@@ -1,0 +1,102 @@
+[
+  {
+    "id": "amazon_pay_icici",
+    "name": "Amazon Pay ICICI Visa",
+    "network": "Visa",
+    "optimizationVector": "Yields 5% back directly as a statement credit.",
+    "billingCycleStart": 20,
+    "billingCycleEnd": 19,
+    "loungeAccess": { "eligible": false },
+    "regulatoryUpdate": "2026 Update: Avoid loading more than ₹5,000 into your Amazon Pay wallet per month."
+  },
+  {
+    "id": "icici_coral",
+    "name": "ICICI Coral Visa Card",
+    "network": "Visa",
+    "optimizationVector": "Secondary domestic utility / baseline buffer",
+    "billingCycleStart": 20,
+    "billingCycleEnd": 19,
+    "loungeAccess": { "eligible": true, "spendThreshold": 5000, "terminals": ["Domestic"] },
+    "regulatoryUpdate": ""
+  },
+  {
+    "id": "idfc_first_wealth",
+    "name": "IDFC First Wealth Visa",
+    "network": "Visa",
+    "optimizationVector": "10X rewards on Dining and Travel from transaction one.",
+    "billingCycleStart": 20,
+    "billingCycleEnd": 19,
+    "loungeAccess": { "eligible": true, "spendThreshold": 20000, "terminals": ["Domestic", "International", "Chennai T4"] },
+    "regulatoryUpdate": "2026 Update: BOGO movie tickets strictly require a ₹20k total monthly spend."
+  },
+  {
+    "id": "sbi_flipkart",
+    "name": "SBI Flipkart Mastercard",
+    "network": "Mastercard",
+    "optimizationVector": "Offers 5% cashback on Flipkart/Cleartrip.",
+    "billingCycleStart": 11,
+    "billingCycleEnd": 10,
+    "loungeAccess": { "eligible": true, "spendThreshold": 100000, "terminals": ["Domestic"] },
+    "regulatoryUpdate": "2026 Update: Late payment fees revised; keep automation active."
+  },
+  {
+    "id": "sbi_bpcl_octane",
+    "name": "SBI BPCL Octane Visa",
+    "network": "Visa",
+    "optimizationVector": "Massive ~7.25% value back specifically at BPCL stations.",
+    "billingCycleStart": 11,
+    "billingCycleEnd": 10,
+    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic"] },
+    "regulatoryUpdate": "2026 Update: Check annual fee spending milestones."
+  },
+  {
+    "id": "hdfc_indian_oil",
+    "name": "HDFC Indian Oil RuPay",
+    "network": "RuPay",
+    "optimizationVector": "Best used at IndianOil stations if BPCL is unavailable.",
+    "billingCycleStart": 11,
+    "billingCycleEnd": 10,
+    "loungeAccess": { "eligible": false },
+    "regulatoryUpdate": ""
+  },
+  {
+    "id": "bobcard_scapia",
+    "name": "BOBCARD Scapia Visa",
+    "network": "Visa",
+    "optimizationVector": "Zero forex markup saves you ~3.5% conversion fees.",
+    "billingCycleStart": 18,
+    "billingCycleEnd": 17,
+    "loungeAccess": { "eligible": true, "spendThreshold": 5000, "terminals": ["Domestic", "International", "Chennai T4"] },
+    "regulatoryUpdate": ""
+  },
+  {
+    "id": "federal_one_metal",
+    "name": "Federal One Metal Visa",
+    "network": "Visa",
+    "optimizationVector": "Standard catch-all reward rate.",
+    "billingCycleStart": 19,
+    "billingCycleEnd": 18,
+    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International"] },
+    "regulatoryUpdate": "2026 Update: ICICI cards now charge a 2% fee on online gaming."
+  },
+  {
+    "id": "federal_imperio",
+    "name": "Federal Bank Imperio Visa",
+    "network": "Visa",
+    "optimizationVector": "Tier-2 lifestyle / automated billing cycles",
+    "billingCycleStart": 21,
+    "billingCycleEnd": 20,
+    "loungeAccess": { "eligible": true, "spendThreshold": 5000, "terminals": ["Domestic"] },
+    "regulatoryUpdate": ""
+  },
+  {
+    "id": "yes_bank_rupay",
+    "name": "Yes Bank RuPay",
+    "network": "RuPay",
+    "optimizationVector": "Keeps bank statement clean while earning rewards on QR codes.",
+    "billingCycleStart": 3,
+    "billingCycleEnd": 2,
+    "loungeAccess": { "eligible": false },
+    "regulatoryUpdate": ""
+  }
+]

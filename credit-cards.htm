@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Master Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .card-result {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .nav-tabs .nav-link {
+            color: #495057;
+        }
+
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            background-color: #fff;
+            border-bottom-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto" style="max-width: 650px;">
+        <h2 class="mb-4 text-center">💳 Credit Card Master Hub</h2>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nav-tabs mb-4" id="hubTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="optimizer-tab" data-bs-toggle="tab" data-bs-target="#optimizer"
+                    type="button" role="tab">Spend Optimizer</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tracker-tab" data-bs-toggle="tab" data-bs-target="#tracker" type="button"
+                    role="tab">Billing Cycle Tracker</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="hubTabsContent">
+            <!-- Tab 1: Spend Optimizer -->
+            <div class="tab-pane fade show active" id="optimizer" role="tabpanel">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <label for="spendCategory" class="form-label fw-bold">What are you paying for?</label>
+                        <select id="spendCategory" class="form-select mb-3 shadow-none">
+                            <option value="" selected disabled>Select a category...</option>
+                            <option value="amazon">Amazon Shopping & Amazon Pay</option>
+                            <option value="flipkart">Flipkart / Myntra / Cleartrip</option>
+                            <option value="bpcl">Fuel (BPCL Pumps in Bengaluru)</option>
+                            <option value="other_fuel">Fuel (Other Pumps)</option>
+                            <option value="upi">Street Vendors / UPI QR Scans</option>
+                            <option value="forex">International Travel / USD Subscriptions</option>
+                            <option value="dining_travel">Dining Out & Flight Bookings</option>
+                            <option value="gaming_wallet">Online Gaming / Wallet Reloads</option>
+                            <option value="general">General Offline / Catch-All</option>
+                        </select>
+                        <button id="findCardBtn" class="btn btn-dark w-100 shadow-none">Get Best Card</button>
+                    </div>
+                </div>
+
+                <div id="resultCard" class="card card-result shadow-sm border-dark">
+                    <div class="card-body">
+                        <h5 class="card-title text-dark fw-bold">Primary Card: <span id="primaryCard"></span></h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Backup: <span id="backupCard"></span></h6>
+                        <p class="card-text mt-3" id="logicText"></p>
+                        <div class="alert alert-warning mb-0" style="font-size: 0.9rem;" id="updateText"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Billing Cycle Tracker -->
+            <div class="tab-pane fade" id="tracker" role="tabpanel">
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-3">Set Your Card Statement Dates (Day of Month)</h6>
+                        <form id="cycleForm">
+                            <div class="row g-3">
+                                <div class="col-7"><label class="small fw-semibold">Amazon Pay ICICI Visa</label></div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="Amazon Pay ICICI Visa" min="1" max="31" value="20"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">ICICI Coral Visa Card</label></div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="ICICI Coral Visa Card" min="1" max="31" value="20"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">IDFC First Wealth Visa</label></div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="IDFC First Wealth Visa" min="1" max="31" value="20"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">SBI Flipkart Mastercard</label>
+                                </div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="SBI Flipkart Mastercard" min="1" max="31" value="11"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">SBI Bharat Petroleum Octane
+                                        Visa</label></div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="SBI Bharat Petroleum Octane Visa" min="1" max="31" value="11"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">HDFC Indian Oil RuPay Card</label>
+                                </div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="HDFC Indian Oil RuPay Card" min="1" max="31" value="11"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">BOBCARD Scapia Visa Card</label>
+                                </div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="BOBCARD Scapia Visa Card" min="1" max="31" value="18"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">Federal One Metal Visa</label></div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="Federal One Metal Visa" min="1" max="31" value="19"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">Federal Bank Imperio Visa</label>
+                                </div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="Federal Bank Imperio Visa" min="1" max="31" value="21"></div>
+
+                                <div class="col-7"><label class="small fw-semibold">Yes Bank RuPay Card</label></div>
+                                <div class="col-5"><input type="number" class="form-control form-control-sm stmt-input"
+                                        data-card="Yes Bank RuPay Card" min="1" max="31" value="3"></div>
+                            </div>
+                            <button type="button" id="calcCyclesBtn" class="btn btn-dark btn-sm w-100 mt-4">Analyze
+                                Cycles for Today</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-3">Current Cycle Status (As of Today)</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover align-middle" style="font-size: 0.85rem;">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Card Name</th>
+                                        <th>Stmt Day</th>
+                                        <th>Target Cycle</th>
+                                        <th>Days Left</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="trackerTableBody">
+                                    <!-- Dynamic rows go here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const cardLogic = {
+            amazon: { primary: "Amazon Pay ICICI Visa", backup: "Federal One Metal Visa", logic: "Yields 5% back directly as a statement credit.", update: "2026 Update: Avoid loading more than ₹5,000 into your Amazon Pay wallet per month." },
+            flipkart: { primary: "SBI Flipkart Mastercard", backup: "Federal One Metal Visa", logic: "Offers 5% cashback on Flipkart/Cleartrip.", update: "2026 Update: Late payment fees revised; keep automation active." },
+            bpcl: { primary: "SBI BPCL Octane Visa", backup: "HDFC Indian Oil RuPay", logic: "Massive ~7.25% value back specifically at BPCL stations.", update: "2026 Update: Check annual fee spending milestones." },
+            other_fuel: { primary: "HDFC Indian Oil RuPay", backup: "SBI BPCL Octane Visa", logic: "Best used at IndianOil stations if BPCL is unavailable.", update: "" },
+            upi: { primary: "Yes Bank RuPay (Digital)", backup: "HDFC Indian Oil RuPay", logic: "Keeps bank statement clean while earning rewards on QR codes.", update: "" },
+            forex: { primary: "BOBCARD Scapia Visa", backup: "Federal One Metal Visa", logic: "Zero forex markup saves you ~3.5% conversion fees.", update: "" },
+            dining_travel: { primary: "IDFC First Wealth Visa", backup: "Federal One Metal Visa", logic: "10X rewards on Dining and Travel from transaction one.", update: "2026 Update: BOGO movie tickets strictly require a ₹20k total monthly spend." },
+            gaming_wallet: { primary: "Federal One Metal Visa", backup: "IDFC First Wealth Visa", logic: "Standard catch-all reward rate.", update: "2026 Update: ICICI cards now charge a 2% fee on online gaming." },
+            general: { primary: "IDFC First Wealth Visa", backup: "Federal One Metal Visa", logic: "Solid base rewards. OneCard applies a 5X multiplier to top 2 categories.", update: "" }
+        };
+
+        $(document).ready(function () {
+            $('#findCardBtn').click(function () {
+                const category = $('#spendCategory').val();
+                if (!category) return;
+                const data = cardLogic[category];
+                $('#primaryCard').text(data.primary);
+                $('#backupCard').text(data.backup);
+                $('#logicText').text(data.logic);
+                if (data.update) {
+                    $('#updateText').html('<strong>🚨 Rule Change:</strong> ' + data.update).show();
+                } else {
+                    $('#updateText').hide();
+                }
+                $('#resultCard').fadeIn();
+            });
+
+            function calculateCycles() {
+                const today = new Date();
+                const currentDay = today.getDate();
+                let html = '';
+
+                $('.stmt-input').each(function () {
+                    const cardName = $(this).data('card');
+                    const stmtDay = parseInt($(this).val());
+
+                    if (isNaN(stmtDay) || stmtDay < 1 || stmtDay > 31) return;
+
+                    let targetCycle = "";
+                    let daysLeft = 0;
+                    let badgeClass = "";
+
+                    if (currentDay <= stmtDay) {
+                        targetCycle = "Current Bill";
+                        daysLeft = stmtDay - currentDay;
+                        badgeClass = daysLeft <= 3 ? "bg-danger" : "bg-warning text-dark";
+                    } else {
+                        targetCycle = "Next Bill";
+                        const nextStmtDate = new Date(today.getFullYear(), today.getMonth() + 1, stmtDay);
+                        const timeDiff = nextStmtDate.getTime() - today.getTime();
+                        daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                        badgeClass = "bg-success";
+                    }
+
+                    html += `<tr>
+                        <td class="fw-semibold">${cardName}</td>
+                        <td>${stmtDay}</td>
+                        <td><span class="badge ${badgeClass}">${targetCycle}</span></td>
+                        <td><strong>${daysLeft}</strong> days left</td>
+                    </tr>`;
+                });
+
+                $('#trackerTableBody').html(html);
+            }
+
+            $('#calcCyclesBtn').click(calculateCycles);
+            calculateCycles();
+        });
+    </script>
+</body>
+
+</html>
