@@ -1,0 +1,40 @@
+<div class="glass-card">
+  <h4 class="fw-bold section-title">Spend Optimizer</h4>
+  <p class="text-muted text-sm section-desc">
+    Calculate the optimal route for your transaction to maximize rewards and interest-free days.
+  </p>
+
+  <form (ngSubmit)="onSubmit()" class="optimizer-form">
+    <div class="form-group">
+      <label for="txAmount" class="form-label">Transaction Amount (₹)</label>
+      <input
+        type="number"
+        id="txAmount"
+        class="form-input"
+        [(ngModel)]="amount"
+        name="amount"
+        placeholder="e.g., 50000"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="txCategory" class="form-label">Spend Category</label>
+      <select
+        id="txCategory"
+        class="form-input form-select"
+        [(ngModel)]="category"
+        name="category"
+        required
+      >
+        <option value="" disabled>Select Category</option>
+        @for (cat of categories; track cat.value) {
+          <option [value]="cat.value">{{ cat.label }}</option>
+        }
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-full" [disabled]="!category">
+      Optimize Route
+    </button>
+  </form>
+</div>

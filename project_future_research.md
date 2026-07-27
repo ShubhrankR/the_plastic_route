@@ -7,6 +7,15 @@ While commercial FinTech applications (like CRED and others) offer reward tracki
 
 The Plastic Route is designed to solve exactly this problem—providing immediate, actionable clarity without the noise.
 
+## ✅ Completed: Framework Migration (July 2026)
+The project has been migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22** with:
+- **Standalone components** (no NgModules)
+- **Angular Signals** for reactive state management
+- **TypeScript 6** with strict mode
+- **Injectable services** (`CardService`, `ThemeService`) with dependency injection
+- **Custom CSS design system** replacing Bootstrap (glassmorphism aesthetic preserved)
+- **Externalized card data** in `cards.json` for easy community contributions
+
 ## Privacy-First Data Architecture
 To build trust and ensure security, this application will operate on a strict **Zero-Backend / Privacy-First** model.
 - **Client-Side Storage**: Users will input their specific credit card portfolio (card name, network, billing cycle dates, and custom rules). All of this data will be stored **exclusively** on the user's browser using `IndexedDB`.
@@ -17,14 +26,13 @@ To build trust and ensure security, this application will operate on a strict **
 2. **Optional Transaction Amounts**: The "Transaction Amount" input field will become optional. Users can simply select a spend category (e.g., "Dining") to instantly see which card offers the best multiplier, regardless of the spend volume.
 3. **Open Source Community**: The project will remain fully open-source, allowing the community to contribute new credit card profiles, updated reward logic, and optimizations as bank rules change.
 
-## Architecture Migration Strategy
-The current MVP is built on HTML5, Bootstrap 5, and jQuery. To support a robust `IndexedDB` implementation, dynamic state management, and offline PWA capabilities, the architecture must evolve.
+## Next Architecture Steps
+Now that Angular 22 is in place, the next priorities are:
 
-We are considering migrating to a modern framework. Options include:
-- **Next.js (React)**: Excellent for SEO, component reusability, and robust ecosystem, though SSR features may be overkill for a purely client-side app.
-- **Angular**: Highly structured, built-in services for state and IndexedDB management, but has a steeper learning curve.
-- **SvelteKit / Vue (Nuxt)**: Lightweight, extremely fast, and developer-friendly—potentially a perfect match for a fast, responsive utility app.
-- *Let's discuss which framework aligns best with your long-term goals.*
+1. **IndexedDB Integration**: Use Angular's DI to create an `IndexedDBService` for persisting user's personal card portfolio in the browser.
+2. **PWA Support**: Run `ng add @angular/pwa` to add service worker, manifest, and offline caching.
+3. **Dynamic Rule Engine**: Allow users to customize reward multipliers and thresholds per card.
+4. **Angular Router**: Add proper routing (`/optimizer`, `/tracker`, `/portfolio`) as the app grows.
 
 ---
 
@@ -33,7 +41,6 @@ We are considering migrating to a modern framework. Options include:
 > [!IMPORTANT]
 > Please review these questions as they will guide our next architectural decisions.
 
-1. **Framework Selection**: Do you have a personal preference for the next framework (React/Next, Angular, Vue, Svelte)? Since we want a purely client-side IndexedDB app, a lightweight framework (like React + Vite or Svelte) might be more performant than a heavy SSR framework like Next.js.
-2. **Pre-loaded Card Database**: Should we maintain a "Master Database" of popular Indian credit cards that users can select from a dropdown to quickly populate their local IndexedDB, rather than typing all the details manually?
-3. **Rule Engine Complexity**: Credit card rules change frequently (e.g., the 2026 gaming fee updates). Should we build a dynamic rule engine where users can tweak the logic themselves, or should the community maintain the logic via open-source PRs?
-4. **Offline Support (PWA)**: Should we configure the new architecture as a Progressive Web App (PWA) so users can install it on their phones and use it completely offline?
+1. **Pre-loaded Card Database**: Should we maintain a "Master Database" of popular Indian credit cards that users can select from a dropdown to quickly populate their local IndexedDB, rather than typing all the details manually?
+2. **Rule Engine Complexity**: Credit card rules change frequently (e.g., the 2026 gaming fee updates). Should we build a dynamic rule engine where users can tweak the logic themselves, or should the community maintain the logic via open-source PRs?
+3. **Offline Support (PWA)**: Should we configure the architecture as a Progressive Web App (PWA) so users can install it on their phones and use it completely offline?

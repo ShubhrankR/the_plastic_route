@@ -1,0 +1,34 @@
+<div class="glass-card">
+  <h5 class="fw-bold portfolio-title">Card Portfolio Status</h5>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Card Name</th>
+          <th>Optimization Vector</th>
+          <th>Billing Cycle</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (card of cards; track card.id) {
+          <tr>
+            <td>
+              <span class="fw-semibold">{{ card.name }}</span>
+              <br>
+              <span class="badge badge-network">{{ card.network }}</span>
+            </td>
+            <td class="text-secondary text-sm">{{ card.optimizationVector }}</td>
+            <td>
+              <span class="cycle-range">
+                <span class="fw-semibold">{{ card.billingCycleStart }}</span>
+                <span class="text-muted text-sm"> to </span>
+                <span class="fw-semibold">{{ card.billingCycleEnd }}</span>
+              </span>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

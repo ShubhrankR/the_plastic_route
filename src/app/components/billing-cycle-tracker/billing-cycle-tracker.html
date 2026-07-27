@@ -1,0 +1,39 @@
+<div class="glass-card">
+  <div class="tracker-header">
+    <h4 class="fw-bold">Billing Cycle Status</h4>
+    <button class="btn btn-ghost" (click)="refresh()">↻ Refresh</button>
+  </div>
+  <p class="text-muted text-sm tracker-desc">
+    See whether today's transactions hit the current or next billing cycle for each card.
+  </p>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Card Name</th>
+          <th>Stmt Day</th>
+          <th>Target Cycle</th>
+          <th>Days Left</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (s of statuses; track s.cardName) {
+          <tr>
+            <td class="fw-semibold">{{ s.cardName }}</td>
+            <td>{{ s.statementDay }}</td>
+            <td>
+              <span class="badge" [class]="getBadgeClass(s.severity)">
+                {{ s.targetCycle }}
+              </span>
+            </td>
+            <td>
+              <strong>{{ s.daysLeft }}</strong>
+              <span class="text-muted text-sm"> days</span>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

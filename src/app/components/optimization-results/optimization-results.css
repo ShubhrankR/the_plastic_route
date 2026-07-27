@@ -1,0 +1,61 @@
+.results-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+}
+
+/* Placeholder */
+.placeholder-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  padding: 3rem 1rem;
+  opacity: 0.45;
+}
+
+.placeholder-icon {
+  margin-bottom: 1rem;
+}
+
+.placeholder-state h5 {
+  font-weight: 500;
+}
+
+/* Results */
+.result-label {
+  margin-bottom: 0.25rem;
+}
+
+.result-card-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.result-reason {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.backup-label {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.stat-label {
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  margin-bottom: 0.25rem;
+}
+
+.stat-sub {
+  margin-bottom: 0;
+}

@@ -1,32 +1,76 @@
 # 💳 The Plastic Route
 
-An open-source, lightweight, privacy-first credit card spend optimizer and billing cycle tracker. 
+An open-source, lightweight, privacy-first credit card spend optimizer and billing cycle tracker.
 
 Unlike closed ecosystems that scrape your SMS data or demand heavy permissions, **The Plastic Route** runs entirely in the browser, stores no personal financial data on servers, and lets *you* map the ultimate mathematical route for your wallet.
 
-## 🚀 Live Demo
-[Deploy your link here via GitHub Pages or Antigravity]
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js ≥ v24.15.0
+- npm ≥ 11.0.0
+
+### Installation & Dev Server
+```bash
+npm install
+npm start
+```
+The app will be available at `http://localhost:4200/`.
+
+### Production Build
+```bash
+npm run build
+```
+Output is generated in the `dist/the-plastic-route/` directory.
 
 ## ✨ Features
 *   **Spend Optimizer:** Quick lookup tool to instantly see which primary or backup card to swipe based on the purchase category (Amazon, Fuel, Forex, UPI, etc.).
 *   **Billing Cycle Tracker:** Real-time analysis of statement dates. Instantly see if a transaction today hits your *current bill* or safely rolls over to the *next bill* for maximum interest-free leverage.
-*   **Privacy-First:** Zero backend, zero cookies, zero tracking. 
+*   **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays in your browser.
 
 ## 🛠️ Project Architecture
-The project is intentionally kept simple using standard web technologies so that anyone can run it locally or host it instantly:
-*   HTML5 / CSS3 (Bootstrap 5)
-*   jQuery (DOM manipulation and date calculations)
+The project is built with modern Angular (v22) using standalone components, signals, and TypeScript:
+
+| Layer | Tech |
+|---|---|
+| Framework | Angular 22 (standalone components, signals) |
+| Language | TypeScript 6 (strict mode) |
+| Styling | Custom CSS design system with CSS custom properties |
+| State | Angular Signals |
+| Build | Angular CLI + esbuild |
+
+### Project Structure
+```
+src/
+├── app/
+│   ├── components/         # Standalone UI components
+│   │   ├── navbar/         # Top navigation + theme toggle
+│   │   ├── spend-optimizer/        # Transaction form
+│   │   ├── optimization-results/   # Card recommendation display
+│   │   ├── billing-cycle-tracker/  # Statement cycle analysis
+│   │   ├── portfolio-table/        # Full card portfolio overview
+│   │   └── footer/
+│   ├── data/
+│   │   └── cards.json      # Credit card reward rules & billing data
+│   ├── models/
+│   │   └── card.model.ts   # TypeScript interfaces
+│   └── services/
+│       ├── card.service.ts # Optimization logic & billing cycle math
+│       └── theme.service.ts # Dark/light theme management
+├── index.html
+├── main.ts
+└── styles.css              # Global design system
+```
 
 ## 🤝 How to Contribute (The Open-Source Way)
 Banking rules, reward points, and lounge access thresholds change constantly. We rely on the community to keep this matrix sharp and updated.
 
 ### Adding or Updating Card Logic
-The core spending matrix is driven by a single object in the script tag. If a bank changes its policy or you want to add a new category killer:
+The core spending matrix is driven by `src/app/data/cards.json`. If a bank changes its policy or you want to add a new category killer:
 1. Fork this repository.
-2. Update the `cardLogic` structure in `index.html`.
-3. Open a Pull Request!
-
-*Future Roadmap: Moving the card definitions to a separate `cards.json` file to make contributions even easier.*
+2. Update the card data in `src/app/data/cards.json`.
+3. If adding a new spending category, update `CATEGORY_MAP` in `src/app/services/card.service.ts`.
+4. Open a Pull Request!
 
 ## 📜 License
 MIT License - feel free to fork, modify, and use it for your own portfolio.

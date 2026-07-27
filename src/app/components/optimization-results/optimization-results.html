@@ -1,0 +1,58 @@
+<div class="glass-card results-card">
+  <h4 class="fw-bold section-title">Optimization Results</h4>
+
+  <!-- Placeholder state -->
+  @if (!result()) {
+    <div class="placeholder-state">
+      <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" viewBox="0 0 16 16" class="placeholder-icon">
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+        <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
+      </svg>
+      <h5 class="text-muted">Enter details to see the best card route</h5>
+    </div>
+  }
+
+  <!-- Results state -->
+  @if (result(); as r) {
+    <div class="fade-in-up">
+      <!-- Recommended card -->
+      <div class="alert-success-card">
+        <p class="text-success text-sm fw-semibold result-label">Recommended Route</p>
+        <h3 class="fw-bold result-card-name">{{ r.bestCard.name }}</h3>
+        <p class="text-secondary text-sm result-reason">{{ r.reason }}</p>
+
+        @if (r.bestCard.regulatoryUpdate) {
+          <div class="alert-warning-card">
+            <span class="text-warning fw-semibold">🚨 Rule Change:</span>
+            <span class="text-secondary text-sm"> {{ r.bestCard.regulatoryUpdate }}</span>
+          </div>
+        }
+
+        <p class="text-muted text-sm backup-label">
+          Backup Card: <span class="text-secondary fw-semibold">{{ r.backupCard.name }}</span>
+        </p>
+      </div>
+
+      <!-- Stats grid -->
+      <div class="info-grid">
+        <div class="info-box">
+          <p class="text-muted text-xs text-uppercase stat-label">Interest-Free Window</p>
+          <h3 class="text-info fw-bold stat-value">
+            {{ r.interestFreeDays }} <span class="text-sm fw-normal">days</span>
+          </h3>
+          <p class="text-muted text-xs stat-sub">Due Date: {{ formatDate(r.dueDate) }}</p>
+        </div>
+
+        <div class="info-box">
+          <p class="text-muted text-xs text-uppercase stat-label">Lounge Access</p>
+          @if (r.bestCard.loungeAccess.eligible) {
+            <h3 class="text-success fw-bold stat-value">Eligible</h3>
+            <p class="text-muted text-xs stat-sub">{{ getLoungeLabel(r) }}</p>
+          } @else {
+            <h3 class="text-danger fw-bold stat-value">Not Eligible</h3>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>
