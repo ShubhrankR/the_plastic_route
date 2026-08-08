@@ -38,6 +38,7 @@ Output is generated in the `dist/the-plastic-route/` directory.
 Detailed project roadmaps, scaling strategies, and architectural research are available in the [`docs/`](docs/) directory:
 
 - **[Development & Feature Roadmap (TODO)](docs/TODO.md)**: Milestone tasks, Phase 1 to Phase 5 feature checklists, and backlog.
+- **[Security, Privacy & App Navigation](docs/SECURITY_PRIVACY_AND_NAVIGATION.md)**: Security risk analysis, zero-credential storage guarantee, master catalog vs local wallet data separation, and multi-user route flows.
 - **[Architecture & Scaling Strategy](docs/SCALING_STRATEGY.md)**: Multi-vector scoring algorithm, declarative rule schemas, Web Workers, IndexedDB, PWA setup, and P2P sync.
 - **[Future Vision & Research](project_future_research.md)**: Origin philosophy, framework migration background, and architectural questions.
 
