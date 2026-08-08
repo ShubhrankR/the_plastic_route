@@ -56,6 +56,9 @@ This document defines the technical architecture, design principles, mandatory r
 > [!CAUTION]
 > **NEVER EXECUTE GIT PUSH**: AI assistants MUST NEVER execute `git push` or attempt to push any commits/branches to remote repositories without explicit user permission.
 
+> [!IMPORTANT]
+> **PRE-COMMIT APPROVAL REQUIRED WITH YES/NO MENU**: Before executing any `git commit`, the AI assistant MUST explicitly showcase the proposed commit message, modified files, and prompt the user with a direct **Yes / No** option choice (using the interactive `ask_question` tool). Do NOT run `git commit` unless the user selects **Yes**.
+
 ### 2. 🟢 Environment & Build Requirements
 > [!IMPORTANT]
 > **Node.js Version Requirement**: The Angular CLI requires Node.js `≥ 24.15.0`.
