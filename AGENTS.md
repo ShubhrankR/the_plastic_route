@@ -24,26 +24,25 @@ This document defines the technical architecture, design principles, mandatory r
 /home/shubhrank_rastogi/WORKSPACE/PROJECTS/my_projects/the_plastic_route/
 ├── src/
 │   ├── app/
-│   │   ├── components/                 # Standalone UI components
-│   │   │   ├── navbar/                 # App navigation & theme toggle
-│   │   │   ├── spend-optimizer/        # Spend category form
-│   │   │   ├── optimization-results/   # Card recommendation & billing breakdown
-│   │   │   ├── billing-cycle-tracker/  # Statement cycle analysis table
-│   │   │   ├── portfolio-table/        # Full credit card portfolio view
-│   │   │   └── footer/                 # Footer component
-│   │   ├── data/
-│   │   │   └── cards.json              # Community-maintained card database
-│   │   ├── models/
-│   │   │   └── card.model.ts           # Interfaces (CreditCard, OptimizationResult, etc.)
-│   │   ├── services/
-│   │   │   ├── card.service.ts         # Category mapping & billing cycle math
-│   │   │   └── theme.service.ts        # Dark/Light theme manager
-│   │   ├── app.config.ts               # Application configuration
-│   │   ├── app.ts                      # Root component (App)
-│   │   ├── app.html                    # Main layout template
-│   │   └── app.css                     # Root component styles
-│   ├── styles.css                      # Design system tokens & utility styles
+│   │   ├── core/                       # Singleton services, models, and datasets
+│   │   │   ├── data/cards.json         # Master credit card dataset
+│   │   │   ├── models/card.model.ts    # TypeScript interfaces
+│   │   │   └── services/               # CardService, ThemeService, IndexedDBService
+│   │   ├── features/                   # Domain feature views (Route pages)
+│   │   │   ├── home/                   # Home / Landing Page view & guide
+│   │   │   ├── optimizer/              # Spend Optimizer form & results
+│   │   │   ├── tracker/                # Billing Cycle Tracker view
+│   │   │   └── portfolio/              # Card Portfolio overview & management
+│   │   ├── shared/                     # Reusable layout components
+│   │   │   └── components/             # Navbar (header & theme toggle), Footer
+│   │   ├── app.config.ts               # App configuration & router providers
+│   │   ├── app.routes.ts               # HashLocationStrategy route definitions
+│   │   ├── app.ts                      # Root component shell
+│   │   ├── app.html                    # Main layout template (<router-outlet />)
+│   │   └── app.css                     # Root layout styling
+│   ├── styles.css                      # Global design system & theme tokens
 │   └── main.ts                         # Application entry point
+├── docs/                               # TODO.md, SCALING_STRATEGY.md, SECURITY_PRIVACY_AND_NAVIGATION.md
 ├── project_future_research.md          # Architectural vision & research roadmap
 ├── angular.json                        # Angular CLI configuration
 └── package.json                        # Project dependencies

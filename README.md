@@ -29,8 +29,10 @@ npm run build
 Output is generated in the `dist/the-plastic-route/` directory.
 
 ## ✨ Features
+*   **Home Landing Page:** Interactive landing page (`/#/home`) explaining the application purpose, privacy-first architecture, 3-step user guide, and open-source GitHub contribution guidelines.
 *   **Spend Optimizer:** Quick lookup tool to instantly see which primary or backup card to swipe based on the purchase category (Amazon, Fuel, Forex, UPI, etc.).
 *   **Billing Cycle Tracker:** Real-time analysis of statement dates. Instantly see if a transaction today hits your *current bill* or safely rolls over to the *next bill* for maximum interest-free leverage.
+*   **IndexedDB Wallet Persistence:** Client-side local storage using browser IndexedDB for custom user card portfolios with zero server tracking.
 *   **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays in your browser.
 
 ## 📚 Project Documentation
@@ -47,30 +49,30 @@ The project is built with modern Angular (v22) using standalone components, sign
 
 | Layer | Tech |
 |---|---|
-| Framework | Angular 22 (standalone components, signals) |
+| Framework | Angular 22 (standalone components, signals, Angular Router) |
 | Language | TypeScript 6 (strict mode) |
-| Styling | Custom CSS design system with CSS custom properties |
-| State | Angular Signals |
+| Styling | Custom CSS design system with CSS custom properties & glassmorphism |
+| State & Storage | Angular Signals + Browser IndexedDB |
 | Build | Angular CLI + esbuild |
 
 ### Project Structure
 ```
 src/
 ├── app/
-│   ├── components/         # Standalone UI components
-│   │   ├── navbar/         # Top navigation + theme toggle
-│   │   ├── spend-optimizer/        # Transaction form
-│   │   ├── optimization-results/   # Card recommendation display
-│   │   ├── billing-cycle-tracker/  # Statement cycle analysis
-│   │   ├── portfolio-table/        # Full card portfolio overview
-│   │   └── footer/
-│   ├── data/
-│   │   └── cards.json      # Credit card reward rules & billing data
-│   ├── models/
-│   │   └── card.model.ts   # TypeScript interfaces
-│   └── services/
-│       ├── card.service.ts # Optimization logic & billing cycle math
-│       └── theme.service.ts # Dark/light theme management
+│   ├── core/                       # Singleton services, models, and datasets
+│   │   ├── data/cards.json         # Master card dataset
+│   │   ├── models/card.model.ts    # TypeScript interfaces
+│   │   └── services/               # CardService, ThemeService, IndexedDBService
+│   ├── features/                   # Domain feature views (Route pages)
+│   │   ├── home/                   # Home / Landing Page view & sub-components
+│   │   ├── optimizer/              # Spend Optimizer page view & form components
+│   │   ├── tracker/                # Billing Cycle Tracker page view & table
+│   │   └── portfolio/              # Card Portfolio overview & management
+│   ├── shared/                     # Reusable layout components
+│   │   └── components/             # Navbar (header & theme switcher), Footer
+│   ├── app.config.ts               # App configuration & router providers
+│   ├── app.routes.ts               # HashLocationStrategy route mapping
+│   └── app.ts                      # Root application component shell
 ├── index.html
 ├── main.ts
 └── styles.css              # Global design system
