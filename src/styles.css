@@ -39,6 +39,9 @@
   --danger-bg: rgba(248, 113, 113, 0.08);
   --info: #38bdf8;
 
+  --link-color: #60a5fa;
+  --link-hover: #93c5fd;
+
   --shadow-lg: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
   --shadow-glow: 0 0 40px -10px rgba(59, 130, 246, 0.2);
 
@@ -54,7 +57,7 @@
 
 [data-theme="light"] {
   --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
+  --bg-secondary: #ffffff;
   --card-bg: rgba(255, 255, 255, 0.75);
   --card-bg-hover: rgba(255, 255, 255, 0.9);
   --card-border: rgba(0, 0, 0, 0.08);
@@ -63,6 +66,8 @@
   --text-primary: #0f172a;
   --text-secondary: #334155;
   --text-muted: #64748b;
+  --link-color: #2563eb;
+  --link-hover: #1d4ed8;
 
   --input-bg: rgba(255, 255, 255, 0.9);
   --input-border: rgba(0, 0, 0, 0.12);
@@ -257,9 +262,89 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem;
 }
 
+/* Global Anchor / Hyperlink Styling */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a.btn, .btn {
+  text-decoration: none !important;
+}
+
+a.btn:hover, .btn:hover {
+  text-decoration: none !important;
+}
+
+.text-primary {
+  color: var(--link-color) !important;
+}
+
+.text-primary:hover {
+  color: var(--link-hover) !important;
+}
+
 /* ============================================
-   Buttons
+   Buttons & Animated Gradient Borders
    ============================================ */
+
+@property --border-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotateBorder {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.gradient-border-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+
+  /* Solid inner background with continuously circulating conic gradient on border edge */
+  background-image:
+    linear-gradient(var(--bg-secondary), var(--bg-secondary)),
+    conic-gradient(from var(--border-angle), #3b82f6, #8b5cf6, #06b6d4, #ec4899, #3b82f6);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: rotateBorder 4s linear infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.gradient-border-btn:hover {
+  text-decoration: none !important;
+  transform: translateY(-3px);
+  animation-duration: 2s;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.35);
+  color: var(--text-primary) !important;
+}
+
+.gradient-border-btn:active {
+  transform: translateY(-1px);
+}
 
 .btn {
   display: inline-flex;
