@@ -55,27 +55,32 @@ To transition **The Plastic Route** from a hardcoded single-user app into a univ
 ## 🧭 3. App Navigation & User Flows
 
 ```
-                          ┌──────────────────────────────────────────────┐
-                          │               App Navigation Bar              │
-                          │   [Optimizer]  [Tracker]  [Portfolio]  [⚙️]   │
-                          └──────┬────────────┬────────────┬─────────┬───┘
-                                 │            │            │         │
-          ┌──────────────────────┘            │            │         └──────────────────────┐
-          ▼                                   ▼            ▼                                ▼
-┌──────────────────┐               ┌──────────────────┐  ┌──────────────────┐    ┌──────────────────┐
-│ Spend Optimizer  │               │ Billing Tracker  │  │  Card Portfolio  │    │ Settings & Data  │
-│  (/#/optimizer)  │               │   (/#/tracker)   │  │  (/#/portfolio)  │    │   (/#/settings)  │
-├──────────────────┤               ├──────────────────┤  ├──────────────────┤    ├──────────────────┤
-│ • Amount Input   │               │ • Current vs Next│  │ • Active Card    │    │ • Export JSON    │
-│ • Category Select│               │   Bill Status    │  │   Table          │    │ • Import JSON    │
-│ • Best/Backup    │               │ • Days Left      │  │ • Add Card Modal │    │ • Clear Wallet   │
-│   Recommendation │               │   Countdown      │  │ • Edit Stmt Dates│    │ • Theme Switcher │
-└──────────────────┘               └──────────────────┘  └──────────────────┘    └──────────────────┘
+                             ┌─────────────────────────────────────────────────────────┐
+                             │                    App Navigation Bar                   │
+                             │  [Home]  [Optimizer]  [Tracker]  [Portfolio]  [Settings] │
+                             └────┬──────────┬────────────┬──────────┬───────────┬─────┘
+                                  │          │            │          │           │
+         ┌────────────────────────┘          │            │          │           └────────────────────────┐
+         ▼                                   ▼            ▼          ▼                                    ▼
+┌──────────────────┐               ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐
+│   Home Landing   │               │ Spend Optimizer  │ │ Billing Tracker  │ │  Card Portfolio  │ │ Settings & Data  │
+│    (/#/home)     │               │  (/#/optimizer)  │ │   (/#/tracker)   │ │  (/#/portfolio)  │ │   (/#/settings)  │
+├──────────────────┤               ├──────────────────┤ ├──────────────────┤ ├──────────────────┤ ├──────────────────┤
+│ • Hero Overview  │               │ • Amount Input   │ │ • Current vs Next│ │ • Active Card    │ │ • Export JSON    │
+│ • App Purpose    │               │ • Category Select│ │   Bill Status    │ │   Table          │ │ • Import JSON    │
+│ • Usage Guide    │               │ • Best/Backup    │ │ • Days Left      │ │ • Add Card Modal │ │ • Clear Wallet   │
+│ • Open Source    │               │   Recommendation │ │   Countdown      │ │ • Edit Stmt Dates│ │ • Theme Switcher │
+│   Contributions  │               └──────────────────┘ └──────────────────┘ └──────────────────┘ └──────────────────┘
+└──────────────────┘
 ```
 
 ### Detailed Route Specifications
 
-#### 1. 💳 Spend Optimizer (`/#/optimizer`) — *Default Landing View*
+#### 1. 🏠 Home & Landing Page (`/#/home`) — *Default Landing View*
+- **Purpose**: Welcomes new and returning users, explains zero-backend privacy guarantees, demonstrates how to use the 3 core features, and provides open-source contribution instructions.
+- **Key Sections**: Hero CTA Header, Value Pillars, 3-Step Interactive Guide, and Open-Source GitHub Contribution Card.
+
+#### 2. 💳 Spend Optimizer (`/#/optimizer`)
 - **Purpose**: Instant transaction optimization lookup.
 - **Data Source**: Evaluates rules against **User's Active Wallet** in IndexedDB.
 - **Controls**:
