@@ -76,10 +76,11 @@ This document defines the technical architecture, design principles, mandatory r
 * **Modern Control Flow**: Always use native control flow blocks (`@if`, `@else`, `@for (item of items; track item.id)`) instead of legacy `*ngIf` / `*ngFor` directives.
 * **Dependency Injection**: Inject services using functional `inject()` or constructor injection.
 
-### 4. 🎨 Design System & Styling Rules
-* **Vanilla CSS System**: The project uses custom CSS properties (`:root` variables in `styles.css`) for theme switching, glassmorphism card surfaces, and responsive grids.
-* **Do NOT Add Heavy UI Frameworks**: Do not install Bootstrap, TailwindCSS, or Angular Material unless explicitly requested by the user.
-* **Theme Support**: Ensure all new components support dark/light modes by referencing root CSS variables (`var(--bg-primary)`, `var(--card-bg)`, `var(--text-primary)`, etc.).
+### 4. 🎨 Design System & Styling Rules (Strict Custom Vanilla CSS)
+> [!IMPORTANT]
+> **NO THIRD-PARTY CSS FRAMEWORKS**: The project strictly uses a 100% custom Vanilla CSS design system powered by CSS custom properties (`:root` tokens in `src/styles.css`). Do NOT install, import, or generate code for TailwindCSS, Bootstrap, DaisyUI, PrimeNG, or Angular Material. All utility classes, glassmorphic cards, animations, and theme styles MUST be authored in custom CSS.
+* **Custom CSS Variables**: Use CSS custom properties (`var(--bg-primary)`, `var(--card-bg)`, `var(--text-primary)`, `var(--link-color)`, etc.) for dark/light theme switching.
+* **Performance Guarantee**: Maintains an ultra-lightweight ~10 KB production CSS footprint with zero build-time PostCSS dependencies.
 
 ### 5. 🛡️ Privacy-First Philosophy
 * **Zero Backend**: All card processing and optimization logic must run client-side in the browser.

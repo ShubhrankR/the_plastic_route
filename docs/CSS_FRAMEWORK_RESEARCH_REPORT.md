@@ -4,11 +4,14 @@
 **Current Styling**: Custom Vanilla CSS Design System with CSS Variables, Glassmorphism, and Dark/Light Mode support.  
 **Date**: August 2026
 
+> [!IMPORTANT]
+> **FINAL ARCHITECTURAL DECISION**: We will **NOT** use any third-party CSS frameworks (TailwindCSS, Bootstrap, DaisyUI, PrimeNG, Material, etc.). For **The Plastic Route**, we strictly use and create our own custom CSS properties (`:root` tokens in `src/styles.css`). All utility classes, glassmorphic cards, responsive layouts, and dark/light themes are 100% custom-authored.
+
 ---
 
 ## 📊 Executive Summary
 
-This research report evaluates modern CSS frameworks for potential integration into **The Plastic Route**. We analyzed **Tailwind CSS v4**, **Spartan UI (shadcn for Angular)**, **DaisyUI**, **PrimeNG**, and **Angular Material** against the project's core pillars:
+This research report evaluates CSS options for **The Plastic Route**. Based on our privacy-first, lightweight architecture principles, we evaluated **Tailwind CSS v4**, **Spartan UI**, **DaisyUI**, **PrimeNG**, and **Angular Material** against our custom Vanilla CSS setup:
 1. **Glassmorphic & Premium Design Aesthetics**
 2. **Client-Side Lightweight Performance (< 15 KB CSS bundle)**
 3. **Dark / Light Theme System Compatibility (`data-theme="dark" / "light"`)**
