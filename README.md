@@ -28,6 +28,14 @@ Output is generated in the `dist/the-plastic-route/` directory.
 *   **Billing Cycle Tracker:** Real-time analysis of statement dates. Instantly see if a transaction today hits your *current bill* or safely rolls over to the *next bill* for maximum interest-free leverage.
 *   **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays in your browser.
 
+## 📚 Project Documentation
+
+Detailed project roadmaps, scaling strategies, and architectural research are available in the [`docs/`](docs/) directory:
+
+- **[Development & Feature Roadmap (TODO)](docs/TODO.md)**: Milestone tasks, Phase 1 to Phase 5 feature checklists, and backlog.
+- **[Architecture & Scaling Strategy](docs/SCALING_STRATEGY.md)**: Multi-vector scoring algorithm, declarative rule schemas, Web Workers, IndexedDB, PWA setup, and P2P sync.
+- **[Future Vision & Research](project_future_research.md)**: Origin philosophy, framework migration background, and architectural questions.
+
 ## 🛠️ Project Architecture
 The project is built with modern Angular (v22) using standalone components, signals, and TypeScript:
 
