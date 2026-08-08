@@ -1,5 +1,10 @@
 # 💳 The Plastic Route
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-6366f1?style=for-the-badge&logo=github)](https://shubhrankr.github.io/the_plastic_route/)
+
+> **🌐 Live Interactive Demo**: Experience the web application deployed live on GitHub Pages:  
+> 👉 **[https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)**
+
 An open-source, lightweight, privacy-first credit card spend optimizer and billing cycle tracker.
 
 Unlike closed ecosystems that scrape your SMS data or demand heavy permissions, **The Plastic Route** runs entirely in the browser, stores no personal financial data on servers, and lets *you* map the ultimate mathematical route for your wallet.

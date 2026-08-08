@@ -9,6 +9,7 @@ This document defines the technical architecture, design principles, mandatory r
 **The Plastic Route** is an open-source, privacy-first, zero-backend credit card spend optimizer and billing cycle tracker. It helps users determine the optimal credit card for any transaction category to maximize reward multipliers, cashback, and interest-free repayment cycles.
 
 ### 🌐 Key Links & Quick Stats
+* **Live Demo**: [https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)
 * **Framework**: Angular 22 (Standalone Architecture)
 * **Language**: TypeScript 6 (Strict Mode)
 * **State Management**: Angular Signals

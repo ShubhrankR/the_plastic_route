@@ -9,6 +9,7 @@ This document provides project context, technical architecture, and operational 
 **The Plastic Route** is an open-source, privacy-first, lightweight credit card spend optimizer and billing cycle tracker built with **Angular 22**. It operates entirely in the browser without server dependencies or personal financial tracking.
 
 ### Technical Stack & Architecture
+- **Live Demo**: [https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)
 - **Framework**: Angular 22 (`@angular/core`: `^22.0.0`)
 - **Architecture**: 100% **Standalone Components** (`bootstrapApplication` in `src/main.ts`, `app.ts` root component).
 - **State Management**: **Angular Signals** (`signal()`, `computed()`, `input()`, `output()`) across components and services.
