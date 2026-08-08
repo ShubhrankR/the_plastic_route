@@ -117,3 +117,53 @@ To transition **The Plastic Route** from a hardcoded single-user app into a univ
 1. **Update `docs/TODO.md`**: Add Phase 2 tasks for Catalog Separation and Portfolio Builder Modal.
 2. **Build Portfolio Builder Form Component**: Create `/portfolio/add` modal supporting catalog selection & custom card creation.
 3. **Add `/settings` Route**: Implement JSON export and import options for user data portability.
+
+---
+
+## 🔄 5. Data Persistence Across Page Refreshes & App Updates Strategy
+
+### The Problem / Question:
+> *"If a user enters card details, will data survive browser refreshes when the app is updated with new open-source features on GitHub Pages?"*
+
+---
+
+### 🛡️ The 4-Layer Solution:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        APP UPDATE & DATA PERSISTENCE WORKFLOW                          │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                        │
+│  ┌───────────────────────┐   1. User Enters Cards   ┌──────────────────────────────┐   │
+│  │   User App Interface  │ ───────────────────────► │    Browser IndexedDB Store   │   │
+│  │     (Angular UI)      │                          │     (ThePlasticRouteDB)      │   │
+│  └───────────▲───────────┘                          └──────────────┬───────────────┘   │
+│              │                                                     │                   │
+│              │ 3. PWA Auto-Reload (Keeps Data!)                    │ 2. Survives       │
+│              │                                                     │    Refreshes      │
+│  ┌───────────┴───────────┐                          ┌──────────────▼───────────────┐   │
+│  │  PWA Service Worker   │                          │ Persistent Browser Storage   │   │
+│  │ (Detects Build Hash)  │                          │  (Survives reloads/updates)  │   │
+│  └───────────────────────┘                          └──────────────────────────────┘   │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 1. IndexedDB Client-Side Database (Zero In-Memory Data Loss)
+* User card data is **NOT** stored in transient JavaScript RAM memory.
+* It is written to browser `IndexedDB` (`ThePlasticRouteDB`).
+* **IndexedDB is permanent local disk storage**. It survives page refreshes, tab closes, browser updates, and system reboots.
+
+#### 2. Non-Destructive App Updates (Service Worker PWA)
+* When a new version of the app is deployed to GitHub Pages (`dist/the-plastic-route/`), Angular's PWA Service Worker detects the new build hash.
+* It downloads the new code in the background and presents a non-intrusive prompt: *"New version available! Click to update."*
+* When the user reloads, the browser loads the **new UI code**, while Angular initializes `IndexedDBService` and reads the existing `ThePlasticRouteDB`. **100% of user data remains intact!**
+
+#### 3. Smart Schema Versioning & Catalog Merging
+When the open-source community updates `cards.json` with new cards or revised bank rules:
+* **Custom Cards**: User-created cards are strictly private and never modified.
+* **Template Cards**: If the community updates a reward cap or lounge rule for a card in `cards.json`, the app detects the version bump and offers an optional 1-click *"Sync Bank Rule Update"* button without touching the user's custom statement dates or credit limits.
+
+#### 4. Fail-Safe Backup (`.tpr` / JSON Export)
+* For complete user peace of mind, the `/settings` page will provide a 1-click **Export Backup** (`my_wallet_backup.tpr`).
+* If a user clears their browser cache or switches to a new laptop/phone, uploading their `.tpr` file instantly restores their entire portfolio in 2 seconds.
+
