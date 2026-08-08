@@ -1,44 +1,7 @@
 <app-navbar />
 
 <main class="container main-content">
-  <!-- Tab Navigation -->
-  <div class="tab-nav">
-    <button
-      class="tab-btn"
-      [class.active]="activeTab() === 'optimizer'"
-      (click)="setTab('optimizer')"
-    >
-      💳 Spend Optimizer
-    </button>
-    <button
-      class="tab-btn"
-      [class.active]="activeTab() === 'tracker'"
-      (click)="setTab('tracker')"
-    >
-      📅 Billing Tracker
-    </button>
-  </div>
-
-  <!-- Optimizer Tab -->
-  @if (activeTab() === 'optimizer') {
-    <div class="fade-in-up">
-      <div class="grid-2">
-        <app-spend-optimizer (optimized)="onOptimized($event)" />
-        <app-optimization-results [result]="optimizationResult()" />
-      </div>
-
-      <section class="portfolio-section">
-        <app-portfolio-table />
-      </section>
-    </div>
-  }
-
-  <!-- Billing Tracker Tab -->
-  @if (activeTab() === 'tracker') {
-    <div class="fade-in-up">
-      <app-billing-cycle-tracker />
-    </div>
-  }
+  <router-outlet />
 </main>
 
 <app-footer />

@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { OptimizationResult } from '../../models/card.model';
+import { OptimizationResult } from '../../../../core/models/card.model';
 
 @Component({
   selector: 'app-optimization-results',

@@ -6,15 +6,17 @@ This document tracks all active, upcoming, and long-term development tasks for *
 
 ## 🎯 Current Milestone: Phase 1 — State & Routing Foundation
 
-- [ ] **Angular Router Integration (`/router`)**
-  - [ ] Configure Angular Router in `src/app/app.routes.ts` with Hash / Path location strategy.
-  - [ ] Add dedicated route views: `/optimizer`, `/tracker`, `/portfolio`, `/settings`.
-  - [ ] Update `Navbar` component to use `routerLink` and `routerLinkActive` for seamless navigation.
+- [x] **Modern Angular Architecture Reorganization (`core/`, `features/`, `shared/`)**
+  - [x] Reorganize codebase to modern Angular 22 standalone industry standards.
+- [x] **Angular Router Integration (`/router`)**
+  - [x] Configure Angular Router in `src/app/app.routes.ts` with `HashLocationStrategy`.
+  - [x] Add dedicated route views: `/optimizer`, `/tracker`, `/portfolio`.
+  - [x] Update `Navbar` component to use `routerLink` and `routerLinkActive` for seamless navigation.
 
-- [ ] **IndexedDB Persistence Layer (`IndexedDBService`)**
-  - [ ] Implement `IndexedDBService` using `idb` or native `window.indexedDB` wrapped in RxJS / Signals.
-  - [ ] Define schemas for `UserCard`, `CustomCategoryRule`, and `AppSettings`.
-  - [ ] Add fallback mechanism to `cards.json` when local IndexedDB is empty.
+- [x] **IndexedDB Persistence Layer (`IndexedDBService`)**
+  - [x] Implement `IndexedDBService` in `core/services/` using native `window.indexedDB` and Angular Signals.
+  - [x] Define object stores for `user_cards` and `user_settings`.
+  - [x] Add automatic fallback mechanism to `cards.json` when local IndexedDB is empty.
 
 ---
 

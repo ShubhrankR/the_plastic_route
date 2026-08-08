@@ -1,16 +1,16 @@
 import { Component, inject, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CardService } from '../../services/card.service';
-import { OptimizationResult, SpendCategory } from '../../models/card.model';
+import { CardService } from '../../../../core/services/card.service';
+import { OptimizationResult, SpendCategory } from '../../../../core/models/card.model';
 
 @Component({
-  selector: 'app-spend-optimizer',
+  selector: 'app-spend-optimizer-form',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './spend-optimizer.html',
-  styleUrl: './spend-optimizer.css',
+  templateUrl: './spend-optimizer-form.html',
+  styleUrl: './spend-optimizer-form.css',
 })
-export class SpendOptimizer {
+export class SpendOptimizerForm {
   private readonly cardService = inject(CardService);
 
   /** Emits the optimization result to the parent. */
