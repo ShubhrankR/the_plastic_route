@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (card of cards; track card.id) {
+        @for (card of cards(); track card.id) {
           <tr>
             <td>
               <span class="fw-semibold">{{ card.name }}</span>

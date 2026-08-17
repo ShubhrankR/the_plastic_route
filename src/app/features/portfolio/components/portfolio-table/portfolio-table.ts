@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { CardService } from '../../services/card.service';
-import { CreditCard } from '../../models/card.model';
+import { CardService } from '../../../../core/services/card.service';
+import { CreditCard } from '../../../../core/models/card.model';
 
 @Component({
   selector: 'app-portfolio-table',
@@ -10,5 +10,5 @@ import { CreditCard } from '../../models/card.model';
 })
 export class PortfolioTable {
   private readonly cardService = inject(CardService);
-  protected readonly cards: CreditCard[] = this.cardService.getCards();
+  protected readonly cards = this.cardService.cards;
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import {
   CreditCard,
   OptimizationResult,
@@ -7,9 +7,10 @@ import {
   CategoryOption,
 } from '../models/card.model';
 import cardsData from '../data/cards.json';
+import { IndexedDBService } from './indexed-db.service';
 
 /**
- * Category-to-card mapping ported from the original jQuery logic.
+ * Category-to-card mapping.
  * Each category maps to a primary and backup card ID.
  */
 const CATEGORY_MAP: Record<SpendCategory, { primaryId: string; backupId: string }> = {
@@ -26,7 +27,29 @@ const CATEGORY_MAP: Record<SpendCategory, { primaryId: string; backupId: string 
 
 @Injectable({ providedIn: 'root' })
 export class CardService {
-  private readonly cards: CreditCard[] = cardsData as CreditCard[];
+  private readonly indexedDB = inject(IndexedDBService);
+  private readonly defaultCards: CreditCard[] = cardsData as CreditCard[];
+
+  /** Reactive signal holding the current credit card portfolio. */
+  readonly cards = signal<CreditCard[]>(this.defaultCards);
+
+  constructor() {
+    this.loadCards();
+  }
+
+  /** Load cards from IndexedDB, falling back to static cards.json. */
+  private async loadCards(): Promise<void> {
+    try {
+      await this.indexedDB.seedDefaultCards(this.defaultCards);
+      const userCards = await this.indexedDB.getAllCards();
+      if (userCards && userCards.length > 0) {
+        this.cards.set(userCards);
+      }
+    } catch {
+      // Fallback to static cards.json
+      this.cards.set(this.defaultCards);
+    }
+  }
 
   /** All available spend categories for the dropdown. */
   readonly categories: CategoryOption[] = [
@@ -43,12 +66,12 @@ export class CardService {
 
   /** Returns the full card portfolio. */
   getCards(): CreditCard[] {
-    return this.cards;
+    return this.cards();
   }
 
   /** Find a card by its ID. */
   findCard(id: string): CreditCard | undefined {
-    return this.cards.find(c => c.id === id);
+    return this.cards().find(c => c.id === id);
   }
 
   /**
@@ -56,10 +79,11 @@ export class CardService {
    * Returns the best card, backup card, interest-free days, and due date.
    */
   getOptimalRoute(category: SpendCategory): OptimizationResult {
+    const currentCards = this.cards();
     const route = CATEGORY_MAP[category] ?? CATEGORY_MAP['general'];
 
-    const bestCard = this.findCard(route.primaryId) ?? this.cards[0];
-    const backupCard = this.findCard(route.backupId) ?? this.cards[1];
+    const bestCard = this.findCard(route.primaryId) ?? currentCards[0];
+    const backupCard = this.findCard(route.backupId) ?? currentCards[1] ?? currentCards[0];
 
     const today = new Date();
     const currentDay = today.getDate();
@@ -75,8 +99,7 @@ export class CardService {
     const dueDate = new Date();
     dueDate.setDate(dueDate.getDate() + interestFreeDays);
 
-    // Build reason string
-    let reason = bestCard.optimizationVector;
+    const reason = bestCard.optimizationVector;
 
     return {
       bestCard,
@@ -89,8 +112,6 @@ export class CardService {
 
   /**
    * Calculates the billing cycle status for a given statement day.
-   * Determines whether a transaction today hits the current or next bill.
-   * Ported from credit-cards.htm billing cycle tracker logic.
    */
   calculateBillingCycleStatus(cardName: string, statementDay: number): BillingCycleStatus {
     const today = new Date();
@@ -123,7 +144,7 @@ export class CardService {
    * Returns billing cycle statuses for all cards in the portfolio.
    */
   getAllBillingCycleStatuses(): BillingCycleStatus[] {
-    return this.cards.map(card =>
+    return this.cards().map(card =>
       this.calculateBillingCycleStatus(card.name, card.billingCycleStart)
     );
   }

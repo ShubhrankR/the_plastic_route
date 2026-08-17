@@ -4,17 +4,23 @@ This document tracks all active, upcoming, and long-term development tasks for *
 
 ---
 
-## 🎯 Current Milestone: Phase 1 — State & Routing Foundation
+## 🎯 Current Milestone: Phase 2 — Dynamic User Portfolio & Customization
 
-- [ ] **Angular Router Integration (`/router`)**
-  - [ ] Configure Angular Router in `src/app/app.routes.ts` with Hash / Path location strategy.
-  - [ ] Add dedicated route views: `/optimizer`, `/tracker`, `/portfolio`, `/settings`.
-  - [ ] Update `Navbar` component to use `routerLink` and `routerLinkActive` for seamless navigation.
-
-- [ ] **IndexedDB Persistence Layer (`IndexedDBService`)**
-  - [ ] Implement `IndexedDBService` using `idb` or native `window.indexedDB` wrapped in RxJS / Signals.
-  - [ ] Define schemas for `UserCard`, `CustomCategoryRule`, and `AppSettings`.
-  - [ ] Add fallback mechanism to `cards.json` when local IndexedDB is empty.
+### ✅ Completed: Phase 1 — State, Routing & Design Foundation
+- [x] **Modern Angular Architecture Reorganization (`core/`, `features/`, `shared/`)**
+  - [x] Reorganize codebase to modern Angular 22 standalone industry standards with Signals.
+- [x] **Angular Router Integration (`/router`)**
+  - [x] Configure Angular Router in `src/app/app.routes.ts` with `HashLocationStrategy`.
+  - [x] Add dedicated route views: `/home`, `/optimizer`, `/tracker`, `/portfolio`.
+  - [x] Update `Navbar` component to use `routerLink` and `routerLinkActive` for seamless navigation.
+- [x] **IndexedDB Persistence Layer (`IndexedDBService`)**
+  - [x] Implement `IndexedDBService` in `core/services/` using native `window.indexedDB` and Angular Signals.
+  - [x] Define object stores for `user_cards` and `user_settings`.
+  - [x] Add automatic fallback mechanism to `cards.json` when local IndexedDB is empty.
+- [x] **Design System & Brand Identity**
+  - [x] Implement 100% custom Vanilla CSS **Emerald Forest & Gold (Organic Growth)** color system for Dark and Light modes.
+  - [x] Create and integrate vector brand assets (`public/the_plastic_route.svg`, `public/favicon.svg`, `public/favicon.ico`).
+  - [x] Add animated circulating conic-gradient borders on interactive hero CTA buttons.
 
 ---
 

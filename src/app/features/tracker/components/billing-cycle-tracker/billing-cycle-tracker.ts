@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CardService } from '../../services/card.service';
-import { BillingCycleStatus } from '../../models/card.model';
+import { CardService } from '../../../../core/services/card.service';
+import { BillingCycleStatus } from '../../../../core/models/card.model';
 
 @Component({
   selector: 'app-billing-cycle-tracker',
