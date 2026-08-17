@@ -13,8 +13,9 @@ This document defines the technical architecture, design principles, mandatory r
 * **Framework**: Angular 22 (Standalone Architecture)
 * **Language**: TypeScript 6 (Strict Mode)
 * **State Management**: Angular Signals
-* **Styling**: Custom CSS Design System (CSS Custom Properties & Glassmorphic UI)
-* **Data Storage**: Client-side (JSON dataset / future IndexedDB integration)
+* **Styling**: Custom CSS Design System (CSS Custom Properties, Emerald Forest & Gold palette, Glassmorphic UI)
+* **Brand Assets**: Custom SVG brand vector (`public/the_plastic_route.svg`) & Multi-Res Favicon (`public/favicon.ico`, `public/favicon.svg`)
+* **Data Storage**: Client-side (JSON dataset / IndexedDB integration)
 
 ---
 

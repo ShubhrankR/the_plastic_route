@@ -1,11 +1,50 @@
 # 🎨 CSS Framework & Styling Research Report for The Plastic Route
 
 **Project Stack**: Angular 22 (Standalone Components, Signals, Hash Routing)  
-**Current Styling**: Custom Vanilla CSS Design System with CSS Variables, Glassmorphism, and Dark/Light Mode support.  
+**Current Styling**: 100% Custom Vanilla CSS Design System with **Emerald Forest & Gold (Organic Growth)** tokens, Glassmorphism, and Dark/Light Mode support.  
 **Date**: August 2026
 
 > [!IMPORTANT]
-> **FINAL ARCHITECTURAL DECISION**: We will **NOT** use any third-party CSS frameworks (TailwindCSS, Bootstrap, DaisyUI, PrimeNG, Material, etc.). For **The Plastic Route**, we strictly use and create our own custom CSS properties (`:root` tokens in `src/styles.css`). All utility classes, glassmorphic cards, responsive layouts, and dark/light themes are 100% custom-authored.
+> **FINAL ARCHITECTURAL DECISION**: We strictly use our own 100% custom Vanilla CSS properties (`:root` tokens in `src/styles.css`). We will **NOT** install or bundle any third-party CSS frameworks (TailwindCSS, Bootstrap, DaisyUI, PrimeNG, Material, etc.). All utility classes, glassmorphic cards, animated gradient borders, responsive layouts, and the Emerald Forest & Gold dark/light themes are custom-authored.
+
+---
+
+## 🎨 Implemented Design Tokens: Emerald Forest & Gold (Organic Growth)
+
+Our custom CSS design system powers the application using native CSS Custom Properties in `src/styles.css`:
+
+```css
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #041d16;
+  --bg-secondary: #062b21;
+  --card-bg: rgba(6, 43, 33, 0.7);
+  --card-bg-hover: rgba(10, 61, 47, 0.85);
+  --card-border: rgba(16, 185, 129, 0.12);
+  --card-border-hover: rgba(245, 158, 11, 0.28);
+  --accent-primary: #10b981;
+  --accent-secondary: #f59e0b;
+  --text-primary: #ecfdf5;
+  --text-secondary: #a7f3d0;
+  --text-muted: #6ee7b7;
+  --gradient-primary: linear-gradient(135deg, #10b981, #f59e0b);
+}
+
+[data-theme="light"] {
+  /* Light Theme */
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: #d1fae5;
+  --card-border-hover: rgba(245, 158, 11, 0.35);
+  --accent-primary: #064e3b;
+  --accent-secondary: #f59e0b;
+  --text-primary: #064e3b;
+  --text-secondary: #065f46;
+  --text-muted: #64748b;
+  --gradient-primary: linear-gradient(135deg, #064e3b, #d97706);
+}
+```
 
 ---
 

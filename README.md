@@ -33,6 +33,8 @@ Output is generated in the `dist/the-plastic-route/` directory.
 *   **Spend Optimizer:** Quick lookup tool to instantly see which primary or backup card to swipe based on the purchase category (Amazon, Fuel, Forex, UPI, etc.).
 *   **Billing Cycle Tracker:** Real-time analysis of statement dates. Instantly see if a transaction today hits your *current bill* or safely rolls over to the *next bill* for maximum interest-free leverage.
 *   **IndexedDB Wallet Persistence:** Client-side local storage using browser IndexedDB for custom user card portfolios with zero server tracking.
+*   **Emerald Forest & Gold Theme:** Nature-inspired high-contrast dark and light theme tokens with glassmorphic cards, emerald primary accents, and golden optimization vectors.
+*   **Brand Icon & Multi-Res Favicon:** Custom vector brand mark and multi-resolution `favicon.ico` / `favicon.svg` embedded across all viewports.
 *   **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays in your browser.
 
 ## 📚 Project Documentation
@@ -52,7 +54,8 @@ The project is built with modern Angular (v22) using standalone components, sign
 |---|---|
 | Framework | Angular 22 (standalone components, signals, Angular Router) |
 | Language | TypeScript 6 (strict mode) |
-| Styling | Custom CSS design system with CSS custom properties & glassmorphism |
+| Styling | 100% Custom Vanilla CSS Design System (Emerald Forest & Gold tokens, glassmorphism) |
+| Brand Assets | SVG brand vector icon + multi-resolution `.ico` / `.svg` favicons |
 | State & Storage | Angular Signals + Browser IndexedDB |
 | Build | Angular CLI + esbuild |
 
