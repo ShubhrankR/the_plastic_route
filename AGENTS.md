@@ -43,8 +43,7 @@ This document defines the technical architecture, design principles, mandatory r
 │   │   └── app.css                     # Root layout styling
 │   ├── styles.css                      # Global design system & theme tokens
 │   └── main.ts                         # Application entry point
-├── docs/                               # TODO.md, SCALING_STRATEGY.md, SECURITY_PRIVACY_AND_NAVIGATION.md
-├── project_future_research.md          # Architectural vision & research roadmap
+├── docs/                               # TODO.md, SCALING_STRATEGY.md, SECURITY_PRIVACY_AND_NAVIGATION.md, USER_ONBOARDING_STRATEGY.md
 ├── angular.json                        # Angular CLI configuration
 └── package.json                        # Project dependencies
 ```

@@ -41,11 +41,11 @@ Output is generated in the `dist/the-plastic-route/` directory.
 
 Detailed project roadmaps, scaling strategies, and architectural research are available in the [`docs/`](docs/) directory:
 
-- **[Development & Feature Roadmap (TODO)](docs/TODO.md)**: Milestone tasks, Phase 1 to Phase 5 feature checklists, and backlog.
+- **[Development & Feature Roadmap (TODO)](docs/TODO.md)**: Origin philosophy, milestone history, Phase 1–5 feature checklists, backlog, and open research questions.
+- **[User Onboarding Strategy](docs/USER_ONBOARDING_STRATEGY.md)**: How new visitors should experience the app — data segregation, onboarding flow options, and implementation sequence.
 - **[Security, Privacy & App Navigation](docs/SECURITY_PRIVACY_AND_NAVIGATION.md)**: Security risk analysis, zero-credential storage guarantee, master catalog vs local wallet data separation, and multi-user route flows.
 - **[CSS Framework Research Report](docs/CSS_FRAMEWORK_RESEARCH_REPORT.md)**: Comprehensive evaluation of Tailwind CSS v4, Spartan UI, DaisyUI 5, PrimeNG, and Vanilla CSS for Angular 22.
 - **[Architecture & Scaling Strategy](docs/SCALING_STRATEGY.md)**: Multi-vector scoring algorithm, declarative rule schemas, Web Workers, IndexedDB, PWA setup, and P2P sync.
-- **[Future Vision & Research](project_future_research.md)**: Origin philosophy, framework migration background, and architectural questions.
 
 ## 🛠️ Project Architecture
 The project is built with modern Angular (v22) using standalone components, signals, and TypeScript:

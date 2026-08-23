@@ -1,12 +1,36 @@
-# 📋 The Plastic Route — Development & Feature Roadmap (TODO)
+# 📋 The Plastic Route — Development & Feature Roadmap
 
-This document tracks all active, upcoming, and long-term development tasks for **The Plastic Route**, categorized into clear architectural phases.
+This document tracks all active, upcoming, and long-term development tasks for **The Plastic Route**, including the project's origin philosophy, architectural research questions, and phased feature roadmap.
 
 ---
 
-## 🎯 Current Milestone: Phase 2 — Dynamic User Portfolio & Customization
+## 🌱 Origin & Core Philosophy
 
-### ✅ Completed: Phase 1 — State, Routing & Design Foundation
+The idea for **The Plastic Route** was born out of a real-world problem: managing multiple credit cards and trying to remember which card yields the best benefits for a specific transaction at a specific time.
+
+While commercial FinTech applications (like CRED and others) offer reward tracking and bill payment, they often obscure the most critical information behind gamification, ads, or complex UX. They do not provide a direct, clear answer to the immediate question: *"I am about to pay for X. Which card should I swipe right now to maximize my rewards and interest-free period?"*
+
+The Plastic Route is designed to solve exactly this problem—providing immediate, actionable clarity without the noise.
+
+### 🛡️ Privacy-First Data Architecture
+To build trust and ensure security, this application operates on a strict **Zero-Backend / Privacy-First** model.
+- **Client-Side Storage**: Users input their specific credit card portfolio (card name, network, billing cycle dates, and custom rules). All data is stored **exclusively** on the user's browser using `IndexedDB`.
+- **No Telemetry**: The app itself (and its creators) have absolutely zero access to the user's financial setup. There is no database, no server syncing, and no user accounts required.
+
+---
+
+## ✅ Completed Milestones
+
+### Phase 0 — Framework Migration (July 2026)
+The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22** with:
+- **Standalone components** (no NgModules)
+- **Angular Signals** for reactive state management
+- **TypeScript 6** with strict mode
+- **Injectable services** (`CardService`, `ThemeService`) with dependency injection
+- **Custom CSS design system** replacing Bootstrap (glassmorphism aesthetic preserved)
+- **Externalized card data** in `cards.json` for easy community contributions
+
+### Phase 1 — State, Routing & Design Foundation
 - [x] **Modern Angular Architecture Reorganization (`core/`, `features/`, `shared/`)**
   - [x] Reorganize codebase to modern Angular 22 standalone industry standards with Signals.
 - [x] **Angular Router Integration (`/router`)**
@@ -24,7 +48,12 @@ This document tracks all active, upcoming, and long-term development tasks for *
 
 ---
 
-## 🛠️ Phase 2 — Dynamic User Portfolio & Customization
+## 🎯 Current Milestone: Phase 2 — Dynamic User Portfolio & Customization
+
+- [ ] **User Onboarding & Data Segregation** *(see [USER_ONBOARDING_STRATEGY.md](USER_ONBOARDING_STRATEGY.md))*
+  - [ ] Implement first-visit detection (check IndexedDB for existing user data).
+  - [ ] Build onboarding flow that separates the owner's personal cards from new user experience.
+  - [ ] Segregate `cards.json` into a read-only Master Catalog (template library) vs. a per-user Local Wallet (IndexedDB).
 
 - [ ] **Interactive Portfolio Builder UI**
   - [ ] Build `/portfolio/add` form to let users add custom credit cards to their personal wallet.
@@ -79,3 +108,14 @@ This document tracks all active, upcoming, and long-term development tasks for *
 - [ ] Multi-currency support (USD, EUR, GBP, AED FX markups and zero-forex card comparison).
 - [ ] Lounge access terminal finder (search terminal/airport to see eligible cards).
 - [ ] Dark/Light mode scheduled auto-switching based on system preferences.
+
+---
+
+## ❓ Open Research Questions
+
+> [!IMPORTANT]
+> These questions will guide upcoming architectural decisions.
+
+1. **Pre-loaded Card Database**: Should we maintain a "Master Database" of popular Indian credit cards that users can select from a dropdown to quickly populate their local IndexedDB, rather than typing all the details manually?
+2. **Rule Engine Complexity**: Credit card rules change frequently (e.g., the 2026 gaming fee updates). Should we build a dynamic rule engine where users can tweak the logic themselves, or should the community maintain the logic via open-source PRs?
+3. **Offline Support (PWA)**: Should we configure the architecture as a Progressive Web App (PWA) so users can install it on their phones and use it completely offline?
