@@ -18,16 +18,56 @@
       <a routerLink="/tracker" class="gradient-border-btn">
         📅 View Billing Tracker
       </a>
+      <a routerLink="/portfolio" class="gradient-border-btn">
+        💼 Manage My Portfolio
+      </a>
       <a
         href="https://github.com/ShubhrankR/the_plastic_route"
         target="_blank"
         rel="noopener noreferrer"
         class="gradient-border-btn"
       >
-        ⭐ GitHub Repository
+        ⭐ GitHub Repo
       </a>
     </div>
   </section>
+
+  <!-- First-Visit Onboarding Welcome Banner (Explore vs Build) -->
+  @if (isLoaded() && isExploreMode()) {
+    <section class="onboarding-section glass-card slide-down">
+      <div class="onboarding-header">
+        <span class="badge badge-warning">👋 Welcome New Visitor</span>
+        <h2 class="fw-bold mt-1">How would you like to start?</h2>
+        <p class="text-secondary text-sm">
+          The Plastic Route stores everything locally on your device in IndexedDB. Choose an onboarding path below:
+        </p>
+      </div>
+
+      <div class="onboarding-grid grid-2 mt-2">
+        <div class="onboarding-choice-card">
+          <div class="choice-icon">⚡</div>
+          <h4 class="fw-bold">Explore Demo Mode</h4>
+          <p class="text-secondary text-sm">
+            Browse our Master Catalog of 20+ top Indian credit cards with pre-configured templates. Test the Optimizer and Billing Tracker immediately with sample data.
+          </p>
+          <a routerLink="/optimizer" class="btn btn-outline btn-full mt-2">
+            🔍 Start Exploring
+          </a>
+        </div>
+
+        <div class="onboarding-choice-card choice-primary">
+          <div class="choice-icon">💼</div>
+          <h4 class="fw-bold">Set Up Personal Wallet</h4>
+          <p class="text-secondary text-sm">
+            Start building your own wallet. Quick-add your specific cards from the catalog or add custom cards with your personal billing cycle dates.
+          </p>
+          <a routerLink="/portfolio" class="btn btn-primary btn-full mt-2">
+            🚀 Build My Portfolio
+          </a>
+        </div>
+      </div>
+    </section>
+  }
 
   <!-- About & Value Pillars Section -->
   <section class="features-section">

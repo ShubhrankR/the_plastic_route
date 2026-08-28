@@ -9,11 +9,20 @@
       <a routerLink="/home" routerLinkActive="active" class="nav-link">🏠 Home</a>
       <a routerLink="/optimizer" routerLinkActive="active" class="nav-link">💳 Optimizer</a>
       <a routerLink="/tracker" routerLinkActive="active" class="nav-link">📅 Tracker</a>
-      <a routerLink="/portfolio" routerLinkActive="active" class="nav-link">💼 Portfolio</a>
+      <a routerLink="/portfolio" routerLinkActive="active" class="nav-link">
+        💼 Portfolio
+        @if (isExploreMode()) {
+          <span class="nav-badge badge-warning">Demo</span>
+        } @else if (userCardCount() > 0) {
+          <span class="nav-badge badge-success">{{ userCardCount() }}</span>
+        }
+      </a>
     </div>
 
-    <button class="btn btn-ghost" (click)="toggleTheme()">
-      {{ theme() === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode' }}
-    </button>
+    <div class="navbar-actions">
+      <button class="btn btn-ghost" (click)="toggleTheme()">
+        {{ theme() === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode' }}
+      </button>
+    </div>
   </div>
 </nav>

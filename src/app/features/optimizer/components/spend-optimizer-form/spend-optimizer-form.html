@@ -6,23 +6,12 @@
 
   <form (ngSubmit)="onSubmit()" class="optimizer-form">
     <div class="form-group">
-      <label for="txAmount" class="form-label">Transaction Amount (₹)</label>
-      <input
-        type="number"
-        id="txAmount"
-        class="form-input"
-        [(ngModel)]="amount"
-        name="amount"
-        placeholder="e.g., 50000"
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="txCategory" class="form-label">Spend Category</label>
+      <label for="txCategory" class="form-label">Spend Category *</label>
       <select
         id="txCategory"
         class="form-input form-select"
         [(ngModel)]="category"
+        (ngModelChange)="onCategoryChange()"
         name="category"
         required
       >
@@ -33,8 +22,23 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label for="txAmount" class="form-label">
+        Transaction Amount (₹) <span class="text-muted text-xs">(Optional)</span>
+      </label>
+      <input
+        type="number"
+        id="txAmount"
+        class="form-input"
+        [(ngModel)]="amount"
+        (ngModelChange)="onCategoryChange()"
+        name="amount"
+        placeholder="e.g., 5000"
+      />
+    </div>
+
     <button type="submit" class="btn btn-primary btn-full" [disabled]="!category">
-      Optimize Route
+      ⚡ Optimize Route
     </button>
   </form>
 </div>

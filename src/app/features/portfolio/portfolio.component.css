@@ -1,1 +1,29 @@
-/* Portfolio page styles */
+.portfolio-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mr-1 {
+  margin-right: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1.5rem;
+}

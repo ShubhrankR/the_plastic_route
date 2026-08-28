@@ -48,25 +48,28 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 
 ---
 
-## 🎯 Current Milestone: Phase 2 — Dynamic User Portfolio & Customization
+## ✅ Completed Milestones: Phase 2 — Dynamic User Portfolio & Customization (August 2026)
 
-- [ ] **User Onboarding & Data Segregation** *(see [USER_ONBOARDING_STRATEGY.md](USER_ONBOARDING_STRATEGY.md))*
-  - [ ] Implement first-visit detection (check IndexedDB for existing user data).
-  - [ ] Build onboarding flow that separates the owner's personal cards from new user experience.
-  - [ ] Segregate `cards.json` into a read-only Master Catalog (template library) vs. a per-user Local Wallet (IndexedDB).
+- [x] **User Onboarding & Data Segregation** *(see [USER_ONBOARDING_STRATEGY.md](USER_ONBOARDING_STRATEGY.md))*
+  - [x] Implement first-visit detection (check IndexedDB for existing user data vs explore mode).
+  - [x] Build onboarding flow that separates the owner's personal cards (`owner_portfolio.json` seed) from new user experience.
+  - [x] Segregate `cards.json` into a read-only Master Catalog (template library) vs. a per-user Local Wallet (IndexedDB).
+  - [x] Implement `?seed=owner` URL parameter support and developer seed load action.
 
-- [ ] **Interactive Portfolio Builder UI**
-  - [ ] Build `/portfolio/add` form to let users add custom credit cards to their personal wallet.
-  - [ ] Add editable fields for: Card Name, Bank, Network (Visa/Mastercard/RuPay/Amex), Statement Date, Due Date Offset, Credit Limit, and Annual Fee.
-  - [ ] Support editing and deleting cards from local IndexedDB.
+- [x] **Interactive Portfolio Builder UI**
+  - [x] Build glassmorphic `<app-card-modal>` with **"Quick Add from Catalog"** and **"Custom Card"** tabs.
+  - [x] Add editable fields for: Card Name, Bank, Network (Visa/Mastercard/RuPay/Amex/Diners Club), Statement Date (1-31), Billing Cycle End (1-31), Optimization Vector, Lounge Access, and Regulatory Notes.
+  - [x] Support editing and deleting cards with full IndexedDB persistence.
+  - [x] Add empty state and quick wallet reset/clear controls.
 
-- [ ] **Pre-Loaded Master Card Catalog**
-  - [ ] Expand `src/app/data/cards.json` to cover 50+ popular Indian credit cards (HDFC Millennia, Infinia, SBI Cashback, Axis Ace, ICICI Amazon Pay, IDFC First Wealth, Scapia, etc.).
-  - [ ] Add "Quick Add from Catalog" dropdown so users don't have to manually type card details.
+- [x] **Pre-Loaded Master Card Catalog**
+  - [x] Expand `src/app/core/data/cards.json` with 20+ top Indian credit cards (HDFC Infinia, Millennia, Regalia Gold, SBI Cashback, Flipkart, BPCL Octane, Axis Ace, Airtel, Atlas, ICICI Amazon Pay, Coral, Sapphiro, IDFC First Wealth, Scapia, Tata Neu Infinity, Amex Platinum Travel, MRCC, Yes Bank RuPay, Federal One Metal, Imperio).
+  - [x] Add "Quick Add from Catalog" selector with live card preview and custom statement date assignment.
 
-- [ ] **Flexible Input Fields**
-  - [ ] Make "Transaction Amount" field optional in the Spend Optimizer form.
-  - [ ] Allow category-only instant lookups (e.g., selecting "Dining" immediately highlights the best card multiplier regardless of amount).
+- [x] **Flexible Input Fields & Instant Optimization**
+  - [x] Make "Transaction Amount" field optional in the Spend Optimizer form.
+  - [x] Allow category-only instant lookups (e.g., selecting "Dining" immediately highlights the best card multiplier with optional monetary estimated return).
+
 
 ---
 

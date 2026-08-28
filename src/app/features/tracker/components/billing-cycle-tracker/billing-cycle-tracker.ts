@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { CardService } from '../../../../core/services/card.service';
 import { BillingCycleStatus } from '../../../../core/models/card.model';
 
@@ -8,16 +8,15 @@ import { BillingCycleStatus } from '../../../../core/models/card.model';
   templateUrl: './billing-cycle-tracker.html',
   styleUrl: './billing-cycle-tracker.css',
 })
-export class BillingCycleTracker implements OnInit {
+export class BillingCycleTracker {
   private readonly cardService = inject(CardService);
-  protected statuses: BillingCycleStatus[] = [];
 
-  ngOnInit(): void {
-    this.refresh();
-  }
+  readonly statuses = computed<BillingCycleStatus[]>(() =>
+    this.cardService.getAllBillingCycleStatuses()
+  );
 
   refresh(): void {
-    this.statuses = this.cardService.getAllBillingCycleStatuses();
+    // Computed automatically tracks signal changes
   }
 
   getBadgeClass(severity: string): string {

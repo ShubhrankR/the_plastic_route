@@ -20,9 +20,20 @@ export class SpendOptimizerForm {
   protected amount = '';
   protected category: SpendCategory | '' = '';
 
+  onCategoryChange(): void {
+    if (this.category) {
+      this.calculate();
+    }
+  }
+
   onSubmit(): void {
     if (!this.category) return;
-    const result = this.cardService.getOptimalRoute(this.category as SpendCategory);
+    this.calculate();
+  }
+
+  private calculate(): void {
+    const numAmount = this.amount ? Number(this.amount) : undefined;
+    const result = this.cardService.getOptimalRoute(this.category as SpendCategory, numAmount);
     this.optimized.emit(result);
   }
 }

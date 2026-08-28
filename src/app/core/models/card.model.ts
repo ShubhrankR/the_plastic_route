@@ -1,3 +1,5 @@
+export type CardNetwork = 'Visa' | 'Mastercard' | 'RuPay' | 'Amex' | 'Diners Club';
+
 export interface LoungeAccess {
   eligible: boolean;
   spendThreshold?: number;
@@ -7,12 +9,28 @@ export interface LoungeAccess {
 export interface CreditCard {
   id: string;
   name: string;
-  network: 'Visa' | 'Mastercard' | 'RuPay';
+  bank?: string;
+  network: CardNetwork;
   optimizationVector: string;
   billingCycleStart: number;
   billingCycleEnd: number;
   loungeAccess: LoungeAccess;
   regulatoryUpdate: string;
+  categories?: SpendCategory[];
+  isCustom?: boolean;
+}
+
+export interface MasterCatalogCard {
+  id: string;
+  name: string;
+  bank: string;
+  network: CardNetwork;
+  optimizationVector: string;
+  defaultBillingStart?: number;
+  defaultBillingEnd?: number;
+  loungeAccess: LoungeAccess;
+  regulatoryUpdate: string;
+  categories: SpendCategory[];
 }
 
 export interface OptimizationResult {
@@ -21,6 +39,7 @@ export interface OptimizationResult {
   interestFreeDays: number;
   dueDate: Date;
   reason: string;
+  estimatedSaving?: number;
 }
 
 export interface BillingCycleStatus {
@@ -46,3 +65,4 @@ export interface CategoryOption {
   value: SpendCategory;
   label: string;
 }
+

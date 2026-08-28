@@ -1,11 +1,35 @@
-.portfolio-title {
-  margin-bottom: 1.25rem;
+.table-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.table-wrap {
-  overflow-x: auto;
+.card-name-text {
+  font-size: 0.95rem;
 }
 
-.cycle-range {
+.badge-group {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.actions-cell {
   white-space: nowrap;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mr-1 {
+  margin-right: 0.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
 }

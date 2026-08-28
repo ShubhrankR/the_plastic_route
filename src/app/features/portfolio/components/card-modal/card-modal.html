@@ -1,0 +1,269 @@
+<div class="modal-backdrop fade-in" (click)="close.emit()">
+  <div class="modal-dialog slide-down" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h4 class="fw-bold">
+        @if (cardToEdit()) {
+          <span>✏️ Edit Card</span>
+        } @else {
+          <span>💳 Add Credit Card</span>
+        }
+      </h4>
+      <button type="button" class="modal-close-btn" (click)="close.emit()" aria-label="Close modal">
+        &times;
+      </button>
+    </div>
+
+    <!-- Mode Selector Tabs (only when adding new) -->
+    @if (!cardToEdit()) {
+      <div class="tab-nav">
+        <button
+          type="button"
+          class="tab-btn"
+          [class.active]="activeTab() === 'quick'"
+          (click)="activeTab.set('quick')"
+        >
+          ⚡ Quick Add from Catalog
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          [class.active]="activeTab() === 'custom'"
+          (click)="activeTab.set('custom')"
+        >
+          ✍️ Custom Card
+        </button>
+      </div>
+    }
+
+    <!-- Tab 1: Quick Add from Catalog -->
+    @if (!cardToEdit() && activeTab() === 'quick') {
+      <form (ngSubmit)="onQuickAddSubmit()" class="card-form">
+        <div class="form-group">
+          <label for="catalogSelect" class="form-label">Select Card from Master Catalog</label>
+          <select
+            id="catalogSelect"
+            class="form-input form-select"
+            [value]="selectedCatalogId()"
+            (change)="onCatalogSelect($event)"
+            required
+          >
+            @for (catCard of masterCatalog(); track catCard.id) {
+              <option [value]="catCard.id">
+                {{ catCard.bank }} — {{ catCard.name }} ({{ catCard.network }})
+              </option>
+            }
+          </select>
+        </div>
+
+        @if (getSelectedCatalogCard(); as selected) {
+          <div class="catalog-preview info-box">
+            <div class="d-flex justify-between items-center mb-1">
+              <span class="badge badge-network">{{ selected.network }}</span>
+              <span class="text-xs text-muted">{{ selected.bank }}</span>
+            </div>
+            <p class="text-sm fw-semibold text-secondary">{{ selected.optimizationVector }}</p>
+            @if (selected.loungeAccess.eligible) {
+              <div class="text-xs text-success mt-1">
+                ✈️ Lounge Access: Eligible (Threshold: ₹{{ selected.loungeAccess.spendThreshold ?? 0 }})
+              </div>
+            }
+          </div>
+        }
+
+        <div class="form-row mt-2">
+          <div class="form-group">
+            <label for="quickStart" class="form-label">Statement Date (Day of Month)</label>
+            <input
+              type="number"
+              id="quickStart"
+              class="form-input"
+              min="1"
+              max="31"
+              [ngModel]="quickBillingStart()"
+              (ngModelChange)="quickBillingStart.set($event)"
+              name="quickBillingStart"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="quickEnd" class="form-label">Billing Cycle End (Day)</label>
+            <input
+              type="number"
+              id="quickEnd"
+              class="form-input"
+              min="1"
+              max="31"
+              [ngModel]="quickBillingEnd()"
+              (ngModelChange)="quickBillingEnd.set($event)"
+              name="quickBillingEnd"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" (click)="close.emit()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!selectedCatalogId()">
+            ⚡ Add Card to Wallet
+          </button>
+        </div>
+      </form>
+    }
+
+    <!-- Tab 2: Custom Card or Edit Existing Card Form -->
+    @if (cardToEdit() || activeTab() === 'custom') {
+      <form (ngSubmit)="onCustomSave()" class="card-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cardName" class="form-label">Card Name *</label>
+            <input
+              type="text"
+              id="cardName"
+              class="form-input"
+              placeholder="e.g. HDFC Infinia Metal"
+              [ngModel]="name()"
+              (ngModelChange)="name.set($event)"
+              name="cardName"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="cardBank" class="form-label">Issuing Bank</label>
+            <input
+              type="text"
+              id="cardBank"
+              class="form-input"
+              placeholder="e.g. HDFC Bank"
+              [ngModel]="bank()"
+              (ngModelChange)="bank.set($event)"
+              name="cardBank"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cardNetwork" class="form-label">Card Network</label>
+            <select
+              id="cardNetwork"
+              class="form-input form-select"
+              [ngModel]="network()"
+              (ngModelChange)="network.set($event)"
+              name="cardNetwork"
+            >
+              @for (net of networks; track net) {
+                <option [value]="net">{{ net }}</option>
+              }
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stmtStart" class="form-label">Statement Date (1-31) *</label>
+            <input
+              type="number"
+              id="stmtStart"
+              class="form-input"
+              min="1"
+              max="31"
+              [ngModel]="billingCycleStart()"
+              (ngModelChange)="billingCycleStart.set($event)"
+              name="stmtStart"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="stmtEnd" class="form-label">Billing Cycle End (1-31)</label>
+            <input
+              type="number"
+              id="stmtEnd"
+              class="form-input"
+              min="1"
+              max="31"
+              [ngModel]="billingCycleEnd()"
+              (ngModelChange)="billingCycleEnd.set($event)"
+              name="stmtEnd"
+            />
+          </div>
+          <div class="form-group">
+            <label for="optVector" class="form-label">Optimization Note / Reward Multiplier</label>
+            <input
+              type="text"
+              id="optVector"
+              class="form-input"
+              placeholder="e.g. 5% cashback on online spends"
+              [ngModel]="optimizationVector()"
+              (ngModelChange)="optimizationVector.set($event)"
+              name="optVector"
+            />
+          </div>
+        </div>
+
+        <!-- Lounge Access Toggle -->
+        <div class="lounge-section info-box mt-2">
+          <div class="checkbox-row">
+            <label class="checkbox-container">
+              <input
+                type="checkbox"
+                [ngModel]="loungeEligible()"
+                (ngModelChange)="loungeEligible.set($event)"
+                name="loungeEligible"
+              />
+              <span class="checkbox-label fw-semibold">✈️ Includes Airport Lounge Access</span>
+            </label>
+          </div>
+
+          @if (loungeEligible()) {
+            <div class="form-row mt-1">
+              <div class="form-group">
+                <label for="loungeThreshold" class="form-label text-xs">Spend Threshold (₹)</label>
+                <input
+                  type="number"
+                  id="loungeThreshold"
+                  class="form-input text-sm"
+                  placeholder="0 for unconditional"
+                  [ngModel]="loungeSpendThreshold()"
+                  (ngModelChange)="loungeSpendThreshold.set($event)"
+                  name="loungeThreshold"
+                />
+              </div>
+              <div class="form-group">
+                <label for="loungeTerms" class="form-label text-xs">Terminals (comma-separated)</label>
+                <input
+                  type="text"
+                  id="loungeTerms"
+                  class="form-input text-sm"
+                  placeholder="Domestic, International"
+                  [ngModel]="loungeTerminals()"
+                  (ngModelChange)="loungeTerminals.set($event)"
+                  name="loungeTerms"
+                />
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="regUpdate" class="form-label">Regulatory / Important Notes</label>
+          <input
+            type="text"
+            id="regUpdate"
+            class="form-input"
+            placeholder="e.g. 2026 Update: Excludes wallet reloads and jewelry"
+            [ngModel]="regulatoryUpdate()"
+            (ngModelChange)="regulatoryUpdate.set($event)"
+            name="regUpdate"
+          />
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" (click)="close.emit()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!name() || !billingCycleStart()">
+            💾 Save Card
+          </button>
+        </div>
+      </form>
+    }
+  </div>
+</div>
