@@ -1,0 +1,102 @@
+<div class="welcome-container">
+  <!-- Brand Header -->
+  <div class="welcome-header">
+    <div class="brand-badge">
+      <img src="the_plastic_route.svg" alt="The Plastic Route Logo" class="brand-icon" width="48" height="48">
+      <span class="badge badge-success">🛡️ Zero Backend • 100% Client-Side</span>
+    </div>
+    
+    <h1 class="welcome-title">
+      Welcome to <span class="text-gradient">The Plastic Route</span>.
+    </h1>
+    <p class="welcome-subtitle text-secondary">
+      Maximize your credit card rewards, interest-free leverage, and airport lounge access with mathematical clarity. All data is computed and stored exclusively on your device.
+    </p>
+  </div>
+
+  <!-- Centered Dual Choice Cards -->
+  <div class="choice-grid">
+    <!-- Option 1: Explore Demo Mode -->
+    <div class="choice-card glass-card choice-explore">
+      <div class="choice-top">
+        <div class="choice-badge-row">
+          <span class="choice-tag tag-demo">⚡ Fast Track</span>
+          <span class="text-xs text-muted">No Setup Required</span>
+        </div>
+        <div class="choice-icon-wrap">
+          <span class="choice-icon">🔍</span>
+        </div>
+        <h3 class="choice-title">Explore Demo Mode</h3>
+        <p class="choice-desc text-secondary text-sm">
+          Test-drive the Spend Optimizer and Billing Tracker immediately with a pre-configured master catalog.
+        </p>
+
+        <ul class="feature-bullets">
+          <li>
+            <span class="bullet-check">✓</span>
+            <span><strong>20+ Top Indian Cards</strong> pre-loaded (Infinia, Millennia, SBI Cashback, Scapia, etc.)</span>
+          </li>
+          <li>
+            <span class="bullet-check">✓</span>
+            <span><strong>Instant Spend Optimizer</strong> with live category savings calculations</span>
+          </li>
+          <li>
+            <span class="bullet-check">✓</span>
+            <span><strong>Real-time Billing Cycles</strong> & 50-day rollover previews</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="choice-bottom">
+        <button type="button" class="btn btn-outline btn-full btn-choice" (click)="chooseExplore()">
+          ⚡ Explore Demo Mode →
+        </button>
+      </div>
+    </div>
+
+    <!-- Option 2: Build Personal Wallet -->
+    <div class="choice-card glass-card choice-wallet">
+      <div class="choice-top">
+        <div class="choice-badge-row">
+          <span class="choice-tag tag-wallet">🛡️ Privacy-First</span>
+          <span class="text-xs text-muted">IndexedDB Stored</span>
+        </div>
+        <div class="choice-icon-wrap">
+          <span class="choice-icon">💼</span>
+        </div>
+        <h3 class="choice-title">Build Personal Wallet</h3>
+        <p class="choice-desc text-secondary text-sm">
+          Set up your private wallet by selecting your cards or creating custom ones with your exact statement dates.
+        </p>
+
+        <ul class="feature-bullets">
+          <li>
+            <span class="bullet-check">✓</span>
+            <span><strong>100% Private in IndexedDB</strong> — zero accounts, zero cloud syncing</span>
+          </li>
+          <li>
+            <span class="bullet-check">✓</span>
+            <span><strong>Custom Statement Days</strong> for exact billing cutoff tracking</span>
+          </li>
+          <li>
+            <span class="bullet-check">✓</span>
+            <span><strong>Airport Lounge Tracker</strong> tailored to your card threshold spending</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="choice-bottom">
+        <button type="button" class="btn btn-primary btn-full btn-choice" (click)="chooseCustom()">
+          🚀 Set Up My Wallet →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Trust & Privacy Footer -->
+  <div class="welcome-footer text-center">
+    <p class="text-xs text-muted">
+      🔒 Your data never leaves this browser. You can switch between Explore Mode and your Personal Wallet anytime from the navigation bar.
+    </p>
+  </div>
+</div>

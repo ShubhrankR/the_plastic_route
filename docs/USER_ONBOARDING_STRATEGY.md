@@ -1,8 +1,50 @@
 # 🚪 User Onboarding & Data Segregation Strategy
 
-**Status**: 📝 Under Discussion (Phase 2)
+**Status**: ✅ Implemented (August 2026)
 **Branch**: `feature/seg-login`
 **Date**: August 2026
+
+---
+
+## 🎯 Implemented Architecture Summary
+
+The two-path First-Time User Experience (FTUE) has been fully implemented as a **dedicated `/welcome` onboarding gateway** with Angular functional route guards and two-tier state synchronization:
+
+```
+                          ┌────────────────────────────────┐
+                          │   First-Time Visitor Arrives   │
+                          └───────────────┬────────────────┘
+                                          │
+                                          ▼
+                               ┌─────────────────────┐
+                               │   onboardingGuard   │
+                               └──────────┬──────────┘
+                                          │
+                        ┌─────────────────┴─────────────────┐
+                        ▼                                   ▼
+             [ FTUE Not Completed ]               [ FTUE Completed ]
+                        │                                   │
+                        ▼                                   ▼
+           ┌────────────────────────┐             ┌───────────────────┐
+           │    /#/welcome Screen   │             │   /#/home / App   │
+           └────────────┬───────────┘             └───────────────────┘
+                        │
+          ┌─────────────┴─────────────┐
+          ▼                           ▼
+┌───────────────────┐       ┌───────────────────┐
+│ ⚡ Explore Demo   │       │ 💼 Build Wallet   │
+│ (20+ Master Cards)│       │ (Local IndexedDB) │
+└─────────┬─────────┘       └─────────┬─────────┘
+          ▼                           ▼
+┌───────────────────┐       ┌───────────────────┐
+│ Routes to /#/home │       │Routes to/portfolio│
+└───────────────────┘       └───────────────────┘
+```
+
+1. **Dedicated Gateway (`/welcome`)**: A distraction-free, beautifully balanced view featuring equal-elevation choice cards for *Explore Demo Mode* and *Build Personal Wallet*.
+2. **Angular Functional Route Guard (`onboardingGuard`)**: Seamlessly redirects first-time visitors to `/#/welcome`, while `welcomeGuard` prevents onboarded returning visitors from being trapped on the onboarding view.
+3. **Two-Tier State Sync**: Synchronous `localStorage` check (`tpr_ftue_completed`) to guarantee **zero flash of un-onboarded content**, paired with persistent `IndexedDB` wallet storage.
+4. **Data Segregation**: The public demo catalog (`cards.json`) is populated with distinct, randomized statement dates, completely separated from the developer/owner seed (`owner_portfolio.json`).
 
 ---
 

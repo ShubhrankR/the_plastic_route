@@ -10,20 +10,21 @@ import {
 import catalogData from '../data/cards.json';
 import ownerSeedData from '../data/owner_portfolio.json';
 import { IndexedDBService } from './indexed-db.service';
+import { ToastService } from './toast.service';
 
 /**
  * Category-to-card ID fallback mapping for standard recommendation routes.
  */
 const CATEGORY_PRIORITY_MAP: Record<SpendCategory, string[]> = {
   amazon: ['amazon_pay_icici', 'hdfc_millennia', 'sbi_cashback', 'hdfc_infinia', 'federal_one_metal'],
-  flipkart: ['sbi_flipkart', 'hdfc_millennia', 'sbi_cashback', 'hdfc_infinia', 'federal_one_metal'],
+  flipkart: ['axis_flipkart', 'sbi_flipkart', 'hdfc_millennia', 'sbi_cashback', 'hdfc_infinia', 'federal_one_metal'],
   bpcl: ['sbi_bpcl_octane', 'hdfc_indian_oil', 'federal_one_metal'],
-  other_fuel: ['hdfc_indian_oil', 'sbi_bpcl_octane', 'federal_one_metal'],
-  upi: ['yes_bank_rupay', 'tata_neu_infinity', 'hdfc_indian_oil', 'federal_one_metal'],
-  forex: ['bobcard_scapia', 'axis_atlas', 'idfc_first_wealth', 'hdfc_infinia', 'federal_one_metal'],
-  dining_travel: ['idfc_first_wealth', 'hdfc_infinia', 'axis_atlas', 'icici_sapphiro', 'amex_platinum_travel', 'federal_one_metal'],
+  other_fuel: ['axis_indianoil_rupay', 'hdfc_indian_oil', 'sbi_bpcl_octane', 'federal_one_metal'],
+  upi: ['axis_supermoney_rupay', 'yes_bank_rupay', 'tata_neu_infinity', 'axis_indianoil_rupay', 'hdfc_indian_oil', 'federal_one_metal'],
+  forex: ['axis_burgundy_private', 'bobcard_scapia', 'axis_atlas', 'axis_magnus', 'axis_horizon', 'idfc_first_wealth', 'hdfc_infinia', 'federal_one_metal'],
+  dining_travel: ['axis_atlas', 'axis_magnus', 'idfc_first_wealth', 'hdfc_infinia', 'icici_sapphiro', 'amex_platinum_travel', 'axis_flipkart', 'federal_one_metal'],
   gaming_wallet: ['federal_one_metal', 'axis_ace', 'amex_mrcc', 'idfc_first_wealth'],
-  general: ['idfc_first_wealth', 'hdfc_infinia', 'sbi_cashback', 'axis_ace', 'federal_one_metal', 'federal_imperio'],
+  general: ['idfc_first_wealth', 'hdfc_infinia', 'sbi_cashback', 'axis_ace', 'axis_magnus', 'federal_one_metal', 'federal_imperio'],
 };
 
 /** Approximate savings rate multipliers for estimation */
@@ -42,6 +43,7 @@ const CATEGORY_SAVINGS_MULTIPLIER: Record<SpendCategory, number> = {
 @Injectable({ providedIn: 'root' })
 export class CardService {
   private readonly indexedDB = inject(IndexedDBService);
+  private readonly toastService = inject(ToastService);
 
   /** Master catalog of available credit card templates. */
   readonly masterCatalog = signal<MasterCatalogCard[]>(catalogData as MasterCatalogCard[]);
@@ -57,6 +59,11 @@ export class CardService {
 
   /** Total number of cards currently in the active wallet. */
   readonly userCardCount = computed(() => this.cards().length);
+
+  /** Whether the user has completed the First-Time User Experience onboarding. */
+  readonly hasCompletedOnboarding = signal<boolean>(
+    typeof window !== 'undefined' ? localStorage.getItem('tpr_ftue_completed') === 'true' : false
+  );
 
   /** All available spend categories for forms and selectors. */
   readonly categories: CategoryOption[] = [
@@ -79,7 +86,7 @@ export class CardService {
    * Initializes the card portfolio.
    * 1. Checks URL query params for `?seed=owner`
    * 2. Checks IndexedDB for existing user cards
-   * 3. If neither exists, defaults to Explore Mode with Master Catalog demo entries.
+   * 3. Syncs FTUE state with local storage
    */
   async initPortfolio(): Promise<void> {
     try {
@@ -92,6 +99,7 @@ export class CardService {
 
       if (hasOwnerSeed) {
         await this.loadOwnerSeed();
+        await this.completeOnboarding('custom');
         this.isLoaded.set(true);
         return;
       }
@@ -100,16 +108,60 @@ export class CardService {
       if (storedCards && storedCards.length > 0) {
         this.cards.set(storedCards);
         this.isExploreMode.set(false);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('tpr_ftue_completed', 'true');
+        }
+        this.hasCompletedOnboarding.set(true);
       } else {
-        // First visit with empty IndexedDB -> activate Explore Mode with demo cards
-        this.loadExploreCatalog();
+        const mode = typeof window !== 'undefined' ? localStorage.getItem('tpr_onboarding_mode') : null;
+        if (mode === 'custom') {
+          this.cards.set([]);
+          this.isExploreMode.set(false);
+        } else {
+          this.loadExploreCatalog();
+        }
       }
     } catch (err) {
-      console.warn('Portfolio initialization fallback to explore mode:', err);
+      console.warn('Portfolio initialization fallback:', err);
       this.loadExploreCatalog();
     } finally {
       this.isLoaded.set(true);
     }
+  }
+
+  /**
+   * Completes the FTUE onboarding flow and persists the selected mode.
+   */
+  async completeOnboarding(mode: 'explore' | 'custom'): Promise<void> {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('tpr_ftue_completed', 'true');
+      localStorage.setItem('tpr_onboarding_mode', mode);
+    }
+    this.hasCompletedOnboarding.set(true);
+
+    if (mode === 'explore') {
+      this.loadExploreCatalog();
+    } else {
+      const stored = await this.indexedDB.getAllCards();
+      if (stored && stored.length > 0) {
+        this.cards.set(stored);
+        this.isExploreMode.set(false);
+      } else {
+        this.cards.set([]);
+        this.isExploreMode.set(false);
+      }
+    }
+  }
+
+  /**
+   * Resets the FTUE onboarding state to allow re-visiting the welcome screen.
+   */
+  async resetOnboarding(): Promise<void> {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('tpr_ftue_completed');
+      localStorage.removeItem('tpr_onboarding_mode');
+    }
+    this.hasCompletedOnboarding.set(false);
   }
 
   /**
@@ -123,16 +175,9 @@ export class CardService {
       const template = catalog.find(c => c.id === seed.id);
       if (template) {
         seededCards.push({
-          id: template.id,
-          name: template.name,
-          bank: template.bank,
-          network: template.network,
-          optimizationVector: template.optimizationVector,
+          ...template,
           billingCycleStart: seed.billingCycleStart,
           billingCycleEnd: seed.billingCycleEnd,
-          loungeAccess: template.loungeAccess,
-          regulatoryUpdate: template.regulatoryUpdate,
-          categories: template.categories,
           isCustom: false,
         });
       }
@@ -150,16 +195,9 @@ export class CardService {
   loadExploreCatalog(): void {
     const catalog = this.masterCatalog();
     const demoCards: CreditCard[] = catalog.slice(0, 10).map(item => ({
-      id: item.id,
-      name: item.name,
-      bank: item.bank,
-      network: item.network,
-      optimizationVector: item.optimizationVector,
+      ...item,
       billingCycleStart: item.defaultBillingStart ?? 1,
       billingCycleEnd: item.defaultBillingEnd ?? 30,
-      loungeAccess: item.loungeAccess,
-      regulatoryUpdate: item.regulatoryUpdate,
-      categories: item.categories,
       isCustom: false,
     }));
 
@@ -198,11 +236,41 @@ export class CardService {
   }
 
   /**
-   * Deletes a card from IndexedDB and updates the reactive state.
+   * Deletes a card from IndexedDB and updates the reactive state with an undo option.
    */
   async deleteCard(id: string): Promise<void> {
+    const cardToDelete = this.cards().find(c => c.id === id);
     await this.indexedDB.deleteCard(id);
     this.cards.update(list => list.filter(c => c.id !== id));
+
+    if (cardToDelete) {
+      this.toastService.show({
+        message: `Removed "${cardToDelete.name}" from your portfolio.`,
+        type: 'warning',
+        actionLabel: '↩️ Undo',
+        durationMs: 6000,
+        onAction: async () => {
+          await this.restoreCard(cardToDelete);
+        },
+      });
+    }
+  }
+
+  /**
+   * Restores a deleted card back to IndexedDB and the reactive state.
+   */
+  async restoreCard(card: CreditCard): Promise<void> {
+    await this.indexedDB.saveCard(card);
+    this.cards.update(list => {
+      if (list.some(c => c.id === card.id)) return list;
+      return [...list, card];
+    });
+    this.isExploreMode.set(false);
+    this.toastService.show({
+      message: `Restored "${card.name}" to your portfolio.`,
+      type: 'success',
+      durationMs: 3000,
+    });
   }
 
   /**

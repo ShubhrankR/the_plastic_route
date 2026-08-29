@@ -5,19 +5,21 @@
       <span>The Plastic Route.</span>
     </a>
     
-    <div class="nav-links">
-      <a routerLink="/home" routerLinkActive="active" class="nav-link">🏠 Home</a>
-      <a routerLink="/optimizer" routerLinkActive="active" class="nav-link">💳 Optimizer</a>
-      <a routerLink="/tracker" routerLinkActive="active" class="nav-link">📅 Tracker</a>
-      <a routerLink="/portfolio" routerLinkActive="active" class="nav-link">
-        💼 Portfolio
-        @if (isExploreMode()) {
-          <span class="nav-badge badge-warning">Demo</span>
-        } @else if (userCardCount() > 0) {
-          <span class="nav-badge badge-success">{{ userCardCount() }}</span>
-        }
-      </a>
-    </div>
+    @if (hasCompletedOnboarding()) {
+      <div class="nav-links">
+        <a routerLink="/home" routerLinkActive="active" class="nav-link">🏠 Home</a>
+        <a routerLink="/optimizer" routerLinkActive="active" class="nav-link">💳 Optimizer</a>
+        <a routerLink="/tracker" routerLinkActive="active" class="nav-link">📅 Tracker</a>
+        <a routerLink="/portfolio" routerLinkActive="active" class="nav-link">
+          💼 Portfolio
+          @if (isExploreMode()) {
+            <span class="nav-badge badge-warning">Demo</span>
+          } @else if (userCardCount() > 0) {
+            <span class="nav-badge badge-success">{{ userCardCount() }}</span>
+          }
+        </a>
+      </div>
+    }
 
     <div class="navbar-actions">
       <button class="btn btn-ghost" (click)="toggleTheme()">

@@ -50,25 +50,27 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 
 ## ✅ Completed Milestones: Phase 2 — Dynamic User Portfolio & Customization (August 2026)
 
-- [x] **User Onboarding & Data Segregation** *(see [USER_ONBOARDING_STRATEGY.md](USER_ONBOARDING_STRATEGY.md))*
-  - [x] Implement first-visit detection (check IndexedDB for existing user data vs explore mode).
-  - [x] Build onboarding flow that separates the owner's personal cards (`owner_portfolio.json` seed) from new user experience.
-  - [x] Segregate `cards.json` into a read-only Master Catalog (template library) vs. a per-user Local Wallet (IndexedDB).
-  - [x] Implement `?seed=owner` URL parameter support and developer seed load action.
+- [x] **Dedicated First-Time User Experience (FTUE) & Route Guards**
+  - [x] Create dedicated, distraction-free Onboarding Gateway (`/#/welcome`) with balanced dual choice cards (*Explore Demo Mode* vs *Build Personal Wallet*).
+  - [x] Implement Angular Functional Route Guards (`onboardingGuard`, `welcomeGuard`) with synchronous `localStorage` verification to eliminate content flash (FOUC).
+  - [x] Expose `hasCompletedOnboarding` reactive signal and clean up homepage layout.
 
-- [x] **Interactive Portfolio Builder UI**
-  - [x] Build glassmorphic `<app-card-modal>` with **"Quick Add from Catalog"** and **"Custom Card"** tabs.
-  - [x] Add editable fields for: Card Name, Bank, Network (Visa/Mastercard/RuPay/Amex/Diners Club), Statement Date (1-31), Billing Cycle End (1-31), Optimization Vector, Lounge Access, and Regulatory Notes.
-  - [x] Support editing and deleting cards with full IndexedDB persistence.
-  - [x] Add empty state and quick wallet reset/clear controls.
+- [x] **Toast Notifications & Undo Card Deletion System**
+  - [x] Create reactive Signal-based `ToastService` and glassmorphic `<app-toast>` component.
+  - [x] Implement interactive `[ ↩️ Undo ]` action to instantly restore deleted cards back to IndexedDB and reactive signals.
 
-- [x] **Pre-Loaded Master Card Catalog**
-  - [x] Expand `src/app/core/data/cards.json` with 20+ top Indian credit cards (HDFC Infinia, Millennia, Regalia Gold, SBI Cashback, Flipkart, BPCL Octane, Axis Ace, Airtel, Atlas, ICICI Amazon Pay, Coral, Sapphiro, IDFC First Wealth, Scapia, Tata Neu Infinity, Amex Platinum Travel, MRCC, Yes Bank RuPay, Federal One Metal, Imperio).
-  - [x] Add "Quick Add from Catalog" selector with live card preview and custom statement date assignment.
+- [x] **Scroll-Triggered Micro-Animations**
+  - [x] Implement `ScrollRevealDirective` leveraging native `IntersectionObserver` with one-shot unobserve and `prefers-reduced-motion` compliance.
 
-- [x] **Flexible Input Fields & Instant Optimization**
-  - [x] Make "Transaction Amount" field optional in the Spend Optimizer form.
-  - [x] Allow category-only instant lookups (e.g., selecting "Dining" immediately highlights the best card multiplier with optional monetary estimated return).
+- [x] **Light Mode Theming & Form Accessibility Overhaul**
+  - [x] Soften light theme primary background to eye-friendly neutral off-white (`#f8fafc` / slate-50) and white cards (`#ffffff`).
+  - [x] Upgrade light mode typography to high-contrast Slate-900 (`#0f172a`) and Slate-700 (`#334155`).
+  - [x] Overhaul Edit Card modal contrast: crisp white input surfaces with slate borders, dark labels, and readable select dropdowns.
+
+- [x] **Extensible Data Models & Distinct Sample Dataset**
+  - [x] Make `CreditCard` and `MasterCatalogCard` interfaces extensible with optional metadata fields and open index signatures (`[key: string]: any`).
+  - [x] Randomize and distribute default statement dates in `cards.json` across the month, completely segregating demo data from the developer seed.
+
 
 
 ---

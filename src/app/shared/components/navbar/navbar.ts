@@ -17,6 +17,7 @@ export class Navbar {
   protected readonly theme = this.themeService.theme;
   protected readonly isExploreMode = this.cardService.isExploreMode;
   protected readonly userCardCount = this.cardService.userCardCount;
+  protected readonly hasCompletedOnboarding = this.cardService.hasCompletedOnboarding;
 
   toggleTheme(): void {
     this.themeService.toggleTheme();

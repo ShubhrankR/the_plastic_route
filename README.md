@@ -29,21 +29,24 @@ npm run build
 Output is generated in the `dist/the-plastic-route/` directory.
 
 ## ✨ Features
-*   **Home Landing Page:** Interactive landing page (`/#/home`) explaining the application purpose, privacy-first architecture, 3-step user guide, and open-source GitHub contribution guidelines.
-*   **Spend Optimizer:** Quick lookup tool to instantly see which primary or backup card to swipe based on the purchase category (Amazon, Fuel, Forex, UPI, etc.).
+*   **Dedicated Welcome Gateway & FTUE:** Distraction-free onboarding view (`/#/welcome`) guarded by Angular Functional Route Guards, offering immediate choice between *Explore Demo Mode* and *Build Personal Wallet*.
+*   **Home Landing Page:** Interactive landing page (`/#/home`) explaining the application purpose, privacy-first architecture, 3-metric highlight bar, and open-source GitHub contribution guidelines.
+*   **Spend Optimizer:** Quick lookup tool to instantly see which primary or backup card to swipe based on purchase category (Amazon, Fuel, Forex, UPI, Dining, Travel, etc.).
 *   **Billing Cycle Tracker:** Real-time analysis of statement dates. Instantly see if a transaction today hits your *current bill* or safely rolls over to the *next bill* for maximum interest-free leverage.
 *   **IndexedDB Wallet Persistence:** Client-side local storage using browser IndexedDB for custom user card portfolios with zero server tracking.
-*   **Emerald Forest & Gold Theme:** Nature-inspired high-contrast dark and light theme tokens with glassmorphic cards, emerald primary accents, and golden optimization vectors.
+*   **Toast Notifications & Undo Card Deletion:** Reactive signal-based toast notification system with interactive `[ ↩️ Undo ]` action to instantly restore deleted cards.
+*   **Scroll-Triggered Micro-Animations:** Native `IntersectionObserver` scroll reveal directive with zero main-thread blocking and `prefers-reduced-motion` compliance.
+*   **Soothing Light & Dark Themes:** Nature-inspired Emerald Forest & Gold color system with soft off-white (`#f8fafc`) light mode, rich dark emerald mode, glassmorphism, and WCAG-compliant high-contrast typography.
 *   **Brand Icon & Multi-Res Favicon:** Custom vector brand mark and multi-resolution `favicon.ico` / `favicon.svg` embedded across all viewports.
-*   **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays in your browser.
+*   **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays strictly in your browser.
 
 ## 📚 Project Documentation
 
 Detailed project roadmaps, scaling strategies, and architectural research are available in the [`docs/`](docs/) directory:
 
 - **[Development & Feature Roadmap (TODO)](docs/TODO.md)**: Origin philosophy, milestone history, Phase 1–5 feature checklists, backlog, and open research questions.
-- **[User Onboarding Strategy](docs/USER_ONBOARDING_STRATEGY.md)**: How new visitors should experience the app — data segregation, onboarding flow options, and implementation sequence.
-- **[Security, Privacy & App Navigation](docs/SECURITY_PRIVACY_AND_NAVIGATION.md)**: Security risk analysis, zero-credential storage guarantee, master catalog vs local wallet data separation, and multi-user route flows.
+- **[User Onboarding Strategy](docs/USER_ONBOARDING_STRATEGY.md)**: Complete specification of the implemented FTUE onboarding gateway, data segregation, and route guard lifecycle.
+- **[Security, Privacy & App Navigation](docs/SECURITY_PRIVACY_AND_NAVIGATION.md)**: Security risk analysis, zero-credential storage guarantee, master catalog vs local wallet data separation, and route guard flows.
 - **[CSS Framework Research Report](docs/CSS_FRAMEWORK_RESEARCH_REPORT.md)**: Comprehensive evaluation of Tailwind CSS v4, Spartan UI, DaisyUI 5, PrimeNG, and Vanilla CSS for Angular 22.
 - **[Architecture & Scaling Strategy](docs/SCALING_STRATEGY.md)**: Multi-vector scoring algorithm, declarative rule schemas, Web Workers, IndexedDB, PWA setup, and P2P sync.
 
@@ -52,34 +55,37 @@ The project is built with modern Angular (v22) using standalone components, sign
 
 | Layer | Tech |
 |---|---|
-| Framework | Angular 22 (standalone components, signals, Angular Router) |
-| Language | TypeScript 6 (strict mode) |
-| Styling | 100% Custom Vanilla CSS Design System (Emerald Forest & Gold tokens, glassmorphism) |
+| Framework | Angular 22 (standalone components, signals, functional route guards, Angular Router) |
+| Language | TypeScript 6 (strict mode, extensible data schemas) |
+| Styling | 100% Custom Vanilla CSS Design System (Emerald Forest & Gold tokens, soft off-white light mode, glassmorphism) |
 | Brand Assets | SVG brand vector icon + multi-resolution `.ico` / `.svg` favicons |
-| State & Storage | Angular Signals + Browser IndexedDB |
+| State & Storage | Angular Signals + Browser IndexedDB + Synchronous localStorage FTUE cache |
 | Build | Angular CLI + esbuild |
 
 ### Project Structure
 ```
 src/
 ├── app/
-│   ├── core/                       # Singleton services, models, and datasets
-│   │   ├── data/cards.json         # Master card dataset
-│   │   ├── models/card.model.ts    # TypeScript interfaces
-│   │   └── services/               # CardService, ThemeService, IndexedDBService
+│   ├── core/                       # Singleton services, models, guards, and datasets
+│   │   ├── data/                   # Master catalog (cards.json) & owner seed data
+│   │   ├── guards/                 # Functional route guards (onboardingGuard, welcomeGuard)
+│   │   ├── models/card.model.ts    # Extensible TypeScript interfaces
+│   │   └── services/               # CardService, ThemeService, IndexedDBService, ToastService
 │   ├── features/                   # Domain feature views (Route pages)
+│   │   ├── welcome/                # First-Time User Experience gateway (/welcome)
 │   │   ├── home/                   # Home / Landing Page view & sub-components
 │   │   ├── optimizer/              # Spend Optimizer page view & form components
 │   │   ├── tracker/                # Billing Cycle Tracker page view & table
 │   │   └── portfolio/              # Card Portfolio overview & management
-│   ├── shared/                     # Reusable layout components
-│   │   └── components/             # Navbar (header & theme switcher), Footer
+│   ├── shared/                     # Reusable layout components and directives
+│   │   ├── components/             # Navbar, Footer, Toast notifications, Modals
+│   │   └── directives/             # ScrollRevealDirective (IntersectionObserver)
 │   ├── app.config.ts               # App configuration & router providers
-│   ├── app.routes.ts               # HashLocationStrategy route mapping
+│   ├── app.routes.ts               # HashLocationStrategy route mapping & guards
 │   └── app.ts                      # Root application component shell
 ├── index.html
 ├── main.ts
-└── styles.css              # Global design system
+└── styles.css                      # Global design system & theme tokens
 ```
 
 ## 🤝 How to Contribute (The Open-Source Way)

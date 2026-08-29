@@ -1,3 +1,7 @@
+:host {
+  display: contents;
+}
+
 .catalog-preview {
   margin-top: 0.5rem;
   background: var(--input-bg);
@@ -20,6 +24,21 @@
   gap: 0.6rem;
   cursor: pointer;
   user-select: none;
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .checkbox-container {
+  color: #0f172a;
+}
+
+[data-theme="light"] .catalog-preview {
+  background: #f8fafc;
+  border-left: 3px solid #059669;
+}
+
+[data-theme="light"] .lounge-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
 }
 
 .checkbox-container input[type="checkbox"] {
