@@ -7,9 +7,22 @@
     "optimizationVector": "Flagship 33.3% reward rate on flights & hotels via SmartBuy, 3.3% baseline return on all spends.",
     "defaultBillingStart": 5,
     "defaultBillingEnd": 4,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International", "Priority Pass"] },
-    "regulatoryUpdate": "2026 Update: SmartBuy accelerated points capped at 15,000 RP per calendar month.",
-    "categories": ["dining_travel", "general", "amazon", "flipkart"],
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: SmartBuy accelerated points capped at 15,000 RP/mo; 3,000 RP monthly sub-cap on GyFTR/Woohoo brand vouchers.",
+    "categories": [
+      "dining_travel",
+      "general",
+      "amazon",
+      "flipkart"
+    ],
     "annualFee": "₹12,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -21,9 +34,15 @@
     "optimizationVector": "5% unlimited online cashback across all e-commerce platforms without merchant locks.",
     "defaultBillingStart": 24,
     "defaultBillingEnd": 23,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: Monthly cashback capped at ₹5,000; utilities and jewelry excluded.",
-    "categories": ["amazon", "flipkart", "general"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "general"
+    ],
     "annualFee": "₹999 + GST",
     "forexMarkup": "3.5%"
   },
@@ -35,9 +54,19 @@
     "optimizationVector": "5 EDGE Miles per ₹100 on airlines/hotels (~10% return on airline transfers) + tier milestone bonuses.",
     "defaultBillingStart": 8,
     "defaultBillingEnd": 7,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Miles conversion ratio 1:2 across partner airline and hotel programs.",
-    "categories": ["dining_travel", "forex"],
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
     "annualFee": "₹5,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -49,9 +78,20 @@
     "optimizationVector": "10% NeuCoins on Tata Neu ecosystem (1mg, BigBasket, Air India Express, Croma) & 1.5% on UPI.",
     "defaultBillingStart": 16,
     "defaultBillingEnd": 15,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International"] },
-    "regulatoryUpdate": "2026 Update: NeuCoins carry 1:1 rupee value across all Tata partner apps.",
-    "categories": ["upi", "general", "dining_travel"],
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Requires ₹50k spend in prior quarter to unlock 2 domestic lounge vouchers; NeuCoins carry 1:1 rupee value.",
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "2.0%"
   },
@@ -63,9 +103,14 @@
     "optimizationVector": "Yields 5% back directly as Amazon Pay statement credit for Prime members.",
     "defaultBillingStart": 1,
     "defaultBillingEnd": 31,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: Avoid loading more than ₹5,000 into Amazon Pay wallet per month to prevent processing charges.",
-    "categories": ["amazon", "general"],
+    "categories": [
+      "amazon",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -77,9 +122,18 @@
     "optimizationVector": "Earn 40,000 Membership Rewards points + ₹10,000 Taj voucher on ₹4 Lakh annual spend milestone.",
     "defaultBillingStart": 28,
     "defaultBillingEnd": 27,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: 8 domestic lounge visits per year across major Indian terminals.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹5,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -91,9 +145,19 @@
     "optimizationVector": "5% cashback on Google Pay utility bills/recharges, 4% on Swiggy/Zomato/Ola, 1.5% flat unlimited other spends.",
     "defaultBillingStart": 12,
     "defaultBillingEnd": 11,
-    "loungeAccess": { "eligible": true, "spendThreshold": 50000, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: 5% Google Pay utility & 4% partner cashback combined cap ₹500/month; 4 domestic lounges/year.",
-    "categories": ["general", "dining_travel", "gaming_wallet"],
+    "categories": [
+      "general",
+      "dining_travel",
+      "gaming_wallet"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -105,9 +169,20 @@
     "optimizationVector": "Zero forex markup saves ~3.5% conversion fee on international and USD subscriptions.",
     "defaultBillingStart": 15,
     "defaultBillingEnd": 14,
-    "loungeAccess": { "eligible": true, "spendThreshold": 5000, "terminals": ["Domestic", "International", "Chennai T4"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 5000,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Chennai T4"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Unlimited domestic lounge access requires ₹5,000 eligible spend in prior cycle.",
-    "categories": ["forex", "dining_travel"],
+    "categories": [
+      "forex",
+      "dining_travel"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "0.0%"
   },
@@ -119,9 +194,19 @@
     "optimizationVector": "5% cashback on Amazon, Flipkart, Swiggy, Zomato, Myntra, Uber, and Tata CLiQ.",
     "defaultBillingStart": 17,
     "defaultBillingEnd": 16,
-    "loungeAccess": { "eligible": true, "spendThreshold": 100000, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 100000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: 5% merchant cashback capped at ₹1,000 per billing cycle.",
-    "categories": ["amazon", "flipkart", "dining_travel"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "dining_travel"
+    ],
     "annualFee": "₹1,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -133,9 +218,13 @@
     "optimizationVector": "Keeps primary bank statement clean while earning 8X rewards on UPI merchant QR codes.",
     "defaultBillingStart": 2,
     "defaultBillingEnd": 1,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: UPI rewards capped at 500 reward points per calendar cycle.",
-    "categories": ["upi"],
+    "categories": [
+      "upi"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -147,9 +236,20 @@
     "optimizationVector": "10X rewards on Dining and International Travel from transaction one with zero expiry.",
     "defaultBillingStart": 25,
     "defaultBillingEnd": 24,
-    "loungeAccess": { "eligible": true, "spendThreshold": 20000, "terminals": ["Domestic", "International", "Chennai T4"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Chennai T4"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: BOGO movie tickets strictly require a ₹20k prior calendar month spend.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "1.5%"
   },
@@ -161,9 +261,20 @@
     "optimizationVector": "Buy-One-Get-One up to ₹500 on BookMyShow twice a month + 4 complimentary airport lounges/quarter.",
     "defaultBillingStart": 9,
     "defaultBillingEnd": 8,
-    "loungeAccess": { "eligible": true, "spendThreshold": 5000, "terminals": ["Domestic", "International", "Dreamfolks"] },
-    "regulatoryUpdate": "2026 Update: Spa access discontinued; domestic lounge threshold linked to prior quarterly spend.",
-    "categories": ["dining_travel", "general"],
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 75000,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Dreamfolks"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Domestic lounge access requires ₹75,000 spend in preceding calendar quarter; 2 intl visits via Dreamfolks.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹6,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -175,9 +286,17 @@
     "optimizationVector": "Massive ~7.25% value back (25X reward points + 1% surcharge waiver) at BPCL petrol pumps.",
     "defaultBillingStart": 6,
     "defaultBillingEnd": 5,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: 25X reward points capped at ₹10,000 monthly fuel spend.",
-    "categories": ["bpcl"],
+    "categories": [
+      "bpcl"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -189,9 +308,18 @@
     "optimizationVector": "Offers 5% cashback on Flipkart and Cleartrip flight bookings.",
     "defaultBillingStart": 21,
     "defaultBillingEnd": 20,
-    "loungeAccess": { "eligible": true, "spendThreshold": 100000, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 100000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Late payment fees revised; ensure automated clearing is active.",
-    "categories": ["flipkart", "general"],
+    "categories": [
+      "flipkart",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -203,9 +331,14 @@
     "optimizationVector": "Earn 5% fuel points at IndianOil outlets + seamless UPI merchant payments.",
     "defaultBillingStart": 27,
     "defaultBillingEnd": 26,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: Fuel points redemption directly against IndianOil XTRAREWARDS.",
-    "categories": ["other_fuel", "upi"],
+    "categories": [
+      "other_fuel",
+      "upi"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -217,9 +350,19 @@
     "optimizationVector": "Standard 1% to 2% catch-all reward rate with instant fractional point conversion.",
     "defaultBillingStart": 13,
     "defaultBillingEnd": 12,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Metal card issuance tier requires ₹50k quarterly spends for fee waiver.",
-    "categories": ["general", "gaming_wallet"],
+    "categories": [
+      "general",
+      "gaming_wallet"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "1.0%"
   },
@@ -231,9 +374,17 @@
     "optimizationVector": "Tier-2 lifestyle card with automated utility bill reward boosters.",
     "defaultBillingStart": 19,
     "defaultBillingEnd": 18,
-    "loungeAccess": { "eligible": true, "spendThreshold": 5000, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 5000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Milestone vouchers disbursed via email within 45 days of quarter end.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹1,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -245,9 +396,18 @@
     "optimizationVector": "25% cashback on Airtel mobile & broadband bills, 10% on BigBasket, Swiggy, and Zomato.",
     "defaultBillingStart": 10,
     "defaultBillingEnd": 9,
-    "loungeAccess": { "eligible": true, "spendThreshold": 50000, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Airtel bill cashback capped at ₹250/month; food orders capped at ₹500/month.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -259,9 +419,14 @@
     "optimizationVector": "1,000 bonus points on 4 transactions of ₹1,500+ every month + 1,000 points on ₹20k monthly spend.",
     "defaultBillingStart": 29,
     "defaultBillingEnd": 28,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: Fuel and utility wallet loads excluded from monthly milestone threshold.",
-    "categories": ["general", "gaming_wallet"],
+    "categories": [
+      "general",
+      "gaming_wallet"
+    ],
     "annualFee": "₹4,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -273,9 +438,17 @@
     "optimizationVector": "Secondary domestic utility and 25% discount on BookMyShow (up to ₹100).",
     "defaultBillingStart": 22,
     "defaultBillingEnd": 21,
-    "loungeAccess": { "eligible": true, "spendThreshold": 5000, "terminals": ["Domestic"] },
-    "regulatoryUpdate": "2026 Update: ICICI charges 2% surcharge on online gaming and digital wallet top-ups.",
-    "categories": ["general"],
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 75000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Domestic airport lounge access requires minimum ₹75,000 spend in the preceding calendar quarter.",
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -287,9 +460,19 @@
     "optimizationVector": "5% cashback on Flipkart & Cleartrip, 7.5% on Myntra, 4% on preferred partners (Swiggy, Uber, PVR) & 1% base.",
     "defaultBillingStart": 12,
     "defaultBillingEnd": 11,
-    "loungeAccess": { "eligible": true, "spendThreshold": 50000, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: 4 domestic lounge visits/year with spend-based eligibility; annual fee waived on ₹3.5L annual spend.",
-    "categories": ["flipkart", "dining_travel", "general"],
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -301,9 +484,18 @@
     "optimizationVector": "BOGO movie tickets on BookMyShow/District, ₹120 off twice/month on Swiggy & 4 EDGE Points/₹200.",
     "defaultBillingStart": 15,
     "defaultBillingEnd": 14,
-    "loungeAccess": { "eligible": true, "spendThreshold": 50000, "terminals": ["Domestic"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: 1 complimentary domestic airport lounge visit per quarter subject to minimum spend criteria.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -315,9 +507,15 @@
     "optimizationVector": "20 EDGE Points/₹100 on IOCL fuel (≈4% valueback) + 5 RP/₹100 on online shopping & seamless RuPay UPI.",
     "defaultBillingStart": 18,
     "defaultBillingEnd": 17,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: 1% fuel surcharge waiver at IOCL pumps + monthly accelerated reward point caps per MITC.",
-    "categories": ["other_fuel", "upi", "general"],
+    "categories": [
+      "other_fuel",
+      "upi",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -329,9 +527,21 @@
     "optimizationVector": "12 EDGE Points/₹200 up to ₹1.5L/month, 35 EDGE Points/₹200 thereafter with transfer to airline/hotel partners + 2% forex markup.",
     "defaultBillingStart": 8,
     "defaultBillingEnd": 7,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International", "Priority Pass"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Unlimited domestic & international lounge access; annual fee waived on ₹25L eligible annual spend.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹12,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -343,9 +553,19 @@
     "optimizationVector": "5 EDGE Miles per ₹100 on Travel EDGE & airline portals + 2 EDGE Points on other eligible spends.",
     "defaultBillingStart": 14,
     "defaultBillingEnd": 13,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Up to 8 complimentary lounge visits per quarter on Visa variant per MITC.",
-    "categories": ["dining_travel", "forex"],
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
     "annualFee": "₹3,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -357,9 +577,14 @@
     "optimizationVector": "3% cashback on UPI transactions via super.money UPI & 1% cashback on other qualifying spends.",
     "defaultBillingStart": 20,
     "defaultBillingEnd": 19,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: Lifetime free RuPay card optimized for merchant UPI QR code payments.",
-    "categories": ["upi", "general"],
+    "categories": [
+      "upi",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -371,9 +596,14 @@
     "optimizationVector": "Lifetime free entry-level card with partner brand discounts on Zomato, Blinkit, Myntra & BookMyShow.",
     "defaultBillingStart": 16,
     "defaultBillingEnd": 15,
-    "loungeAccess": { "eligible": false },
+    "loungeAccess": {
+      "eligible": false
+    },
     "regulatoryUpdate": "2026 Update: Marketed lifetime free; monthly discount caps apply on merchant partner apps.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -385,10 +615,1036 @@
     "optimizationVector": "0% forex markup on all international transactions + 15 EDGE Points/₹200 and unlimited global lounges.",
     "defaultBillingStart": 1,
     "defaultBillingEnd": 31,
-    "loungeAccess": { "eligible": true, "spendThreshold": 0, "terminals": ["Domestic", "International", "Priority Pass"] },
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
+    },
     "regulatoryUpdate": "2026 Update: Zero forex markup; complimentary for Burgundy Private clients meeting TRV criteria.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹50,000 + GST",
     "forexMarkup": "0.0%"
+  },
+  {
+    "id": "flipkart_axis_bank_credit_card",
+    "name": "Flipkart Axis Bank Credit Card",
+    "bank": "Axis Bank",
+    "network": "Mastercard",
+    "optimizationVector": "Up to 5% cashback on Flipkart & Cleartrip, 7.5% on Myntra, 4% on partners (Swiggy, Uber, PVR etc.), 1% on other spends; cashback typically uncapped on Flipkart/Myntra, general merchant caps as per MITC.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_my_zone_credit_card",
+    "name": "Axis My Zone Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Base: 4 EDGE Reward Points per ₹200 (≈0.4%). Accelerated: BOGO movie offers, Swiggy discount, partner offers; no explicit points multiplier beyond base; caps mainly on partner offers (e.g. Swiggy ₹120 off twice a month).",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indianoil_axis_bank_rupay_credit_card",
+    "name": "IndianOil Axis Bank RuPay Credit Card",
+    "bank": "Axis Bank",
+    "network": "RuPay",
+    "optimizationVector": "Accelerated: 20 Reward Points per ₹100 on fuel at IOCL pumps; 5 RP/₹100 on online shopping; base: 1 EDGE Point/₹100 on other spends. Category caps per month are defined in MITC (not in public summary).",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "other_fuel",
+      "general"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_horizon_credit_card",
+    "name": "Axis Bank Horizon Credit Card",
+    "bank": "Axis Bank",
+    "network": "Mastercard",
+    "optimizationVector": "5 EDGE Miles per ₹100 on Axis Travel EDGE portal & airline websites; 2 EDGE Reward Points on other eligible spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_neo_credit_card",
+    "name": "Axis Bank Neo Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Base: 1 EDGE Reward Point/₹200 (≈0.1%). Additional value from brand discounts (Zomato, Blinkit, Myntra, BookMyShow) rather than multipliers; benefit caps per partner per month.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indianoil_axis_bank_premium_credit_card",
+    "name": "IndianOil Axis Bank Premium Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Accelerated: 6X EDGE Miles per ₹150 on IOCL fuel; 2X per ₹150 on grocery; base: 1X EDGE Mile on other eligible spends. Detailed caps (e.g. max accelerated miles per month) in MITC.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "other_fuel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹1,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_ace_credit_card",
+    "name": "Axis Bank ACE Credit Card",
+    "bank": "Axis Bank",
+    "network": "Mastercard",
+    "optimizationVector": "5% cashback on utility bills & mobile recharges via Google Pay; 4% on Swiggy, Zomato & Ola; base 1.5% elsewhere. Combined monthly cap of ₹500 cashback on 5%+4% categories; base 1.5% uncapped in public summary.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
+    "annualFee": "₹499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_select_credit_card",
+    "name": "Axis Bank SELECT Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Retail spends: 20 EDGE Points/₹200 up to ₹20,000 monthly (≈2%); then 10 EDGE Points/₹200 (≈1%). Additional milestone Edge points annually.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_privilege_credit_card",
+    "name": "Axis Bank Privilege Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "10 EDGE Reward Points per ₹200 on most spends (≈1%). Milestone: extra EDGE points on spends of ₹2.5 lakh.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_rewards_credit_card",
+    "name": "Axis Bank Rewards Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Accelerated: 10X EDGE Points per ₹125 at departmental & apparel stores; base: 2 EDGE Points/₹125 elsewhere. Effective reward rate ≈2% at accelerated merchants, ≈0.4% base.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹1,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_cashback_credit_card",
+    "name": "Axis Bank Cashback Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "7% cashback on online purchases; 0.75% on offline & travel; 0.5% on utility. Cashback caps per statement cycle exist but are documented in MITC rather than public summaries.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
+    "annualFee": "₹1,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indigo_axis_bank_premium_credit_card",
+    "name": "IndiGo Axis Bank Premium Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "7 IndiGo BluChips/₹100 on IndiGo channels, 3/₹100 on grocery & hotel, 2/₹100 on other spends. Programme‑specific caps (e.g. on bonus vouchers and milestone BluChips) detailed in IndiGo/Axis programme terms.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹5,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indigo_axis_bank_credit_card",
+    "name": "IndiGo Axis Bank Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "3 BluChips/₹100 on IndiGo, 2/₹100 on grocery & dining, 1/₹100 on other spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹799 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_supermoney_rupay_credit_card",
+    "name": "Axis Bank SuperMoney RuPay Credit Card",
+    "bank": "Axis Bank",
+    "network": "RuPay",
+    "optimizationVector": "3% cashback on UPI spends via super.money UPI; 1% cashback on other qualifying spends. Monthly cashback caps appear in programme terms, not in public summary.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "upi",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "google_pay_flex_axis_bank_credit_card",
+    "name": "Google Pay Flex Axis Bank Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Stars‑based system: 1 Star per ₹500 spend (≈0.2%); welcome 250 Stars + ₹250 gift card. Redemption via Google Pay for instant cashback (1 Star ≈₹1).",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "gaming_wallet",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "fibe_axis_bank_rupay_credit_card",
+    "name": "Fibe Axis Bank RuPay Credit Card",
+    "bank": "Axis Bank",
+    "network": "RuPay",
+    "optimizationVector": "3% cashback on entertainment, food delivery & commute; base rewards on other spends not emphasised in summary.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_olympus_credit_card",
+    "name": "Axis Bank Olympus Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Earn 1 EDGE Mile/₹100 domestic and 2 EDGE Miles/₹100 international, with welcome EDGE Miles and hotel vouchers.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹20,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_magnus_credit_card",
+    "name": "Axis Bank Magnus Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "12 EDGE Reward Points/₹200 on spends up to ₹1.5 lakh/month; 35 EDGE Points/₹200 thereafter, enabling high effective rewards especially when transferred via EDGE Miles partners.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "axis_bank_shoppers_stop_credit_card",
+    "name": "Axis Bank Shoppers Stop Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Accelerated: 20 First Citizen points/₹200 at Shoppers Stop private labels; base points on non‑private‑label & other spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "samsung_axis_bank_signature_credit_card",
+    "name": "Samsung Axis Bank Signature Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Up to ₹10,000 cashback annually on Samsung purchases; 10 EDGE Points/₹100 on select brands (Zomato, UrbanCompany, Tata 1mg, Myntra, BigBasket); 5 EDGE Points/₹100 on other eligible spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "spicejet_axis_bank_voyage_credit_card",
+    "name": "SpiceJet Axis Bank Voyage Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "Up to 18 SpiceClub points/₹200 on SpiceJet website/app; 6 points/₹200 on online spends; 3 points/₹200 on other spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹750 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "spicejet_axis_bank_voyage_black_credit_card",
+    "name": "SpiceJet Axis Bank Voyage Black Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "28 SpiceClub points/₹200 on SpiceJet app/website; 12 points/₹200 on online entertainment, food, bills; 6 points/₹200 elsewhere.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "airtel_axis_bank_credit_card",
+    "name": "Airtel Axis Bank Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "25% cashback on Airtel recharges (capped at 2× base cashback per month); 10% on utility bills (capped at base cashback); 10% value back on Zomato/Blinkit/District (₹200 cap per partner/month); 1% on other spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_pride_signature_credit_card",
+    "name": "Axis Bank Pride Signature Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "8 EDGE Reward Points/₹200 on spends; targeted at defence personnel with patriotic card design.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_pride_platinum_credit_card",
+    "name": "Axis Bank Pride Platinum Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "4 Reward Points/₹200; similar defence‑segment positioning.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_kwik_rupay_credit_card",
+    "name": "Axis Bank KWIK RuPay Credit Card",
+    "bank": "Axis Bank",
+    "network": "RuPay",
+    "optimizationVector": "2 EDGE Reward Points/₹200 on domestic and international spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "ikea_family_credit_card_by_axis_bank",
+    "name": "IKEA Family Credit Card by Axis Bank",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "3 EDGE Reward Points/₹100 on IKEA spends; 2 EDGE Points/₹100 on dining; standard points elsewhere.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_miles_more_select_credit_card",
+    "name": "Axis Bank Miles & More Select Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "6 award miles per ₹200 spend; welcome 15,000 miles.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹10,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_miles_more_world_credit_card",
+    "name": "Axis Bank Miles & More World Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "4 award miles per ₹200 spend; welcome 5,000 miles.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹3,500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_my_zone_easy_credit_card",
+    "name": "Axis Bank My Zone Easy Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "4 EDGE Reward Points per ₹200 spend; targeted at secured/FD‑backed customers.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_reserve_credit_card",
+    "name": "Axis Bank Reserve Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "15 EDGE Points/₹200 domestically; 30 EDGE Points/₹200 internationally, plus luxury hotel memberships and concierge benefits.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹50,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "axis_bank_burgundy_private_credit_card",
+    "name": "Axis Bank Burgundy Private Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "15 EDGE Reward Points/₹200 on most spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹50,000 + GST",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "axis_bank_primus_credit_card",
+    "name": "Axis Bank Primus Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "1 EDGE Mile/₹100 on all transactions; large welcome benefit (25,000 EDGE Miles or hotel gift card).",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹5,00,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "lic_axis_bank_signature_credit_card",
+    "name": "LIC Axis Bank Signature Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "2X rewards on LIC premium payments & foreign currency transactions; 1X reward on most other spends except fuel, wallet & EMI.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "other_fuel",
+      "gaming_wallet",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "lic_axis_bank_platinum_credit_card",
+    "name": "LIC Axis Bank Platinum Credit Card",
+    "bank": "Axis Bank",
+    "network": "Visa",
+    "optimizationVector": "2X benefits on LIC premium payments & foreign currency transactions; 1X reward on other spends except fuel, wallet & EMI.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
+    "categories": [
+      "other_fuel",
+      "gaming_wallet",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_diners_black",
+    "name": "HDFC Diners Club Black Metal",
+    "bank": "HDFC Bank",
+    "network": "Diners Club",
+    "optimizationVector": "33.3% SmartBuy return on flights/hotels + unlimited domestic & international lounge access globally.",
+    "defaultBillingStart": 5,
+    "defaultBillingEnd": 4,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: SmartBuy accelerated cap at 10,000 RP/mo; 3,000 RP monthly sub-cap on GyFTR/Woohoo brand vouchers.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general",
+      "amazon"
+    ],
+    "annualFee": "₹10,000 + GST",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "hdfc_regalia_gold",
+    "name": "HDFC Regalia Gold",
+    "bank": "HDFC Bank",
+    "network": "Visa",
+    "optimizationVector": "5X points on Marks & Spencer, Myntra, Nykaa, Reliance Digital + 4 RP/₹150 base and milestone flight vouchers.",
+    "defaultBillingStart": 10,
+    "defaultBillingEnd": 9,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 60000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Requires ₹60,000 spend in prior quarter to unlock 3 domestic lounge vouchers; 6 intl visits via Priority Pass.",
+    "categories": [
+      "dining_travel",
+      "flipkart",
+      "general"
+    ],
+    "annualFee": "₹2,500 + GST",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "hdfc_swiggy",
+    "name": "Swiggy HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "network": "Mastercard",
+    "optimizationVector": "10% cashback on Swiggy (Food, Instamart, Dineout, Genie up to ₹1,500/mo) & 5% on top e-commerce platforms.",
+    "defaultBillingStart": 20,
+    "defaultBillingEnd": 19,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 10% Swiggy cashback capped at ₹1,500/cycle; 5% online shopping capped at ₹1,500/month; no airport lounge.",
+    "categories": [
+      "dining_travel",
+      "amazon",
+      "flipkart",
+      "general"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_marriott_bonvoy",
+    "name": "Marriott Bonvoy HDFC Bank Credit Card",
+    "bank": "HDFC Bank",
+    "network": "Diners Club",
+    "optimizationVector": "1 Free Night Award annually + 8X on Marriott, 4X on dining/travel + 12 domestic & 12 international lounge visits.",
+    "defaultBillingStart": 14,
+    "defaultBillingEnd": 13,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Includes 10 Elite Night Credits and Silver Elite status annually; ₹3,000 annual fee.",
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
+    "annualFee": "₹3,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_pixel_play",
+    "name": "HDFC Pixel Play RuPay Credit Card",
+    "bank": "HDFC Bank",
+    "network": "RuPay",
+    "optimizationVector": "5% cashback on 2 chosen merchant categories & 3% on chosen e-commerce platform + seamless RuPay UPI.",
+    "defaultBillingStart": 25,
+    "defaultBillingEnd": 24,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Fully digital card managed via PayZapp; custom cashback merchant selection every quarter.",
+    "categories": [
+      "upi",
+      "amazon",
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "tata_neu_plus",
+    "name": "Tata Neu Plus HDFC Bank",
+    "bank": "HDFC Bank",
+    "network": "RuPay",
+    "optimizationVector": "4.99% NeuCoins on Tata Neu ecosystem & 1% on UPI transactions via Tata Neu app.",
+    "defaultBillingStart": 16,
+    "defaultBillingEnd": 15,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 4 domestic lounge visits per year subject to ₹50,000 quarterly spend threshold.",
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_emeralde_private",
+    "name": "ICICI Emeralde Private Metal",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "6 ICICI Reward Points/₹200 on all retail spends (3% return) + zero Forex markup on international transactions.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 31,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Exempt from ₹75k quarterly spend requirement; unlimited domestic and international lounge access with guest visits.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹12,500 + GST",
+    "forexMarkup": "1.5%"
+  },
+  {
+    "id": "icici_rubyx",
+    "name": "ICICI Rubyx",
+    "bank": "ICICI Bank",
+    "network": "Mastercard",
+    "optimizationVector": "25% discount on BookMyShow/INOX tickets (twice/month) + dual card variant benefit (Mastercard + Amex).",
+    "defaultBillingStart": 15,
+    "defaultBillingEnd": 14,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 75000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Requires ₹75,000 spend in preceding calendar quarter for complimentary domestic lounge access.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹3,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_coral_rupay",
+    "name": "ICICI Coral RuPay Credit Card",
+    "bank": "ICICI Bank",
+    "network": "RuPay",
+    "optimizationVector": "2X reward points on regular merchant spends + 25% discount on BookMyShow and seamless UPI payments.",
+    "defaultBillingStart": 22,
+    "defaultBillingEnd": 21,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 75000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: RuPay UPI enabled; airport lounge access subject to ₹75,000 prior quarterly spend.",
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_adani_one_signature",
+    "name": "ICICI Adani One Signature",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "7% Adani Reward Points on Adani ecosystem (Duty Free, flight bookings, parking) + premium airport valet perks.",
+    "defaultBillingStart": 18,
+    "defaultBillingEnd": 17,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 75000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Domestic lounge access subject to ₹75k quarterly spend threshold; premium airport meet & greet benefits.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹5,000 + GST",
+    "forexMarkup": "1.5%"
   }
 ]

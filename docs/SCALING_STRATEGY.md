@@ -135,12 +135,25 @@ Since there are no user accounts or cloud databases:
 
 ---
 
+### 6. 🤖 Autonomous Multi-Source Card Harvester & CI/CD Data Pipeline
+
+To prevent manual maintenance debt as Indian banks introduce frequent circulars and devaluations:
+
+1. **Dual-Trigger Architecture**:
+   - **Antigravity Interactive Harvester (`.agents/skills/card-harvester/SKILL.md`)**: On-demand web traversal to query official issuer schedules, MITCs, and verified community portals (TechnoFino, CardExpert).
+   - **GitHub Actions Scheduled CI/CD (`.github/workflows/sync-cards.yml`)**: Weekly automated execution that syncs datasets, verifies Angular compilation (`npm run build`), and opens PRs on updates.
+2. **Schema Ingestion & Normalization (`scripts/sync-cards.mjs`)**:
+   - Programmatically parses CSV/JSON feeds, infers bank brands, networks, lounge thresholds, forex rates, and spend category unions.
+   - Strictly isolates private user seed datasets (`src/app/core/data/owner_portfolio.json`) from the public catalog (`src/app/core/data/cards.json`).
+
+---
+
 ## 🛣️ Long-Term Feature Roadmap Summary
 
 ```mermaid
 flowchart LR
     A[Phase 1: Angular Router & IndexedDB] --> B[Phase 2: Dynamic Portfolio Builder]
-    B --> C[Phase 3: PWA & Offline Engine]
+    B --> C[Phase 3: Automated Card Harvester]
     C --> D[Phase 4: Dynamic Rule Engine]
     D --> E[Phase 5: P2P Sync & Community Registry]
 ```

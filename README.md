@@ -28,7 +28,15 @@ npm run build
 ```
 Output is generated in the `dist/the-plastic-route/` directory.
 
+### Autonomous Card Harvester & Master Catalog Sync
+```bash
+npm run cards:sync
+```
+Synchronizes scraped CSV/JSON datasets into `src/app/core/data/cards.json` while isolating private seed files.
+
 ## ✨ Features
+*   **Automated Card Harvester & GitHub Actions:** On-demand Antigravity skill (`card-harvester`) and scheduled GitHub Actions workflow (`.github/workflows/sync-cards.yml`) that traverses, updates, and validates the master bank database against official MITC circulars.
+*   **Comprehensive Bank Coverage:** Master catalog containing verified 2026 data for major Indian banks (**HDFC Bank**, **ICICI Bank**, **Axis Bank**, **SBI Card**, **American Express**, **IDFC FIRST**, **Federal Bank**).
 *   **Dedicated Welcome Gateway & FTUE:** Distraction-free onboarding view (`/#/welcome`) guarded by Angular Functional Route Guards, offering immediate choice between *Explore Demo Mode* and *Build Personal Wallet*.
 *   **Home Landing Page:** Interactive landing page (`/#/home`) explaining the application purpose, privacy-first architecture, 3-metric highlight bar, and open-source GitHub contribution guidelines.
 *   **Spend Optimizer:** Quick lookup tool to instantly see which primary or backup card to swipe based on purchase category (Amazon, Fuel, Forex, UPI, Dining, Travel, etc.).

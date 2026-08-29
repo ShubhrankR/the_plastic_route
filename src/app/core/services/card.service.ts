@@ -16,15 +16,15 @@ import { ToastService } from './toast.service';
  * Category-to-card ID fallback mapping for standard recommendation routes.
  */
 const CATEGORY_PRIORITY_MAP: Record<SpendCategory, string[]> = {
-  amazon: ['amazon_pay_icici', 'hdfc_millennia', 'sbi_cashback', 'hdfc_infinia', 'federal_one_metal'],
-  flipkart: ['axis_flipkart', 'sbi_flipkart', 'hdfc_millennia', 'sbi_cashback', 'hdfc_infinia', 'federal_one_metal'],
+  amazon: ['amazon_pay_icici', 'hdfc_infinia', 'hdfc_diners_black', 'hdfc_millennia', 'hdfc_swiggy', 'sbi_cashback', 'federal_one_metal'],
+  flipkart: ['axis_flipkart', 'sbi_flipkart', 'hdfc_infinia', 'hdfc_diners_black', 'hdfc_millennia', 'hdfc_swiggy', 'sbi_cashback', 'federal_one_metal'],
   bpcl: ['sbi_bpcl_octane', 'hdfc_indian_oil', 'federal_one_metal'],
   other_fuel: ['axis_indianoil_rupay', 'hdfc_indian_oil', 'sbi_bpcl_octane', 'federal_one_metal'],
-  upi: ['axis_supermoney_rupay', 'yes_bank_rupay', 'tata_neu_infinity', 'axis_indianoil_rupay', 'hdfc_indian_oil', 'federal_one_metal'],
-  forex: ['axis_burgundy_private', 'bobcard_scapia', 'axis_atlas', 'axis_magnus', 'axis_horizon', 'idfc_first_wealth', 'hdfc_infinia', 'federal_one_metal'],
-  dining_travel: ['axis_atlas', 'axis_magnus', 'idfc_first_wealth', 'hdfc_infinia', 'icici_sapphiro', 'amex_platinum_travel', 'axis_flipkart', 'federal_one_metal'],
+  upi: ['axis_supermoney_rupay', 'tata_neu_infinity', 'tata_neu_plus', 'hdfc_pixel_play', 'icici_coral_rupay', 'yes_bank_rupay', 'axis_indianoil_rupay', 'hdfc_indian_oil', 'federal_one_metal'],
+  forex: ['axis_burgundy_private', 'icici_emeralde_private', 'hdfc_infinia', 'hdfc_diners_black', 'bobcard_scapia', 'axis_atlas', 'axis_magnus', 'axis_horizon', 'icici_adani_one_signature', 'hdfc_marriott_bonvoy', 'idfc_first_wealth', 'federal_one_metal'],
+  dining_travel: ['hdfc_infinia', 'hdfc_diners_black', 'icici_emeralde_private', 'hdfc_swiggy', 'axis_atlas', 'axis_magnus', 'icici_sapphiro', 'icici_adani_one_signature', 'hdfc_marriott_bonvoy', 'hdfc_regalia_gold', 'idfc_first_wealth', 'amex_platinum_travel', 'axis_flipkart', 'federal_one_metal'],
   gaming_wallet: ['federal_one_metal', 'axis_ace', 'amex_mrcc', 'idfc_first_wealth'],
-  general: ['idfc_first_wealth', 'hdfc_infinia', 'sbi_cashback', 'axis_ace', 'axis_magnus', 'federal_one_metal', 'federal_imperio'],
+  general: ['hdfc_infinia', 'hdfc_diners_black', 'icici_emeralde_private', 'idfc_first_wealth', 'sbi_cashback', 'axis_ace', 'axis_magnus', 'hdfc_regalia_gold', 'federal_one_metal', 'federal_imperio'],
 };
 
 /** Approximate savings rate multipliers for estimation */

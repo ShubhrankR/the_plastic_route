@@ -71,6 +71,13 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
   - [x] Make `CreditCard` and `MasterCatalogCard` interfaces extensible with optional metadata fields and open index signatures (`[key: string]: any`).
   - [x] Randomize and distribute default statement dates in `cards.json` across the month, completely segregating demo data from the developer seed.
 
+- [x] **Autonomous Card Harvester & Multi-Bank Dataset Ingestion (August 2026)**
+  - [x] Standalone Node.js dataset ingestion & normalization engine (`scripts/sync-cards.mjs` / `npm run cards:sync`).
+  - [x] GitHub Actions automated workflow (`.github/workflows/sync-cards.yml`) with manual `workflow_dispatch` and weekly Monday cron triggers.
+  - [x] Workspace Antigravity Skill (`.agents/skills/card-harvester/SKILL.md`) for on-demand web research, MITC parsing, and schema validation.
+  - [x] Comprehensive card catalog expansion for major Indian banks (**Axis Bank**, **HDFC Bank**, **ICICI Bank**) with verified 2026 lounge spend criteria (e.g. ₹60k/₹75k thresholds) and SmartBuy voucher sub-caps.
+  - [x] Guaranteed isolation of private seed data (`src/app/core/data/owner_portfolio.json`).
+
 
 
 ---
