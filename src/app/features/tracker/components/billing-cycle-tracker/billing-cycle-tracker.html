@@ -18,7 +18,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (s of statuses; track s.cardName) {
+        @for (s of statuses(); track s.cardName) {
           <tr>
             <td class="fw-semibold">{{ s.cardName }}</td>
             <td>{{ s.statementDay }}</td>

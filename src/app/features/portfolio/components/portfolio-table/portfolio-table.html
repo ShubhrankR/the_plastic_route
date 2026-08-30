@@ -1,34 +1,107 @@
 <div class="glass-card">
-  <h5 class="fw-bold portfolio-title">Card Portfolio Status</h5>
-
-  <div class="table-wrap">
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Card Name</th>
-          <th>Optimization Vector</th>
-          <th>Billing Cycle</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (card of cards(); track card.id) {
-          <tr>
-            <td>
-              <span class="fw-semibold">{{ card.name }}</span>
-              <br>
-              <span class="badge badge-network">{{ card.network }}</span>
-            </td>
-            <td class="text-secondary text-sm">{{ card.optimizationVector }}</td>
-            <td>
-              <span class="cycle-range">
-                <span class="fw-semibold">{{ card.billingCycleStart }}</span>
-                <span class="text-muted text-sm"> to </span>
-                <span class="fw-semibold">{{ card.billingCycleEnd }}</span>
-              </span>
-            </td>
-          </tr>
+  <div class="table-header-row">
+    <div>
+      <h5 class="fw-bold portfolio-title">
+        @if (isExploreMode()) {
+          <span>🔍 Master Catalog Preview (10 Sample Cards)</span>
+        } @else {
+          <span>💼 Active Wallet Portfolio ({{ cards().length }} Cards)</span>
         }
-      </tbody>
-    </table>
+      </h5>
+      <p class="text-sm text-muted">
+        @if (isExploreMode()) {
+          <span>Sample reference dataset. Add your cards to customize statement dates.</span>
+        } @else {
+          <span>Stored 100% locally in your browser's IndexedDB.</span>
+        }
+      </p>
+    </div>
   </div>
+
+  @if (cards().length > 0) {
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Card & Issuer</th>
+            <th>Optimization Vector & Lounge Access</th>
+            <th>Billing Cycle</th>
+            <th class="text-right">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (card of cards(); track card.id) {
+            <tr>
+              <td>
+                <span class="fw-semibold card-name-text">{{ card.name }}</span>
+                <br>
+                <div class="badge-group mt-1">
+                  <span class="badge badge-network">{{ card.network }}</span>
+                  @if (card.bank) {
+                    <span class="badge badge-bank text-xs">{{ card.bank }}</span>
+                  }
+                  @if (card.isCustom) {
+                    <span class="badge badge-warning text-xs">Custom</span>
+                  }
+                </div>
+              </td>
+              <td>
+                <div class="text-secondary text-sm">{{ card.optimizationVector }}</div>
+                @if (card.regulatoryUpdate) {
+                  <div class="text-xs text-muted mt-1">{{ card.regulatoryUpdate }}</div>
+                }
+                @if (card.loungeAccess?.eligible) {
+                  <div class="text-xs text-success mt-1">
+                    ✈️ Lounge Access:
+                    @if (card.loungeAccess.spendThreshold && card.loungeAccess.spendThreshold > 0) {
+                      <span>₹{{ card.loungeAccess.spendThreshold }} Spend Required</span>
+                    } @else {
+                      <span>Complimentary</span>
+                    }
+                  </div>
+                }
+              </td>
+              <td>
+                <div class="cycle-range">
+                  <span class="fw-semibold text-primary">{{ card.billingCycleStart }}</span>
+                  <span class="text-muted text-sm"> to </span>
+                  <span class="fw-semibold text-primary">{{ card.billingCycleEnd }}</span>
+                </div>
+                <span class="text-xs text-muted">day of month</span>
+              </td>
+              <td class="text-right actions-cell">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-outline mr-1"
+                  (click)="onEdit(card)"
+                  title="Edit Card"
+                >
+                  ✏️ Edit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-danger"
+                  (click)="onDelete(card.id)"
+                  title="Delete Card"
+                >
+                  🗑️
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <div class="empty-state">
+      <div class="empty-icon">💳</div>
+      <h3 class="empty-title">Your Wallet is Empty</h3>
+      <p class="empty-desc">
+        You haven't added any credit cards yet. Quick-add from our 20+ Master Catalog templates or create a custom card.
+      </p>
+      <button type="button" class="btn btn-primary" (click)="addCardRequested.emit()">
+        ⚡ Add Your First Card
+      </button>
+    </div>
+  }
 </div>

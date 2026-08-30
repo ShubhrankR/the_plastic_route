@@ -1,3 +1,82 @@
-<div class="fade-in-up">
-  <app-portfolio-table />
+<div class="portfolio-page">
+  <!-- Mode Banner -->
+  @if (isExploreMode()) {
+    <div class="mode-banner mode-banner-demo slide-down">
+      <div>
+        <span class="badge badge-warning mr-1">🔍 Explore Mode</span>
+        <span class="text-sm text-secondary">
+          You are viewing a sample preview from the Master Catalog. Add cards to start your personal IndexedDB wallet.
+        </span>
+      </div>
+      <div class="mode-banner-actions">
+        <button type="button" class="btn btn-sm btn-primary" (click)="openAddModal()">
+          ⚡ Set Up My Wallet
+        </button>
+      </div>
+    </div>
+  }
+
+  <!-- Page Header Actions -->
+  <div class="portfolio-header-bar mb-2">
+    <div>
+      <h2 class="fw-bold">My Card Portfolio</h2>
+      <p class="text-secondary text-sm">
+        Manage your active cards, billing cycle statement dates, and lounge eligibility.
+      </p>
+    </div>
+
+    <div class="portfolio-actions">
+      <button type="button" class="btn btn-primary" (click)="openAddModal()">
+        ➕ Add Credit Card
+      </button>
+
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn btn-outline btn-sm"
+          (click)="handleLoadOwnerSeed()"
+          title="Seed personal portfolio configuration"
+        >
+          📥 Load Developer Seed
+        </button>
+
+        @if (!isExploreMode()) {
+          <button
+            type="button"
+            class="btn btn-outline btn-sm"
+            (click)="handleLoadExplore()"
+            title="Switch back to Master Catalog preview"
+          >
+            🔍 Explore Mode
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            (click)="handleClearWallet()"
+            title="Clear all cards from local IndexedDB"
+          >
+            🗑️ Clear Wallet
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Table Component -->
+  <app-portfolio-table
+    (editCard)="openEditModal($event)"
+    (deleteCard)="handleDelete($event)"
+    (addCardRequested)="openAddModal()"
+  />
+
+  <!-- Add / Edit Card Modal Component -->
+  @if (showModal()) {
+    <app-card-modal
+      [cardToEdit]="cardToEdit()"
+      [masterCatalog]="masterCatalog()"
+      (close)="closeModal()"
+      (save)="handleSave($event)"
+      (quickAdd)="handleQuickAdd($event)"
+    />
+  }
 </div>

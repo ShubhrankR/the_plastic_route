@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { CardService } from '../../../../core/services/card.service';
 import { CreditCard } from '../../../../core/models/card.model';
 
@@ -10,5 +10,19 @@ import { CreditCard } from '../../../../core/models/card.model';
 })
 export class PortfolioTable {
   private readonly cardService = inject(CardService);
-  protected readonly cards = this.cardService.cards;
+
+  readonly cards = this.cardService.cards;
+  readonly isExploreMode = this.cardService.isExploreMode;
+
+  editCard = output<CreditCard>();
+  deleteCard = output<string>();
+  addCardRequested = output<void>();
+
+  onEdit(card: CreditCard): void {
+    this.editCard.emit(card);
+  }
+
+  onDelete(id: string): void {
+    this.deleteCard.emit(id);
+  }
 }

@@ -48,6 +48,12 @@ export class IndexedDBService {
     });
   }
 
+  /** Check if any user cards exist in IndexedDB. */
+  async hasUserCards(): Promise<boolean> {
+    const cards = await this.getAllCards();
+    return cards.length > 0;
+  }
+
   /** Retrieve all custom cards from IndexedDB. */
   async getAllCards(): Promise<CreditCard[]> {
     const db = await this.initDB();
@@ -74,6 +80,22 @@ export class IndexedDBService {
     });
   }
 
+  /** Batch save multiple cards into IndexedDB in a single transaction. */
+  async saveCards(cards: CreditCard[]): Promise<void> {
+    const db = await this.initDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(CARDS_STORE, 'readwrite');
+      const store = tx.objectStore(CARDS_STORE);
+
+      for (const card of cards) {
+        store.put(card);
+      }
+
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+
   /** Delete a card from IndexedDB by ID. */
   async deleteCard(id: string): Promise<void> {
     const db = await this.initDB();
@@ -87,13 +109,54 @@ export class IndexedDBService {
     });
   }
 
+  /** Clear all cards from the user_cards store. */
+  async clearAllCards(): Promise<void> {
+    const db = await this.initDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(CARDS_STORE, 'readwrite');
+      const store = tx.objectStore(CARDS_STORE);
+      const request = store.clear();
+
+      request.onsuccess = () => resolve();
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  /** Retrieve a key-value setting from user_settings store. */
+  async getSetting<T>(key: string): Promise<T | null> {
+    const db = await this.initDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(SETTINGS_STORE, 'readonly');
+      const store = tx.objectStore(SETTINGS_STORE);
+      const request = store.get(key);
+
+      request.onsuccess = () => {
+        const res = request.result;
+        resolve(res ? (res.value as T) : null);
+      };
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  /** Save a key-value setting into user_settings store. */
+  async saveSetting<T>(key: string, value: T): Promise<void> {
+    const db = await this.initDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(SETTINGS_STORE, 'readwrite');
+      const store = tx.objectStore(SETTINGS_STORE);
+      const request = store.put({ key, value });
+
+      request.onsuccess = () => resolve();
+      request.onerror = () => reject(request.error);
+    });
+  }
+
   /** Populate IndexedDB with default cards if empty. */
   async seedDefaultCards(cards: CreditCard[]): Promise<void> {
     const existing = await this.getAllCards();
     if (existing.length === 0) {
-      for (const card of cards) {
-        await this.saveCard(card);
-      }
+      await this.saveCards(cards);
     }
   }
 }
+

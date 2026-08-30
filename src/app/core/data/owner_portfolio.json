@@ -1,0 +1,52 @@
+[
+  {
+    "id": "amazon_pay_icici",
+    "billingCycleStart": 20,
+    "billingCycleEnd": 19
+  },
+  {
+    "id": "icici_coral",
+    "billingCycleStart": 20,
+    "billingCycleEnd": 19
+  },
+  {
+    "id": "idfc_first_wealth",
+    "billingCycleStart": 20,
+    "billingCycleEnd": 19
+  },
+  {
+    "id": "sbi_flipkart",
+    "billingCycleStart": 11,
+    "billingCycleEnd": 10
+  },
+  {
+    "id": "sbi_bpcl_octane",
+    "billingCycleStart": 11,
+    "billingCycleEnd": 10
+  },
+  {
+    "id": "hdfc_indian_oil",
+    "billingCycleStart": 11,
+    "billingCycleEnd": 10
+  },
+  {
+    "id": "bobcard_scapia",
+    "billingCycleStart": 18,
+    "billingCycleEnd": 17
+  },
+  {
+    "id": "federal_one_metal",
+    "billingCycleStart": 19,
+    "billingCycleEnd": 18
+  },
+  {
+    "id": "federal_imperio",
+    "billingCycleStart": 21,
+    "billingCycleEnd": 20
+  },
+  {
+    "id": "yes_bank_rupay",
+    "billingCycleStart": 3,
+    "billingCycleEnd": 2
+  }
+]

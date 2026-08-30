@@ -1,0 +1,42 @@
+@if (currentToast(); as toast) {
+  <div class="toast-container" role="status" aria-live="polite">
+    <div class="toast-card glass-card slide-up" [class]="'toast-' + toast.type">
+      <div class="toast-body">
+        <span class="toast-icon">
+          @if (toast.type === 'success') { ✨ }
+          @else if (toast.type === 'warning') { ⚠️ }
+          @else if (toast.type === 'danger') { 🛑 }
+          @else { ℹ️ }
+        </span>
+        <span class="toast-message">{{ toast.message }}</span>
+      </div>
+
+      <div class="toast-actions">
+        @if (toast.actionLabel) {
+          <button
+            type="button"
+            class="toast-action-btn"
+            (click)="toastService.triggerAction()"
+          >
+            {{ toast.actionLabel }}
+          </button>
+        }
+        <button
+          type="button"
+          class="toast-close-btn"
+          (click)="toastService.dismiss()"
+          aria-label="Dismiss notification"
+        >
+          &times;
+        </button>
+      </div>
+
+      @if (toast.durationMs > 0) {
+        <div
+          class="toast-progress-bar"
+          [style.animation-duration.ms]="toast.durationMs"
+        ></div>
+      }
+    </div>
+  </div>
+}

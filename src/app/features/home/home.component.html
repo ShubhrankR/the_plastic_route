@@ -1,82 +1,129 @@
-<div class="fade-in-up home-page">
+<div class="home-page">
   <!-- Hero Section -->
-  <section class="hero-section glass-card">
-    <div class="hero-badge">
-      <span class="badge badge-success">🛡️ Privacy-First & Zero Backend</span>
+  <section class="hero-section glass-card" appScrollReveal>
+    <div class="hero-badge-wrap">
+      <span class="badge badge-success hero-badge">🛡️ 100% Client-Side • Zero Backend • Zero Telemetry</span>
     </div>
+
     <h1 class="hero-title">
-      Maximize Your Credit Card Utility with <span class="text-gradient">Mathematical Precision</span>.
+      Swipe with <span class="text-gradient">Mathematical Certainty</span>.
     </h1>
+
     <p class="hero-subtitle text-secondary">
-      Stop guessing which card to swipe. Calculate reward multipliers, cashback yield, lounge eligibility, and interest-free billing leverage in real-time—100% locally in your browser.
+      Stop guessing which credit card earns maximum rewards. Calculate cashbacks, lounge access rules, and interest-free billing leverage in real-time—100% locally in your browser.
     </p>
 
     <div class="hero-cta-group">
-      <a routerLink="/optimizer" class="gradient-border-btn">
-        💳 Try Spend Optimizer
+      <a routerLink="/optimizer" class="btn btn-primary btn-hero">
+        ⚡ Launch Spend Optimizer
       </a>
-      <a routerLink="/tracker" class="gradient-border-btn">
-        📅 View Billing Tracker
+      <a routerLink="/portfolio" class="btn btn-outline btn-hero">
+        💼 Manage My Wallet
       </a>
       <a
         href="https://github.com/ShubhrankR/the_plastic_route"
         target="_blank"
         rel="noopener noreferrer"
-        class="gradient-border-btn"
+        class="hero-github-link"
       >
-        ⭐ GitHub Repository
+        ⭐ GitHub ↗
       </a>
     </div>
+
+    <!-- Quick Live Metrics Highlight -->
+    <div class="hero-highlights">
+      <div class="highlight-item">
+        <span class="highlight-icon">⚡</span>
+        <div class="highlight-text">
+          <span class="highlight-title">20+ Top Cards</span>
+          <span class="highlight-desc">Pre-loaded Indian catalog</span>
+        </div>
+      </div>
+      <div class="highlight-divider"></div>
+      <div class="highlight-item">
+        <span class="highlight-icon">📅</span>
+        <div class="highlight-text">
+          <span class="highlight-title">50-Day Leverage</span>
+          <span class="highlight-desc">Statement rollover calculation</span>
+        </div>
+      </div>
+      <div class="highlight-divider"></div>
+      <div class="highlight-item">
+        <span class="highlight-icon">🔒</span>
+        <div class="highlight-text">
+          <span class="highlight-title">Zero Cloud Sync</span>
+          <span class="highlight-desc">100% stored in IndexedDB</span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- About & Value Pillars Section -->
-  <section class="features-section">
+
+  <!-- Core Utility Modules Section -->
+  <section class="modules-section" appScrollReveal delay="0.1s">
     <div class="section-header">
-      <h2 class="fw-bold">What is The Plastic Route about?</h2>
-      <p class="text-muted">Unlike traditional financial apps, we never ask for your card numbers, passwords, or SMS permissions.</p>
+      <span class="badge badge-network">Core Capabilities</span>
+      <h2 class="fw-bold mt-1">Engineered for Everyday Financial Decisions</h2>
+      <p class="text-muted">Direct, clutter-free tools that tell you which card to swipe right before payment.</p>
     </div>
 
-    <div class="grid-3">
-      <div class="glass-card feature-card">
-        <div class="feature-icon">🔒</div>
-        <h4 class="fw-bold feature-title">100% Client-Side Privacy</h4>
-        <p class="text-secondary text-sm">
-          Zero servers, zero database logins, zero tracking cookies. All portfolio data is stored exclusively in your browser's local IndexedDB.
+    <div class="grid-3 mt-3">
+      <div class="glass-card module-card" appScrollReveal delay="0.1s">
+        <div class="module-icon-wrap">
+          <span class="module-icon">🎯</span>
+        </div>
+        <h3 class="fw-bold module-title">Spend Optimizer</h3>
+        <p class="text-secondary text-sm module-desc">
+          Instant category routing across Amazon, Flipkart, Fuel, Forex, UPI QR codes, Dining, and Travel with live return estimation.
         </p>
+        <a routerLink="/optimizer" class="module-link text-primary fw-semibold">
+          Try Optimizer →
+        </a>
       </div>
 
-      <div class="glass-card feature-card">
-        <div class="feature-icon">⚡</div>
-        <h4 class="fw-bold feature-title">Smart Spend Optimization</h4>
-        <p class="text-secondary text-sm">
-          Instantly routes your spend to the highest yielding card (Amazon, Flipkart, BPCL Fuel, Forex, UPI QR Scans, Dining, Travel, and Wallet loads).
+      <div class="glass-card module-card" appScrollReveal delay="0.15s">
+        <div class="module-icon-wrap">
+          <span class="module-icon">📅</span>
+        </div>
+        <h3 class="fw-bold module-title">Billing Cycle Tracker</h3>
+        <p class="text-secondary text-sm module-desc">
+          Real-time statement cycle analysis tells you if today's transaction rolls over into the next cycle for up to 50 interest-free days.
         </p>
+        <a routerLink="/tracker" class="module-link text-primary fw-semibold">
+          Check Cycles →
+        </a>
       </div>
 
-      <div class="glass-card feature-card">
-        <div class="feature-icon">📅</div>
-        <h4 class="fw-bold feature-title">Statement Cycle Leverage</h4>
-        <p class="text-secondary text-sm">
-          Real-time billing cycle analysis tells you if a transaction today hits your current bill or rolls over into the next cycle for up to 50 interest-free days.
+      <div class="glass-card module-card" appScrollReveal delay="0.2s">
+        <div class="module-icon-wrap">
+          <span class="module-icon">💼</span>
+        </div>
+        <h3 class="fw-bold module-title">Portfolio Manager</h3>
+        <p class="text-secondary text-sm module-desc">
+          Manage your card inventory, customize billing dates, verify airport lounge spend thresholds, and stay ahead of bank rule updates.
         </p>
+        <a routerLink="/portfolio" class="module-link text-primary fw-semibold">
+          Manage Wallet →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- How to Use Section -->
-  <section class="how-to-section glass-card">
+  <!-- How It Works Section -->
+  <section class="how-to-section glass-card" appScrollReveal delay="0.1s">
     <div class="section-header text-left">
-      <h2 class="fw-bold">How to Use The App</h2>
-      <p class="text-muted">Get started in three easy steps—no account creation required.</p>
+      <span class="badge badge-network">Quick Start</span>
+      <h2 class="fw-bold mt-1">How It Works</h2>
+      <p class="text-muted">Zero registration, zero password creation, 100% private.</p>
     </div>
 
-    <div class="steps-grid">
+    <div class="steps-grid mt-2">
       <div class="step-card">
         <div class="step-number">1</div>
         <div class="step-content">
-          <h4 class="fw-bold">Select Purchase Category</h4>
+          <h4 class="fw-bold">Pick Your Cards</h4>
           <p class="text-secondary text-sm">
-            Head to the <a routerLink="/optimizer" class="text-primary fw-semibold">Spend Optimizer</a>, choose your purchase category (e.g., Fuel, Dining, Amazon), and view your primary and backup card recommendations.
+            Add your active cards from our 20+ Indian Master Catalog or configure custom cards with your statement dates.
           </p>
         </div>
       </div>
@@ -84,9 +131,9 @@
       <div class="step-card">
         <div class="step-number">2</div>
         <div class="step-content">
-          <h4 class="fw-bold">Check Statement Rollover</h4>
+          <h4 class="fw-bold">Select Category</h4>
           <p class="text-secondary text-sm">
-            Check the <a routerLink="/tracker" class="text-primary fw-semibold">Billing Tracker</a> before making major payments to verify if today's transaction safely rolls over into the next statement cycle.
+            Before making a purchase, pick the spend category in the Optimizer to find the highest-yielding card route.
           </p>
         </div>
       </div>
@@ -94,47 +141,32 @@
       <div class="step-card">
         <div class="step-number">3</div>
         <div class="step-content">
-          <h4 class="fw-bold">Manage Your Portfolio</h4>
+          <h4 class="fw-bold">Maximize Grace Period</h4>
           <p class="text-secondary text-sm">
-            Visit <a routerLink="/portfolio" class="text-primary fw-semibold">My Portfolio</a> to view your active card inventory, inspect lounge access thresholds, and check statement generation dates.
+            Check the Tracker to verify statement cutoff dates and maximize interest-free cash flow buffer.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Community Contribution Section -->
-  <section class="community-section glass-card">
+  <!-- Community / Open Source Callout -->
+  <section class="community-section glass-card" appScrollReveal delay="0.1s">
     <div class="community-content">
-      <span class="badge badge-network">🤝 Open Source & Community Driven</span>
-      <h2 class="fw-bold community-title">Help Keep Credit Card Logic Sharp & Updated</h2>
+      <span class="badge badge-warning">🤝 Open Source & Community Driven</span>
+      <h2 class="fw-bold community-title">Community-Maintained Logic</h2>
       <p class="text-secondary community-desc">
-        Banking rules, lounge spending thresholds, and cashback caps change frequently. <strong>The Plastic Route</strong> is community-driven—anyone can submit rule updates or add new credit card templates via GitHub.
+        Bank rules, cashback caps, and lounge spend thresholds evolve regularly. The Plastic Route is open-source—anyone can propose rule updates or contribute new credit cards via GitHub pull requests.
       </p>
 
-      <div class="contrib-steps">
-        <div class="contrib-step">
-          <span class="step-badge">1</span>
-          <span>Fork the Repository on GitHub</span>
-        </div>
-        <div class="contrib-step">
-          <span class="step-badge">2</span>
-          <span>Update card rules in <code>src/app/core/data/cards.json</code></span>
-        </div>
-        <div class="contrib-step">
-          <span class="step-badge">3</span>
-          <span>Open a Pull Request for instant review</span>
-        </div>
-      </div>
-
-      <div class="community-cta">
+      <div class="community-actions">
         <a
           href="https://github.com/ShubhrankR/the_plastic_route"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-primary btn-lg"
+          class="btn btn-primary"
         >
-          🚀 Contribute on GitHub ↗
+          ⭐ View GitHub Repository ↗
         </a>
       </div>
     </div>

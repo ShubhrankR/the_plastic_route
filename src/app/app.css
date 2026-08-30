@@ -1,8 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .main-content {
+  flex: 1 0 auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  width: 100%;
 }
 
 .portfolio-section {
   margin-top: 1.5rem;
 }
+

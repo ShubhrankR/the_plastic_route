@@ -1,0 +1,73 @@
+:host {
+  display: contents;
+}
+
+.catalog-preview {
+  margin-top: 0.5rem;
+  background: var(--input-bg);
+  border-left: 3px solid var(--accent-primary);
+  padding: 0.85rem;
+}
+
+.lounge-section {
+  padding: 0.85rem;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .checkbox-container {
+  color: #0f172a;
+}
+
+[data-theme="light"] .catalog-preview {
+  background: #f8fafc;
+  border-left: 3px solid #059669;
+}
+
+[data-theme="light"] .lounge-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}

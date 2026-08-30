@@ -1,3 +1,8 @@
+.grid-2 {
+  align-items: stretch;
+}
+
 .portfolio-section {
   margin-top: 2rem;
 }
+
