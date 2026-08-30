@@ -30,15 +30,15 @@ const VALID_CATEGORIES = new Set([
 
 const VALID_NETWORKS = new Set(['Visa', 'Mastercard', 'RuPay', 'Amex', 'Diners Club']);
 
-const DANGEROUS_HTML_REGEX = /<[^>]*>|javascript:|data:\s*text\/html/i;
+const DANGEROUS_CONTENT_REGEX = /[<>]|(?:javascript|vbscript|data):/i;
 const ID_REGEX = /^[a-z0-9_]+$/;
 
 /**
- * Validates a string for presence of HTML tags or dangerous URI schemes.
+ * Validates a string for presence of angle brackets, HTML tags, or dangerous URI schemes.
  */
 function isDangerousString(str) {
   if (typeof str !== 'string') return false;
-  return DANGEROUS_HTML_REGEX.test(str);
+  return DANGEROUS_CONTENT_REGEX.test(str);
 }
 
 /**

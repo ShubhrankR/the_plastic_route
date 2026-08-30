@@ -11,15 +11,14 @@ const CARDS_JSON_PATH = path.join(ROOT_DIR, 'src', 'app', 'core', 'data', 'cards
 const WORKER_DIR = path.join(ROOT_DIR, 'worker');
 
 /**
- * Strips HTML tags, script sequences, and dangerous control characters from raw text.
+ * Strips angle brackets, dangerous URI schemes, and control characters from raw text.
  */
 function sanitizeText(str) {
   if (!str || typeof str !== 'string') return '';
-  return str
-    .replace(/<[^>]*>/g, '')
-    .replace(/javascript:/gi, '')
-    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
-    .trim();
+  let clean = str.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+  clean = clean.replace(/[<>]/g, '');
+  clean = clean.replace(/(?:javascript|vbscript|data):/gi, '');
+  return clean.trim();
 }
 
 /**
