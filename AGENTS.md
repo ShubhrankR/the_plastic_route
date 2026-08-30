@@ -101,9 +101,13 @@ Before marking any task as complete:
 
 ---
 
-## 🗺️ Extending Card Rules & Categories
+## 🗺️ Extending Card Rules, Datasets & Perplexity Research
 
 When adding a new credit card or spending category:
-1. Update `src/app/data/cards.json` with the new `CreditCard` entry.
-2. Update `SpendCategory` type union and `CategoryOption` array in `src/app/models/card.model.ts`.
-3. Update `CATEGORY_MAP` in `src/app/services/card.service.ts` to assign primary and backup cards.
+1. Refer to [`docs/PERPLEXITY_RESEARCH_INTEGRATION.md`](docs/PERPLEXITY_RESEARCH_INTEGRATION.md) for the standardized Perplexity Pro Deep Research protocol and schema.
+2. Ingest verified card objects into [`src/app/core/data/cards.json`](src/app/core/data/cards.json) (conforming to `MasterCatalogCard`).
+3. If new categories are required, update `SpendCategory` in [`src/app/core/models/card.model.ts`](src/app/core/models/card.model.ts).
+4. Update `CATEGORY_PRIORITY_MAP` in [`src/app/core/services/card.service.ts`](src/app/core/services/card.service.ts) to assign category champions.
+5. Update the master inventory index in [`docs/CARD_CATALOG_DATASET.md`](docs/CARD_CATALOG_DATASET.md).
+6. **NEVER modify `src/app/core/data/owner_portfolio.json`**.
+

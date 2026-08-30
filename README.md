@@ -53,6 +53,8 @@ Synchronizes scraped CSV/JSON datasets into `src/app/core/data/cards.json` while
 Detailed project roadmaps, scaling strategies, and architectural research are available in the [`docs/`](docs/) directory:
 
 - **[Development & Feature Roadmap (TODO)](docs/TODO.md)**: Origin philosophy, milestone history, Phase 1–5 feature checklists, backlog, and open research questions.
+- **[Master Credit Card Catalog & Bank Index](docs/CARD_CATALOG_DATASET.md)**: Comprehensive breakdown of all 165 cards across 11 banks in the dataset, reward structures, lounge access, and fees.
+- **[Perplexity Deep Research Integration](docs/PERPLEXITY_RESEARCH_INTEGRATION.md)**: Standardized research prompt templates, Perplexity Project setup, and autonomous dataset ingestion workflows.
 - **[User Onboarding Strategy](docs/USER_ONBOARDING_STRATEGY.md)**: Complete specification of the implemented FTUE onboarding gateway, data segregation, and route guard lifecycle.
 - **[Security, Privacy & App Navigation](docs/SECURITY_PRIVACY_AND_NAVIGATION.md)**: Security risk analysis, zero-credential storage guarantee, master catalog vs local wallet data separation, and route guard flows.
 - **[CSS Framework Research Report](docs/CSS_FRAMEWORK_RESEARCH_REPORT.md)**: Comprehensive evaluation of Tailwind CSS v4, Spartan UI, DaisyUI 5, PrimeNG, and Vanilla CSS for Angular 22.

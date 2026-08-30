@@ -28,22 +28,22 @@
   },
   {
     "id": "sbi_cashback",
-    "name": "SBI Cashback Card",
+    "name": "Cashback SBI Card",
     "bank": "SBI Card",
     "network": "Visa",
-    "optimizationVector": "5% unlimited online cashback across all e-commerce platforms without merchant locks.",
+    "optimizationVector": "5% cashback on all eligible online spends across e-commerce (capped at ₹2,000/month) + 1% on eligible offline spends (capped at ₹2,000/month) with auto statement credit.",
     "defaultBillingStart": 24,
     "defaultBillingEnd": 23,
     "loungeAccess": {
       "eligible": false
     },
-    "regulatoryUpdate": "2026 Update: Monthly cashback capped at ₹5,000; utilities and jewelry excluded.",
+    "regulatoryUpdate": "2026 Update: Capped at ₹2,000/month online and ₹2,000/month offline (₹4,000 total/cycle); fee waived on ₹2 Lakh annual spend; lounge access withdrawn.",
     "categories": [
       "amazon",
       "flipkart",
       "general"
     ],
-    "annualFee": "₹999 + GST",
+    "annualFee": "₹999 + GST (Waived on ₹2 Lakh spend)",
     "forexMarkup": "3.5%"
   },
   {
@@ -190,24 +190,22 @@
     "id": "hdfc_millennia",
     "name": "HDFC Millennia",
     "bank": "HDFC Bank",
-    "network": "Mastercard",
-    "optimizationVector": "5% cashback on Amazon, Flipkart, Swiggy, Zomato, Myntra, Uber, and Tata CLiQ.",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "5% cashback (as CashPoints) on 10 partner merchants (Amazon, Flipkart, Swiggy, Zomato, Myntra, Uber, Tata CLiQ, BookMyShow, Cult.fit, Sony LIV) capped at 1,000 points/month + 1% on all other spends.",
     "defaultBillingStart": 17,
     "defaultBillingEnd": 16,
     "loungeAccess": {
-      "eligible": true,
-      "spendThreshold": 100000,
-      "terminals": [
-        "Domestic"
-      ]
+      "eligible": false,
+      "notes": "No complimentary lounge access on current public variant"
     },
-    "regulatoryUpdate": "2026 Update: 5% merchant cashback capped at ₹1,000 per billing cycle.",
+    "regulatoryUpdate": "2026 Update: 5% partner cashback capped at 1,000 CashPoints/month; 1% other spends capped at 1,000 CashPoints/month. Fee waived on ₹1 Lakh spend.",
     "categories": [
       "amazon",
       "flipkart",
-      "dining_travel"
+      "dining_travel",
+      "general"
     ],
-    "annualFee": "₹1,000 + GST",
+    "annualFee": "₹1,000 + GST (Waived on ₹1 Lakh spend)",
     "forexMarkup": "3.5%"
   },
   {
@@ -230,24 +228,25 @@
   },
   {
     "id": "idfc_first_wealth",
-    "name": "IDFC First Wealth",
+    "name": "FIRST Wealth Credit Card",
     "bank": "IDFC FIRST Bank",
     "network": "Visa",
-    "optimizationVector": "10X rewards on Dining and International Travel from transaction one with zero expiry.",
+    "optimizationVector": "10X Reward Points on Dining, Travel, and International spends + higher in-app travel multipliers (25 RP/₹100 hotels, 15 RP/₹100 flights), 1.5% low forex markup, and 1 domestic + 1 international lounge per quarter.",
     "defaultBillingStart": 25,
     "defaultBillingEnd": 24,
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
       "terminals": [
-        "Domestic",
-        "International",
-        "Chennai T4"
+        "Domestic (1/qtr)",
+        "International (1/qtr via DreamFolks/Priority Pass)",
+        "Railway Lounges"
       ]
     },
-    "regulatoryUpdate": "2026 Update: BOGO movie tickets strictly require a ₹20k prior calendar month spend.",
+    "regulatoryUpdate": "2026 Update: Lounge access and BOGO movie tickets unlocked with ≥₹20k prior calendar month spend; 1.5% forex markup.",
     "categories": [
       "dining_travel",
+      "forex",
       "general"
     ],
     "annualFee": "Lifetime Free",
@@ -1646,5 +1645,2043 @@
     ],
     "annualFee": "₹5,000 + GST",
     "forexMarkup": "1.5%"
+  },
+  {
+    "id": "sbi_simplyclick",
+    "name": "SBI SimplyCLICK Credit Card",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "10X Reward Points on online partner brands (Apollo 24x7, BookMyShow, Cleartrip, Myntra) + 5X on all other online spends.",
+    "defaultBillingStart": 14,
+    "defaultBillingEnd": 13,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Cleartrip voucher redemption structure updated for milestone spends.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1 Lakh spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_simplysave",
+    "name": "SBI SimplySAVE Credit Card",
+    "bank": "SBI Card",
+    "network": "RuPay",
+    "optimizationVector": "10X Reward Points (2.5% return) on everyday offline categories: Dining, Movies, Grocery, and Departmental stores.",
+    "defaultBillingStart": 18,
+    "defaultBillingEnd": 17,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: RuPay variant enables seamless 10X points on UPI merchant spends.",
+    "categories": [
+      "general",
+      "dining_travel",
+      "upi"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1 Lakh spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_aurum",
+    "name": "SBI Card AURUM",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Super-premium metal card offering 4 RPs per ₹100, complimentary Club Marriott membership, 16 domestic + unlimited international lounge visits, and ₹1,000 monthly movie vouchers on BookMyShow.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International (DreamFolks / Priority Pass)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Dedicated luxury lifestyle concierge desk and WSJ/Mint subscriptions included.",
+    "categories": [
+      "dining_travel",
+      "general",
+      "forex"
+    ],
+    "annualFee": "₹9,999 + GST (Waived on ₹12 Lakh spend)",
+    "forexMarkup": "1.99%"
+  },
+  {
+    "id": "sbi_card_elite",
+    "name": "SBI Card ELITE",
+    "bank": "SBI Card",
+    "network": "Mastercard",
+    "optimizationVector": "5X Reward Points on Dining, Departmental stores, and Grocery spends + ₹6,000 yearly movie benefits (2 tickets up to ₹250 each/mo).",
+    "defaultBillingStart": 11,
+    "defaultBillingEnd": 10,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 6/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Club Vistara Silver tier and Trident Privilege Red membership benefits refreshed.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹4,999 + GST (Waived on ₹10 Lakh spend)",
+    "forexMarkup": "1.99%"
+  },
+  {
+    "id": "sbi_card_prime",
+    "name": "SBI Card PRIME",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "20 RPs per ₹100 on your birthday, 10 RPs per ₹100 on Dining, Grocery, Departmental, and Utility bill payments.",
+    "defaultBillingStart": 27,
+    "defaultBillingEnd": 26,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (8/yr)",
+        "International (Priority Pass 4/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1-year complimentary Club ITC Silver Tier status + milestone gift vouchers.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹2,999 + GST (Waived on ₹3 Lakh spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_card_pulse",
+    "name": "SBI Card PULSE",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Dedicated wellness card: complimentary FITPASS PRO 12-month membership, Netmeds First, 5X Reward Points on chemist, pharmacy, dining, and grocery spends.",
+    "defaultBillingStart": 16,
+    "defaultBillingEnd": 15,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Annual fee waived at ₹2 Lakh milestone; Noise smartwatch welcome gift.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹1,499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_irctc_premier",
+    "name": "IRCTC SBI Card Premier",
+    "bank": "SBI Card",
+    "network": "RuPay",
+    "optimizationVector": "Up to 10% value back as Reward Points on AC railway ticket bookings on irctc.co.in + 1% IRCTC transaction fee waiver and 8 complimentary Railway Lounge visits per year.",
+    "defaultBillingStart": 5,
+    "defaultBillingEnd": 4,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Railway Lounges (8/yr, max 2/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: RuPay integration allows linking to UPI apps with accelerated travel rewards.",
+    "categories": [
+      "dining_travel",
+      "upi"
+    ],
+    "annualFee": "₹1,499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_bpcl_standard",
+    "name": "BPCL SBI Card",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "4.25% value back (13X reward points + 1% fuel surcharge waiver) on fuel purchases at BPCL petrol pumps.",
+    "defaultBillingStart": 22,
+    "defaultBillingEnd": 21,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 5X reward points on grocery, departmental stores, and dining.",
+    "categories": [
+      "bpcl"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_reliance_prime",
+    "name": "Reliance SBI Card PRIME",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Up to 10 Reward Points per ₹100 on spends across Reliance Retail brands (Trends, Smart Bazaar, Digital, Ajio, Reliance Jewels) + ₹3,000 welcome voucher.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (8/yr)",
+        "International (Priority Pass 4/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Up to ₹8,750 milestone Reliance Retail vouchers based on annual spending.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹2,999 + GST (Waived on ₹3 Lakh spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_club_vistara_prime",
+    "name": "Club Vistara SBI Card PRIME",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Complimentary Club Vistara Silver Tier membership, 1 complimentary Premium Economy ticket on joining and up to 4 additional tickets on milestone spends.",
+    "defaultBillingStart": 9,
+    "defaultBillingEnd": 8,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (8/yr, max 2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Integration with Air India Maharaja Points conversion transition terms.",
+    "categories": [
+      "dining_travel"
+    ],
+    "annualFee": "₹2,999 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_paytm_select",
+    "name": "Paytm SBI Card SELECT",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "5% cashback on Paytm Mall, Movies, and Mini App spends + 2% cashback on other Paytm app transactions.",
+    "defaultBillingStart": 19,
+    "defaultBillingEnd": 18,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (4/yr, max 1/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Complimentary Paytm First membership + ₹750 cashback on first transaction.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹1,499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_unnati",
+    "name": "SBI Card Unnati",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Zero annual fee for 4 years, issued against a Fixed Deposit (FD) of ₹25,000 or more, earning 1 Reward Point per ₹100 spent.",
+    "defaultBillingStart": 25,
+    "defaultBillingEnd": 24,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Credit building entry-level card with 100% approval against lien FD.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹0 for first 4 years, ₹499 thereafter",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_pioneer_private",
+    "name": "Pioneer Private Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Invite-only private banking card with elevated rewards on travel and lifestyle spends, 1.5% low forex markup, and global airport lounge access for cardholders and guests via Priority Pass & DragonPass.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (Unlimited + Guest)",
+        "International (Priority Pass / DragonPass Unlimited)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Private banking luxury privileges with global concierge and lounge access.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹25,000 + GST (Nil joining for Private Clients)",
+    "forexMarkup": "1.5%"
+  },
+  {
+    "id": "indusind_pioneer_heritage",
+    "name": "Pioneer Heritage Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Travel-oriented luxury card with elevated reward points on travel, dining, and international spends (never-expiring points), 1.5% low forex markup, international lounges via Priority Pass, and complimentary golf games.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Golf privileges and international lounge access updated; non-expiring reward points.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹1,00,000 joining / ₹25,000 renewal",
+    "forexMarkup": "1.5%"
+  },
+  {
+    "id": "indusind_indulge",
+    "name": "Indulge Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Super-premium metal card with 0% forex markup on all foreign currency spends, up to 24 domestic + 16 international lounge visits per year via Priority Pass, golf privileges, and non-expiring reward points.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (6/qtr)",
+        "International (Priority Pass 4/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 0% zero forex markup on foreign currency spends; 40 complimentary airport lounge visits annually.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹75,000 joining / ₹10,000 renewal",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "indusind_crest",
+    "name": "Crest Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Super-premium lifestyle card with ~1-2.5% effective rewards on travel and dining (never-expiring points), 1.5% low forex markup, and complimentary domestic & international Priority Pass lounge visits.",
+    "defaultBillingStart": 4,
+    "defaultBillingEnd": 3,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1.5% low forex markup; luxury concierge and lifestyle travel perks.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹75,000 joining / ₹10,000 renewal",
+    "forexMarkup": "1.5%"
+  },
+  {
+    "id": "indusind_celesta",
+    "name": "Celesta Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Premium lifestyle card offering up to 3% rewards on travel, dining and luxury spends, 2.0% reduced forex markup, domestic and international Priority Pass lounge access, and golf privileges.",
+    "defaultBillingStart": 3,
+    "defaultBillingEnd": 2,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 2.0% reduced forex markup; golf privileges and non-expiring reward points.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹25,000 joining / ₹5,000 renewal",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "indusind_pioneer_legacy",
+    "name": "Pioneer Legacy Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "No-annual-fee relationship card offering premium reward rates on travel, dining and international spends, 1.8% reduced forex markup, and domestic + international Priority Pass lounge access.",
+    "defaultBillingStart": 10,
+    "defaultBillingEnd": 9,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Zero renewal fee for Pioneer relationship holders; 1.8% forex markup.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹5,000 - ₹50,000 joining / Nil renewal",
+    "forexMarkup": "1.8%"
+  },
+  {
+    "id": "indusind_solitaire",
+    "name": "Indus Solitaire Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Jewelry and lifestyle-focused premium card offering accelerated reward points on high-ticket luxury merchants, 2.0% reduced forex markup, and domestic & international airport lounge access.",
+    "defaultBillingStart": 8,
+    "defaultBillingEnd": 7,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Accelerated rewards on luxury and jewelry merchants; never-expiring points.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹30,000 joining / ₹10,000 renewal",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "indusind_pinnacle",
+    "name": "Pinnacle Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Up to ~2.5% value on online spends and travel (10X points on select online categories, 1 RP = ₹0.75 cash value) + 1.8% low forex markup, 2 BookMyShow movie tickets/mo, and domestic & international Priority Pass lounge access.",
+    "defaultBillingStart": 15,
+    "defaultBillingEnd": 14,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: High cash-value redemption rate (₹0.75/pt); 1.8% reduced forex markup.",
+    "categories": [
+      "general",
+      "dining_travel",
+      "forex"
+    ],
+    "annualFee": "₹15,000 joining / Nil renewal",
+    "forexMarkup": "1.8%"
+  },
+  {
+    "id": "indusind_legend",
+    "name": "Legend Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Lifetime free card earning 2 Reward Points per ₹100 on weekends (1 RP weekdays), 1.8% reduced forex markup, Buy 1 Get 1 on BookMyShow (up to ₹200/mo), and 8 complimentary international lounge visits/yr via Priority Pass ($35 fee waived).",
+    "defaultBillingStart": 20,
+    "defaultBillingEnd": 19,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "International (Priority Pass 8/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Up to 8 complimentary international lounge visits per year with $35 fee waiver on Priority Pass; 1.8% forex markup.",
+    "categories": [
+      "general",
+      "forex",
+      "dining_travel"
+    ],
+    "annualFee": "₹5,000 joining / Nil renewal (LTF)",
+    "forexMarkup": "1.8%"
+  },
+  {
+    "id": "indusind_nexxt",
+    "name": "Nexxt Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Hybrid interactive credit card with physical push-buttons and LED indicators allowing instant switching between Credit, POS EMI, and Reward Points redemption right at merchant checkout.",
+    "defaultBillingStart": 13,
+    "defaultBillingEnd": 12,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Physical button selector for on-the-spot EMI and rewards conversion; domestic lounge access.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹10,000 joining / Nil renewal",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_platinum_aura_edge",
+    "name": "Platinum Aura Edge Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard / RuPay",
+    "optimizationVector": "Lifetime free customizable reward card earning up to 4X points on chosen merchant bundles (Shopping, Dining, Travel, Fuel) with never-expiring points and UPI support on RuPay.",
+    "defaultBillingStart": 23,
+    "defaultBillingEnd": 22,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Customizable 4X reward plan configurations; UPI merchant payment support.",
+    "categories": [
+      "general",
+      "dining_travel",
+      "upi"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_platinum",
+    "name": "Platinum Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard / RuPay",
+    "optimizationVector": "Lifetime free everyday starter card earning ~1-1.5% rewards on retail spends with never-expiring points, zero annual charges, and RuPay UPI enabled.",
+    "defaultBillingStart": 16,
+    "defaultBillingEnd": 15,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Lifetime free everyday credit card with RuPay UPI support.",
+    "categories": [
+      "general",
+      "upi"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_duo",
+    "name": "Duo Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Unique dual plastic card with two EMV chips and magnetic stripes integrating both Credit Card and Debit Card accounts onto a single physical card.",
+    "defaultBillingStart": 18,
+    "defaultBillingEnd": 17,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Two-in-one credit and debit dual account plastic.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_epay_amex",
+    "name": "ePay Credit Card (Amex Platform)",
+    "bank": "IndusInd Bank",
+    "network": "Amex",
+    "optimizationVector": "Lifetime free American Express platform card earning accelerated reward points on online utility bill payments, recharges, and recurring online subscriptions.",
+    "defaultBillingStart": 21,
+    "defaultBillingEnd": 20,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Issued on American Express payment network with online utility rewards.",
+    "categories": [
+      "general",
+      "gaming_wallet"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_samman_rupay",
+    "name": "Samman Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "RuPay",
+    "optimizationVector": "Dedicated government & PSU employee card offering 1% statement cashback on retail and utility spends, zero fuel surcharge, non-expiring points, and RuPay UPI integration.",
+    "defaultBillingStart": 10,
+    "defaultBillingEnd": 9,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Government employee welfare card with 1% statement cashback and UPI support.",
+    "categories": [
+      "general",
+      "upi"
+    ],
+    "annualFee": "₹199 + GST (Nil for Govt Employees)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_eazydiner_signature",
+    "name": "EazyDiner IndusInd Bank Signature",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Flagship dining credit card: 10X points on EazyDiner Prime dining (up to 10% effective value), extra 25% instant discount (up to ₹1,000) on EazyDiner Pay, 2 BookMyShow movie tickets/mo, and 2 domestic lounge visits/quarter (8/yr).",
+    "defaultBillingStart": 7,
+    "defaultBillingEnd": 6,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Complimentary 1-year EazyDiner Prime membership and 8 domestic lounge visits/year.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹2,999 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_eazydiner_platinum",
+    "name": "EazyDiner IndusInd Bank Platinum",
+    "bank": "IndusInd Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Lifetime free entry-level dining card offering boosted reward points on EazyDiner restaurant bookings, dining discounts, and 3-month EazyDiner Prime membership.",
+    "defaultBillingStart": 11,
+    "defaultBillingEnd": 10,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Lifetime free dining card with EazyDiner Pay discounts.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_avios_infinite",
+    "name": "IndusInd Bank Avios Visa Infinite",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Co-branded frequent flyer powerhouse: Earn accelerated Avios on British Airways & Qatar Airways ticket bookings, 1.5% low forex markup, and international & domestic lounge visits via Priority Pass.",
+    "defaultBillingStart": 28,
+    "defaultBillingEnd": 27,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "International (Priority Pass)",
+        "Domestic (2/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1.5% discounted forex markup at preferred international destination; Avios milestone bonuses.",
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
+    "annualFee": "₹10,000 joining / ₹5,000 renewal",
+    "forexMarkup": "1.5%"
+  },
+  {
+    "id": "indusind_tiger",
+    "name": "IndusInd Bank Tiger Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "Visa",
+    "optimizationVector": "Lifetime free lifestyle travel card: Tiered rewards up to 6X points on travel & dining (1.2-7.2% effective return), 1.5% low forex markup, 8 domestic (2/qtr) + 2 international airport lounge visits/yr, and BookMyShow movie vouchers.",
+    "defaultBillingStart": 17,
+    "defaultBillingEnd": 16,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 2/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Genuine lifetime-free card with 1.5% low forex fee and 10 complimentary airport lounge visits annually.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "1.5%"
+  },
+  {
+    "id": "indusind_jio_bp_mobility",
+    "name": "IndusInd Bank Jio-bp Mobility+ Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "RuPay",
+    "optimizationVector": "Co-branded mobility and fuel card earning boosted reward points and cashback at Jio-bp fuel stations, EV charging points, and Wild Bean cafes + 1% fuel surcharge waiver.",
+    "defaultBillingStart": 25,
+    "defaultBillingEnd": 24,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: No renewal fee; boosted rewards at Jio-bp pumps and EV mobility chargers.",
+    "categories": [
+      "other_fuel",
+      "upi",
+      "general"
+    ],
+    "annualFee": "₹499 joining / Nil renewal",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "indusind_cred_rupay",
+    "name": "CRED IndusInd Bank RuPay Credit Card",
+    "bank": "IndusInd Bank",
+    "network": "RuPay",
+    "optimizationVector": "Lifetime free co-branded RuPay card integrated with the CRED app, earning accelerated CRED reward coins on merchant payments and UPI QR transactions.",
+    "defaultBillingStart": 27,
+    "defaultBillingEnd": 26,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Issued in collaboration with CRED; lifetime free with seamless UPI Scan & Pay.",
+    "categories": [
+      "upi",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_white_reserve",
+    "name": "Kotak White Reserve Metal",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Visa",
+    "optimizationVector": "Ultra-premium metal card with White Pass milestone system earning up to ₹2.5 Lakh annual valueback, complimentary Club Marriott membership, unlimited domestic & international lounge access with guest visits, and 2.0% forex markup.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (Unlimited + Guest)",
+        "International (Unlimited + Guest)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Private banking luxury metal tier with unlimited worldwide lounge access.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹12,500 + GST",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "kotak_white",
+    "name": "Kotak White Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Visa",
+    "optimizationVector": "Premium lifestyle card with White Pass valueback up to ₹27,000 annually upon hitting spend milestones, 8 domestic airport lounge visits/yr (2/qtr), and 4 international lounge visits via Priority Pass.",
+    "defaultBillingStart": 16,
+    "defaultBillingEnd": 15,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Tiered White Pass milestone redemption for luxury retail & flights.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹3,000 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_zen_signature",
+    "name": "Kotak Zen Signature",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Visa",
+    "optimizationVector": "10 Zen Points per ₹150 on Dining, Departmental stores, and International spends + 5 Zen Points on other retail categories, 8 domestic lounge visits/yr (2/qtr), and 3 international Priority Pass visits.",
+    "defaultBillingStart": 24,
+    "defaultBillingEnd": 23,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 3/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1.5 Lakh spend; 10 Zen points on dining.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹1,500 + GST (Waived on ₹1.5L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_mojo_platinum",
+    "name": "Kotak Mojo Platinum",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Visa",
+    "optimizationVector": "2.5 Mojo Points per ₹100 on all online spends (2.5% return) and 1 Mojo Point per ₹100 on all other spends + 8 domestic lounge visits per year (2/qtr).",
+    "defaultBillingStart": 11,
+    "defaultBillingEnd": 10,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1 Lakh annual spending.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹1,000 + GST (Waived on ₹1L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_royale_signature",
+    "name": "Kotak Royale Signature",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Visa",
+    "optimizationVector": "4X Reward Points on Dining, Hotels, Restaurants, and International spends (4 RPs per ₹150) + 2 complimentary domestic airport lounge visits per calendar quarter.",
+    "defaultBillingStart": 8,
+    "defaultBillingEnd": 7,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1 Lakh spend; fuel surcharge waiver active.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹999 + GST (Waived on ₹1L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_league_platinum",
+    "name": "Kotak League Platinum",
+    "bank": "Kotak Mahindra Bank",
+    "network": "RuPay",
+    "optimizationVector": "8X Reward Points on special categories (Travel, Airlines, Departmental Stores) + 4 movie tickets per quarter or reward points on milestone spends, with instant RuPay UPI linking.",
+    "defaultBillingStart": 22,
+    "defaultBillingEnd": 21,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 30000,
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: RuPay variant supports UPI payments with 8X reward points.",
+    "categories": [
+      "general",
+      "upi",
+      "dining_travel"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_indianoil_rupay",
+    "name": "Kotak IndianOil RuPay Credit Card",
+    "bank": "Kotak Mahindra Bank",
+    "network": "RuPay",
+    "optimizationVector": "Up to 5% valueback (24 Reward Points per ₹150) on fuel purchases at IndianOil pumps + 2% valueback on Grocery and Dining, and 1% fuel surcharge waiver on RuPay UPI payments.",
+    "defaultBillingStart": 14,
+    "defaultBillingEnd": 13,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Seamless UPI merchant payments on RuPay with accelerated fuel points.",
+    "categories": [
+      "other_fuel",
+      "upi"
+    ],
+    "annualFee": "₹449 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_pvr_inox_signature",
+    "name": "Kotak PVR INOX Signature",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Visa",
+    "optimizationVector": "Complimentary 2 PVR INOX movie tickets (up to ₹400 each) every billing cycle on monthly spends of ₹10,000 + 20% discount on food & beverages at PVR INOX cinemas.",
+    "defaultBillingStart": 19,
+    "defaultBillingEnd": 18,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Movie voucher benefits valid across combined PVR INOX screens nationwide.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_811_dreamdifferent",
+    "name": "Kotak 811 #DreamDifferent",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Visa",
+    "optimizationVector": "2 Reward Points per ₹100 on online retail spends and 1 RP per ₹100 offline, zero joining or renewal fee, 90% credit limit against fixed deposit with 100% approval.",
+    "defaultBillingStart": 26,
+    "defaultBillingEnd": 25,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Credit building entry-level card with 100% approval against lien FD.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "kotak_indigo_6e_rewards_xl",
+    "name": "Kotak IndiGo 6E Rewards XL",
+    "bank": "Kotak Mahindra Bank",
+    "network": "Mastercard",
+    "optimizationVector": "6% 6E Rewards on IndiGo flight bookings, 3% on Dining, Grocery, and Entertainment + 1 complimentary domestic flight voucher (up to ₹3,000) and 8 domestic airport lounge visits (2/qtr).",
+    "defaultBillingStart": 6,
+    "defaultBillingEnd": 5,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Free flight welcome ticket and 6% reward rate on IndiGo bookings.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹1,500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_moneyback_plus",
+    "name": "HDFC Bank MoneyBack Plus Credit Card",
+    "bank": "HDFC Bank",
+    "network": "Visa / Mastercard / RuPay",
+    "optimizationVector": "10X CashPoints (₹200 spend) on Amazon, Flipkart, Swiggy, BigBasket, and Reliance Smart Superstore + 2 CashPoints/₹200 on other retail spends.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Accelerated CashPoints capped per statement cycle; annual fee waived on ₹50,000 annual spends.",
+    "categories": [
+      "amazon",
+      "flipkart",
+      "general"
+    ],
+    "annualFee": "₹500 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_freedom",
+    "name": "HDFC Bank Freedom Credit Card",
+    "bank": "HDFC Bank",
+    "network": "Visa / Mastercard / RuPay",
+    "optimizationVector": "10X CashPoints on BigBasket, Swiggy, BookMyShow, OYO, and Uber + 1 CashPoint/₹200 on other eligible spends.",
+    "defaultBillingStart": 21,
+    "defaultBillingEnd": 20,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Everyday rewards card; renewal fee waived on annual spends of ₹50,000.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹500 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_diners_privilege",
+    "name": "HDFC Bank Diners Club Privilege",
+    "bank": "HDFC Bank",
+    "network": "Diners Club",
+    "optimizationVector": "4 Reward Points per ₹200 base (~1%), 5X (20 RPs/₹200) on Swiggy and Zomato + SmartBuy accelerated rewards for travel/vouchers and 2 domestic/international lounge visits per quarter.",
+    "defaultBillingStart": 4,
+    "defaultBillingEnd": 3,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic (2/qtr, spend-based)",
+        "International (2/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Low 2.0% forex markup; renewal fee waived on ₹3 Lakh annual spends.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹1,000 + GST (Waived on ₹3L spend)",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "hdfc_upi_rupay",
+    "name": "HDFC Bank UPI RuPay Credit Card",
+    "bank": "HDFC Bank",
+    "network": "RuPay",
+    "optimizationVector": "3% CashPoints on groceries, dining, and supermarket spends + 2% on utility bills and 1% on other UPI QR merchant payments.",
+    "defaultBillingStart": 15,
+    "defaultBillingEnd": 14,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Virtual digital issuance; category caps apply per billing statement cycle.",
+    "categories": [
+      "upi",
+      "general"
+    ],
+    "annualFee": "₹99 + GST / Free in select campaigns",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_phonepe_ultimo",
+    "name": "PhonePe HDFC Bank Ultimo Credit Card",
+    "bank": "HDFC Bank",
+    "network": "RuPay",
+    "optimizationVector": "10 Reward Points per ₹100 on PhonePe (recharges, bills, movies, utilities, hotels), 5 RPs/₹100 on major e-commerce brands, and 1 RP/₹100 on UPI Scan & Pay.",
+    "defaultBillingStart": 9,
+    "defaultBillingEnd": 8,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: RuPay UPI integration with milestone gift cards on app usage.",
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹999 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_phonepe_uno",
+    "name": "PhonePe HDFC Bank Uno Credit Card",
+    "bank": "HDFC Bank",
+    "network": "RuPay",
+    "optimizationVector": "2 Reward Points per ₹100 on PhonePe recharges & bill payments, 1 RP/₹100 on other e-commerce spends, and seamless UPI QR payments.",
+    "defaultBillingStart": 23,
+    "defaultBillingEnd": 22,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Entry-level UPI co-branded card with instant cashback vouchers on first transaction.",
+    "categories": [
+      "upi",
+      "general"
+    ],
+    "annualFee": "₹499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "hdfc_pixel_go",
+    "name": "HDFC Pixel Go Credit Card",
+    "bank": "HDFC Bank",
+    "network": "Visa",
+    "optimizationVector": "1% unlimited cashback on all eligible retail spends, delivered digitally on PayZapp with low annual fee.",
+    "defaultBillingStart": 27,
+    "defaultBillingEnd": 26,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Pure digital cashback credit card managed via PayZapp.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹250 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_first_millennia",
+    "name": "FIRST Millennia Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa / RuPay",
+    "optimizationVector": "Lifetime free card earning 10X Reward Points on Dining, Travel, International, and Birthday spends (from transaction one) + 3X on other retail spends, with 1% fuel surcharge waiver.",
+    "defaultBillingStart": 14,
+    "defaultBillingEnd": 13,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 10X reward multipliers activate from the first eligible rupee spent; 24-month reward point expiry.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general",
+      "upi"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_first_classic",
+    "name": "FIRST Classic Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa",
+    "optimizationVector": "Lifetime free everyday card earning 10X RPs on Dining, Travel & International spends, 3X on general retail, and 4 complimentary Railway Lounge visits per quarter.",
+    "defaultBillingStart": 18,
+    "defaultBillingEnd": 17,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Railway Lounges (4/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 4 complimentary railway lounge visits per quarter unlocked with ≥₹20,000 monthly spend.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_first_select",
+    "name": "FIRST Select Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Lifetime free card with 10X RPs on Dining/Travel/International, 1.99% low forex markup, 1 domestic airport lounge visit per quarter (4/yr) + 4 railway lounges per quarter (16/yr).",
+    "defaultBillingStart": 22,
+    "defaultBillingEnd": 21,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (1/qtr)",
+        "Railway Lounges (4/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1.99% reduced forex markup; lounge visits unlocked with ≥₹20k spend in prior calendar month.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "1.99%"
+  },
+  {
+    "id": "idfc_first_wow",
+    "name": "FIRST WOW! Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa",
+    "optimizationVector": "Zero forex markup (0% FX fee) secured against Fixed Deposit (FD ≥₹20k), earning 4 RPs per ₹150 (~0.67% return) with 100% approval and no credit history required.",
+    "defaultBillingStart": 5,
+    "defaultBillingEnd": 4,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 0% forex markup on all foreign currency spends; credit-builder card against FD.",
+    "categories": [
+      "forex",
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "idfc_first_wow_black",
+    "name": "FIRST WOW! Black Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Mastercard / RuPay",
+    "optimizationVector": "0% forex markup secured card with dual network (Mastercard + RuPay companion), 4 domestic airport lounge visits/yr, and accelerated travel rewards (50 RP/₹150 hotels, 30 RP/₹150 flights).",
+    "defaultBillingStart": 8,
+    "defaultBillingEnd": 7,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 0% forex markup + RuPay UPI companion with in-app travel boosts.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "upi",
+      "general"
+    ],
+    "annualFee": "₹750 + GST",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "idfc_quantum_plus",
+    "name": "Quantum+ Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa",
+    "optimizationVector": "10X Reward Points on online shopping, 5X on offline retail, and 3X on utilities & bill payments, with low annual fee.",
+    "defaultBillingStart": 11,
+    "defaultBillingEnd": 10,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Annual fee waived on ₹50k annual spend; 10X rewards on online merchants.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹199 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_first_digital_rupay",
+    "name": "FIRST Digital RuPay Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "RuPay",
+    "optimizationVector": "Lifetime free digital virtual card for seamless UPI QR payments, earning 3X Reward Points on UPI spends via IDFC app + low 1.5% international forex markup.",
+    "defaultBillingStart": 16,
+    "defaultBillingEnd": 15,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Instant virtual issuance with 1.5% low international forex fee.",
+    "categories": [
+      "upi",
+      "general",
+      "forex"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "1.5%"
+  },
+  {
+    "id": "idfc_first_earn_rupay",
+    "name": "FIRST EARN RuPay Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "RuPay",
+    "optimizationVector": "4 Reward Points per ₹150 on online spends, 2 RPs/₹150 offline, and seamless UPI QR code payments with welcome bonus points.",
+    "defaultBillingStart": 20,
+    "defaultBillingEnd": 19,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1 Lakh spend; UPI merchant payments supported.",
+    "categories": [
+      "upi",
+      "general"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_first_power_hpcl",
+    "name": "FIRST Power Credit Card (HPCL)",
+    "bank": "IDFC FIRST Bank",
+    "network": "RuPay / Visa",
+    "optimizationVector": "Up to 3.5% valueback (21X Reward Points per ₹150) on HPCL fuel via HP Pay + 15X on groceries, utilities, and IDFC FASTag, and 2X on UPI payments.",
+    "defaultBillingStart": 7,
+    "defaultBillingEnd": 6,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 21X HPCL fuel points plus 6 HP Pay coins/₹100 via HP Pay app.",
+    "categories": [
+      "other_fuel",
+      "upi",
+      "general"
+    ],
+    "annualFee": "₹199 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_first_power_plus_hpcl",
+    "name": "FIRST Power+ Credit Card (HPCL)",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa",
+    "optimizationVector": "Up to 6.5% savings (30X RPs/₹150) on HPCL fuel, groceries, utilities & FASTag + 60 RP/₹150 on hotels & 40 RP/₹150 on flights via IDFC app, with 1 domestic airport lounge visit per quarter (4/yr).",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 30X HPCL fuel and utility multiplier; 1 domestic lounge/quarter unlocked on ₹20k spend.",
+    "categories": [
+      "other_fuel",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1.5L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_first_swyp",
+    "name": "FIRST SWYP Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Mastercard",
+    "optimizationVector": "Youth-focused lifestyle card with 4 RPs per ₹150 online, 2 RPs/₹150 offline, and 16 complimentary Railway Lounge visits per year (4/qtr).",
+    "defaultBillingStart": 26,
+    "defaultBillingEnd": 25,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Railway Lounges (4/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Instant EMI conversions and 4 railway lounge visits per quarter.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1.5L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_hello_cashback",
+    "name": "Hello Cashback Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "RuPay",
+    "optimizationVector": "3% cashback on online spends up to ₹10,000/cycle and 5% cashback on incremental online spends above that (cap ₹1,000/cycle) + up to 6% on app travel bookings.",
+    "defaultBillingStart": 17,
+    "defaultBillingEnd": 16,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 5% online cashback tier; annual fee waived on ₹2 Lakh spend.",
+    "categories": [
+      "general",
+      "dining_travel",
+      "upi"
+    ],
+    "annualFee": "₹1,000 + GST (Waived on ₹2L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_ashva",
+    "name": "Ashva Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa Infinite Metal",
+    "optimizationVector": "Premium metal travel card with 1.0% low forex markup, 10X/3X/1X rewards with monthly spend boosts, and 4 domestic + 2 international airport lounge visits per quarter (16+8/yr) + railway lounges.",
+    "defaultBillingStart": 3,
+    "defaultBillingEnd": 2,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (4/qtr)",
+        "International (2/qtr)",
+        "Railway Lounges"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Ultra-low 1.0% forex markup; 16 domestic + 8 international lounge visits per year.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹2,999 + GST (Waived on ₹4-6L spend)",
+    "forexMarkup": "1.0%"
+  },
+  {
+    "id": "idfc_diamond_reserve",
+    "name": "Diamond Reserve Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa Infinite",
+    "optimizationVector": "0% forex markup mid-premium card with 10 RPs per ₹150 on incremental spends above ₹20k/month, up to 10% on app travel (60 RP/₹150 hotels, 40 RP/₹150 flights), and 2 domestic + 2 international lounges per quarter (8+8/yr).",
+    "defaultBillingStart": 10,
+    "defaultBillingEnd": 9,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (2/qtr)",
+        "Railway Lounges"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 0% forex markup on all foreign currency and DCC transactions; golf benefits.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹3,000 + GST (Waived on ₹6L spend)",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "idfc_mayura",
+    "name": "Mayura Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa Infinite Metal",
+    "optimizationVector": "Flagship 0% forex markup metal card: Up to 10% effective rewards on travel (40X points on flights/hotels via app), 5 RP/₹150 international, 4 domestic + 4 international lounges per quarter (16+16/yr), and complimentary monthly golf.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (4/qtr)",
+        "International (4/qtr)",
+        "Railway Lounges"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 0% forex markup; 32 complimentary airport lounge visits annually.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹5,999 + GST",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "idfc_gaj",
+    "name": "Gaj: Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa Infinite Metal",
+    "optimizationVector": "Invite-only private banking metal card: 0% forex markup, 5 RP/₹150 domestic (1 pt = ₹1 on travel → 3.3%), 50 RP/₹150 on in-app hotels (~33%), 4 domestic (incl 1 guest) + 4 international lounges per quarter (16+16/yr), and 4 railway lounges/qtr.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (4/qtr + 1 Guest)",
+        "International (4/qtr)",
+        "Railway Lounges (4/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 0% forex markup + guest lounge access privileges for private clients.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹12,500 + GST (Waived on ₹10L spend)",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "idfc_first_private",
+    "name": "FIRST Private Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa Infinite Metal",
+    "optimizationVector": "Ultra-HNI bespoke metal card: 0% forex markup, unlimited domestic and international lounge access with guest visits, flat 10 RP/₹150 domestic (~6.67% return on travel) and 5 RP/₹150 international (~3.33%).",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (Unlimited + Guest)",
+        "International (Unlimited + Guest)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 0% forex markup and unlimited worldwide lounge access for ultra-HNIs.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹50,000 joining / ₹25,000 renewal",
+    "forexMarkup": "0.0%"
+  },
+  {
+    "id": "idfc_club_vistara",
+    "name": "Club Vistara IDFC FIRST Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa",
+    "optimizationVector": "Co-branded frequent flyer card earning accelerated CV points on flights and retail spends (~2.4% return) + 2 domestic & 1 international lounge access per quarter (8+4/yr).",
+    "defaultBillingStart": 15,
+    "defaultBillingEnd": 14,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (1/qtr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Reduced 2.99% forex markup; Air India transition support.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹4,999 + GST",
+    "forexMarkup": "2.99%"
+  },
+  {
+    "id": "idfc_indigo",
+    "name": "IndiGo IDFC FIRST Credit Card",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa Metal / Plastic",
+    "optimizationVector": "Co-branded 6E Rewards on IndiGo flight bookings, 3–4X on travel categories, complimentary flight tickets on milestone spends, and domestic & international lounge access.",
+    "defaultBillingStart": 24,
+    "defaultBillingEnd": 23,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 6E Rewards currency on IndiGo; spend gate ₹20k monthly for lounge visits.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹4,000 (Metal) / ₹3,000 (Plastic) joining / ₹2,000 renewal",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_lic_classic",
+    "name": "LIC Classic Credit Card (IDFC)",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa",
+    "optimizationVector": "Lifetime free co-branded card earning 4X Reward Points on LIC insurance premium payments, 2X on groceries & online shopping, and 1X on other spends.",
+    "defaultBillingStart": 19,
+    "defaultBillingEnd": 18,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 4X points on LIC insurance premiums; lifetime free for LIC policyholders.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "idfc_lic_select",
+    "name": "LIC Select Credit Card (IDFC)",
+    "bank": "IDFC FIRST Bank",
+    "network": "Visa",
+    "optimizationVector": "Lifetime free premium LIC co-branded card with accelerated reward points on LIC premiums, travel and dining, and complimentary railway lounge visits.",
+    "defaultBillingStart": 28,
+    "defaultBillingEnd": 27,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 20000,
+      "terminals": [
+        "Railway Lounges"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Accelerated rewards on insurance premiums and railway lounge access.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_simplysave_upi_rupay",
+    "name": "SimplySAVE UPI RuPay Credit Card",
+    "bank": "SBI Card",
+    "network": "RuPay",
+    "optimizationVector": "Entry-level RuPay UPI credit card earning accelerated Reward Points on everyday grocery, dining, and merchant QR payments via UPI apps.",
+    "defaultBillingStart": 15,
+    "defaultBillingEnd": 14,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Seamless UPI integration on RuPay; annual fee waived on ₹1 Lakh spend.",
+    "categories": [
+      "upi",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_tata_neu_plus",
+    "name": "Tata Neu Plus SBI Card",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Co-branded Tata card earning ~2% NeuCoins on Tata Neu & partner brands, 1% on other retail spends, with domestic airport lounge access.",
+    "defaultBillingStart": 18,
+    "defaultBillingEnd": 17,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: NeuCoins valid for 12 months; renewal fee waived on ₹1 Lakh spend.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_tata_neu_infinity",
+    "name": "Tata Neu Infinity SBI Card",
+    "bank": "SBI Card",
+    "network": "Visa / Mastercard / RuPay",
+    "optimizationVector": "5% NeuCoins on Tata brands (BigBasket, Croma, Air India, Taj, 1mg), 1.5% on other retail & RuPay UPI spends, 1.99% low forex markup, and 8 domestic + 4 international lounges/year.",
+    "defaultBillingStart": 22,
+    "defaultBillingEnd": 21,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 75000,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1.99% low forex markup; domestic lounge access unlocked with ₹75k quarterly spend.",
+    "categories": [
+      "general",
+      "dining_travel",
+      "forex",
+      "upi"
+    ],
+    "annualFee": "₹1,499 + GST (Waived on ₹3L spend)",
+    "forexMarkup": "1.99%"
+  },
+  {
+    "id": "sbi_card_miles",
+    "name": "SBI Card MILES",
+    "bank": "SBI Card",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Entry travel card earning flexible Travel Credits on flights, hotels, and online travel agencies (OTAs) with airline conversion partners.",
+    "defaultBillingStart": 9,
+    "defaultBillingEnd": 8,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 50000,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Travel Credits redeemable across partnered airline and hotel programs.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹1,499 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_card_miles_prime",
+    "name": "SBI Card Miles Prime",
+    "bank": "SBI Card",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Mid-tier travel card with 2.5% reduced forex markup, elevated Travel Credits on flight/hotel bookings (~3-4% value), and 8 domestic + 4 international lounges per year.",
+    "defaultBillingStart": 14,
+    "defaultBillingEnd": 13,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 2.5% reduced forex markup; fee reversed on ₹10 Lakh annual spend.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹2,999 + GST (Waived on ₹10L spend)",
+    "forexMarkup": "2.5%"
+  },
+  {
+    "id": "sbi_card_miles_elite",
+    "name": "SBI Card Miles Elite",
+    "bank": "SBI Card",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Top flexible miles card: Up to 6 Travel Credits per ₹200 on travel spends, 1.99% ultra-low forex markup, and 8 domestic + 6 international lounge visits/year via Priority Pass.",
+    "defaultBillingStart": 2,
+    "defaultBillingEnd": 1,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 6/yr)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1.99% low forex fee; milestone bonus travel credits on ₹1L spend blocks.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹4,999 + GST (Waived on ₹15L spend)",
+    "forexMarkup": "1.99%"
+  },
+  {
+    "id": "sbi_irctc_platinum",
+    "name": "IRCTC SBI Platinum / RuPay Credit Card",
+    "bank": "SBI Card",
+    "network": "RuPay",
+    "optimizationVector": "Up to ~10% value back on IRCTC train ticket bookings via Reward Points + 1% fuel surcharge waiver and complimentary Railway Lounge visits.",
+    "defaultBillingStart": 20,
+    "defaultBillingEnd": 19,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Railway Lounges"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Direct 10% valueback on rail ticket bookings on irctc.co.in.",
+    "categories": [
+      "dining_travel",
+      "upi",
+      "general"
+    ],
+    "annualFee": "₹500 + GST",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_titan",
+    "name": "Titan SBI Card",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "6 Reward Points per ₹100 on Titan, Tanishq, Mia, Fastrack, and Zoya purchases (≈6% value in Titan vouchers) + 1% fuel surcharge waiver.",
+    "defaultBillingStart": 26,
+    "defaultBillingEnd": 25,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 6% valueback on jewelry and watches across Titan Group brands; fee waived on ₹3L spend.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹2,999 + GST (Waived on ₹3L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_shaurya",
+    "name": "Shaurya SBI Card",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Dedicated credit card for Indian defence personnel offering concessional finance charges (APR ~33%), reward points on everyday retail, and 1% fuel surcharge waiver.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Concessional APR for armed forces personnel.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹250 + GST / Nil for Defence",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "sbi_shaurya_select",
+    "name": "Shaurya Select SBI Card",
+    "bank": "SBI Card",
+    "network": "Visa",
+    "optimizationVector": "Premium defence card offering accelerated rewards on dining, groceries, and CSD canteen purchases + complimentary domestic airport lounge visits.",
+    "defaultBillingStart": 16,
+    "defaultBillingEnd": 15,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Accelerated rewards on CSD defence stores and dining.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹1,499 + GST / Concessional",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_platinum_chip",
+    "name": "ICICI Bank Platinum Chip Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Lifetime free starter card offering 2 Reward Points per ₹100 on retail spends, 1 RP/₹100 on utilities & insurance, and 1% fuel surcharge waiver.",
+    "defaultBillingStart": 10,
+    "defaultBillingEnd": 9,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Lifetime free starter credit card with contactless chip security.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_hpcl_coral",
+    "name": "ICICI Bank HPCL Coral Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "Up to ~3.5-4% valueback at HPCL petrol pumps (2.5% cashback + 1% fuel surcharge waiver capped at ₹100/mo) + 2 RP/₹100 on other retail spends.",
+    "defaultBillingStart": 14,
+    "defaultBillingEnd": 13,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 2.5% cashback equivalent on HPCL pumps; renewal fee waived on ₹50k spend.",
+    "categories": [
+      "other_fuel",
+      "general"
+    ],
+    "annualFee": "₹199 + GST (Waived on ₹50k spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_hpcl_super_saver",
+    "name": "ICICI Bank HPCL Super Saver Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "4% cashback on HPCL fuel transactions via HP Pay (cap ₹200/mo) + 20 Reward Points per ₹100 on departmental stores, utilities & groceries (5% return).",
+    "defaultBillingStart": 18,
+    "defaultBillingEnd": 17,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 20 RP/₹100 on grocery and utility bills; renewal fee waived on ₹1.5 Lakh annual spend.",
+    "categories": [
+      "other_fuel",
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹500 + GST (Waived on ₹1.5L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_expressions",
+    "name": "ICICI Bank Expressions Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Personalized design card earning 3 Reward Points per ₹100 on retail spends, Buy 1 Get 1 movie ticket offers on BookMyShow (up to ₹100/ticket), and 1% fuel surcharge waiver.",
+    "defaultBillingStart": 22,
+    "defaultBillingEnd": 21,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1.5 Lakh spend; customizable card photo face.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1.5L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_makemytrip_signature",
+    "name": "MakeMyTrip ICICI Bank Credit Card (Signature)",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "Co-branded travel card: Up to 6% myCash on MakeMyTrip hotel bookings, 3% on flight bookings, 1% on other spends, with domestic & international lounge access via DreamFolks.",
+    "defaultBillingStart": 6,
+    "defaultBillingEnd": 5,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 35000,
+      "terminals": [
+        "Domestic (1/qtr)",
+        "International (DreamFolks)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1 myCash = ₹1 on MakeMyTrip travel bookings; milestone MMT holiday vouchers.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹2,500 + GST (Waived on ₹2.5L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_parakram",
+    "name": "ICICI Bank Parakram Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa / RuPay",
+    "optimizationVector": "Lifetime free defence personnel credit card offering 5X Reward Points on CSD canteens, grocery & departmental stores, and 1% fuel surcharge waiver.",
+    "defaultBillingStart": 12,
+    "defaultBillingEnd": 11,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: Lifetime free for Indian armed forces and paramilitary forces.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "Lifetime Free",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_emeralde",
+    "name": "ICICI Bank Emeralde Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa / Mastercard",
+    "optimizationVector": "Super-premium lifestyle card with 2.0% reduced forex markup, 4 RPs per ₹100 on retail, unlimited domestic and international airport lounge access via Priority Pass & DreamFolks + monthly golf rounds.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic (Unlimited)",
+        "International (Unlimited Priority Pass / DreamFolks)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 2.0% reduced forex markup; unlimited worldwide lounge access for primary & add-on.",
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
+    "annualFee": "₹12,000 + GST (Waived on ₹10L spend)",
+    "forexMarkup": "2.0%"
+  },
+  {
+    "id": "icici_times_black",
+    "name": "Times Black ICICI Bank Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "Ultra-exclusive lifestyle card with 1.49% ultra-low forex markup, Times Prime annual membership, enhanced dining & entertainment rewards, and premium domestic & international lounge access.",
+    "defaultBillingStart": 1,
+    "defaultBillingEnd": 30,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: 1.49% ultra-low forex markup (one of the lowest in ICICI portfolio); Times Prime bundled.",
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹20,000 + GST",
+    "forexMarkup": "1.49%"
+  },
+  {
+    "id": "icici_adani_one_platinum",
+    "name": "Adani One ICICI Bank Platinum Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "Co-branded airport ecosystem card earning accelerated Adani Rewards on flights, duty-free, parking & utilities in Adani airports + domestic lounge access.",
+    "defaultBillingStart": 15,
+    "defaultBillingEnd": 14,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 35000,
+      "terminals": [
+        "Domestic (Adani Airports)"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Adani airport valet and lounge privileges; fee waived on ₹1.5L spend.",
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
+    "annualFee": "₹750 + GST (Waived on ₹1.5L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_manchester_united_platinum",
+    "name": "Manchester United ICICI Bank Platinum Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "Official Manchester United co-branded card earning bonus reward points on official MU merchandise, Megastore discounts, and match ticket privileges.",
+    "defaultBillingStart": 20,
+    "defaultBillingEnd": 19,
+    "loungeAccess": {
+      "eligible": false
+    },
+    "regulatoryUpdate": "2026 Update: 10% discount on Manchester United online Megastore purchases.",
+    "categories": [
+      "general"
+    ],
+    "annualFee": "₹499 + GST (Waived on ₹1.25L spend)",
+    "forexMarkup": "3.5%"
+  },
+  {
+    "id": "icici_parakram_select",
+    "name": "ICICI Bank Parakram Select Credit Card",
+    "bank": "ICICI Bank",
+    "network": "Visa",
+    "optimizationVector": "Premium defence personnel card offering accelerated 5X rewards on CSD stores, groceries, and dining + complimentary domestic airport and railway lounge access.",
+    "defaultBillingStart": 25,
+    "defaultBillingEnd": 24,
+    "loungeAccess": {
+      "eligible": true,
+      "spendThreshold": 0,
+      "terminals": [
+        "Domestic",
+        "Railway Lounges"
+      ]
+    },
+    "regulatoryUpdate": "2026 Update: Accelerated CSD canteen rewards and airport lounge access for defence officers.",
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
+    "annualFee": "₹1,000 + GST / Concessional",
+    "forexMarkup": "3.5%"
   }
 ]
+
+
+
+
+
