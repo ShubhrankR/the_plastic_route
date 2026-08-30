@@ -1,10 +1,16 @@
 <nav class="navbar">
   <div class="container navbar-inner">
     <a routerLink="/home" class="brand text-gradient">
-      <img src="the_plastic_route.svg" alt="The Plastic Route Logo" class="brand-logo" width="36" height="36">
+      <img
+        src="the_plastic_route.svg"
+        alt="The Plastic Route Logo"
+        class="brand-logo"
+        width="36"
+        height="36"
+      />
       <span>The Plastic Route.</span>
     </a>
-    
+
     @if (hasCompletedOnboarding()) {
       <div class="nav-links">
         <a routerLink="/home" routerLinkActive="active" class="nav-link">🏠 Home</a>

@@ -72,7 +72,7 @@ export class CardModal implements OnInit {
     const target = event.target as HTMLSelectElement;
     const catId = target.value;
     this.selectedCatalogId.set(catId);
-    const found = this.masterCatalog().find(c => c.id === catId);
+    const found = this.masterCatalog().find((c) => c.id === catId);
     if (found) {
       this.quickBillingStart.set(found.defaultBillingStart ?? 1);
       this.quickBillingEnd.set(found.defaultBillingEnd ?? 30);
@@ -80,7 +80,7 @@ export class CardModal implements OnInit {
   }
 
   getSelectedCatalogCard(): MasterCatalogCard | undefined {
-    return this.masterCatalog().find(c => c.id === this.selectedCatalogId());
+    return this.masterCatalog().find((c) => c.id === this.selectedCatalogId());
   }
 
   onQuickAddSubmit(): void {
@@ -97,7 +97,10 @@ export class CardModal implements OnInit {
     if (!this.name() || !this.billingCycleStart()) return;
 
     const terminals = this.loungeTerminals()
-      ? this.loungeTerminals().split(',').map(s => s.trim()).filter(Boolean)
+      ? this.loungeTerminals()
+          .split(',')
+          .map((s) => s.trim())
+          .filter(Boolean)
       : ['Domestic'];
 
     const card: CreditCard = {

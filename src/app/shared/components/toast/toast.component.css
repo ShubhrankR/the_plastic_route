@@ -18,7 +18,9 @@
   border-radius: var(--radius-lg);
   background: var(--bg-secondary);
   border: 1px solid var(--card-border-hover);
-  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.2);
+  box-shadow:
+    0 12px 35px -8px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(16, 185, 129, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,12 +31,16 @@
 
 .toast-warning {
   border-color: var(--accent-secondary);
-  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(245, 158, 11, 0.25);
+  box-shadow:
+    0 12px 35px -8px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(245, 158, 11, 0.25);
 }
 
 .toast-success {
   border-color: var(--accent-primary);
-  box-shadow: 0 12px 35px -8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.25);
+  box-shadow:
+    0 12px 35px -8px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(16, 185, 129, 0.25);
 }
 
 .toast-body {
@@ -72,7 +78,9 @@
   border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .toast-action-btn:hover {
@@ -107,8 +115,12 @@
 }
 
 @keyframes shrinkProgress {
-  from { width: 100%; }
-  to { width: 0%; }
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
 }
 
 @keyframes slideUp {

@@ -16,15 +16,209 @@ import { ToastService } from './toast.service';
  * Category-to-card ID fallback mapping for standard recommendation routes.
  */
 const CATEGORY_PRIORITY_MAP: Record<SpendCategory, string[]> = {
-  amazon: ['amazon_pay_icici', 'hdfc_infinia', 'hdfc_diners_black', 'hdfc_millennia', 'hdfc_moneyback_plus', 'hdfc_swiggy', 'sbi_cashback', 'sbi_simplyclick', 'indusind_pinnacle', 'federal_one_metal'],
-  flipkart: ['axis_flipkart', 'sbi_flipkart', 'hdfc_infinia', 'hdfc_diners_black', 'hdfc_millennia', 'hdfc_moneyback_plus', 'hdfc_swiggy', 'sbi_cashback', 'sbi_simplyclick', 'indusind_pinnacle', 'federal_one_metal'],
+  amazon: [
+    'amazon_pay_icici',
+    'hdfc_infinia',
+    'hdfc_diners_black',
+    'hdfc_millennia',
+    'hdfc_moneyback_plus',
+    'hdfc_swiggy',
+    'sbi_cashback',
+    'sbi_simplyclick',
+    'indusind_pinnacle',
+    'federal_one_metal',
+  ],
+  flipkart: [
+    'axis_flipkart',
+    'sbi_flipkart',
+    'hdfc_infinia',
+    'hdfc_diners_black',
+    'hdfc_millennia',
+    'hdfc_moneyback_plus',
+    'hdfc_swiggy',
+    'sbi_cashback',
+    'sbi_simplyclick',
+    'indusind_pinnacle',
+    'federal_one_metal',
+  ],
   bpcl: ['sbi_bpcl_octane', 'sbi_bpcl_standard', 'hdfc_indian_oil', 'federal_one_metal'],
-  other_fuel: ['axis_indianoil_rupay', 'idfc_first_power_plus_hpcl', 'icici_hpcl_super_saver', 'idfc_first_power_hpcl', 'icici_hpcl_coral', 'indusind_jio_bp_mobility', 'kotak_indianoil_rupay', 'hdfc_indian_oil', 'sbi_bpcl_octane', 'sbi_bpcl_standard', 'federal_one_metal'],
-  upi: ['axis_supermoney_rupay', 'tata_neu_infinity', 'idfc_first_digital_rupay', 'sbi_simplysave_upi_rupay', 'indusind_cred_rupay', 'idfc_hello_cashback', 'hdfc_phonepe_ultimo', 'hdfc_upi_rupay', 'sbi_simplysave', 'sbi_tata_neu_infinity', 'kotak_league_platinum', 'kotak_indianoil_rupay', 'idfc_first_power_hpcl', 'idfc_first_earn_rupay', 'sbi_irctc_platinum', 'sbi_irctc_premier', 'indusind_platinum_aura_edge', 'indusind_platinum', 'indusind_samman_rupay', 'tata_neu_plus', 'hdfc_phonepe_uno', 'hdfc_pixel_play', 'icici_coral_rupay', 'yes_bank_rupay', 'axis_indianoil_rupay', 'hdfc_indian_oil', 'federal_one_metal'],
-  forex: ['idfc_first_private', 'idfc_mayura', 'idfc_gaj', 'idfc_diamond_reserve', 'indusind_indulge', 'idfc_first_wow', 'idfc_first_wow_black', 'idfc_ashva', 'kotak_white_reserve', 'indusind_pioneer_private', 'indusind_pioneer_heritage', 'indusind_crest', 'indusind_tiger', 'indusind_legend', 'indusind_pioneer_legacy', 'indusind_solitaire', 'indusind_pinnacle', 'indusind_avios_infinite', 'icici_times_black', 'axis_burgundy_private', 'icici_emeralde_private', 'icici_emeralde', 'sbi_aurum', 'sbi_card_miles_elite', 'sbi_card_miles_prime', 'sbi_card_elite', 'sbi_tata_neu_infinity', 'idfc_first_wealth', 'idfc_first_select', 'hdfc_infinia', 'hdfc_diners_black', 'hdfc_diners_privilege', 'bobcard_scapia', 'axis_atlas', 'axis_magnus', 'axis_horizon', 'icici_adani_one_signature', 'hdfc_marriott_bonvoy', 'federal_one_metal'],
-  dining_travel: ['idfc_first_private', 'idfc_mayura', 'idfc_gaj', 'idfc_ashva', 'kotak_white_reserve', 'indusind_indulge', 'indusind_pioneer_private', 'indusind_pioneer_heritage', 'indusind_crest', 'indusind_eazydiner_signature', 'sbi_aurum', 'sbi_card_miles_elite', 'sbi_card_miles_prime', 'sbi_card_miles', 'hdfc_infinia', 'hdfc_diners_black', 'icici_emeralde_private', 'icici_emeralde', 'icici_times_black', 'indusind_avios_infinite', 'idfc_first_wealth', 'idfc_club_vistara', 'idfc_first_select', 'icici_makemytrip_signature', 'indusind_pioneer_legacy', 'indusind_solitaire', 'indusind_eazydiner_platinum', 'kotak_zen_signature', 'kotak_white', 'kotak_indigo_6e_rewards_xl', 'indusind_celesta', 'hdfc_swiggy', 'hdfc_diners_privilege', 'sbi_titan', 'axis_atlas', 'axis_magnus', 'sbi_card_elite', 'sbi_card_prime', 'sbi_club_vistara_prime', 'icici_sapphiro', 'icici_adani_one_signature', 'icici_adani_one_platinum', 'hdfc_marriott_bonvoy', 'hdfc_regalia_gold', 'amex_platinum_travel', 'axis_flipkart', 'sbi_irctc_premier', 'sbi_irctc_platinum', 'federal_one_metal'],
-  gaming_wallet: ['federal_one_metal', 'axis_ace', 'amex_mrcc', 'idfc_first_wealth', 'indusind_epay_amex'],
-  general: ['idfc_first_private', 'idfc_mayura', 'kotak_white_reserve', 'indusind_indulge', 'indusind_pioneer_private', 'indusind_pioneer_heritage', 'sbi_aurum', 'sbi_card_miles_elite', 'hdfc_infinia', 'hdfc_diners_black', 'icici_emeralde_private', 'icici_emeralde', 'idfc_first_wealth', 'sbi_cashback', 'idfc_hello_cashback', 'idfc_first_millennia', 'kotak_mojo_platinum', 'indusind_pinnacle', 'sbi_card_prime', 'sbi_card_elite', 'axis_ace', 'axis_magnus', 'hdfc_regalia_gold', 'hdfc_diners_privilege', 'kotak_zen_signature', 'indusind_celesta', 'indusind_tiger', 'sbi_simplyclick', 'sbi_simplysave', 'hdfc_moneyback_plus', 'hdfc_freedom', 'hdfc_pixel_go', 'federal_one_metal', 'federal_imperio'],
+  other_fuel: [
+    'axis_indianoil_rupay',
+    'idfc_first_power_plus_hpcl',
+    'icici_hpcl_super_saver',
+    'idfc_first_power_hpcl',
+    'icici_hpcl_coral',
+    'indusind_jio_bp_mobility',
+    'kotak_indianoil_rupay',
+    'hdfc_indian_oil',
+    'sbi_bpcl_octane',
+    'sbi_bpcl_standard',
+    'federal_one_metal',
+  ],
+  upi: [
+    'axis_supermoney_rupay',
+    'tata_neu_infinity',
+    'idfc_first_digital_rupay',
+    'sbi_simplysave_upi_rupay',
+    'indusind_cred_rupay',
+    'idfc_hello_cashback',
+    'hdfc_phonepe_ultimo',
+    'hdfc_upi_rupay',
+    'sbi_simplysave',
+    'sbi_tata_neu_infinity',
+    'kotak_league_platinum',
+    'kotak_indianoil_rupay',
+    'idfc_first_power_hpcl',
+    'idfc_first_earn_rupay',
+    'sbi_irctc_platinum',
+    'sbi_irctc_premier',
+    'indusind_platinum_aura_edge',
+    'indusind_platinum',
+    'indusind_samman_rupay',
+    'tata_neu_plus',
+    'hdfc_phonepe_uno',
+    'hdfc_pixel_play',
+    'icici_coral_rupay',
+    'yes_bank_rupay',
+    'axis_indianoil_rupay',
+    'hdfc_indian_oil',
+    'federal_one_metal',
+  ],
+  forex: [
+    'idfc_first_private',
+    'idfc_mayura',
+    'idfc_gaj',
+    'idfc_diamond_reserve',
+    'indusind_indulge',
+    'idfc_first_wow',
+    'idfc_first_wow_black',
+    'idfc_ashva',
+    'kotak_white_reserve',
+    'indusind_pioneer_private',
+    'indusind_pioneer_heritage',
+    'indusind_crest',
+    'indusind_tiger',
+    'indusind_legend',
+    'indusind_pioneer_legacy',
+    'indusind_solitaire',
+    'indusind_pinnacle',
+    'indusind_avios_infinite',
+    'icici_times_black',
+    'axis_burgundy_private',
+    'icici_emeralde_private',
+    'icici_emeralde',
+    'sbi_aurum',
+    'sbi_card_miles_elite',
+    'sbi_card_miles_prime',
+    'sbi_card_elite',
+    'sbi_tata_neu_infinity',
+    'idfc_first_wealth',
+    'idfc_first_select',
+    'hdfc_infinia',
+    'hdfc_diners_black',
+    'hdfc_diners_privilege',
+    'bobcard_scapia',
+    'axis_atlas',
+    'axis_magnus',
+    'axis_horizon',
+    'icici_adani_one_signature',
+    'hdfc_marriott_bonvoy',
+    'federal_one_metal',
+  ],
+  dining_travel: [
+    'idfc_first_private',
+    'idfc_mayura',
+    'idfc_gaj',
+    'idfc_ashva',
+    'kotak_white_reserve',
+    'indusind_indulge',
+    'indusind_pioneer_private',
+    'indusind_pioneer_heritage',
+    'indusind_crest',
+    'indusind_eazydiner_signature',
+    'sbi_aurum',
+    'sbi_card_miles_elite',
+    'sbi_card_miles_prime',
+    'sbi_card_miles',
+    'hdfc_infinia',
+    'hdfc_diners_black',
+    'icici_emeralde_private',
+    'icici_emeralde',
+    'icici_times_black',
+    'indusind_avios_infinite',
+    'idfc_first_wealth',
+    'idfc_club_vistara',
+    'idfc_first_select',
+    'icici_makemytrip_signature',
+    'indusind_pioneer_legacy',
+    'indusind_solitaire',
+    'indusind_eazydiner_platinum',
+    'kotak_zen_signature',
+    'kotak_white',
+    'kotak_indigo_6e_rewards_xl',
+    'indusind_celesta',
+    'hdfc_swiggy',
+    'hdfc_diners_privilege',
+    'sbi_titan',
+    'axis_atlas',
+    'axis_magnus',
+    'sbi_card_elite',
+    'sbi_card_prime',
+    'sbi_club_vistara_prime',
+    'icici_sapphiro',
+    'icici_adani_one_signature',
+    'icici_adani_one_platinum',
+    'hdfc_marriott_bonvoy',
+    'hdfc_regalia_gold',
+    'amex_platinum_travel',
+    'axis_flipkart',
+    'sbi_irctc_premier',
+    'sbi_irctc_platinum',
+    'federal_one_metal',
+  ],
+  gaming_wallet: [
+    'federal_one_metal',
+    'axis_ace',
+    'amex_mrcc',
+    'idfc_first_wealth',
+    'indusind_epay_amex',
+  ],
+  general: [
+    'idfc_first_private',
+    'idfc_mayura',
+    'kotak_white_reserve',
+    'indusind_indulge',
+    'indusind_pioneer_private',
+    'indusind_pioneer_heritage',
+    'sbi_aurum',
+    'sbi_card_miles_elite',
+    'hdfc_infinia',
+    'hdfc_diners_black',
+    'icici_emeralde_private',
+    'icici_emeralde',
+    'idfc_first_wealth',
+    'sbi_cashback',
+    'idfc_hello_cashback',
+    'idfc_first_millennia',
+    'kotak_mojo_platinum',
+    'indusind_pinnacle',
+    'sbi_card_prime',
+    'sbi_card_elite',
+    'axis_ace',
+    'axis_magnus',
+    'hdfc_regalia_gold',
+    'hdfc_diners_privilege',
+    'kotak_zen_signature',
+    'indusind_celesta',
+    'indusind_tiger',
+    'sbi_simplyclick',
+    'sbi_simplysave',
+    'hdfc_moneyback_plus',
+    'hdfc_freedom',
+    'hdfc_pixel_go',
+    'federal_one_metal',
+    'federal_imperio',
+  ],
 };
 
 /** Approximate savings rate multipliers for estimation */
@@ -35,7 +229,7 @@ const CATEGORY_SAVINGS_MULTIPLIER: Record<SpendCategory, number> = {
   other_fuel: 0.05,
   upi: 0.015,
   forex: 0.035,
-  dining_travel: 0.10,
+  dining_travel: 0.1,
   gaming_wallet: 0.02,
   general: 0.015,
 };
@@ -62,20 +256,20 @@ export class CardService {
 
   /** Whether the user has completed the First-Time User Experience onboarding. */
   readonly hasCompletedOnboarding = signal<boolean>(
-    typeof window !== 'undefined' ? localStorage.getItem('tpr_ftue_completed') === 'true' : false
+    typeof window !== 'undefined' ? localStorage.getItem('tpr_ftue_completed') === 'true' : false,
   );
 
   /** All available spend categories for forms and selectors. */
   readonly categories: CategoryOption[] = [
-    { value: 'amazon',        label: 'Amazon Shopping & Amazon Pay' },
-    { value: 'flipkart',      label: 'Flipkart / Myntra / Cleartrip' },
-    { value: 'bpcl',          label: 'Fuel (BPCL Pumps in Bengaluru)' },
-    { value: 'other_fuel',    label: 'Fuel (Other Pumps / IOCL)' },
-    { value: 'upi',           label: 'Street Vendors / UPI QR Scans' },
-    { value: 'forex',         label: 'International Travel / USD Subscriptions' },
+    { value: 'amazon', label: 'Amazon Shopping & Amazon Pay' },
+    { value: 'flipkart', label: 'Flipkart / Myntra / Cleartrip' },
+    { value: 'bpcl', label: 'Fuel (BPCL Pumps in Bengaluru)' },
+    { value: 'other_fuel', label: 'Fuel (Other Pumps / IOCL)' },
+    { value: 'upi', label: 'Street Vendors / UPI QR Scans' },
+    { value: 'forex', label: 'International Travel / USD Subscriptions' },
     { value: 'dining_travel', label: 'Dining Out & Flight Bookings' },
     { value: 'gaming_wallet', label: 'Online Gaming / Wallet Reloads' },
-    { value: 'general',       label: 'General Offline / Catch-All' },
+    { value: 'general', label: 'General Offline / Catch-All' },
   ];
 
   constructor() {
@@ -113,7 +307,8 @@ export class CardService {
         }
         this.hasCompletedOnboarding.set(true);
       } else {
-        const mode = typeof window !== 'undefined' ? localStorage.getItem('tpr_onboarding_mode') : null;
+        const mode =
+          typeof window !== 'undefined' ? localStorage.getItem('tpr_onboarding_mode') : null;
         if (mode === 'custom') {
           this.cards.set([]);
           this.isExploreMode.set(false);
@@ -172,7 +367,7 @@ export class CardService {
     const seededCards: CreditCard[] = [];
 
     for (const seed of ownerSeedData) {
-      const template = catalog.find(c => c.id === seed.id);
+      const template = catalog.find((c) => c.id === seed.id);
       if (template) {
         seededCards.push({
           ...template,
@@ -194,7 +389,7 @@ export class CardService {
    */
   loadExploreCatalog(): void {
     const catalog = this.masterCatalog();
-    const demoCards: CreditCard[] = catalog.slice(0, 10).map(item => ({
+    const demoCards: CreditCard[] = catalog.slice(0, 10).map((item) => ({
       ...item,
       billingCycleStart: item.defaultBillingStart ?? 1,
       billingCycleEnd: item.defaultBillingEnd ?? 30,
@@ -219,8 +414,8 @@ export class CardService {
     }
 
     await this.indexedDB.saveCard(card);
-    this.cards.update(list => {
-      const filtered = list.filter(c => c.id !== card.id);
+    this.cards.update((list) => {
+      const filtered = list.filter((c) => c.id !== card.id);
       return [...filtered, card];
     });
     this.isExploreMode.set(false);
@@ -231,7 +426,7 @@ export class CardService {
    */
   async updateCard(card: CreditCard): Promise<void> {
     await this.indexedDB.saveCard(card);
-    this.cards.update(list => list.map(c => (c.id === card.id ? card : c)));
+    this.cards.update((list) => list.map((c) => (c.id === card.id ? card : c)));
     this.isExploreMode.set(false);
   }
 
@@ -239,9 +434,9 @@ export class CardService {
    * Deletes a card from IndexedDB and updates the reactive state with an undo option.
    */
   async deleteCard(id: string): Promise<void> {
-    const cardToDelete = this.cards().find(c => c.id === id);
+    const cardToDelete = this.cards().find((c) => c.id === id);
     await this.indexedDB.deleteCard(id);
-    this.cards.update(list => list.filter(c => c.id !== id));
+    this.cards.update((list) => list.filter((c) => c.id !== id));
 
     if (cardToDelete) {
       this.toastService.show({
@@ -261,8 +456,8 @@ export class CardService {
    */
   async restoreCard(card: CreditCard): Promise<void> {
     await this.indexedDB.saveCard(card);
-    this.cards.update(list => {
-      if (list.some(c => c.id === card.id)) return list;
+    this.cards.update((list) => {
+      if (list.some((c) => c.id === card.id)) return list;
       return [...list, card];
     });
     this.isExploreMode.set(false);
@@ -276,8 +471,12 @@ export class CardService {
   /**
    * Quick-adds a card from the Master Catalog with user-provided billing dates.
    */
-  async quickAddFromCatalog(catalogId: string, billingStart?: number, billingEnd?: number): Promise<void> {
-    const template = this.masterCatalog().find(c => c.id === catalogId);
+  async quickAddFromCatalog(
+    catalogId: string,
+    billingStart?: number,
+    billingEnd?: number,
+  ): Promise<void> {
+    const template = this.masterCatalog().find((c) => c.id === catalogId);
     if (!template) return;
 
     const start = billingStart ?? template.defaultBillingStart ?? 1;
@@ -316,7 +515,7 @@ export class CardService {
 
   /** Find a card by its ID in current wallet. */
   findCard(id: string): CreditCard | undefined {
-    return this.cards().find(c => c.id === id);
+    return this.cards().find((c) => c.id === id);
   }
 
   /**
@@ -355,7 +554,7 @@ export class CardService {
     // 1. Find cards in wallet matching category priorities
     const matchedCards: CreditCard[] = [];
     for (const priorityId of priorityList) {
-      const match = currentCards.find(c => c.id === priorityId || c.id.startsWith(priorityId));
+      const match = currentCards.find((c) => c.id === priorityId || c.id.startsWith(priorityId));
       if (match && !matchedCards.includes(match)) {
         matchedCards.push(match);
       }
@@ -421,11 +620,7 @@ export class CardService {
       severity = daysLeft <= 3 ? 'danger' : 'warning';
     } else {
       targetCycle = 'Next Bill';
-      const nextStmtDate = new Date(
-        today.getFullYear(),
-        today.getMonth() + 1,
-        statementDay
-      );
+      const nextStmtDate = new Date(today.getFullYear(), today.getMonth() + 1, statementDay);
       const timeDiff = nextStmtDate.getTime() - today.getTime();
       daysLeft = Math.ceil(timeDiff / (1000 * 3600 * 24));
       severity = 'success';
@@ -438,8 +633,8 @@ export class CardService {
    * Returns billing cycle statuses for all cards in the active wallet.
    */
   getAllBillingCycleStatuses(): BillingCycleStatus[] {
-    return this.cards().map(card =>
-      this.calculateBillingCycleStatus(card.name, card.billingCycleStart)
+    return this.cards().map((card) =>
+      this.calculateBillingCycleStatus(card.name, card.billingCycleStart),
     );
   }
 }

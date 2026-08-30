@@ -12,7 +12,7 @@ export class BillingCycleTracker {
   private readonly cardService = inject(CardService);
 
   readonly statuses = computed<BillingCycleStatus[]>(() =>
-    this.cardService.getAllBillingCycleStatuses()
+    this.cardService.getAllBillingCycleStatuses(),
   );
 
   refresh(): void {
@@ -21,10 +21,14 @@ export class BillingCycleTracker {
 
   getBadgeClass(severity: string): string {
     switch (severity) {
-      case 'danger': return 'badge-danger';
-      case 'warning': return 'badge-warning';
-      case 'success': return 'badge-success';
-      default: return 'badge-network';
+      case 'danger':
+        return 'badge-danger';
+      case 'warning':
+        return 'badge-warning';
+      case 'success':
+        return 'badge-success';
+      default:
+        return 'badge-network';
     }
   }
 }

@@ -29,7 +29,11 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
     const nativeEl = this.el.nativeElement as HTMLElement;
 
     // Check for prefers-reduced-motion
-    if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
       nativeEl.classList.add(this.revealClass);
       return;
     }
@@ -55,7 +59,7 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
         {
           threshold: this.threshold,
           rootMargin: '0px 0px -40px 0px',
-        }
+        },
       );
 
       this.observer.observe(nativeEl);

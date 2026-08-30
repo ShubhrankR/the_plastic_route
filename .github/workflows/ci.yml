@@ -1,0 +1,44 @@
+name: Continuous Integration & Security Gate
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-build:
+    name: Code Quality, Schema & Security Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify Code Formatting
+        run: npm run format:check
+
+      - name: Validate Master Card Catalog Schema & Integrity
+        run: npm run cards:validate
+
+      - name: Verify Angular Production Compilation
+        run: npm run build
+
+      - name: Audit Dependencies for High-Severity Vulnerabilities
+        run: npm audit --audit-level=high

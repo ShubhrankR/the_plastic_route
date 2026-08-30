@@ -1,0 +1,104 @@
+name: 💳 Credit Card Dataset Request / Addition
+description: Propose adding a new credit card or updating bank reward rules in the master catalog.
+title: '[Card]: '
+labels: ['card-request', 'dataset-sync']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 💳 Master Credit Card Catalog Submission
+        Thank you for helping keep **The Plastic Route** bank catalog updated! Please provide details from the official bank MITC / schedule of charges.
+
+  - type: input
+    id: card_name
+    attributes:
+      label: Card Product Name
+      description: What is the official marketing name of the credit card?
+      placeholder: 'e.g., SBI Cashback Credit Card'
+    validations:
+      required: true
+
+  - type: input
+    id: bank_name
+    attributes:
+      label: Issuing Bank
+      description: Which bank or financial institution issues this card?
+      placeholder: 'e.g., SBI Card, HDFC Bank, Axis Bank'
+    validations:
+      required: true
+
+  - type: dropdown
+    id: network
+    attributes:
+      label: Card Network
+      description: Which network(s) is this card issued on?
+      options:
+        - Visa
+        - Mastercard
+        - RuPay
+        - Amex
+        - Diners Club
+        - Visa / RuPay
+        - Visa / Mastercard
+        - Mastercard / RuPay
+        - Visa / Mastercard / RuPay
+    validations:
+      required: true
+
+  - type: textarea
+    id: rewards_summary
+    attributes:
+      label: Reward Rate & Optimization Summary
+      description: Summarize the primary cashback/reward percentages, milestone benefits, or special multipliers.
+      placeholder: 'e.g., 5% cashback on all online retail spends (capped at ₹5,000/month), 1% on offline spends. Excludes fuel, rent, wallet reloads.'
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: categories
+    attributes:
+      label: Spending Categories
+      description: Check all transaction categories where this card excels.
+      options:
+        - label: Amazon Shopping & Amazon Pay (`amazon`)
+        - label: Flipkart / Myntra / Cleartrip (`flipkart`)
+        - label: BPCL Fuel (`bpcl`)
+        - label: Other Fuel - HPCL / IOCL (`other_fuel`)
+        - label: RuPay UPI QR Scans (`upi`)
+        - label: International Travel & Forex (`forex`)
+        - label: Dining Out & Flights (`dining_travel`)
+        - label: Gaming & Wallet Reloads (`gaming_wallet`)
+        - label: General / Catch-All spends (`general`)
+
+  - type: input
+    id: annual_fee
+    attributes:
+      label: Annual / Joining Fee & Waiver Conditions
+      placeholder: 'e.g., ₹999 + GST (Waived on ₹2,00,000 annual spend)'
+    validations:
+      required: false
+
+  - type: input
+    id: forex_markup
+    attributes:
+      label: Forex Markup Fee
+      placeholder: 'e.g., 3.5%, 2.0%, 0.0%'
+    validations:
+      required: false
+
+  - type: input
+    id: lounge_access
+    attributes:
+      label: Airport Lounge Access & Quarterly Spend Threshold
+      placeholder: 'e.g., 4 domestic lounge visits/yr (Spend ₹50,000 in previous quarter)'
+    validations:
+      required: false
+
+  - type: input
+    id: source_link
+    attributes:
+      label: Official Bank MITC / Tariff URL Citation
+      description: Link to the bank's official schedule of charges or terms page.
+      placeholder: 'https://www.sbicard.com/...'
+    validations:
+      required: true
