@@ -7,31 +7,30 @@ export const routes: Routes = [
     path: 'welcome',
     canActivate: [welcomeGuard],
     loadComponent: () =>
-      import('./features/welcome/welcome.component').then(m => m.WelcomeComponent),
+      import('./features/welcome/welcome.component').then((m) => m.WelcomeComponent),
   },
   {
     path: 'home',
     canActivate: [onboardingGuard],
-    loadComponent: () =>
-      import('./features/home/home.component').then(m => m.HomeComponent),
+    loadComponent: () => import('./features/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'optimizer',
     canActivate: [onboardingGuard],
     loadComponent: () =>
-      import('./features/optimizer/optimizer.component').then(m => m.OptimizerComponent),
+      import('./features/optimizer/optimizer.component').then((m) => m.OptimizerComponent),
   },
   {
     path: 'tracker',
     canActivate: [onboardingGuard],
     loadComponent: () =>
-      import('./features/tracker/tracker.component').then(m => m.TrackerComponent),
+      import('./features/tracker/tracker.component').then((m) => m.TrackerComponent),
   },
   {
     path: 'portfolio',
     canActivate: [onboardingGuard],
     loadComponent: () =>
-      import('./features/portfolio/portfolio.component').then(m => m.PortfolioComponent),
+      import('./features/portfolio/portfolio.component').then((m) => m.PortfolioComponent),
   },
   { path: '**', redirectTo: 'home' },
 ];

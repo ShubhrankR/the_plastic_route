@@ -45,7 +45,11 @@ export class PortfolioComponent {
     this.closeModal();
   }
 
-  async handleQuickAdd(data: { catalogId: string; billingStart: number; billingEnd: number }): Promise<void> {
+  async handleQuickAdd(data: {
+    catalogId: string;
+    billingStart: number;
+    billingEnd: number;
+  }): Promise<void> {
     await this.cardService.quickAddFromCatalog(data.catalogId, data.billingStart, data.billingEnd);
     this.closeModal();
   }

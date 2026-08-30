@@ -25,15 +25,16 @@ graph TD
 
 In your **Perplexity Pro Workspace**, create a dedicated Project:
 
-* **Title**: `the_plastic_route`
-* **Description**:
+- **Title**: `the_plastic_route`
+- **Description**:
+
   ```text
   An open-source, lightweight, privacy-first credit card spend optimizer and billing cycle tracker.
 
   Unlike closed ecosystems that scrape SMS or demand permissions, The Plastic Route runs 100% in the browser. This project workspace serves as the authoritative research and data engineering pipeline for harvesting accurate, verified 2026 Indian credit card catalogs.
   ```
 
-* **Instructions (System Prompt)**:
+- **Instructions (System Prompt)**:
   ```text
   You are an expert Indian credit card specialist, financial data engineer, and reward optimization analyst working for "The Plastic Route" (an open-source, privacy-first credit card optimizer).
 
@@ -45,7 +46,7 @@ In your **Perplexity Pro Workspace**, create a dedicated Project:
   1. Exact Card Name: Include official public name and card tier (e.g., Entry, Mid-Tier, Premium, Super-Premium Metal, Secured/FD-backed, Co-branded).
   2. Card Network: Specify all issued variants (Visa, Mastercard, RuPay, Diners Club, American Express).
   3. Joining & Annual Fees / Waivers: Exact joining and annual/renewal fees (in INR) and the specific annual spend milestone required for fee waiver. If genuine Lifetime Free (LTF), mark as "Lifetime Free".
-  4. Base vs. Accelerated Rewards: 
+  4. Base vs. Accelerated Rewards:
      - Base reward rate per ₹100 or ₹150 spend.
      - Accelerated merchant multipliers (e.g., Amazon, Flipkart, Swiggy, Zomato, Travel, Fuel, Utilities).
      - Strict monthly caps or category limits on bonus points/cashback.
@@ -71,6 +72,7 @@ In your **Perplexity Pro Workspace**, create a dedicated Project:
 With the project configured, you can harvest any bank using short, high-impact prompts:
 
 ### Single-Bank Deep Dive Prompt
+
 ```text
 List all currently active consumer credit cards issued by [BANK NAME, e.g. RBL Bank / Standard Chartered / HSBC / AU Small Finance Bank] in India.
 Provide the exhaustive Markdown comparison table and JSON dataset.
@@ -83,7 +85,9 @@ Provide the exhaustive Markdown comparison table and JSON dataset.
 When an AI agent receives data from Perplexity (either pasted in chat or saved in `worker/`):
 
 ### 1. Schema Validation
+
 Ensure every card adheres strictly to `MasterCatalogCard` in `src/app/core/models/card.model.ts`:
+
 - `id`: unique snake_case slug (e.g., `idfc_mayura`, `kotak_white_reserve`)
 - `name`: Clean official title
 - `bank`: Standardized bank name
@@ -97,16 +101,20 @@ Ensure every card adheres strictly to `MasterCatalogCard` in `src/app/core/model
 - `forexMarkup`: Standardized percentage string (e.g., `"0.0%"`, `"1.5%"`, `"3.5%"`)
 
 ### 2. Dataset Ingestion
+
 - Append/update entries in `src/app/core/data/cards.json`.
 - **CRITICAL**: Never modify or overwrite `src/app/core/data/owner_portfolio.json`.
 
 ### 3. Optimizer Priority Integration
+
 - If new cards are category champions (e.g. zero forex markup, high fuel rewards, or top dining discounts), add their IDs to `CATEGORY_PRIORITY_MAP` in `src/app/core/services/card.service.ts`.
 
 ### 4. Documentation Update
+
 - Update card count and bank tables in `docs/CARD_CATALOG_DATASET.md`.
 
 ### 5. Build Verification
+
 - Always execute:
   ```bash
   export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && nvm use 24.19.0 && npm run build

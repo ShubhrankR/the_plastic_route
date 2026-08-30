@@ -12,7 +12,7 @@ export class IndexedDBService {
   readonly isInitialized = signal<boolean>(false);
 
   constructor() {
-    this.initDB().catch(err => {
+    this.initDB().catch((err) => {
       console.warn('IndexedDB failed to initialize, falling back to in-memory/JSON store:', err);
     });
   }
@@ -159,4 +159,3 @@ export class IndexedDBService {
     }
   }
 }
-

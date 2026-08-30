@@ -8,12 +8,14 @@ This document tracks all active, upcoming, and long-term development tasks for *
 
 The idea for **The Plastic Route** was born out of a real-world problem: managing multiple credit cards and trying to remember which card yields the best benefits for a specific transaction at a specific time.
 
-While commercial FinTech applications (like CRED and others) offer reward tracking and bill payment, they often obscure the most critical information behind gamification, ads, or complex UX. They do not provide a direct, clear answer to the immediate question: *"I am about to pay for X. Which card should I swipe right now to maximize my rewards and interest-free period?"*
+While commercial FinTech applications (like CRED and others) offer reward tracking and bill payment, they often obscure the most critical information behind gamification, ads, or complex UX. They do not provide a direct, clear answer to the immediate question: _"I am about to pay for X. Which card should I swipe right now to maximize my rewards and interest-free period?"_
 
 The Plastic Route is designed to solve exactly this problem—providing immediate, actionable clarity without the noise.
 
 ### 🛡️ Privacy-First Data Architecture
+
 To build trust and ensure security, this application operates on a strict **Zero-Backend / Privacy-First** model.
+
 - **Client-Side Storage**: Users input their specific credit card portfolio (card name, network, billing cycle dates, and custom rules). All data is stored **exclusively** on the user's browser using `IndexedDB`.
 - **No Telemetry**: The app itself (and its creators) have absolutely zero access to the user's financial setup. There is no database, no server syncing, and no user accounts required.
 
@@ -22,7 +24,9 @@ To build trust and ensure security, this application operates on a strict **Zero
 ## ✅ Completed Milestones
 
 ### Phase 0 — Framework Migration (July 2026)
+
 The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22** with:
+
 - **Standalone components** (no NgModules)
 - **Angular Signals** for reactive state management
 - **TypeScript 6** with strict mode
@@ -31,6 +35,7 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 - **Externalized card data** in `cards.json` for easy community contributions
 
 ### Phase 1 — State, Routing & Design Foundation
+
 - [x] **Modern Angular Architecture Reorganization (`core/`, `features/`, `shared/`)**
   - [x] Reorganize codebase to modern Angular 22 standalone industry standards with Signals.
 - [x] **Angular Router Integration (`/router`)**
@@ -51,7 +56,7 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 ## ✅ Completed Milestones: Phase 2 — Dynamic User Portfolio & Customization (August 2026)
 
 - [x] **Dedicated First-Time User Experience (FTUE) & Route Guards**
-  - [x] Create dedicated, distraction-free Onboarding Gateway (`/#/welcome`) with balanced dual choice cards (*Explore Demo Mode* vs *Build Personal Wallet*).
+  - [x] Create dedicated, distraction-free Onboarding Gateway (`/#/welcome`) with balanced dual choice cards (_Explore Demo Mode_ vs _Build Personal Wallet_).
   - [x] Implement Angular Functional Route Guards (`onboardingGuard`, `welcomeGuard`) with synchronous `localStorage` verification to eliminate content flash (FOUC).
   - [x] Expose `hasCompletedOnboarding` reactive signal and clean up homepage layout.
 
@@ -77,8 +82,6 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
   - [x] Workspace Antigravity Skill (`.agents/skills/card-harvester/SKILL.md`) for on-demand web research, MITC parsing, and schema validation.
   - [x] Comprehensive card catalog expansion for major Indian banks (**Axis Bank**, **HDFC Bank**, **ICICI Bank**) with verified 2026 lounge spend criteria (e.g. ₹60k/₹75k thresholds) and SmartBuy voucher sub-caps.
   - [x] Guaranteed isolation of private seed data (`src/app/core/data/owner_portfolio.json`).
-
-
 
 ---
 

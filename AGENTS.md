@@ -9,13 +9,14 @@ This document defines the technical architecture, design principles, mandatory r
 **The Plastic Route** is an open-source, privacy-first, zero-backend credit card spend optimizer and billing cycle tracker. It helps users determine the optimal credit card for any transaction category to maximize reward multipliers, cashback, and interest-free repayment cycles.
 
 ### 🌐 Key Links & Quick Stats
-* **Live Demo**: [https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)
-* **Framework**: Angular 22 (Standalone Architecture)
-* **Language**: TypeScript 6 (Strict Mode)
-* **State Management**: Angular Signals
-* **Styling**: Custom CSS Design System (CSS Custom Properties, Emerald Forest & Gold palette, Glassmorphic UI)
-* **Brand Assets**: Custom SVG brand vector (`public/the_plastic_route.svg`) & Multi-Res Favicon (`public/favicon.ico`, `public/favicon.svg`)
-* **Data Storage**: Client-side (JSON dataset / IndexedDB integration)
+
+- **Live Demo**: [https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)
+- **Framework**: Angular 22 (Standalone Architecture)
+- **Language**: TypeScript 6 (Strict Mode)
+- **State Management**: Angular Signals
+- **Styling**: Custom CSS Design System (CSS Custom Properties, Emerald Forest & Gold palette, Glassmorphic UI)
+- **Brand Assets**: Custom SVG brand vector (`public/the_plastic_route.svg`) & Multi-Res Favicon (`public/favicon.ico`, `public/favicon.svg`)
+- **Data Storage**: Client-side (JSON dataset / IndexedDB integration)
 
 ---
 
@@ -53,6 +54,7 @@ This document defines the technical architecture, design principles, mandatory r
 ## ⚠️ Mandatory AI Rules & Coding Directives
 
 ### 1. 🔒 Git & Security Rules
+
 > [!CAUTION]
 > **NEVER EXECUTE GIT PUSH**: AI assistants MUST NEVER execute `git push` or attempt to push any commits/branches to remote repositories without explicit user permission.
 
@@ -60,9 +62,11 @@ This document defines the technical architecture, design principles, mandatory r
 > **PRE-COMMIT APPROVAL REQUIRED WITH YES/NO MENU**: Before executing any `git commit`, the AI assistant MUST explicitly showcase the proposed commit message, modified files, and prompt the user with a direct **Yes / No** option choice (using the interactive `ask_question` tool). Do NOT run `git commit` unless the user selects **Yes**.
 
 ### 2. 🟢 Environment & Build Requirements
+
 > [!IMPORTANT]
 > **Node.js Version Requirement**: The Angular CLI requires Node.js `≥ 24.15.0`.
 > Before running build commands, load the appropriate Node environment using nvm:
+>
 > ```bash
 > export NVM_DIR="$HOME/.nvm"
 > [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -71,27 +75,32 @@ This document defines the technical architecture, design principles, mandatory r
 > ```
 
 ### 3. 🅰️ Angular 22 & State Conventions
-* **100% Standalone Components**: Do NOT introduce `NgModules`. All new components must set `standalone: true`.
-* **Angular Signals**: Use Signals (`signal()`, `computed()`, `input()`, `output()`) for reactive component state and data flow.
-* **Modern Control Flow**: Always use native control flow blocks (`@if`, `@else`, `@for (item of items; track item.id)`) instead of legacy `*ngIf` / `*ngFor` directives.
-* **Dependency Injection**: Inject services using functional `inject()` or constructor injection.
+
+- **100% Standalone Components**: Do NOT introduce `NgModules`. All new components must set `standalone: true`.
+- **Angular Signals**: Use Signals (`signal()`, `computed()`, `input()`, `output()`) for reactive component state and data flow.
+- **Modern Control Flow**: Always use native control flow blocks (`@if`, `@else`, `@for (item of items; track item.id)`) instead of legacy `*ngIf` / `*ngFor` directives.
+- **Dependency Injection**: Inject services using functional `inject()` or constructor injection.
 
 ### 4. 🎨 Design System & Styling Rules (Strict Custom Vanilla CSS)
+
 > [!IMPORTANT]
 > **NO THIRD-PARTY CSS FRAMEWORKS**: The project strictly uses a 100% custom Vanilla CSS design system powered by CSS custom properties (`:root` tokens in `src/styles.css`). Do NOT install, import, or generate code for TailwindCSS, Bootstrap, DaisyUI, PrimeNG, or Angular Material. All utility classes, glassmorphic cards, animations, and theme styles MUST be authored in custom CSS.
-* **Custom CSS Variables**: Use CSS custom properties (`var(--bg-primary)`, `var(--card-bg)`, `var(--text-primary)`, `var(--link-color)`, etc.) for dark/light theme switching.
-* **Performance Guarantee**: Maintains an ultra-lightweight ~10 KB production CSS footprint with zero build-time PostCSS dependencies.
+
+- **Custom CSS Variables**: Use CSS custom properties (`var(--bg-primary)`, `var(--card-bg)`, `var(--text-primary)`, `var(--link-color)`, etc.) for dark/light theme switching.
+- **Performance Guarantee**: Maintains an ultra-lightweight ~10 KB production CSS footprint with zero build-time PostCSS dependencies.
 
 ### 5. 🛡️ Privacy-First Philosophy
-* **Zero Backend**: All card processing and optimization logic must run client-side in the browser.
-* **No Telemetry**: Do not introduce analytics, network logging, or third-party tracking scripts.
-* **IndexedDB Readiness**: Any future user portfolio storage feature must use local browser storage (`IndexedDBService` / `localStorage`).
+
+- **Zero Backend**: All card processing and optimization logic must run client-side in the browser.
+- **No Telemetry**: Do not introduce analytics, network logging, or third-party tracking scripts.
+- **IndexedDB Readiness**: Any future user portfolio storage feature must use local browser storage (`IndexedDBService` / `localStorage`).
 
 ---
 
 ## 🧪 Verification & Quality Control
 
 Before marking any task as complete:
+
 1. Ensure the Node environment is set to `24.19.0` using nvm.
 2. Execute the production build command:
    ```bash
@@ -104,10 +113,10 @@ Before marking any task as complete:
 ## 🗺️ Extending Card Rules, Datasets & Perplexity Research
 
 When adding a new credit card or spending category:
+
 1. Refer to [`docs/PERPLEXITY_RESEARCH_INTEGRATION.md`](docs/PERPLEXITY_RESEARCH_INTEGRATION.md) for the standardized Perplexity Pro Deep Research protocol and schema.
 2. Ingest verified card objects into [`src/app/core/data/cards.json`](src/app/core/data/cards.json) (conforming to `MasterCatalogCard`).
 3. If new categories are required, update `SpendCategory` in [`src/app/core/models/card.model.ts`](src/app/core/models/card.model.ts).
 4. Update `CATEGORY_PRIORITY_MAP` in [`src/app/core/services/card.service.ts`](src/app/core/services/card.service.ts) to assign category champions.
 5. Update the master inventory index in [`docs/CARD_CATALOG_DATASET.md`](docs/CARD_CATALOG_DATASET.md).
 6. **NEVER modify `src/app/core/data/owner_portfolio.json`**.
-
