@@ -24,15 +24,19 @@ This skill enables Antigravity assistants to fetch and synchronize credit card r
 When the user asks to fetch or sync card data:
 
 ### Step 1: Check Local Datasets & Perplexity Deep Research Exports
+
 Check if any new CSV, Markdown, or JSON files exist in `worker/` or if the user provided Perplexity Deep Research outputs in the chat.
 Refer to [`docs/PERPLEXITY_RESEARCH_INTEGRATION.md`](../../../docs/PERPLEXITY_RESEARCH_INTEGRATION.md) for detailed Perplexity Project configurations, prompt templates, and schema definitions.
 If CSV datasets exist in `worker/`, run:
+
 ```bash
 export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && nvm use 24.19.0 && npm run cards:sync
 ```
 
 ### Step 2: Web Traversal & Term Verification
+
 If the user specifies particular bank cards or latest devaluations to verify:
+
 1. Search official bank MITC documents or verified aggregators (e.g. TechnoFino, CardExpert).
 2. Extract fields conforming strictly to `MasterCatalogCard` in `src/app/core/models/card.model.ts`:
    - `id`: unique snake_case string (e.g., `axis_magnus`, `hdfc_infinia`)
@@ -47,15 +51,19 @@ If the user specifies particular bank cards or latest devaluations to verify:
    - `forexMarkup`: e.g., `"3.5%"` or `"0.0%"`
 
 ### Step 3: Isolation Rule
+
 > [!CAUTION]
 > **NEVER MODIFY `src/app/core/data/owner_portfolio.json`**. The owner seed portfolio must stay untouched. Only update `src/app/core/data/cards.json`.
 
 ### Step 4: Priority Map Update & Documentation Sync
+
 1. If new cards serve as category champions (forex, fuel, dining, upi, travel), add their IDs to `CATEGORY_PRIORITY_MAP` in `src/app/core/services/card.service.ts`.
 2. Update the master card inventory and bank tables in `docs/CARD_CATALOG_DATASET.md`.
 
 ### Step 5: Build Verification
+
 Always execute production build verification:
+
 ```bash
 export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" && nvm use 24.19.0 && npm run build
 ```

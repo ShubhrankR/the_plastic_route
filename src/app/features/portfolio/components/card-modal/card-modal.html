@@ -64,7 +64,9 @@
             <p class="text-sm fw-semibold text-secondary">{{ selected.optimizationVector }}</p>
             @if (selected.loungeAccess.eligible) {
               <div class="text-xs text-success mt-1">
-                ✈️ Lounge Access: Eligible (Threshold: ₹{{ selected.loungeAccess.spendThreshold ?? 0 }})
+                ✈️ Lounge Access: Eligible (Threshold: ₹{{
+                  selected.loungeAccess.spendThreshold ?? 0
+                }})
               </div>
             }
           </div>
@@ -229,7 +231,9 @@
                 />
               </div>
               <div class="form-group">
-                <label for="loungeTerms" class="form-label text-xs">Terminals (comma-separated)</label>
+                <label for="loungeTerms" class="form-label text-xs"
+                  >Terminals (comma-separated)</label
+                >
                 <input
                   type="text"
                   id="loungeTerms"
@@ -259,7 +263,11 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-ghost" (click)="close.emit()">Cancel</button>
-          <button type="submit" class="btn btn-primary" [disabled]="!name() || !billingCycleStart()">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!name() || !billingCycleStart()"
+          >
             💾 Save Card
           </button>
         </div>

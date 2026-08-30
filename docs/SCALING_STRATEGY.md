@@ -46,6 +46,7 @@ This document outlines the technical architecture, optimization strategies, and 
 As bank reward programs grow more intricate (e.g., HDFC Infinia vs SBI Cashback vs Axis Magnus), card rules cannot remain hardcoded in static `switch` statements.
 
 #### Declarative Rule Schema Specification
+
 ```json
 {
   "cardId": "sbi_cashback",
@@ -70,15 +71,17 @@ As bank reward programs grow more intricate (e.g., HDFC Infinia vs SBI Cashback 
 ```
 
 #### Multi-Vector Recommendation Algorithm
+
 When evaluating the optimal card for a transaction of amount $A$ in category $C$ on date $D$:
 
 $$\text{Score}(Card) = w_1 \cdot \text{CashbackValue}(A, C) + w_2 \cdot \text{RewardPointValue}(A, C) + w_3 \cdot \text{LiquidityValue}(D) - \text{Fees/Surcharges}$$
 
 Where:
-* **CashbackValue**: Evaluates percentage yield up to remaining monthly cap.
-* **RewardPointValue**: Multiplies base points by conversion rate (e.g., 1 point = ₹1 for Accor/flights vs ₹0.20 cash statement credit).
-* **LiquidityValue**: Scores interest-free leverage (e.g., 50 interest-free days remaining has higher financial utility than 5 days).
-* **Fees/Surcharges**: Accounts for FX markup (0% for Scapia vs 3.5% for standard cards), fuel surcharges, or payment gateway fees.
+
+- **CashbackValue**: Evaluates percentage yield up to remaining monthly cap.
+- **RewardPointValue**: Multiplies base points by conversion rate (e.g., 1 point = ₹1 for Accor/flights vs ₹0.20 cash statement credit).
+- **LiquidityValue**: Scores interest-free leverage (e.g., 50 interest-free days remaining has higher financial utility than 5 days).
+- **Fees/Surcharges**: Accounts for FX markup (0% for Scapia vs 3.5% for standard cards), fuel surcharges, or payment gateway fees.
 
 ---
 
@@ -86,14 +89,15 @@ Where:
 
 To handle users with 10–20 cards, historical spend tracking, and custom category overrides without sluggish UI rendering:
 
-| Storage Layer | Technology | Purpose |
-| :--- | :--- | :--- |
-| **Active State** | Angular Signals | UI reactivity, active tab, current recommendation |
-| **User Portfolio** | IndexedDB (`IndexedDBService`) | Storing personal card inventory, custom billing dates, credit limits |
-| **App Settings** | `localStorage` | Dark/light theme, default spend volume, preferred reward type |
-| **Offline Assets** | Service Worker (`CacheStorage`) | Pre-caching HTML/CSS/JS bundles & card logos |
+| Storage Layer      | Technology                      | Purpose                                                              |
+| :----------------- | :------------------------------ | :------------------------------------------------------------------- |
+| **Active State**   | Angular Signals                 | UI reactivity, active tab, current recommendation                    |
+| **User Portfolio** | IndexedDB (`IndexedDBService`)  | Storing personal card inventory, custom billing dates, credit limits |
+| **App Settings**   | `localStorage`                  | Dark/light theme, default spend volume, preferred reward type        |
+| **Offline Assets** | Service Worker (`CacheStorage`) | Pre-caching HTML/CSS/JS bundles & card logos                         |
 
 #### Offloading Computation to Web Workers
+
 For complex portfolio analysis (e.g., evaluating milestone rewards across 10 cards over 12 billing cycles), rule evaluation will run inside a dedicated **Web Worker** (`optimization.worker.ts`) to maintain 60 FPS smooth UI rendering.
 
 ---
@@ -106,7 +110,7 @@ To keep card rules updated without requiring backend servers:
 2. **Stale-While-Revalidate Fetch Engine**:
    - On app launch, the app serves local `cards.json` / IndexedDB immediately.
    - In the background, `CardService` fetches the latest `cards.json` raw release from GitHub CDN (`raw.githubusercontent.com`).
-   - If new card rules or regulatory updates are detected, the app notifies the user with a non-intrusive toast: *"Updated card reward rules available (v2026.08). Tap to update."*
+   - If new card rules or regulatory updates are detected, the app notifies the user with a non-intrusive toast: _"Updated card reward rules available (v2026.08). Tap to update."_
 3. **Open-Source CI Validation**:
    - GitHub Actions pipeline runs JSON Schema validation (`ajv` / Zod) on every Pull Request to ensure community submissions have valid fields, non-overlapping date ranges, and correct network types.
 

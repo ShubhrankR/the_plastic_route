@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { validateCards } from './validate-cards.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -8,6 +9,17 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const CARDS_JSON_PATH = path.join(ROOT_DIR, 'src', 'app', 'core', 'data', 'cards.json');
 const WORKER_DIR = path.join(ROOT_DIR, 'worker');
+
+/**
+ * Strips angle brackets, dangerous URI schemes, and control characters from raw text.
+ */
+function sanitizeText(str) {
+  if (!str || typeof str !== 'string') return '';
+  let clean = str.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+  clean = clean.replace(/[<>]/g, '');
+  clean = clean.replace(/(?:javascript|vbscript|data):/gi, '');
+  return clean.trim();
+}
 
 /**
  * Parses simple CSV content with support for quoted strings.
@@ -102,13 +114,43 @@ function inferCategories(name, rewardsText = '') {
   const categories = new Set();
 
   if (text.includes('amazon')) categories.add('amazon');
-  if (text.includes('flipkart') || text.includes('myntra') || text.includes('cleartrip')) categories.add('flipkart');
+  if (text.includes('flipkart') || text.includes('myntra') || text.includes('cleartrip'))
+    categories.add('flipkart');
   if (text.includes('bpcl')) categories.add('bpcl');
-  if (text.includes('fuel') || text.includes('iocl') || text.includes('indianoil') || text.includes('hpcl')) categories.add('other_fuel');
+  if (
+    text.includes('fuel') ||
+    text.includes('iocl') ||
+    text.includes('indianoil') ||
+    text.includes('hpcl')
+  )
+    categories.add('other_fuel');
   if (text.includes('upi') || text.includes('super.money')) categories.add('upi');
-  if (text.includes('forex') || text.includes('fx ') || text.includes('international') || text.includes('airline') || text.includes('miles')) categories.add('forex');
-  if (text.includes('dining') || text.includes('swiggy') || text.includes('zomato') || text.includes('travel') || text.includes('bogo') || text.includes('bookmyshow') || text.includes('movie') || text.includes('flight')) categories.add('dining_travel');
-  if (text.includes('utility') || text.includes('google pay') || text.includes('wallet') || text.includes('recharge')) categories.add('gaming_wallet');
+  if (
+    text.includes('forex') ||
+    text.includes('fx ') ||
+    text.includes('international') ||
+    text.includes('airline') ||
+    text.includes('miles')
+  )
+    categories.add('forex');
+  if (
+    text.includes('dining') ||
+    text.includes('swiggy') ||
+    text.includes('zomato') ||
+    text.includes('travel') ||
+    text.includes('bogo') ||
+    text.includes('bookmyshow') ||
+    text.includes('movie') ||
+    text.includes('flight')
+  )
+    categories.add('dining_travel');
+  if (
+    text.includes('utility') ||
+    text.includes('google pay') ||
+    text.includes('wallet') ||
+    text.includes('recharge')
+  )
+    categories.add('gaming_wallet');
 
   categories.add('general');
   return Array.from(categories);
@@ -119,12 +161,21 @@ function inferCategories(name, rewardsText = '') {
  */
 function inferLounge(loungeText = '') {
   const text = loungeText.toLowerCase();
-  if (!text || text.includes('none') || text.includes('no lounge') || text.includes('no airport lounge')) {
+  if (
+    !text ||
+    text.includes('none') ||
+    text.includes('no lounge') ||
+    text.includes('no airport lounge')
+  ) {
     return { eligible: false };
   }
 
   const terminals = ['Domestic'];
-  if (text.includes('international') || text.includes('priority pass') || text.includes('globally')) {
+  if (
+    text.includes('international') ||
+    text.includes('priority pass') ||
+    text.includes('globally')
+  ) {
     terminals.push('International');
   }
   if (text.includes('priority pass')) {
@@ -148,7 +199,12 @@ function inferLounge(loungeText = '') {
  */
 function inferAnnualFee(feeText = '') {
   const text = feeText.toLowerCase();
-  if (text.includes('lifetime‑free') || text.includes('lifetime-free') || text.includes('nil') || text.includes('free')) {
+  if (
+    text.includes('lifetime‑free') ||
+    text.includes('lifetime-free') ||
+    text.includes('nil') ||
+    text.includes('free')
+  ) {
     return 'Lifetime Free';
   }
   const match = feeText.match(/₹?([0-9,]+)/);
@@ -198,18 +254,23 @@ export async function syncCards() {
         const [cardName, rawNetwork, feeText, rewardsText, loungeText, fuelForexText] = row;
         if (!cardName || cardName.trim().length === 0) continue;
 
-        const cleanName = cardName.replace(/\s*\(.*?\)/g, '').trim();
+        const cleanName = sanitizeText(cardName.replace(/\s*\(.*?\)/g, '').trim());
         const id = slugify(cleanName);
-        const bank = inferBank(cleanName);
+        const bank = sanitizeText(inferBank(cleanName));
         const network = inferNetwork(cleanName, rawNetwork);
-        const annualFee = inferAnnualFee(feeText);
-        const forexMarkup = inferForex(fuelForexText);
+        const annualFee = sanitizeText(inferAnnualFee(feeText));
+        const forexMarkup = sanitizeText(inferForex(fuelForexText));
         const loungeAccess = inferLounge(loungeText);
         const categories = inferCategories(cleanName, rewardsText);
 
-        const optimizationVector = rewardsText
-          ? rewardsText.replace(/axis\.bank(\+\d+)?/gi, '').replace(/\s+/g, ' ').trim()
-          : `${cleanName} optimal reward mapping.`;
+        const optimizationVector = sanitizeText(
+          rewardsText
+            ? rewardsText
+                .replace(/axis\.bank(\+\d+)?/gi, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+            : `${cleanName} optimal reward mapping.`,
+        );
 
         const newEntry = {
           id,
@@ -241,8 +302,18 @@ export async function syncCards() {
   const updatedCatalog = Array.from(cardMap.values());
   fs.writeFileSync(CARDS_JSON_PATH, JSON.stringify(updatedCatalog, null, 2) + '\n', 'utf8');
 
-  console.log(`✅ Master Catalog Synchronized: ${updatedCatalog.length} total cards (${addedCount} added, ${updatedCount} updated).`);
+  console.log(
+    `✅ Master Catalog Synchronized: ${updatedCatalog.length} total cards (${addedCount} added, ${updatedCount} updated).`,
+  );
   console.log(`🔒 Owner seed portfolio in 'owner_portfolio.json' remained untouched.`);
+
+  console.log('🔍 Running schema validation on updated catalog...');
+  const validation = validateCards();
+  if (!validation.valid) {
+    console.error('❌ Synchronized dataset failed schema validation:', validation.errors);
+    throw new Error(`Synchronized catalog has ${validation.errors.length} validation errors.`);
+  }
+  console.log('✅ Synchronized dataset passed schema validation cleanly.');
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

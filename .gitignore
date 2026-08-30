@@ -45,5 +45,21 @@ Thumbs.db
 *:Zone.Identifier
 *Zone.Identifier
 
-# Legacy backup from migration
+# Secrets, Environment & Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+credentials.json
+*secret*
+*token*
+
+# Legacy backup & Scratch
 .legacy_backup/
+/scratch/
+

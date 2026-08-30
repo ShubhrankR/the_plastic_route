@@ -17,7 +17,8 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12), transparent 70%), var(--card-bg);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12), transparent 70%), var(--card-bg);
 }
 
 .hero-badge-wrap {
@@ -125,8 +126,6 @@
   height: 32px;
   background: var(--card-border);
 }
-
-
 
 /* ============================================
    Core Utility Modules Section

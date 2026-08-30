@@ -18,7 +18,7 @@ export class ThemeService {
 
   /** Toggle between dark and light themes. */
   toggleTheme(): void {
-    this.theme.update(t => (t === 'dark' ? 'light' : 'dark'));
+    this.theme.update((t) => (t === 'dark' ? 'light' : 'dark'));
   }
 
   /** Read the initial theme from localStorage, defaulting to 'dark'. */

@@ -27,21 +27,21 @@
   color: var(--text-primary);
 }
 
-[data-theme="light"] .checkbox-container {
+[data-theme='light'] .checkbox-container {
   color: #0f172a;
 }
 
-[data-theme="light"] .catalog-preview {
+[data-theme='light'] .catalog-preview {
   background: #f8fafc;
   border-left: 3px solid #059669;
 }
 
-[data-theme="light"] .lounge-section {
+[data-theme='light'] .lounge-section {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
 }
 
-.checkbox-container input[type="checkbox"] {
+.checkbox-container input[type='checkbox'] {
   width: 1.15rem;
   height: 1.15rem;
   accent-color: var(--accent-primary);

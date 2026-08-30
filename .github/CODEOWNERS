@@ -1,0 +1,10 @@
+# Global repository maintainer
+* @ShubhrankR
+
+# Security workflows & CI/CD
+/.github/ @ShubhrankR
+
+# Core data schemas, algorithms & services
+/src/app/core/ @ShubhrankR
+/scripts/ @ShubhrankR
+/worker/ @ShubhrankR
