@@ -9,13 +9,20 @@ updates:
     labels:
       - 'dependencies'
       - 'security'
+    ignore:
+      # Angular 22.x only supports TypeScript >=6.0 <6.1;
+      # ignore TS major bumps until Angular catches up.
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
     groups:
       angular:
         patterns:
           - '@angular*'
-          - 'typescript'
           - 'zone.js'
           - 'rxjs'
+      typescript:
+        patterns:
+          - 'typescript'
       dependencies:
         patterns:
           - '*'
