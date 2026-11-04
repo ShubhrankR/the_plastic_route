@@ -1,6 +1,6 @@
 # 📋 The Plastic Route — Development & Feature Roadmap
 
-This document tracks all active, upcoming, and long-term development tasks for **The Plastic Route**, including the project's origin philosophy, current production readiness, and phased feature roadmap.
+This document tracks all active, upcoming, and long-term development tasks for **The Plastic Route**, including the project's origin philosophy, architectural research questions, and phased feature roadmap.
 
 ---
 
@@ -18,15 +18,6 @@ To build trust and ensure security, this application operates on a strict **Zero
 
 - **Client-Side Storage**: Users input their specific credit card portfolio (card name, network, billing cycle dates, and custom rules). All data is stored **exclusively** on the user's browser using `IndexedDB`.
 - **No Telemetry**: The app itself (and its creators) have absolutely zero access to the user's financial setup. There is no database, no server syncing, and no user accounts required.
-- **Static Hosting**: 100% statically built client deployed directly to GitHub Pages with SPA hash-routing support.
-
----
-
-## 🚀 Current Production Status
-
-- **Live URL**: [https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)
-- **Catalog Size**: 182 credit cards across major Indian banks (HDFC, ICICI, SBI, Axis, IDFC FIRST, Kotak, IndusInd, Federal, etc.).
-- **CI / Security Gate**: Fully automated with CodeQL security scanning and zero high/critical vulnerabilities.
 
 ---
 
@@ -60,91 +51,86 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
   - [x] Create and integrate vector brand assets (`public/the_plastic_route.svg`, `public/favicon.svg`, `public/favicon.ico`).
   - [x] Add animated circulating conic-gradient borders on interactive hero CTA buttons.
 
-### Phase 2 — Dynamic User Portfolio & Customization (August 2026)
+---
+
+## ✅ Completed Milestones: Phase 2 — Dynamic User Portfolio & Customization (August 2026)
 
 - [x] **Dedicated First-Time User Experience (FTUE) & Route Guards**
   - [x] Create dedicated, distraction-free Onboarding Gateway (`/#/welcome`) with balanced dual choice cards (_Explore Demo Mode_ vs _Build Personal Wallet_).
   - [x] Implement Angular Functional Route Guards (`onboardingGuard`, `welcomeGuard`) with synchronous `localStorage` verification to eliminate content flash (FOUC).
   - [x] Expose `hasCompletedOnboarding` reactive signal and clean up homepage layout.
+
 - [x] **Toast Notifications & Undo Card Deletion System**
   - [x] Create reactive Signal-based `ToastService` and glassmorphic `<app-toast>` component.
   - [x] Implement interactive `[ ↩️ Undo ]` action to instantly restore deleted cards back to IndexedDB and reactive signals.
+
 - [x] **Scroll-Triggered Micro-Animations**
   - [x] Implement `ScrollRevealDirective` leveraging native `IntersectionObserver` with one-shot unobserve and `prefers-reduced-motion` compliance.
+
 - [x] **Light Mode Theming & Form Accessibility Overhaul**
   - [x] Soften light theme primary background to eye-friendly neutral off-white (`#f8fafc` / slate-50) and white cards (`#ffffff`).
   - [x] Upgrade light mode typography to high-contrast Slate-900 (`#0f172a`) and Slate-700 (`#334155`).
   - [x] Overhaul Edit Card modal contrast: crisp white input surfaces with slate borders, dark labels, and readable select dropdowns.
+
 - [x] **Extensible Data Models & Distinct Sample Dataset**
   - [x] Make `CreditCard` and `MasterCatalogCard` interfaces extensible with optional metadata fields and open index signatures (`[key: string]: any`).
   - [x] Randomize and distribute default statement dates in `cards.json` across the month, completely segregating demo data from the developer seed.
-- [x] **Autonomous Card Harvester & Multi-Bank Dataset Ingestion**
+
+- [x] **Autonomous Card Harvester & Multi-Bank Dataset Ingestion (August 2026)**
   - [x] Standalone Node.js dataset ingestion & normalization engine (`scripts/sync-cards.mjs` / `npm run cards:sync`).
-  - [x] Master card catalog expansion to 182 cards across all major Indian banks with 2026 lounge criteria and spend thresholds.
-  - [x] Strict schema validation suite (`scripts/validate-cards.mjs` / `npm run cards:validate`).
+  - [x] GitHub Actions automated workflow (`.github/workflows/sync-cards.yml`) with manual `workflow_dispatch` and weekly Monday cron triggers.
+  - [x] Workspace Antigravity Skill (`.agents/skills/card-harvester/SKILL.md`) for on-demand web research, MITC parsing, and schema validation.
+  - [x] Comprehensive card catalog expansion for major Indian banks (**Axis Bank**, **HDFC Bank**, **ICICI Bank**) with verified 2026 lounge spend criteria (e.g. ₹60k/₹75k thresholds) and SmartBuy voucher sub-caps.
   - [x] Guaranteed isolation of private seed data (`src/app/core/data/owner_portfolio.json`).
 
-### Phase 2.5 — CI/CD, Supply Chain & Security Hardening (November 2026)
-
-- [x] **Continuous Integration & Automated GitHub Pages Deployment**
-  - [x] Configure `.github/workflows/deploy.yml` with SPA 404 routing for hash navigation.
-  - [x] CodeQL Static Analysis workflow integration with zero security warnings.
-- [x] **Dependency Security Vulnerability Remediations**
-  - [x] Upgraded `@angular/build` and `@angular/cli` to `^22.2.5` to resolve high-severity advisories on `vite@8.3.0–8.3.2`.
-  - [x] Patched `fast-uri` to `3.1.9` resolving scheme spoofing and host canonicalization CVEs.
-  - [x] Resolved Dependabot `typescript@7.x` peer dependency conflict by separating TypeScript from the Angular dependency group and adding major version update ignore rules.
-  - [x] Tuned Dependabot execution cadence to monthly with adjusted PR limits (3 for npm, 2 for actions) to eliminate pipeline noise.
-
 ---
 
-## 🎯 Active & Upcoming Milestones
-
-### Phase 3 — Pre-Launch Polish & Data Sovereignty (Immediate Priority)
-
-- [ ] **Privacy-First Data Sovereignty (Backup & Restore)**
-  - [ ] Implement **Export Wallet (JSON)**: one-click file download containing user's cards and custom settings.
-  - [ ] Implement **Import Wallet (JSON)**: file upload validator to restore/migrate portfolio across devices or after clearing browser cache.
-  - [ ] Add explicit "Reset Wallet to Default" confirmation dialog.
-- [ ] **Public UI Clean-up**
-  - [ ] Remove/hide developer-only action (`📥 Load Developer Seed`) from public `/portfolio` view (keep accessible only via `?seed=owner` URL parameter for maintainers).
-  - [ ] Clean up legacy Bootstrap CSS classes embedded in `src/index.html`.
-- [ ] **Social Sharing & SEO Metadata**
-  - [ ] Add OpenGraph metadata tags (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`) to `src/index.html`.
-  - [ ] Add Twitter Card metadata tags (`twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`).
-  - [ ] Generate branded social share banner asset in `public/`.
-
-### Phase 4 — Progressive Web App (PWA) & Mobile Offline Engine
+## ⚡ Phase 3 — PWA & Offline Engine
 
 - [ ] **Progressive Web App Setup (`@angular/pwa`)**
-  - [ ] Configure Angular Service Worker (`ngsw-config.json`) for instant offline launch.
-  - [ ] Create `manifest.webmanifest` with brand assets, theme colors (`#064e3b` / `#0B0F19`), and app icons.
-  - [ ] Implement offline caching strategy for app shell and static card catalog.
-  - [ ] Add unobtrusive "Install App" prompt banner for mobile and desktop browsers.
-
-### Phase 5 — Advanced Rule Engine & Spend Analytics
-
-- [ ] **Dynamic Rule Evaluation Engine**
-  - [ ] Support custom user-level card reward overrides (e.g. user-specific negotiated fee waiver, customized Swiggy/Zomato cashback rates).
-  - [ ] Support quarterly and annual milestone reward tracking (e.g., spend ₹1 Lakh in a quarter to trigger voucher alerts).
-  - [ ] Excluded category detection (automatic warning when a category like fuel or rent does not earn points on a selected card).
-- [ ] **Airport Lounge Terminal Checker**
-  - [ ] Airport/terminal search interface to view lounge access eligibility and quarter spend qualification requirements per card.
-- [ ] **Forex & Multi-Currency Comparison**
-  - [ ] Compare zero-forex cards vs standard markup cards (including GST on forex markups).
-
-### Phase 6 — Test Suite & Community Ecosystem
-
-- [ ] **Automated Unit & Integration Test Suite**
-  - [ ] Add Jasmine/Karma or Vitest unit tests (`*.spec.ts`) for `CardService` optimization algorithms and billing cycle calculations.
-  - [ ] Add tests for `IndexedDBService` storage operations and FTUE route guards.
-- [ ] **Community Contribution Guidelines**
-  - [ ] Document `cards.json` schema specification in `docs/` for open-source contributors.
-  - [ ] Create dedicated GitHub Issue templates for "New Card Request" and "Bank Devaluation Update".
+  - [ ] Execute `ng add @angular/pwa` to configure Service Worker (`ngsw-config.json`).
+  - [ ] Create `manifest.webmanifest` with brand assets, theme color (`#0B0F19`), and app icons.
+  - [ ] Implement offline caching strategy for app shell and static card definitions.
+  - [ ] Add "Install App" PWA prompt banner for mobile and desktop browsers.
 
 ---
 
-## ❓ Resolved & Open Architectural Decisions
+## 🧠 Phase 4 — Rule Engine & Spend Analytics
 
-1. **Pre-loaded Card Database** ✅ _Resolved_: Implemented via `cards.json` with 182 verified cards and interactive "Quick Add from Catalog" modal.
-2. **Rule Engine Balance** 🔄 _In Progress_: Static baseline rules maintained in catalog via automated weekly harvester; user overrides to be added in Phase 5 without requiring code edits.
-3. **PWA Mobile-First Usage** 🔜 _Prioritized for Phase 4_: Critical for in-store checkout decisions where cell signal may be spotty.
+- [ ] **Dynamic Rule Evaluation Engine**
+  - [ ] Design a JSON rule schema capable of modeling complex reward structures (e.g., 5% cashback up to ₹1,000/month, 2x reward points on forex above ₹50k, excluded categories like wallet load/fuel).
+  - [ ] Support custom user overrides (e.g., user wants to force a specific card for fuel).
+  - [ ] Support milestone reward tracking (e.g., spend ₹1 Lakh in a quarter to get milestone voucher).
+
+- [ ] **Privacy-First Data Management**
+  - [ ] Implement Export Data feature (JSON file download containing user's card setup and custom rules).
+  - [ ] Implement Import Data feature (JSON file upload to restore portfolio on a new browser/device).
+  - [ ] Add "Reset All Data" option with confirmation modal.
+
+---
+
+## 🌐 Phase 5 — Community Ecosystem & Open Source
+
+- [ ] **Community Contribution Guidelines**
+  - [ ] Document `cards.json` schema specification in `docs/` for open-source contributors.
+  - [ ] Add automated JSON validation schema using Zod or JSON Schema in GitHub Actions.
+  - [ ] Create a dedicated issue template for "New Card Request / Regulatory Update".
+
+---
+
+## 📌 Backlog & Icebox
+
+- [ ] Multi-currency support (USD, EUR, GBP, AED FX markups and zero-forex card comparison).
+- [ ] Lounge access terminal finder (search terminal/airport to see eligible cards).
+- [ ] Dark/Light mode scheduled auto-switching based on system preferences.
+
+---
+
+## ❓ Open Research Questions
+
+> [!IMPORTANT]
+> These questions will guide upcoming architectural decisions.
+
+1. **Pre-loaded Card Database**: Should we maintain a "Master Database" of popular Indian credit cards that users can select from a dropdown to quickly populate their local IndexedDB, rather than typing all the details manually?
+2. **Rule Engine Complexity**: Credit card rules change frequently (e.g., the 2026 gaming fee updates). Should we build a dynamic rule engine where users can tweak the logic themselves, or should the community maintain the logic via open-source PRs?
+3. **Offline Support (PWA)**: Should we configure the architecture as a Progressive Web App (PWA) so users can install it on their phones and use it completely offline?
