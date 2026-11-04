@@ -4,11 +4,10 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'weekly'
-    open-pull-requests-limit: 5
+      interval: 'monthly'
+    open-pull-requests-limit: 3
     labels:
       - 'dependencies'
-      - 'security'
     ignore:
       # Angular 22.x only supports TypeScript >=6.0 <6.1;
       # ignore TS major bumps until Angular catches up.
@@ -31,10 +30,9 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'weekly'
-    open-pull-requests-limit: 5
+      interval: 'monthly'
+    open-pull-requests-limit: 2
     labels:
-      - 'ci'
       - 'dependencies'
     groups:
       actions:
