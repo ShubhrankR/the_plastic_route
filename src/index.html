@@ -2,92 +2,94 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>The Plastic Route | Credit Card Optimization</title>
-    <meta
-      name="description"
-      content="Privacy-first credit card spend optimizer and billing cycle tracker. Find the best card for every transaction."
-    />
+    <title>The Plastic Route | Privacy-First Credit Card Optimizer &amp; Billing Tracker</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#064e3b" />
+
+    <!-- Primary Meta Tags -->
+    <meta
+      name="title"
+      content="The Plastic Route | Privacy-First Credit Card Optimizer &amp; Billing Tracker"
+    />
+    <meta
+      name="description"
+      content="Privacy-first, zero-backend credit card spend optimizer and billing cycle tracker. Maximize cashback, reward points, and interest-free repayment cycles across 180+ Indian cards with 100% local client-side storage."
+    />
+    <meta
+      name="keywords"
+      content="credit card, spend optimizer, rewards calculator, cashback, billing cycle tracker, lounge access, indian credit cards, HDFC, ICICI, SBI, Axis, privacy-first, zero-backend"
+    />
+    <meta name="author" content="Shubhrank Rastogi" />
+    <link rel="canonical" href="https://shubhrankr.github.io/the_plastic_route/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shubhrankr.github.io/the_plastic_route/" />
+    <meta property="og:site_name" content="The Plastic Route" />
+    <meta
+      property="og:title"
+      content="The Plastic Route | Privacy-First Credit Card Optimizer &amp; Billing Tracker"
+    />
+    <meta
+      property="og:description"
+      content="Maximize rewards, cashback, and up to 50 days interest-free credit across 180+ Indian cards. 100% client-side privacy with zero telemetry or backend tracking."
+    />
+    <meta
+      property="og:image"
+      content="https://shubhrankr.github.io/the_plastic_route/og-image.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://shubhrankr.github.io/the_plastic_route/og-image.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1376" />
+    <meta property="og:image:height" content="768" />
+    <meta
+      property="og:image:alt"
+      content="The Plastic Route - Credit Card Spend Optimizer and Billing Cycle Tracker preview banner"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://shubhrankr.github.io/the_plastic_route/" />
+    <meta
+      name="twitter:title"
+      content="The Plastic Route | Privacy-First Credit Card Optimizer &amp; Billing Tracker"
+    />
+    <meta
+      name="twitter:description"
+      content="Maximize rewards, cashback, and up to 50 days interest-free credit across 180+ Indian cards. 100% client-side privacy with zero telemetry or backend tracking."
+    />
+    <meta
+      name="twitter:image"
+      content="https://shubhrankr.github.io/the_plastic_route/og-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="The Plastic Route - Credit Card Spend Optimizer preview banner"
+    />
+
+    <!-- Security & Privacy Headers -->
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+
+    <!-- Favicon & Brand Icons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="alternate icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Google Fonts Preconnect & Inter Font Family -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --bg-app: #f0fdf4;
-        --surface-card: #ffffff;
-        --color-primary: #064e3b;
-        --color-secondary: #047857;
-        --color-mint: #10b981;
-        --color-gold: #f59e0b;
-        --border-subtle: #d1fae5;
-        --text-main: #064e3b;
-        --text-muted: #64748b;
-      }
-
-      body {
-        background-color: var(--bg-app);
-        color: var(--text-main);
-      }
-
-      h2,
-      .fw-bold {
-        color: var(--color-primary);
-      }
-
-      .nav-tabs .nav-link {
-        color: var(--text-muted);
-      }
-
-      .nav-tabs .nav-link.active {
-        color: var(--color-primary) !important;
-        font-weight: 700;
-        border-color: var(--border-subtle) var(--border-subtle) #ffffff !important;
-      }
-
-      .btn-dark {
-        background-color: var(--color-primary) !important;
-        border-color: var(--color-primary) !important;
-        color: #ffffff !important;
-        transition: background-color 0.2s ease;
-      }
-
-      .btn-dark:hover {
-        background-color: var(--color-secondary) !important;
-        border-color: var(--color-secondary) !important;
-      }
-
-      .card {
-        border: 1px solid var(--border-subtle) !important;
-      }
-
-      .form-select:focus,
-      .form-control:focus {
-        border-color: var(--color-mint) !important;
-        box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25) !important;
-      }
-
-      .badge.bg-success {
-        background-color: var(--color-mint) !important;
-      }
-
-      .badge.bg-warning {
-        background-color: var(--color-gold) !important;
-        color: #ffffff !important;
-      }
-    </style>
   </head>
   <body data-theme="dark">
     <app-root></app-root>
