@@ -60,4 +60,3 @@ body:
       placeholder: 'https://www.hdfcbank.com/personal/resources/regulatory-notices...'
     validations:
       required: true
-

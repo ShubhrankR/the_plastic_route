@@ -68,4 +68,3 @@ describe('ToastService', () => {
     expect(service.currentToast()).toBeNull();
   });
 });
-
