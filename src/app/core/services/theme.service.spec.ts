@@ -31,3 +31,4 @@ describe('ThemeService', () => {
     expect(service.theme()).toBe('dark');
   });
 });
+
