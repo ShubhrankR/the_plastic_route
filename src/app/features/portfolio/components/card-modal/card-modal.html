@@ -248,6 +248,33 @@
           }
         </div>
 
+        <div class="form-row mt-2">
+          <div class="form-group">
+            <label for="feeWaiver" class="form-label">Annual Fee Waiver Spend (₹)</label>
+            <input
+              type="number"
+              id="feeWaiver"
+              class="form-input"
+              placeholder="e.g. 300000"
+              [ngModel]="feeWaiverSpend()"
+              (ngModelChange)="feeWaiverSpend.set($event)"
+              name="feeWaiver"
+            />
+          </div>
+          <div class="form-group">
+            <label for="customNotes" class="form-label">Custom Reward / Negotiation Notes</label>
+            <input
+              type="text"
+              id="customNotes"
+              class="form-input"
+              placeholder="e.g. Lifetime Free offer negotiated"
+              [ngModel]="customNotes()"
+              (ngModelChange)="customNotes.set($event)"
+              name="customNotes"
+            />
+          </div>
+        </div>
+
         <div class="form-group mt-2">
           <label for="regUpdate" class="form-label">Regulatory / Important Notes</label>
           <input

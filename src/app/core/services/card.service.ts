@@ -7,11 +7,25 @@ import {
   SpendCategory,
   CategoryOption,
   WalletBackupPayload,
+  AirportInfo,
+  ForexDetails,
 } from '../models/card.model';
 import catalogData from '../data/cards.json';
 import ownerSeedData from '../data/owner_portfolio.json';
+import airportsData from '../data/airports.json';
 import { IndexedDBService } from './indexed-db.service';
 import { ToastService } from './toast.service';
+
+/** Real-time / indicative foreign currency exchange rates to INR. */
+export const FOREX_RATES: Record<string, { rate: number; symbol: string; label: string }> = {
+  USD: { rate: 86.5, symbol: '$', label: 'USD - US Dollar' },
+  EUR: { rate: 93.2, symbol: '€', label: 'EUR - Euro' },
+  GBP: { rate: 111.0, symbol: '£', label: 'GBP - British Pound' },
+  AED: { rate: 23.55, symbol: 'د.إ', label: 'AED - UAE Dirham' },
+  SGD: { rate: 64.5, symbol: 'S$', label: 'SGD - Singapore Dollar' },
+  THB: { rate: 2.55, symbol: '฿', label: 'THB - Thai Baht' },
+  JPY: { rate: 0.56, symbol: '¥', label: 'JPY - Japanese Yen' },
+};
 
 /**
  * Category-to-card ID fallback mapping for standard recommendation routes.
@@ -220,6 +234,34 @@ const CATEGORY_PRIORITY_MAP: Record<SpendCategory, string[]> = {
     'federal_one_metal',
     'federal_imperio',
   ],
+  rent: [
+    'idfc_first_private',
+    'idfc_first_wealth',
+    'federal_one_metal',
+    'standard_chartered_ultimate',
+  ],
+  utilities: [
+    'axis_ace',
+    'airtel_axis',
+    'tata_neu_infinity',
+    'hdfc_millennia',
+    'sbi_cashback',
+    'idfc_first_wealth',
+  ],
+  education: [
+    'idfc_first_wealth',
+    'idfc_first_select',
+    'hdfc_infinia',
+    'sbi_card_elite',
+    'federal_one_metal',
+  ],
+  wallet_load: ['federal_one_metal', 'idfc_first_wealth', 'amex_mrcc'],
+  government: [
+    'idfc_first_private',
+    'idfc_first_wealth',
+    'federal_one_metal',
+    'indusind_pioneer_private',
+  ],
 };
 
 /** Approximate savings rate multipliers for estimation */
@@ -232,6 +274,11 @@ const CATEGORY_SAVINGS_MULTIPLIER: Record<SpendCategory, number> = {
   forex: 0.035,
   dining_travel: 0.1,
   gaming_wallet: 0.02,
+  rent: 0,
+  utilities: 0.05,
+  education: 0.01,
+  wallet_load: 0,
+  government: 0.005,
   general: 0.015,
 };
 
@@ -242,6 +289,9 @@ export class CardService {
 
   /** Master catalog of available credit card templates. */
   readonly masterCatalog = signal<MasterCatalogCard[]>(catalogData as MasterCatalogCard[]);
+
+  /** Master dataset of Indian airport terminal lounges. */
+  readonly airports = signal<AirportInfo[]>(airportsData as AirportInfo[]);
 
   /** Active user cards in the local wallet (or demo cards if in Explore Mode). */
   readonly cards = signal<CreditCard[]>([]);
@@ -262,15 +312,20 @@ export class CardService {
 
   /** All available spend categories for forms and selectors. */
   readonly categories: CategoryOption[] = [
-    { value: 'amazon', label: 'Amazon Shopping & Amazon Pay' },
-    { value: 'flipkart', label: 'Flipkart / Myntra / Cleartrip' },
-    { value: 'bpcl', label: 'Fuel (BPCL Pumps in Bengaluru)' },
-    { value: 'other_fuel', label: 'Fuel (Other Pumps / IOCL)' },
-    { value: 'upi', label: 'Street Vendors / UPI QR Scans' },
-    { value: 'forex', label: 'International Travel / USD Subscriptions' },
-    { value: 'dining_travel', label: 'Dining Out & Flight Bookings' },
-    { value: 'gaming_wallet', label: 'Online Gaming / Wallet Reloads' },
-    { value: 'general', label: 'General Offline / Catch-All' },
+    { value: 'amazon', label: 'Amazon Shopping & Pay', icon: '🛒' },
+    { value: 'flipkart', label: 'Flipkart / Myntra / Cleartrip', icon: '🛍️' },
+    { value: 'bpcl', label: 'Fuel (BPCL Petrol Pumps)', icon: '⛽' },
+    { value: 'other_fuel', label: 'Fuel (HPCL / IOCL / Shell)', icon: '⛽' },
+    { value: 'upi', label: 'Street Vendors / RuPay UPI QR', icon: '📱' },
+    { value: 'dining_travel', label: 'Dining, Flights & Hotels', icon: '✈️' },
+    { value: 'forex', label: 'International Spend (USD / EUR / GBP / AED)', icon: '🌐' },
+    { value: 'utilities', label: 'Electricity, Water & Gas Bills', icon: '💡' },
+    { value: 'rent', label: 'Rent Payments / Housing Fees', icon: '🏠' },
+    { value: 'education', label: 'School & College Tuition Fees', icon: '🎓' },
+    { value: 'wallet_load', label: 'Wallet Reload (Paytm, Mobikwik, Amazon)', icon: '👛' },
+    { value: 'government', label: 'Government Taxes & Challans', icon: '🏛️' },
+    { value: 'gaming_wallet', label: 'Online Gaming / Entertainment', icon: '🎮' },
+    { value: 'general', label: 'General Offline / Catch-All', icon: '💳' },
   ];
 
   constructor() {
@@ -703,11 +758,41 @@ export class CardService {
 
   /**
    * Runs the spend optimization algorithm.
-   * Dynamically checks the user's active wallet against the requested category.
+   * Dynamically checks the user's active wallet against the requested category and currency.
    */
-  getOptimalRoute(category: SpendCategory, amount?: number): OptimizationResult {
+  getOptimalRoute(
+    category: SpendCategory,
+    amount?: number,
+    currency: string = 'INR',
+  ): OptimizationResult {
     const currentCards = this.cards();
     const fallbackCatalog = this.masterCatalog();
+
+    // Warnings and category rule detections
+    let excludedCategoryWarning: string | undefined;
+    let feeWarning: string | undefined;
+    let forexDetails: ForexDetails | undefined;
+
+    if (category === 'rent') {
+      excludedCategoryWarning =
+        'Excluded Category: Almost all Indian issuers (HDFC, ICICI, SBI, Axis, Kotak) exclude rent from earning reward points.';
+      feeWarning =
+        '1% convenience fee + 18% GST applies to rent payments on credit cards across all major issuers.';
+    } else if (category === 'wallet_load') {
+      excludedCategoryWarning =
+        'Excluded Category: Wallet reloads (Paytm, Mobikwik, Amazon Wallet) earn 0 reward points on almost all cards.';
+      feeWarning =
+        'Third-party wallet applications generally charge an additional 1.5% to 2.5% loading surcharge.';
+    } else if (category === 'government') {
+      excludedCategoryWarning =
+        'Excluded Category: Most banks have excluded government taxes, stamp duties, and challans from reward point accrual.';
+    } else if (category === 'education') {
+      feeWarning =
+        'Surcharge Notice: Several issuers levy a 1% surcharge when paying school or college tuition fees via third-party platforms.';
+    } else if (category === 'other_fuel' || category === 'bpcl') {
+      feeWarning =
+        'Fuel Surcharge Waiver: Standard 1% surcharge waived for transaction amounts between ₹400 and ₹4,000 (monthly caps apply).';
+    }
 
     if (currentCards.length === 0) {
       // Wallet empty: fall back to master catalog representation
@@ -729,6 +814,8 @@ export class CardService {
         interestFreeDays: 45,
         dueDate: new Date(Date.now() + 45 * 86400000),
         reason: demoCard.optimizationVector,
+        excludedCategoryWarning,
+        feeWarning,
       };
     }
 
@@ -771,7 +858,52 @@ export class CardService {
     const reason = bestCard.optimizationVector;
 
     let estimatedSaving: number | undefined;
-    if (amount && amount > 0) {
+
+    // Currency conversion & Forex Savings Breakdown
+    if (currency !== 'INR' && amount && amount > 0) {
+      const fxInfo = FOREX_RATES[currency] ?? { rate: 86.5, symbol: '$', label: currency };
+      const inrBaseAmount = Math.round(amount * fxInfo.rate);
+
+      // Standard bank: 3.5% markup + 18% GST on markup (4.13%)
+      const standardMarkupPercent = 3.5;
+      const standardGstPercent = 18;
+      const standardTotalFee = Math.round(inrBaseAmount * (0.035 * 1.18));
+
+      // Best card forex markup (zero forex if card has 0 markup or zero_forex tag)
+      let bestCardMarkupPercent = 2.0;
+      if (typeof bestCard.forexMarkup === 'number') {
+        bestCardMarkupPercent = bestCard.forexMarkup;
+      } else if (
+        typeof bestCard.forexMarkup === 'string' &&
+        !isNaN(parseFloat(bestCard.forexMarkup))
+      ) {
+        bestCardMarkupPercent = parseFloat(bestCard.forexMarkup);
+      } else if (
+        bestCard.tags?.includes('zero_forex') ||
+        bestCard.id.includes('scapia') ||
+        bestCard.id.includes('wow')
+      ) {
+        bestCardMarkupPercent = 0.0;
+      }
+
+      const bestCardTotalFee = Math.round(inrBaseAmount * (bestCardMarkupPercent / 100) * 1.18);
+      const netSavings = Math.max(0, standardTotalFee - bestCardTotalFee);
+
+      forexDetails = {
+        foreignCurrency: currency,
+        foreignAmount: amount,
+        exchangeRateToInr: fxInfo.rate,
+        inrBaseAmount,
+        standardMarkupPercent,
+        standardGstPercent,
+        standardTotalFee,
+        bestCardMarkupPercent,
+        bestCardTotalFee,
+        netSavings,
+      };
+
+      estimatedSaving = netSavings;
+    } else if (amount && amount > 0) {
       const multiplier = CATEGORY_SAVINGS_MULTIPLIER[category] ?? 0.015;
       estimatedSaving = Math.round(amount * multiplier);
     }
@@ -783,7 +915,70 @@ export class CardService {
       dueDate,
       reason,
       estimatedSaving,
+      excludedCategoryWarning,
+      feeWarning,
+      forexDetails,
     };
+  }
+
+  /**
+   * Evaluates user's cards against a specific airport lounge.
+   */
+  getLoungeAccessForAirport(airportCode: string) {
+    const airport = this.airports().find((a) => a.code.toUpperCase() === airportCode.toUpperCase());
+    if (!airport) return null;
+
+    const userCards = this.cards();
+    const eligibleCards = userCards.filter((c) => c.loungeAccess?.eligible);
+
+    return {
+      airport,
+      eligibleCards,
+    };
+  }
+
+  /**
+   * Returns milestone tracking details for active cards in wallet.
+   */
+  getWalletMilestones() {
+    return this.cards().map((card) => {
+      const isSuperPremium =
+        card.id.includes('infinia') ||
+        card.id.includes('magnus') ||
+        card.id.includes('emeralde') ||
+        card.id.includes('diners_black');
+      const isPremium =
+        card.id.includes('regalia') ||
+        card.id.includes('sapphiro') ||
+        card.id.includes('atlas') ||
+        card.id.includes('vistara');
+
+      const quarterlyTarget = isSuperPremium ? 150000 : isPremium ? 50000 : 30000;
+      const annualTarget = isSuperPremium ? 1000000 : isPremium ? 400000 : 150000;
+      const feeWaiverTarget =
+        card.feeWaiverSpend ?? (isSuperPremium ? 1000000 : isPremium ? 300000 : 100000);
+
+      const milestoneRewards: string[] = [];
+      if (card.loungeAccess?.eligible) {
+        milestoneRewards.push(
+          `Spend ₹${(quarterlyTarget / 1000).toFixed(0)}k/quarter to unlock next quarter lounge quota`,
+        );
+      }
+      milestoneRewards.push(
+        `Spend ₹${(feeWaiverTarget / 100000).toFixed(1)}L/year for Annual Fee Waiver`,
+      );
+      if (isSuperPremium) {
+        milestoneRewards.push('Reach ₹10L annual spend to earn bonus reward multipliers');
+      }
+
+      return {
+        card,
+        quarterlyTarget,
+        annualTarget,
+        feeWaiverTarget,
+        milestoneRewards,
+      };
+    });
   }
 
   /**

@@ -123,14 +123,14 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 
 ### Phase 5 — Advanced Rule Engine & Spend Analytics
 
-- [ ] **Dynamic Rule Evaluation Engine**
-  - [ ] Support custom user-level card reward overrides (e.g. user-specific negotiated fee waiver, customized Swiggy/Zomato cashback rates).
-  - [ ] Support quarterly and annual milestone reward tracking (e.g., spend ₹1 Lakh in a quarter to trigger voucher alerts).
-  - [ ] Excluded category detection (automatic warning when a category like fuel or rent does not earn points on a selected card).
-- [ ] **Airport Lounge Terminal Checker**
-  - [ ] Airport/terminal search interface to view lounge access eligibility and quarter spend qualification requirements per card.
-- [ ] **Forex & Multi-Currency Comparison**
-  - [ ] Compare zero-forex cards vs standard markup cards (including GST on forex markups).
+- [x] **Dynamic Rule Evaluation Engine**
+  - [x] Support custom user-level card reward overrides (negotiated fee waiver, custom reward notes).
+  - [x] Support quarterly and annual milestone reward tracking with spend simulator and lounge qualification progress.
+  - [x] Excluded category detection (automatic warnings for rent 0 points + 1% surcharge, wallet loads, government taxes, fuel surcharge caps).
+- [x] **Airport Lounge Terminal Checker**
+  - [x] Airport/terminal search interface across BLR, DEL, BOM, HYD, MAA, CCU, GOX with 2026 terminal lounge operators and spend qualification criteria.
+- [x] **Forex & Multi-Currency Comparison**
+  - [x] Compare zero-forex cards vs standard 3.5% + 18% GST markup on USD, EUR, GBP, AED, SGD, THB, JPY with live rupee savings breakdown.
 
 ### Phase 6 — Test Suite & Community Ecosystem
 

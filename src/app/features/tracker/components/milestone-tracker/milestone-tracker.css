@@ -1,0 +1,99 @@
+.tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tracker-desc {
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+}
+
+.sim-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sim-input-group {
+  display: flex;
+  align-items: center;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 0 0.5rem;
+}
+
+.sim-currency {
+  font-weight: 700;
+  color: var(--accent-mint);
+  margin-right: 0.25rem;
+}
+
+.form-input-sm {
+  width: 100px;
+  padding: 0.35rem 0.25rem;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.form-input-sm:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.milestone-card {
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.milestone-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fee-item {
+  background: transparent;
+  border: 1px dashed var(--card-border);
+  padding: 0.5rem 0.75rem;
+}
+
+.perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.perk-item {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--text-secondary);
+}
+
+.perk-bullet {
+  font-size: 0.8rem;
+}

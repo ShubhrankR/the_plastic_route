@@ -37,6 +37,43 @@
         <h3 class="fw-bold result-card-name">{{ r.bestCard.name }}</h3>
         <p class="text-secondary text-sm result-reason">{{ r.reason }}</p>
 
+        @if (r.excludedCategoryWarning) {
+          <div class="alert-banner alert-banner-danger">
+            <span>🚫</span>
+            <div><strong>Reward Exclusion:</strong> {{ r.excludedCategoryWarning }}</div>
+          </div>
+        }
+
+        @if (r.feeWarning) {
+          <div class="alert-banner alert-banner-warning">
+            <span>⚠️</span>
+            <div><strong>Fee / Surcharge Notice:</strong> {{ r.feeWarning }}</div>
+          </div>
+        }
+
+        @if (r.forexDetails; as fx) {
+          <div class="alert-banner alert-banner-info" style="flex-direction: column; gap: 0.4rem">
+            <div class="d-flex justify-between items-center" style="width: 100%">
+              <strong
+                >🌐 Forex Comparison ({{ fx.foreignAmount }} {{ fx.foreignCurrency }} ≈ ₹{{
+                  fx.inrBaseAmount.toLocaleString('en-IN')
+                }}):</strong
+              >
+              <span class="badge badge-success fw-bold"
+                >Saves ₹{{ fx.netSavings.toLocaleString('en-IN') }}</span
+              >
+            </div>
+            <div class="text-xs" style="opacity: 0.9">
+              Standard Card (3.5% + 18% GST): ~₹{{ fx.standardTotalFee.toLocaleString('en-IN') }}
+              fee vs
+              <strong>{{ r.bestCard.name }} ({{ fx.bestCardMarkupPercent }}% markup)</strong>: ~₹{{
+                fx.bestCardTotalFee.toLocaleString('en-IN')
+              }}
+              fee.
+            </div>
+          </div>
+        }
+
         @if (r.bestCard.regulatoryUpdate) {
           <div class="alert-warning-card">
             <span class="text-warning fw-semibold">🚨 Rule Change:</span>

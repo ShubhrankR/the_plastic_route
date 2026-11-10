@@ -1,6 +1,6 @@
 import { Component, inject, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CardService } from '../../../../core/services/card.service';
+import { CardService, FOREX_RATES } from '../../../../core/services/card.service';
 import { OptimizationResult, SpendCategory } from '../../../../core/models/card.model';
 
 @Component({
@@ -17,10 +17,30 @@ export class SpendOptimizerForm {
   optimized = output<OptimizationResult>();
 
   protected readonly categories = this.cardService.categories;
+  protected readonly forexCurrencies = Object.entries(FOREX_RATES).map(([code, data]) => ({
+    code,
+    label: data.label,
+    symbol: data.symbol,
+    rate: data.rate,
+  }));
+
   protected amount = '';
   protected category: SpendCategory | '' = '';
+  protected currency = 'INR';
 
   onCategoryChange(): void {
+    if (this.category === 'forex' && this.currency === 'INR') {
+      this.currency = 'USD';
+    } else if (this.category !== 'forex') {
+      this.currency = 'INR';
+    }
+
+    if (this.category) {
+      this.calculate();
+    }
+  }
+
+  onCurrencyChange(): void {
     if (this.category) {
       this.calculate();
     }
@@ -33,7 +53,11 @@ export class SpendOptimizerForm {
 
   private calculate(): void {
     const numAmount = this.amount ? Number(this.amount) : undefined;
-    const result = this.cardService.getOptimalRoute(this.category as SpendCategory, numAmount);
+    const result = this.cardService.getOptimalRoute(
+      this.category as SpendCategory,
+      numAmount,
+      this.currency,
+    );
     this.optimized.emit(result);
   }
 }

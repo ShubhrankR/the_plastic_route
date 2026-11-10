@@ -1,0 +1,318 @@
+[
+  {
+    "code": "BLR",
+    "city": "Bengaluru",
+    "name": "Kempegowda International Airport",
+    "terminals": [
+      {
+        "terminalName": "Terminal 1",
+        "lounges": [
+          {
+            "name": "080 Domestic Lounge",
+            "location": "Mezzanine Level, Domestic Departures",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Visa Infinite",
+              "Mastercard World",
+              "RuPay Select",
+              "Priority Pass",
+              "DreamFolks"
+            ],
+            "spendRequirement": "Spend ₹50,000 in previous calendar quarter required for HDFC & ICICI cards; unconditional on Infinia / Magnus Burgundy / Sapphiro.",
+            "operator": "080 Lounge / Travel Food Services"
+          },
+          {
+            "name": "080 International Lounge",
+            "location": "Level 1, International Departures",
+            "type": "International",
+            "eligibleNetworks": [
+              "Priority Pass",
+              "DreamFolks",
+              "Visa Infinite",
+              "Mastercard World Elite"
+            ],
+            "spendRequirement": "International lounge access quota via Priority Pass or bank international allocation.",
+            "operator": "080 Lounge"
+          }
+        ]
+      },
+      {
+        "terminalName": "Terminal 2",
+        "lounges": [
+          {
+            "name": "080 Domestic Lounge (Garden Terminal)",
+            "location": "Level 4, Domestic Departures near Gate 1",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Infinite",
+              "Mastercard World",
+              "RuPay Select",
+              "Priority Pass",
+              "DreamFolks"
+            ],
+            "spendRequirement": "Complimentary on select premium cards or ₹50k/quarter spend qualification on mid-tier cards.",
+            "operator": "080 Lounge"
+          },
+          {
+            "name": "080 International Lounge",
+            "location": "Level 3, International Departures",
+            "type": "International",
+            "eligibleNetworks": ["Priority Pass", "DreamFolks", "Visa Infinite"],
+            "spendRequirement": "Complimentary international lounge quota per card program.",
+            "operator": "080 Lounge"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "DEL",
+    "city": "New Delhi",
+    "name": "Indira Gandhi International Airport",
+    "terminals": [
+      {
+        "terminalName": "Terminal 1D",
+        "lounges": [
+          {
+            "name": "Encalm Domestic Lounge",
+            "location": "Mezzanine Level, after Security Check",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Visa Infinite",
+              "Mastercard World",
+              "RuPay Select",
+              "DreamFolks"
+            ],
+            "spendRequirement": "Quarterly spend threshold applies on ICICI / HDFC / Axis cards.",
+            "operator": "Encalm Hospitality"
+          }
+        ]
+      },
+      {
+        "terminalName": "Terminal 2",
+        "lounges": [
+          {
+            "name": "Encalm Domestic Lounge",
+            "location": "Near Gate 25, Security Hold Area",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Visa Infinite",
+              "Mastercard World",
+              "RuPay Select",
+              "Priority Pass"
+            ],
+            "spendRequirement": "Quarterly spend check (₹50k) on major bank cards.",
+            "operator": "Encalm Hospitality"
+          }
+        ]
+      },
+      {
+        "terminalName": "Terminal 3",
+        "lounges": [
+          {
+            "name": "Encalm Domestic Lounge",
+            "location": "Level 3, Domestic Security Hold Area",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Visa Infinite",
+              "Mastercard World",
+              "RuPay Select",
+              "Priority Pass",
+              "DreamFolks"
+            ],
+            "spendRequirement": "Complimentary on super-premium cards; ₹50k quarter spend on mid-tier cards.",
+            "operator": "Encalm Hospitality"
+          },
+          {
+            "name": "Encalm Privé International Lounge",
+            "location": "International Departures, Pier Wing B",
+            "type": "International",
+            "eligibleNetworks": ["Priority Pass", "DreamFolks", "Diners Club Black", "Infinia"],
+            "spendRequirement": "Business class ticket or select super-premium cards with complimentary international allocation.",
+            "operator": "Encalm Hospitality"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "BOM",
+    "city": "Mumbai",
+    "name": "Chhatrapati Shivaji Maharaj International Airport",
+    "terminals": [
+      {
+        "terminalName": "Terminal 1",
+        "lounges": [
+          {
+            "name": "Adani Lounge Domestic",
+            "location": "Near Gate 9, Domestic Security Hold Area",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Mastercard World",
+              "RuPay Select",
+              "DreamFolks"
+            ],
+            "spendRequirement": "Quarterly bank spend threshold applies.",
+            "operator": "Adani Airports Lounge"
+          }
+        ]
+      },
+      {
+        "terminalName": "Terminal 2",
+        "lounges": [
+          {
+            "name": "Adani Lounge Domestic",
+            "location": "Level 3, Domestic Departures near Gate 44",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Visa Infinite",
+              "Mastercard World",
+              "RuPay Platinum",
+              "RuPay Select",
+              "Priority Pass"
+            ],
+            "spendRequirement": "Eligible on participating domestic card programs.",
+            "operator": "Adani Airports Lounge"
+          },
+          {
+            "name": "Adani Lounge International",
+            "location": "Level 4, International Departures",
+            "type": "International",
+            "eligibleNetworks": ["Priority Pass", "DreamFolks", "Diners Club Black", "Infinia"],
+            "spendRequirement": "International Priority Pass / DreamFolks card allocation.",
+            "operator": "Adani Airports Lounge"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "HYD",
+    "city": "Hyderabad",
+    "name": "Rajiv Gandhi International Airport",
+    "terminals": [
+      {
+        "terminalName": "Main Terminal",
+        "lounges": [
+          {
+            "name": "Encalm Domestic Lounge",
+            "location": "Near Gate 21, Domestic Departures",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Visa Infinite",
+              "Mastercard World",
+              "RuPay Select",
+              "Priority Pass"
+            ],
+            "spendRequirement": "Spend ₹50,000 in previous quarter for standard cards; free on Infinia / Sapphiro.",
+            "operator": "Encalm Hospitality"
+          },
+          {
+            "name": "Encalm International Lounge",
+            "location": "International Departures Pier",
+            "type": "International",
+            "eligibleNetworks": ["Priority Pass", "DreamFolks"],
+            "spendRequirement": "Complimentary international visits per card policy.",
+            "operator": "Encalm Hospitality"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "MAA",
+    "city": "Chennai",
+    "name": "Chennai International Airport",
+    "terminals": [
+      {
+        "terminalName": "Terminal 1 (Domestic)",
+        "lounges": [
+          {
+            "name": "Travel Club Lounge Domestic",
+            "location": "Near Gate 1, Domestic Security Hold Area",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Mastercard World",
+              "RuPay Select",
+              "Priority Pass",
+              "DreamFolks"
+            ],
+            "spendRequirement": "Quarterly spend qualification on major bank cards.",
+            "operator": "Travel Food Services"
+          }
+        ]
+      },
+      {
+        "terminalName": "Terminal 4 (International)",
+        "lounges": [
+          {
+            "name": "Travel Club Lounge International",
+            "location": "Level 2, International Security Hold Area",
+            "type": "International",
+            "eligibleNetworks": ["Priority Pass", "DreamFolks"],
+            "spendRequirement": "Priority Pass / DreamFolks international allocation.",
+            "operator": "Travel Food Services"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "CCU",
+    "city": "Kolkata",
+    "name": "Netaji Subhash Chandra Bose International Airport",
+    "terminals": [
+      {
+        "terminalName": "Main Terminal",
+        "lounges": [
+          {
+            "name": "Travel Club Lounge Domestic",
+            "location": "Mezzanine Level near Gate 14",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Mastercard World",
+              "RuPay Select",
+              "Priority Pass"
+            ],
+            "spendRequirement": "Domestic quota per calendar quarter.",
+            "operator": "Travel Food Services"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "GOX",
+    "city": "Goa (North)",
+    "name": "Manohar International Airport (Mopa)",
+    "terminals": [
+      {
+        "terminalName": "Terminal 1",
+        "lounges": [
+          {
+            "name": "Encalm Domestic Lounge",
+            "location": "Domestic Departures, Level 1",
+            "type": "Domestic",
+            "eligibleNetworks": [
+              "Visa Signature",
+              "Mastercard World",
+              "RuPay Select",
+              "DreamFolks"
+            ],
+            "spendRequirement": "Bank spend qualification rules apply.",
+            "operator": "Encalm Hospitality"
+          }
+        ]
+      }
+    ]
+  }
+]

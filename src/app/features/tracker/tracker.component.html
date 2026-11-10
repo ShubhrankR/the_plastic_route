@@ -1,3 +1,41 @@
-<div>
-  <app-billing-cycle-tracker />
+<div class="tracker-container">
+  <!-- Subnav Tabs -->
+  <div class="subnav-tabs">
+    <button
+      type="button"
+      class="subnav-tab"
+      [class.active]="activeTab() === 'billing'"
+      (click)="setTab('billing')"
+    >
+      📅 Billing Cycles
+    </button>
+    <button
+      type="button"
+      class="subnav-tab"
+      [class.active]="activeTab() === 'lounge'"
+      (click)="setTab('lounge')"
+    >
+      ✈️ Airport Lounge Checker
+    </button>
+    <button
+      type="button"
+      class="subnav-tab"
+      [class.active]="activeTab() === 'milestones'"
+      (click)="setTab('milestones')"
+    >
+      🎯 Milestones &amp; Fee Waivers
+    </button>
+  </div>
+
+  @switch (activeTab()) {
+    @case ('billing') {
+      <app-billing-cycle-tracker />
+    }
+    @case ('lounge') {
+      <app-lounge-checker />
+    }
+    @case ('milestones') {
+      <app-milestone-tracker />
+    }
+  }
 </div>
