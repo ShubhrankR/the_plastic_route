@@ -1,4 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { CardService } from '../../core/services/card.service';
 import { CreditCard } from '../../core/models/card.model';
 import { PortfolioTable } from './components/portfolio-table/portfolio-table';
@@ -13,6 +15,7 @@ import { CardModal } from './components/card-modal/card-modal';
 })
 export class PortfolioComponent {
   private readonly cardService = inject(CardService);
+  private readonly route = inject(ActivatedRoute);
 
   readonly cards = this.cardService.cards;
   readonly masterCatalog = this.cardService.masterCatalog;
@@ -20,6 +23,26 @@ export class PortfolioComponent {
 
   showModal = signal<boolean>(false);
   cardToEdit = signal<CreditCard | null>(null);
+
+  private readonly queryParams = toSignal(this.route.queryParams, {
+    initialValue: {} as Params,
+  });
+
+  /**
+   * Whether developer controls should be exposed in the UI.
+   * Only active when ?dev=true or ?seed=owner is present in query/hash parameters.
+   */
+  readonly isDeveloperMode = computed<boolean>(() => {
+    const qp = this.queryParams();
+    const hasQueryParam = qp['dev'] === 'true' || qp['seed'] === 'owner';
+    const hasWindowParam =
+      typeof window !== 'undefined' &&
+      (window.location.search.includes('seed=owner') ||
+        window.location.search.includes('dev=true') ||
+        window.location.hash.includes('seed=owner') ||
+        window.location.hash.includes('dev=true'));
+    return Boolean(hasQueryParam || hasWindowParam);
+  });
 
   openAddModal(): void {
     this.cardToEdit.set(null);
@@ -59,7 +82,31 @@ export class PortfolioComponent {
   }
 
   async handleClearWallet(): Promise<void> {
-    await this.cardService.clearWallet();
+    const confirmed = window.confirm(
+      'Are you sure you want to clear your wallet? This removes all cards from your local IndexedDB storage.',
+    );
+    if (confirmed) {
+      await this.cardService.clearWallet();
+    }
+  }
+
+  handleExport(): void {
+    this.cardService.exportWallet();
+  }
+
+  async onFileSelected(event: Event): Promise<void> {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+
+    try {
+      const text = await file.text();
+      await this.cardService.importWallet(text);
+    } catch {
+      // Handled via toast in service
+    } finally {
+      input.value = '';
+    }
   }
 
   async handleLoadOwnerSeed(): Promise<void> {

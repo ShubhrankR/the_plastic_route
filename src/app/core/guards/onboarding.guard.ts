@@ -9,10 +9,15 @@ export const onboardingGuard: CanActivateFn = (route, state) => {
   const cardService = inject(CardService);
   const router = inject(Router);
 
-  // Check if owner seed is requested via query params -> allow direct access
+  // Check if owner seed or dev mode is requested via query params -> allow direct access
   const isOwnerSeed =
     route.queryParamMap.get('seed') === 'owner' ||
-    (typeof window !== 'undefined' && window.location.hash.includes('seed=owner'));
+    route.queryParamMap.get('dev') === 'true' ||
+    (typeof window !== 'undefined' &&
+      (window.location.hash.includes('seed=owner') ||
+        window.location.hash.includes('dev=true') ||
+        window.location.search.includes('seed=owner') ||
+        window.location.search.includes('dev=true')));
 
   if (isOwnerSeed) {
     return true;

@@ -31,15 +31,44 @@
         ➕ Add Credit Card
       </button>
 
+      <!-- Hidden file input for wallet JSON import -->
+      <input
+        type="file"
+        #fileInput
+        accept=".json,application/json"
+        style="display: none"
+        (change)="onFileSelected($event)"
+      />
+
       <div class="btn-group">
         <button
           type="button"
           class="btn btn-outline btn-sm"
-          (click)="handleLoadOwnerSeed()"
-          title="Seed personal portfolio configuration"
+          (click)="handleExport()"
+          title="Download a JSON backup of your cards"
         >
-          📥 Load Developer Seed
+          📤 Export Backup
         </button>
+
+        <button
+          type="button"
+          class="btn btn-outline btn-sm"
+          (click)="fileInput.click()"
+          title="Restore your portfolio from a JSON backup file"
+        >
+          📥 Import Backup
+        </button>
+
+        @if (isDeveloperMode()) {
+          <button
+            type="button"
+            class="btn btn-outline btn-sm"
+            (click)="handleLoadOwnerSeed()"
+            title="Seed personal portfolio configuration (?dev=true)"
+          >
+            📥 Load Developer Seed
+          </button>
+        }
 
         @if (!isExploreMode()) {
           <button
