@@ -21,6 +21,15 @@ export class PortfolioComponent {
   showModal = signal<boolean>(false);
   cardToEdit = signal<CreditCard | null>(null);
 
+  /** Whether developer controls should be exposed (via ?seed=owner or ?dev=true). */
+  readonly isDeveloperMode = signal<boolean>(
+    typeof window !== 'undefined' &&
+      (window.location.search.includes('seed=owner') ||
+        window.location.search.includes('dev=true') ||
+        window.location.hash.includes('seed=owner') ||
+        window.location.hash.includes('dev=true')),
+  );
+
   openAddModal(): void {
     this.cardToEdit.set(null);
     this.showModal.set(true);
@@ -59,7 +68,31 @@ export class PortfolioComponent {
   }
 
   async handleClearWallet(): Promise<void> {
-    await this.cardService.clearWallet();
+    const confirmed = window.confirm(
+      'Are you sure you want to clear your wallet? This removes all cards from your local IndexedDB storage.',
+    );
+    if (confirmed) {
+      await this.cardService.clearWallet();
+    }
+  }
+
+  handleExport(): void {
+    this.cardService.exportWallet();
+  }
+
+  async onFileSelected(event: Event): Promise<void> {
+    const input = event.target as HTMLInputElement;
+    if (!input.files || input.files.length === 0) return;
+    const file = input.files[0];
+
+    try {
+      const text = await file.text();
+      await this.cardService.importWallet(text);
+    } catch {
+      // Handled via toast in service
+    } finally {
+      input.value = '';
+    }
   }
 
   async handleLoadOwnerSeed(): Promise<void> {

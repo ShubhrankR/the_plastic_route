@@ -101,12 +101,12 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 
 ### Phase 3 — Pre-Launch Polish & Data Sovereignty (Immediate Priority)
 
-- [ ] **Privacy-First Data Sovereignty (Backup & Restore)**
-  - [ ] Implement **Export Wallet (JSON)**: one-click file download containing user's cards and custom settings.
-  - [ ] Implement **Import Wallet (JSON)**: file upload validator to restore/migrate portfolio across devices or after clearing browser cache.
-  - [ ] Add explicit "Reset Wallet to Default" confirmation dialog.
+- [x] **Privacy-First Data Sovereignty (Backup & Restore)**
+  - [x] Implement **Export Wallet (JSON)**: one-click file download containing user's cards and custom settings.
+  - [x] Implement **Import Wallet (JSON)**: file upload validator to restore/migrate portfolio across devices or after clearing browser cache.
+  - [x] Add explicit "Reset Wallet to Default" confirmation dialog with toast undo protection.
 - [ ] **Public UI Clean-up**
-  - [ ] Remove/hide developer-only action (`📥 Load Developer Seed`) from public `/portfolio` view (keep accessible only via `?seed=owner` URL parameter for maintainers).
+  - [x] Remove/hide developer-only action (`📥 Load Developer Seed`) from public `/portfolio` view (keep accessible only via `?seed=owner` URL parameter for maintainers).
   - [ ] Clean up legacy Bootstrap CSS classes embedded in `src/index.html`.
 - [ ] **Social Sharing & SEO Metadata**
   - [ ] Add OpenGraph metadata tags (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`) to `src/index.html`.

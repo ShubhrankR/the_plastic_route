@@ -6,6 +6,7 @@ import {
   BillingCycleStatus,
   SpendCategory,
   CategoryOption,
+  WalletBackupPayload,
 } from '../models/card.model';
 import catalogData from '../data/cards.json';
 import ownerSeedData from '../data/owner_portfolio.json';
@@ -500,12 +501,184 @@ export class CardService {
   }
 
   /**
-   * Clears the user's local wallet completely.
+   * Clears the user's local wallet completely with undo protection.
    */
   async clearWallet(): Promise<void> {
+    const previousCards = [...this.cards()];
     await this.indexedDB.clearAllCards();
     this.cards.set([]);
     this.isExploreMode.set(false);
+
+    if (previousCards.length > 0) {
+      this.toastService.show({
+        message: `Cleared ${previousCards.length} card${previousCards.length > 1 ? 's' : ''} from your wallet.`,
+        type: 'warning',
+        actionLabel: '↩️ Undo',
+        durationMs: 7000,
+        onAction: async () => {
+          await this.indexedDB.saveCards(previousCards);
+          this.cards.set(previousCards);
+          this.toastService.show({
+            message: `Restored ${previousCards.length} card${previousCards.length > 1 ? 's' : ''}.`,
+            type: 'success',
+            durationMs: 3000,
+          });
+        },
+      });
+    }
+  }
+
+  /**
+   * Generates and downloads a JSON backup file of the user's active wallet.
+   */
+  exportWallet(): void {
+    const cardsToExport = this.cards();
+    if (cardsToExport.length === 0) {
+      this.toastService.show({
+        message: 'Your wallet is empty. Add cards before exporting a backup.',
+        type: 'warning',
+      });
+      return;
+    }
+
+    const payload: WalletBackupPayload = {
+      version: 1,
+      appName: 'The Plastic Route',
+      exportedAt: new Date().toISOString(),
+      cards: cardsToExport,
+    };
+
+    try {
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {
+        type: 'application/json',
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const dateStr = new Date().toISOString().split('T')[0];
+      a.href = url;
+      a.download = `the-plastic-route-wallet-${dateStr}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      this.toastService.show({
+        message: `Exported ${cardsToExport.length} card${cardsToExport.length > 1 ? 's' : ''} to backup file.`,
+        type: 'success',
+        durationMs: 3500,
+      });
+    } catch (err: any) {
+      this.toastService.show({
+        message: `Failed to export wallet: ${err?.message || 'Unknown error'}`,
+        type: 'danger',
+      });
+    }
+  }
+
+  /**
+   * Validates and imports cards from a JSON backup string into IndexedDB.
+   */
+  async importWallet(
+    jsonText: string,
+  ): Promise<{ success: boolean; count: number; error?: string }> {
+    try {
+      const parsed = JSON.parse(jsonText);
+      let rawCards: any[] = [];
+
+      if (Array.isArray(parsed)) {
+        rawCards = parsed;
+      } else if (parsed && typeof parsed === 'object') {
+        if (Array.isArray(parsed.cards)) {
+          rawCards = parsed.cards;
+        } else if (Array.isArray(parsed.user_cards)) {
+          rawCards = parsed.user_cards;
+        }
+      }
+
+      if (rawCards.length === 0) {
+        const errorMsg = 'No cards found in the uploaded JSON file.';
+        this.toastService.show({ message: errorMsg, type: 'danger' });
+        return { success: false, count: 0, error: errorMsg };
+      }
+
+      // Sanitize and validate cards
+      const validCards: CreditCard[] = [];
+      for (const c of rawCards) {
+        if (!c || typeof c !== 'object') continue;
+        const name = typeof c.name === 'string' ? c.name.trim() : '';
+        if (!name) continue;
+
+        const start = Number(c.billingCycleStart);
+        const end = Number(c.billingCycleEnd);
+
+        const card: CreditCard = {
+          ...c,
+          id:
+            typeof c.id === 'string' && c.id.trim()
+              ? c.id
+              : `imported_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+          name,
+          bank: typeof c.bank === 'string' ? c.bank : undefined,
+          network: c.network || 'Visa',
+          optimizationVector: c.optimizationVector || 'General spend',
+          billingCycleStart: !isNaN(start) && start >= 1 && start <= 31 ? start : 1,
+          billingCycleEnd: !isNaN(end) && end >= 1 && end <= 31 ? end : 30,
+          loungeAccess:
+            c.loungeAccess && typeof c.loungeAccess === 'object'
+              ? c.loungeAccess
+              : { eligible: false },
+          isCustom: c.isCustom ?? true,
+        };
+        validCards.push(card);
+      }
+
+      if (validCards.length === 0) {
+        const errorMsg = 'Could not parse any valid cards matching the required schema.';
+        this.toastService.show({ message: errorMsg, type: 'danger' });
+        return { success: false, count: 0, error: errorMsg };
+      }
+
+      // Preserve previous cards for undo action
+      const previousCards = [...this.cards()];
+
+      // Overwrite IndexedDB and reactive state
+      await this.indexedDB.clearAllCards();
+      await this.indexedDB.saveCards(validCards);
+      this.cards.set(validCards);
+      this.isExploreMode.set(false);
+
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('tpr_ftue_completed', 'true');
+        localStorage.setItem('tpr_onboarding_mode', 'custom');
+      }
+      this.hasCompletedOnboarding.set(true);
+
+      this.toastService.show({
+        message: `Successfully imported ${validCards.length} card${validCards.length > 1 ? 's' : ''} to your wallet!`,
+        type: 'success',
+        durationMs: 7000,
+        actionLabel: previousCards.length > 0 ? '↩️ Undo' : undefined,
+        onAction:
+          previousCards.length > 0
+            ? async () => {
+                await this.indexedDB.clearAllCards();
+                await this.indexedDB.saveCards(previousCards);
+                this.cards.set(previousCards);
+                this.toastService.show({
+                  message: 'Import undone. Previous cards restored.',
+                  type: 'info',
+                  durationMs: 3000,
+                });
+              }
+            : undefined,
+      });
+
+      return { success: true, count: validCards.length };
+    } catch (err: any) {
+      const errorMsg = `Invalid JSON file: ${err?.message || 'Syntax error'}`;
+      this.toastService.show({ message: errorMsg, type: 'danger' });
+      return { success: false, count: 0, error: errorMsg };
+    }
   }
 
   /** Returns all active cards in the wallet. */

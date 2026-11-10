@@ -79,3 +79,11 @@ export interface CategoryOption {
   label: string;
   [key: string]: any;
 }
+
+export interface WalletBackupPayload {
+  version: number;
+  appName: string;
+  exportedAt: string;
+  cards: CreditCard[];
+  [key: string]: any;
+}
