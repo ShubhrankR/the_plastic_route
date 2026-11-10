@@ -20,7 +20,17 @@
       <tbody>
         @for (s of statuses(); track s.cardName) {
           <tr>
-            <td class="fw-semibold">{{ s.cardName }}</td>
+            <td>
+              <span class="fw-semibold">{{ s.cardName }}</span>
+              @if (s.card) {
+                <div class="d-flex items-center gap-1 mt-1">
+                  @if (s.card.bank) {
+                    <app-bank-badge [bank]="s.card.bank" size="xs"></app-bank-badge>
+                  }
+                  <app-network-badge [network]="s.card.network" size="xs"></app-network-badge>
+                </div>
+              }
+            </td>
             <td>{{ s.statementDay }}</td>
             <td>
               <span class="badge" [class]="getBadgeClass(s.severity)">

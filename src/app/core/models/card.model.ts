@@ -85,6 +85,7 @@ export interface OptimizationResult {
 
 export interface BillingCycleStatus {
   cardName: string;
+  card?: CreditCard;
   statementDay: number;
   targetCycle: 'Current Bill' | 'Next Bill';
   daysLeft: number;

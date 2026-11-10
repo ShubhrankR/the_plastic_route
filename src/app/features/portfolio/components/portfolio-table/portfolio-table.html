@@ -36,10 +36,10 @@
                 <span class="fw-semibold card-name-text">{{ card.name }}</span>
                 <br />
                 <div class="badge-group mt-1">
-                  <span class="badge badge-network">{{ card.network }}</span>
                   @if (card.bank) {
-                    <span class="badge badge-bank text-xs">{{ card.bank }}</span>
+                    <app-bank-badge [bank]="card.bank" size="xs"></app-bank-badge>
                   }
+                  <app-network-badge [network]="card.network" size="xs"></app-network-badge>
                   @if (card.isCustom) {
                     <span class="badge badge-warning text-xs">Custom</span>
                   }

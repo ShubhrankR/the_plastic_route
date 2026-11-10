@@ -984,7 +984,11 @@ export class CardService {
   /**
    * Calculates billing cycle status for a specific statement day.
    */
-  calculateBillingCycleStatus(cardName: string, statementDay: number): BillingCycleStatus {
+  calculateBillingCycleStatus(
+    cardName: string,
+    statementDay: number,
+    card?: CreditCard,
+  ): BillingCycleStatus {
     const today = new Date();
     const currentDay = today.getDate();
 
@@ -1004,7 +1008,7 @@ export class CardService {
       severity = 'success';
     }
 
-    return { cardName, statementDay, targetCycle, daysLeft, severity };
+    return { cardName, statementDay, targetCycle, daysLeft, severity, card };
   }
 
   /**
@@ -1012,7 +1016,7 @@ export class CardService {
    */
   getAllBillingCycleStatuses(): BillingCycleStatus[] {
     return this.cards().map((card) =>
-      this.calculateBillingCycleStatus(card.name, card.billingCycleStart),
+      this.calculateBillingCycleStatus(card.name, card.billingCycleStart, card),
     );
   }
 }

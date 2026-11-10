@@ -1,0 +1,87 @@
+.bank-badge-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-fast);
+}
+
+.bank-icon {
+  display: block;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Dark mode: elevated frosted glass & crisp white contrast tile for vibrant logos */
+[data-theme='dark'] .bank-badge-container,
+:host-context([data-theme='dark']) .bank-badge-container,
+:host-context(:not([data-theme='light'])) .bank-badge-container {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme='dark'] .bank-icon,
+:host-context([data-theme='dark']) .bank-icon,
+:host-context(:not([data-theme='light'])) .bank-icon {
+  background: #ffffff;
+  padding: 1.5px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Light mode: clean native card pill styling */
+[data-theme='light'] .bank-badge-container,
+:host-context([data-theme='light']) .bank-badge-container {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .bank-icon,
+:host-context([data-theme='light']) .bank-icon {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Sizing variants */
+.size-xs {
+  padding: 0.15rem 0.42rem;
+  font-size: 0.7rem;
+}
+.size-xs .bank-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.size-sm {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+}
+.size-sm .bank-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.size-md {
+  padding: 0.28rem 0.65rem;
+  font-size: 0.82rem;
+}
+.size-md .bank-icon {
+  width: 24px;
+  height: 24px;
+}

@@ -1,9 +1,12 @@
 import { Component, input } from '@angular/core';
 import { OptimizationResult } from '../../../../core/models/card.model';
+import { BankBadgeComponent } from '../../../../shared/components/bank-badge/bank-badge';
+import { NetworkBadgeComponent } from '../../../../shared/components/network-badge/network-badge';
 
 @Component({
   selector: 'app-optimization-results',
   standalone: true,
+  imports: [BankBadgeComponent, NetworkBadgeComponent],
   templateUrl: './optimization-results.html',
   styleUrl: './optimization-results.css',
 })

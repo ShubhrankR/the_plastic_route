@@ -34,7 +34,15 @@
             </span>
           }
         </div>
-        <h3 class="fw-bold result-card-name">{{ r.bestCard.name }}</h3>
+        <div class="result-card-header d-flex items-center justify-between flex-wrap gap-2">
+          <h3 class="fw-bold result-card-name">{{ r.bestCard.name }}</h3>
+          <div class="d-flex items-center gap-1">
+            @if (r.bestCard.bank) {
+              <app-bank-badge [bank]="r.bestCard.bank" size="sm"></app-bank-badge>
+            }
+            <app-network-badge [network]="r.bestCard.network" size="sm"></app-network-badge>
+          </div>
+        </div>
         <p class="text-secondary text-sm result-reason">{{ r.reason }}</p>
 
         @if (r.excludedCategoryWarning) {
@@ -81,9 +89,14 @@
           </div>
         }
 
-        <p class="text-muted text-sm backup-label">
-          Backup Card: <span class="text-secondary fw-semibold">{{ r.backupCard.name }}</span>
-        </p>
+        <div class="d-flex items-center flex-wrap gap-2 backup-label mt-2">
+          <span class="text-muted text-sm">Backup Card:</span>
+          <span class="text-secondary fw-semibold">{{ r.backupCard.name }}</span>
+          @if (r.backupCard.bank) {
+            <app-bank-badge [bank]="r.backupCard.bank" size="xs"></app-bank-badge>
+          }
+          <app-network-badge [network]="r.backupCard.network" size="xs"></app-network-badge>
+        </div>
       </div>
 
       <!-- Stats grid -->

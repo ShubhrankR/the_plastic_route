@@ -1,10 +1,13 @@
 import { Component, inject, signal, computed } from '@angular/core';
 import { CardService } from '../../../../core/services/card.service';
 import { AirportInfo } from '../../../../core/models/card.model';
+import { BankBadgeComponent } from '../../../../shared/components/bank-badge/bank-badge';
+import { NetworkBadgeComponent } from '../../../../shared/components/network-badge/network-badge';
 
 @Component({
   selector: 'app-lounge-checker',
   standalone: true,
+  imports: [BankBadgeComponent, NetworkBadgeComponent],
   templateUrl: './lounge-checker.html',
   styleUrl: './lounge-checker.css',
 })

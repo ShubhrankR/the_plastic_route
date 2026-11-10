@@ -73,7 +73,20 @@
                       <div class="card-tags">
                         @for (card of eligibleCards(); track card.id) {
                           <span class="card-tag">
-                            ✓ {{ card.name }}
+                            <span class="card-tag-check">✓</span>
+                            @if (card.bank) {
+                              <app-bank-badge
+                                [bank]="card.bank"
+                                size="xs"
+                                [showLabel]="false"
+                              ></app-bank-badge>
+                            }
+                            <span class="card-tag-name">{{ card.name }}</span>
+                            <app-network-badge
+                              [network]="card.network"
+                              size="xs"
+                              [showLabel]="false"
+                            ></app-network-badge>
                             @if (card.loungeAccess.spendThreshold) {
                               <span class="card-tag-threshold"
                                 >(₹{{
