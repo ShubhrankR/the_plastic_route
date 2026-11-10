@@ -27,6 +27,9 @@ To build trust and ensure security, this application operates on a strict **Zero
 - **Live URL**: [https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)
 - **Catalog Size**: 182 credit cards across major Indian banks (HDFC, ICICI, SBI, Axis, IDFC FIRST, Kotak, IndusInd, Federal, etc.).
 - **CI / Security Gate**: Fully automated with CodeQL security scanning and zero high/critical vulnerabilities.
+- **Unit Test Coverage**: 49 automated tests across 8 spec suites (`npm test`).
+- **Offline Readiness**: PWA with Service Worker offline caching and app installation support.
+- **Iconography**: Authentic bank and payment network SVG vector marks with theme-adaptive contrast plates.
 
 ---
 
@@ -142,6 +145,43 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
   - [x] Document `cards.json` schema specification in `docs/CARD_CATALOG_DATASET.md` for open-source contributors.
   - [x] Create dedicated GitHub Issue templates for "New Card Request" and "Bank Devaluation Update" (`.github/ISSUE_TEMPLATE/devaluation_update.yml`).
 
+### Phase 7 — Brand Vector Iconography & Theme-Adaptive Badges (November 2026)
+
+- [x] **Official Payment Network Vector Suite (`public/icons/networks/`)**
+  - [x] Source and integrate authentic vector artwork for Visa, MasterCard, RuPay, American Express, and Diners Club.
+  - [x] Standardize aspect ratios (3:2 rectangular card format) with subtle micro-borders and soft shadows.
+- [x] **Official Bank Logos Suite (`public/icons/banks/`)**
+  - [x] Curate normalized 24x24 authentic vector brand marks for HDFC Bank, SBI Card, ICICI Bank, Axis Bank, Kotak Bank, IDFC FIRST, IndusInd Bank, Bank of Baroda (BOBCARD), Federal Bank, Yes Bank, and American Express.
+  - [x] Provide clean fallback generic SVG bank mark for unmapped institutions.
+- [x] **Reusable Standalone Angular 22 Badge Components**
+  - [x] Implement `BankBadgeComponent` (`<app-bank-badge>`) and `NetworkBadgeComponent` (`<app-network-badge>`) with size variants (`xs`, `sm`, `md`) and toggleable text labels (`showLabel`).
+  - [x] Integrate badges across all application views:
+    - [x] Spend Optimizer results (Best Card & Backup Card recommendations).
+    - [x] Portfolio Table & Add/Edit Card Modal (with real-time catalog preview).
+    - [x] Billing Cycle Tracker.
+    - [x] Airport Lounge Checker (compact icon badge mode).
+    - [x] Milestone & Fee Waiver Tracker.
+- [x] **Theme-Adaptive Contrast & Frosted Glass Design**
+  - [x] Implement clean white micro-plate canvas backing for `.bank-icon` in dark mode (`[data-theme='dark']`) so colored bank marks (Axis maroon, SBI cyan/blue, HDFC red/blue, Kotak red/blue) maintain WCAG AA contrast and pop vibrantly.
+  - [x] Upgrade badge containers with elevated translucent glass (`rgba(255, 255, 255, 0.08)`) and luminous borders (`rgba(255, 255, 255, 0.18)`).
+  - [x] Preserve native clean card chip styling in light mode (`#ffffff`).
+  - [x] Add complete unit test coverage in `bank-badge.spec.ts` and `network-badge.spec.ts`.
+
+---
+
+## 🔮 Future Horizons & Backlog
+
+### Phase 8 — Advanced Financial Utilities & Enhancements
+
+- [ ] **Statement Bill Due Date Reminders**
+  - [ ] Local Notifications API / Calendar `.ics` export for upcoming payment deadlines and interest-free grace periods.
+- [ ] **Merchant Category Code (MCC) Lookup Guide**
+  - [ ] Interactive reference table of Indian MCC codes (e.g., 5411 Groceries, 5812 Dining, 5541 Fuel) with reward eligibility flags per bank.
+- [ ] **Reward Redemption Valuation Matrix**
+  - [ ] Points-to-Rupee transfer ratios across airline & hotel loyalty programs (KrisFlyer, Air India Flying Returns, Accor ALL, Marriott Bonvoy).
+- [ ] **Custom Card Art / Color Accent Customizer**
+  - [ ] Allow users to pick custom gradient or accent colors for cards in their portfolio view to match custom physical card editions.
+
 ---
 
 ## ❓ Resolved & Open Architectural Decisions
@@ -149,4 +189,5 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 1. **Pre-loaded Card Database** ✅ _Resolved_: Implemented via `cards.json` with 182 verified cards and interactive "Quick Add from Catalog" modal.
 2. **Rule Engine Balance** ✅ _Resolved_: Static baseline rules maintained in catalog via automated harvester; custom user overrides (fee waiver thresholds, reward notes) supported in wallet without code modifications.
 3. **PWA Mobile-First Usage** ✅ _Resolved_: Configured with `@angular/service-worker`, offline caching, install prompts, and `manifest.webmanifest`.
-4. **Automated Testing & Security Gate** ✅ _Resolved_: Vitest unit test suite integrated into CI alongside Prettier formatting, catalog schema validation, production build, and CodeQL security analysis.
+4. **Automated Testing & Security Gate** ✅ _Resolved_: Vitest unit test suite (49 tests) integrated into CI alongside Prettier formatting, catalog schema validation, production build, and CodeQL security analysis.
+5. **Brand Iconography & Contrast Compliance** ✅ _Resolved_: Offline vector SVG icon system with theme-adaptive contrast plates delivering high vibrancy across dark and light themes without external CDN dependencies.
