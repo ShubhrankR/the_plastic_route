@@ -37,6 +37,9 @@ jobs:
       - name: Validate Master Card Catalog Schema & Integrity
         run: npm run cards:validate
 
+      - name: Run Automated Unit Tests (Vitest)
+        run: npm test
+
       - name: Verify Angular Production Compilation
         run: npm run build
 

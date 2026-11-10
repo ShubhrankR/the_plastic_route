@@ -134,17 +134,19 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 
 ### Phase 6 — Test Suite & Community Ecosystem
 
-- [ ] **Automated Unit & Integration Test Suite**
-  - [ ] Add Jasmine/Karma or Vitest unit tests (`*.spec.ts`) for `CardService` optimization algorithms and billing cycle calculations.
-  - [ ] Add tests for `IndexedDBService` storage operations and FTUE route guards.
-- [ ] **Community Contribution Guidelines**
-  - [ ] Document `cards.json` schema specification in `docs/` for open-source contributors.
-  - [ ] Create dedicated GitHub Issue templates for "New Card Request" and "Bank Devaluation Update".
+- [x] **Automated Unit & Integration Test Suite**
+  - [x] Add Vitest unit test suite (`*.spec.ts`) for `CardService` optimization algorithms, forex calculator, airport lounge matching, and billing cycle calculations.
+  - [x] Add tests for `IndexedDBService`, `ToastService`, `ThemeService`, `PwaService`, and FTUE route guards (`onboardingGuard`, `welcomeGuard`).
+  - [x] Wire `npm test` into `package.json` and `.github/workflows/ci.yml`.
+- [x] **Community Contribution Guidelines**
+  - [x] Document `cards.json` schema specification in `docs/CARD_CATALOG_DATASET.md` for open-source contributors.
+  - [x] Create dedicated GitHub Issue templates for "New Card Request" and "Bank Devaluation Update" (`.github/ISSUE_TEMPLATE/devaluation_update.yml`).
 
 ---
 
 ## ❓ Resolved & Open Architectural Decisions
 
 1. **Pre-loaded Card Database** ✅ _Resolved_: Implemented via `cards.json` with 182 verified cards and interactive "Quick Add from Catalog" modal.
-2. **Rule Engine Balance** 🔄 _In Progress_: Static baseline rules maintained in catalog via automated weekly harvester; user overrides to be added in Phase 5 without requiring code edits.
-3. **PWA Mobile-First Usage** 🔜 _Prioritized for Phase 4_: Critical for in-store checkout decisions where cell signal may be spotty.
+2. **Rule Engine Balance** ✅ _Resolved_: Static baseline rules maintained in catalog via automated harvester; custom user overrides (fee waiver thresholds, reward notes) supported in wallet without code modifications.
+3. **PWA Mobile-First Usage** ✅ _Resolved_: Configured with `@angular/service-worker`, offline caching, install prompts, and `manifest.webmanifest`.
+4. **Automated Testing & Security Gate** ✅ _Resolved_: Vitest unit test suite integrated into CI alongside Prettier formatting, catalog schema validation, production build, and CodeQL security analysis.
