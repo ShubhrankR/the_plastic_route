@@ -28,6 +28,16 @@
     }
 
     <div class="navbar-actions">
+      @if (canInstall()) {
+        <button
+          type="button"
+          class="btn btn-outline btn-sm"
+          (click)="installPwa()"
+          title="Install The Plastic Route app on your device for instant offline access"
+        >
+          📲 Install App
+        </button>
+      }
       <button class="btn btn-ghost" (click)="toggleTheme()">
         {{ theme() === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode' }}
       </button>
