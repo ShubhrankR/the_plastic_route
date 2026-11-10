@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { CardService, FOREX_RATES } from './card.service';
 import { IndexedDBService } from './indexed-db.service';
-import { ToastService, ToastConfig } from './toast.service';
-import { CreditCard, MasterCatalogCard } from '../models/card.model';
+import { ToastService } from './toast.service';
+import { MasterCatalogCard } from '../models/card.model';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
 describe('CardService', () => {

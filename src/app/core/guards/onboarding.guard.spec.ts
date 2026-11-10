@@ -77,6 +77,7 @@ describe('Route Guards', () => {
       const result = TestBed.runInInjectionContext(() => welcomeGuard(dummyRoute, dummyState));
 
       expect(mockRouter.createUrlTree).toHaveBeenCalledWith(['/home']);
+      expect(result).toBeDefined();
     });
 
     it('should allow non-onboarded visitors to view /welcome', () => {
