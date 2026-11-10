@@ -1,0 +1,102 @@
+<div class="glass-card">
+  <div class="tracker-header">
+    <h4 class="fw-bold">✈️ Airport Lounge Terminal Checker</h4>
+    <span class="badge badge-success fw-semibold">
+      {{ eligibleCards().length }} Eligible Card{{ eligibleCards().length === 1 ? '' : 's' }} in
+      Wallet
+    </span>
+  </div>
+  <p class="text-muted text-sm tracker-desc">
+    Check which terminals and lounges your cards can access across major Indian airports, including
+    updated 2026 quarterly spend qualification requirements.
+  </p>
+
+  <!-- Airport selector pills -->
+  <div class="airport-pills">
+    @for (apt of airports(); track apt.code) {
+      <button
+        type="button"
+        class="airport-pill"
+        [class.active]="apt.code === selectedAirportCode()"
+        (click)="selectAirport(apt.code)"
+      >
+        <span class="airport-code">{{ apt.code }}</span>
+        <span class="airport-city">{{ apt.city }}</span>
+      </button>
+    }
+  </div>
+
+  @if (currentAirport(); as apt) {
+    <div class="airport-details">
+      <div class="airport-header">
+        <h5 class="fw-bold text-gradient">{{ apt.name }} ({{ apt.code }})</h5>
+        <span class="text-muted text-xs">{{ apt.city }}</span>
+      </div>
+
+      <div class="terminals-list">
+        @for (terminal of apt.terminals; track terminal.terminalName) {
+          <div class="terminal-block">
+            <h6 class="terminal-title">🏛️ {{ terminal.terminalName }}</h6>
+
+            <div class="lounges-grid">
+              @for (lounge of terminal.lounges; track lounge.name) {
+                <div class="lounge-card">
+                  <div class="lounge-header">
+                    <h6 class="lounge-name">{{ lounge.name }}</h6>
+                    <span
+                      class="badge lounge-type-badge"
+                      [class]="lounge.type === 'International' ? 'badge-warning' : 'badge-success'"
+                    >
+                      {{ lounge.type }}
+                    </span>
+                  </div>
+
+                  <p class="text-muted text-xs lounge-location">📍 {{ lounge.location }}</p>
+
+                  <div class="lounge-meta">
+                    <span class="text-xs text-secondary"
+                      ><strong>Operator:</strong> {{ lounge.operator }}</span
+                    >
+                  </div>
+
+                  @if (lounge.spendRequirement) {
+                    <div class="spend-req-box">
+                      <span class="spend-req-icon">💳</span>
+                      <p class="spend-req-text">{{ lounge.spendRequirement }}</p>
+                    </div>
+                  }
+
+                  <!-- Matched cards in user's wallet -->
+                  <div class="matched-cards-section">
+                    <p class="matched-label">Cards in your wallet with access:</p>
+                    @if (eligibleCards().length > 0) {
+                      <div class="card-tags">
+                        @for (card of eligibleCards(); track card.id) {
+                          <span class="card-tag">
+                            ✓ {{ card.name }}
+                            @if (card.loungeAccess.spendThreshold) {
+                              <span class="card-tag-threshold"
+                                >(₹{{
+                                  (card.loungeAccess.spendThreshold / 1000).toFixed(0)
+                                }}k/qtr)</span
+                              >
+                            }
+                          </span>
+                        }
+                      </div>
+                    } @else {
+                      <p class="text-muted text-xs italic">
+                        No lounge-eligible cards in your active wallet. Add a card like Infinia,
+                        Regalia Gold, Sapphiro, or Atlas.
+                      </p>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</div>

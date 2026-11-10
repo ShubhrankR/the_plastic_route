@@ -17,25 +17,59 @@
       >
         <option value="" disabled>Select Category</option>
         @for (cat of categories; track cat.value) {
-          <option [value]="cat.value">{{ cat.label }}</option>
+          <option [value]="cat.value">{{ cat.icon ? cat.icon + ' ' : '' }}{{ cat.label }}</option>
         }
       </select>
     </div>
 
-    <div class="form-group">
-      <label for="txAmount" class="form-label">
-        Transaction Amount (₹) <span class="text-muted text-xs">(Optional)</span>
-      </label>
-      <input
-        type="number"
-        id="txAmount"
-        class="form-input"
-        [(ngModel)]="amount"
-        (ngModelChange)="onCategoryChange()"
-        name="amount"
-        placeholder="e.g., 5000"
-      />
-    </div>
+    @if (category === 'forex') {
+      <div class="form-row">
+        <div class="form-group">
+          <label for="txCurrency" class="form-label">Foreign Currency</label>
+          <select
+            id="txCurrency"
+            class="form-input form-select"
+            [(ngModel)]="currency"
+            (ngModelChange)="onCurrencyChange()"
+            name="currency"
+          >
+            @for (c of forexCurrencies; track c.code) {
+              <option [value]="c.code">{{ c.label }} ({{ c.symbol }})</option>
+            }
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="txForexAmount" class="form-label">
+            Amount ({{ currency }}) <span class="text-muted text-xs">(Optional)</span>
+          </label>
+          <input
+            type="number"
+            id="txForexAmount"
+            class="form-input"
+            [(ngModel)]="amount"
+            (ngModelChange)="onCategoryChange()"
+            name="amount"
+            placeholder="e.g., 500"
+          />
+        </div>
+      </div>
+    } @else {
+      <div class="form-group">
+        <label for="txAmount" class="form-label">
+          Transaction Amount (₹) <span class="text-muted text-xs">(Optional)</span>
+        </label>
+        <input
+          type="number"
+          id="txAmount"
+          class="form-input"
+          [(ngModel)]="amount"
+          (ngModelChange)="onCategoryChange()"
+          name="amount"
+          placeholder="e.g., 5000"
+        />
+      </div>
+    }
 
     <button type="submit" class="btn btn-primary btn-full" [disabled]="!category">
       ⚡ Optimize Route

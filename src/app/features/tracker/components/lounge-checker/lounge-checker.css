@@ -1,0 +1,203 @@
+.tracker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tracker-desc {
+  margin-bottom: 1.25rem;
+  max-width: 700px;
+}
+
+.airport-pills {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.airport-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.airport-pill:hover {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--card-border-hover);
+}
+
+.airport-pill.active {
+  background: var(--card-bg-hover);
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.airport-code {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.airport-city {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.airport-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.airport-header {
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.terminal-block {
+  margin-bottom: 1.5rem;
+}
+
+.terminal-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.lounges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.lounge-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: border-color var(--transition-fast);
+}
+
+.lounge-card:hover {
+  border-color: var(--card-border-hover);
+}
+
+.lounge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.lounge-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+  flex: 1;
+}
+
+.lounge-type-badge {
+  flex-shrink: 0;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.lounge-location {
+  margin: 0;
+  line-height: 1.35;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.lounge-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.spend-req-box {
+  background: var(--warning-bg);
+  border: 1px dashed rgba(245, 158, 11, 0.4);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.spend-req-icon {
+  font-size: 0.9rem;
+}
+
+.spend-req-text {
+  font-size: 0.78rem;
+  color: var(--accent-gold);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.matched-cards-section {
+  margin-top: 0.5rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--card-border);
+}
+
+.matched-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.card-tag {
+  background: var(--success-bg);
+  border: 1px solid var(--card-border-hover);
+  color: var(--accent-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  line-height: 1.25;
+}
+
+.card-tag-threshold {
+  opacity: 0.85;
+  font-weight: 500;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}

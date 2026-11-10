@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CardService } from '../../core/services/card.service';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
@@ -16,4 +16,5 @@ export class HomeComponent {
   readonly isExploreMode = this.cardService.isExploreMode;
   readonly userCardCount = this.cardService.userCardCount;
   readonly isLoaded = this.cardService.isLoaded;
+  readonly catalogCount = computed(() => this.cardService.masterCatalog().length);
 }

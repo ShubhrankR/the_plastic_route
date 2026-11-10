@@ -976,9 +976,12 @@ a.btn:hover,
 }
 
 .badge-bank {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--accent-mint);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: var(--success-bg);
+  color: var(--accent-primary);
+  border: 1px solid var(--card-border-hover);
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .badge-pill {
@@ -1025,4 +1028,92 @@ a.btn:hover,
     transform: none !important;
     transition: none !important;
   }
+}
+
+/* ============================================
+   Segmented Subnav Tabs & Progress Bars
+   ============================================ */
+
+.subnav-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--input-bg);
+  padding: 0.35rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.subnav-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.subnav-tab:hover {
+  color: var(--text-primary);
+  background: var(--card-bg);
+}
+
+.subnav-tab.active {
+  color: var(--text-primary);
+  background: var(--card-bg-hover);
+  border: 1px solid var(--card-border-hover);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--input-bg);
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  margin: 0.5rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.alert-banner {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.alert-banner-warning {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fde68a;
+}
+
+.alert-banner-danger {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #fecaca;
+}
+
+.alert-banner-info {
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: #a7f3d0;
 }

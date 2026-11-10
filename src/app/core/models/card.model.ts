@@ -8,6 +8,15 @@ export interface LoungeAccess {
   [key: string]: any;
 }
 
+export interface CardMilestone {
+  id: string;
+  title: string;
+  spendTarget: number;
+  period: 'Quarterly' | 'Annual';
+  reward: string;
+  currentSpend?: number;
+}
+
 export interface CreditCard {
   id: string;
   name: string;
@@ -24,6 +33,9 @@ export interface CreditCard {
   forexMarkup?: string | number;
   rewardRate?: string;
   tags?: string[];
+  milestones?: CardMilestone[];
+  customNotes?: string;
+  feeWaiverSpend?: number;
   [key: string]: any;
 }
 
@@ -42,7 +54,21 @@ export interface MasterCatalogCard {
   forexMarkup?: string | number;
   rewardRate?: string;
   tags?: string[];
+  milestones?: CardMilestone[];
   [key: string]: any;
+}
+
+export interface ForexDetails {
+  foreignCurrency: string;
+  foreignAmount: number;
+  exchangeRateToInr: number;
+  inrBaseAmount: number;
+  standardMarkupPercent: number; // typically 3.5%
+  standardGstPercent: number; // 18% on markup
+  standardTotalFee: number;
+  bestCardMarkupPercent: number; // 0% to 2%
+  bestCardTotalFee: number;
+  netSavings: number;
 }
 
 export interface OptimizationResult {
@@ -52,6 +78,9 @@ export interface OptimizationResult {
   dueDate: Date;
   reason: string;
   estimatedSaving?: number;
+  excludedCategoryWarning?: string;
+  feeWarning?: string;
+  forexDetails?: ForexDetails;
 }
 
 export interface BillingCycleStatus {
@@ -71,12 +100,19 @@ export type SpendCategory =
   | 'forex'
   | 'dining_travel'
   | 'gaming_wallet'
+  | 'rent'
+  | 'utilities'
+  | 'education'
+  | 'wallet_load'
+  | 'government'
   | 'general'
   | (string & {});
 
 export interface CategoryOption {
   value: SpendCategory;
   label: string;
+  icon?: string;
+  warningNote?: string;
   [key: string]: any;
 }
 
@@ -86,4 +122,23 @@ export interface WalletBackupPayload {
   exportedAt: string;
   cards: CreditCard[];
   [key: string]: any;
+}
+
+export interface AirportTerminal {
+  terminalName: string;
+  lounges: {
+    name: string;
+    location: string;
+    type: 'Domestic' | 'International';
+    eligibleNetworks: string[];
+    spendRequirement?: string;
+    operator: string;
+  }[];
+}
+
+export interface AirportInfo {
+  code: string;
+  city: string;
+  name: string;
+  terminals: AirportTerminal[];
 }

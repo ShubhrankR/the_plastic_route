@@ -42,6 +42,8 @@ export class CardModal implements OnInit {
   loungeEligible = signal<boolean>(false);
   loungeSpendThreshold = signal<number>(0);
   loungeTerminals = signal<string>('Domestic');
+  feeWaiverSpend = signal<number>(0);
+  customNotes = signal<string>('');
 
   readonly networks: CardNetwork[] = ['Visa', 'Mastercard', 'RuPay', 'Amex', 'Diners Club'];
 
@@ -60,6 +62,8 @@ export class CardModal implements OnInit {
       this.loungeEligible.set(editData.loungeAccess?.eligible ?? false);
       this.loungeSpendThreshold.set(editData.loungeAccess?.spendThreshold ?? 0);
       this.loungeTerminals.set(editData.loungeAccess?.terminals?.join(', ') ?? 'Domestic');
+      this.feeWaiverSpend.set(editData.feeWaiverSpend ?? 0);
+      this.customNotes.set(editData.customNotes ?? '');
     } else if (this.masterCatalog().length > 0) {
       const first = this.masterCatalog()[0];
       this.selectedCatalogId.set(first.id);
@@ -117,6 +121,8 @@ export class CardModal implements OnInit {
         spendThreshold: this.loungeEligible() ? Number(this.loungeSpendThreshold()) : undefined,
         terminals: this.loungeEligible() ? terminals : undefined,
       },
+      feeWaiverSpend: this.feeWaiverSpend() ? Number(this.feeWaiverSpend()) : undefined,
+      customNotes: this.customNotes().trim() || undefined,
       isCustom: true,
     };
 

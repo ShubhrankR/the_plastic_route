@@ -1,0 +1,97 @@
+<div class="glass-card">
+  <div class="tracker-header">
+    <h4 class="fw-bold">🎯 Milestone &amp; Fee Waiver Tracker</h4>
+    <div class="sim-input-wrap">
+      <label for="quarterlySim" class="text-xs text-muted">Simulate Quarterly Spend:</label>
+      <div class="sim-input-group">
+        <span class="sim-currency">₹</span>
+        <input
+          type="number"
+          id="quarterlySim"
+          class="form-input form-input-sm"
+          [ngModel]="quarterlySpendSim()"
+          (ngModelChange)="quarterlySpendSim.set($event)"
+          step="5000"
+          min="0"
+        />
+      </div>
+    </div>
+  </div>
+  <p class="text-muted text-sm tracker-desc">
+    Track your quarterly spend milestones required for airport lounge qualification, milestone bonus
+    vouchers, and annual fee waivers.
+  </p>
+
+  @if (milestones().length === 0) {
+    <div class="empty-state">
+      <p class="text-muted">No cards in your active wallet. Add cards to track milestones.</p>
+    </div>
+  } @else {
+    <div class="milestones-grid">
+      @for (m of milestones(); track m.card.id) {
+        <div class="milestone-card">
+          <div class="milestone-card-header">
+            <h5 class="milestone-card-title">{{ m.card.name }}</h5>
+            <span class="badge badge-pill badge-bank">{{ m.card.bank ?? m.card.network }}</span>
+          </div>
+
+          <!-- Quarterly Lounge Milestone -->
+          <div class="milestone-item">
+            <div class="d-flex justify-between items-center text-xs">
+              <span class="fw-semibold text-secondary">Quarterly Lounge Spend Goal</span>
+              <span class="fw-bold" [class.text-success]="getProgress(m.quarterlyTarget) === 100">
+                ₹{{ quarterlySpendSim().toLocaleString('en-IN') }} / ₹{{
+                  m.quarterlyTarget.toLocaleString('en-IN')
+                }}
+              </span>
+            </div>
+
+            <div class="progress-track">
+              <div
+                class="progress-fill"
+                [style.width.%]="getProgress(m.quarterlyTarget)"
+                [style.background]="
+                  getProgress(m.quarterlyTarget) === 100 ? '#10b981' : 'var(--gradient-primary)'
+                "
+              ></div>
+            </div>
+
+            <div class="d-flex justify-between items-center text-xs text-muted">
+              <span>{{ getProgress(m.quarterlyTarget) }}% Completed</span>
+              @if (getSpendNeeded(m.quarterlyTarget) === 0) {
+                <span class="text-success fw-bold">✓ Lounge Access Unlocked! 🎉</span>
+              } @else {
+                <span
+                  >₹{{ getSpendNeeded(m.quarterlyTarget).toLocaleString('en-IN') }} more
+                  needed</span
+                >
+              }
+            </div>
+          </div>
+
+          <!-- Annual Fee Waiver Milestone -->
+          @if (m.feeWaiverTarget) {
+            <div class="milestone-item fee-item">
+              <div class="d-flex justify-between items-center text-xs">
+                <span class="fw-semibold text-muted">Annual Fee Waiver Target</span>
+                <span class="fw-bold text-secondary"
+                  >₹{{ m.feeWaiverTarget.toLocaleString('en-IN') }} / year</span
+                >
+              </div>
+            </div>
+          }
+
+          <!-- Milestone Perks List -->
+          <div class="perks-list">
+            @for (reward of m.milestoneRewards; track reward) {
+              <div class="perk-item">
+                <span class="perk-bullet">⚡</span>
+                <span class="perk-text">{{ reward }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
