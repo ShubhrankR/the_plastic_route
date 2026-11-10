@@ -62,6 +62,7 @@ Synchronizes scraped CSV/JSON datasets into `src/app/core/data/cards.json` with 
 - **Scroll-Triggered Micro-Animations:** Native `IntersectionObserver` scroll reveal directive with zero main-thread blocking and `prefers-reduced-motion` compliance.
 - **Soothing Light & Dark Themes:** Nature-inspired Emerald Forest & Gold color system with soft off-white (`#f8fafc`) light mode, rich dark emerald mode, glassmorphism, and WCAG-compliant high-contrast typography.
 - **Brand Icon & Multi-Res Favicon:** Custom vector brand mark and multi-resolution `favicon.ico` / `favicon.svg` embedded across all viewports.
+- **Bank & Payment Network Vector Badges:** Authentic vector brand marks for major networks (Visa, MasterCard, RuPay, Amex, Diners Club) and banks (HDFC, SBI, ICICI, Axis, Kotak, IDFC, IndusInd, BOBCARD, Federal Bank, Yes Bank, etc.) with theme-adaptive frosted glass styling and high-contrast backing plates in dark mode.
 - **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays strictly in your browser.
 
 ## 📚 Project Documentation
