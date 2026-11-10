@@ -115,11 +115,11 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 
 ### Phase 4 — Progressive Web App (PWA) & Mobile Offline Engine
 
-- [ ] **Progressive Web App Setup (`@angular/pwa`)**
-  - [ ] Configure Angular Service Worker (`ngsw-config.json`) for instant offline launch.
-  - [ ] Create `manifest.webmanifest` with brand assets, theme colors (`#064e3b` / `#0B0F19`), and app icons.
-  - [ ] Implement offline caching strategy for app shell and static card catalog.
-  - [ ] Add unobtrusive "Install App" prompt banner for mobile and desktop browsers.
+- [x] **Progressive Web App Setup (`@angular/service-worker`)**
+  - [x] Configure Angular Service Worker (`ngsw-config.json`) for instant offline launch.
+  - [x] Create `manifest.webmanifest` with brand assets, theme colors (`#064e3b` / `#041d16`), and standard + maskable app icons.
+  - [x] Implement offline caching strategy for app shell, fonts, and static card catalog.
+  - [x] Add unobtrusive "Install App" prompt in navbar and automatic update notifications via `PwaService`.
 
 ### Phase 5 — Advanced Rule Engine & Spend Analytics
 
