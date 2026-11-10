@@ -36,7 +36,9 @@ export class PwaService {
   private checkStandaloneMode(): void {
     if (typeof window === 'undefined') return;
 
-    const isStandaloneDisplay = window.matchMedia('(display-mode: standalone)').matches;
+    const isStandaloneDisplay =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(display-mode: standalone)').matches;
     const isIosStandalone =
       (window.navigator as unknown as { standalone?: boolean }).standalone === true;
 

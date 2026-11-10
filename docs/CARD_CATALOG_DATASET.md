@@ -6,7 +6,7 @@ This document provides a comprehensive inventory and breakdown of all credit car
 
 ## 📊 Catalog Overview
 
-- **Total Cards**: 165
+- **Total Cards**: 182
 - **Total Issuers / Banks**: 11
 - **Data Source**: Official Most Important Terms & Conditions (MITC), bank product circulars, and verified community disclosures.
 - **Dataset File**: [`src/app/core/data/cards.json`](../src/app/core/data/cards.json)
@@ -259,5 +259,106 @@ This document provides a comprehensive inventory and breakdown of all credit car
 
 In accordance with our **Privacy-First Architecture**:
 
-- **Master Dataset (`cards.json`)**: Contains publicly verifiable terms, reward rates, fees, and lounge conditions for all 165 cards above.
+- **Master Dataset (`cards.json`)**: Contains publicly verifiable terms, reward rates, fees, and lounge conditions for all 182 cards above.
 - **Developer Test Portfolio (`owner_portfolio.json`)**: Stored separately in `src/app/core/data/owner_portfolio.json` for isolated local debugging, completely detached from public builds.
+
+---
+
+## 🛠️ Schema Specification & Contribution Guide
+
+All cards submitted to `src/app/core/data/cards.json` must strictly conform to the schema enforced by `scripts/validate-cards.mjs`.
+
+### Card Object Schema
+
+```typescript
+export interface MasterCatalogCard {
+  /** Unique lowercase identifier using alphanumeric characters and underscores (e.g., 'hdfc_infinia'). */
+  id: string;
+
+  /** Official marketing name of the card product. */
+  name: string;
+
+  /** Full issuing bank or entity name (e.g., 'HDFC Bank', 'SBI Card', 'ICICI Bank'). */
+  bank: string;
+
+  /** Payment network or slash-separated combinations (Visa, Mastercard, RuPay, Amex, Diners Club). */
+  network: string;
+
+  /** Human-readable explanation of when to swipe this card (e.g., '5% Amazon + SmartBuy multipliers'). */
+  optimizationVector: string;
+
+  /** Default starting day of the billing cycle (1-31). */
+  defaultBillingStart?: number;
+
+  /** Default closing day of the billing cycle (1-31). */
+  defaultBillingEnd?: number;
+
+  /** Lounge access metadata and quarterly qualification requirements. */
+  loungeAccess: {
+    eligible: boolean;
+    spendThreshold?: number; // Previous quarter spend in ₹ required for complimentary access
+    terminals?: string[]; // Applicable terminal codes, e.g., ["T1", "T2"]
+    notes?: string;
+  };
+
+  /** Categories where this card delivers optimal rewards or returns. */
+  categories: SpendCategory[];
+
+  /** Annual fee description and waiver threshold. */
+  annualFee?: string | number;
+
+  /** Foreign currency markup percentage (e.g., 0.0, 1.5, 2.0, 3.5). */
+  forexMarkup?: string | number;
+
+  /** Base reward rate summary (e.g., '3.3% base reward rate'). */
+  rewardRate?: string;
+
+  /** Optional discovery tags (e.g., ['zero_forex', 'lounge_priority']). */
+  tags?: string[];
+
+  /** Milestone spend targets and rewards. */
+  milestones?: Array<{
+    id: string;
+    title: string;
+    spendTarget: number;
+    period: 'Quarterly' | 'Annual';
+    reward: string;
+  }>;
+
+  /** Regulatory notice or devaluation warning (if applicable). */
+  regulatoryUpdate?: string;
+}
+```
+
+### Supported Spend Categories
+
+- `amazon`: Amazon Shopping, Prime, & Amazon Pay
+- `flipkart`: Flipkart, Myntra, Cleartrip
+- `bpcl`: Bharat Petroleum (BPCL) petrol outlets
+- `other_fuel`: HPCL, IndianOil (IOCL), Shell fuel stations
+- `upi`: RuPay UPI QR scans & street vendor payments
+- `forex`: Foreign currency international spends (USD, EUR, GBP, AED, SGD, THB, JPY)
+- `dining_travel`: Flights, hotel bookings, dining & food delivery
+- `utilities`: Electricity, water, gas, broadband bill payments
+- `rent`: Housing rent payments
+- `education`: School & college tuition fees
+- `wallet_load`: Wallet reloads (Paytm, Mobikwik, Amazon Wallet)
+- `government`: Government taxes, stamp duties & challans
+- `gaming_wallet`: Online gaming platforms & digital credits
+- `general`: General offline retail / catch-all category
+
+### Local Verification Before Submitting a PR
+
+```bash
+# 1. Format all files
+npm run format:write
+
+# 2. Validate cards.json schema integrity
+npm run cards:validate
+
+# 3. Run automated test suite
+npm test
+
+# 4. Verify complete CI pipeline
+npm run ci
+```

@@ -26,6 +26,11 @@ const VALID_CATEGORIES = new Set([
   'dining_travel',
   'gaming_wallet',
   'general',
+  'utilities',
+  'rent',
+  'education',
+  'wallet_load',
+  'government',
 ]);
 
 const VALID_NETWORKS = new Set(['Visa', 'Mastercard', 'RuPay', 'Amex', 'Diners Club']);

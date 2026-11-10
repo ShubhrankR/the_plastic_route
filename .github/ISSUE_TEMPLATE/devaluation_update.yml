@@ -1,0 +1,62 @@
+name: 📉 Bank Devaluation / Rule Change Notice
+description: Report a bank reward rate devaluation, fee increase, lounge threshold hike, or newly excluded spend category.
+title: '[Devaluation]: '
+labels: ['devaluation', 'dataset-sync', 'needs-review']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### 📉 Bank Devaluation / Terms & Conditions Update
+        Indian credit card reward terms and lounge access requirements evolve rapidly. Help the community keep calculations accurate by reporting bank policy changes.
+
+  - type: input
+    id: card_id
+    attributes:
+      label: Affected Card Name & Issuer
+      description: Which card and bank is implementing this devaluation?
+      placeholder: 'e.g., HDFC Regalia Gold / Axis Magnus / ICICI Coral'
+    validations:
+      required: true
+
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Type of Policy Change
+      description: What aspect of the card is being revised?
+      options:
+        - Quarterly Airport Lounge Spend Threshold Hike (e.g. ₹35k to ₹50k/qtr)
+        - Reward Rate Reduction / Monthly Cashback Cap
+        - Newly Excluded Categories (Rent, Fuel, Utilities, Govt, Education)
+        - Surcharge Added (Rent 1%, Tuition fee, Wallet load)
+        - Annual Fee / Waiver Threshold Increase
+        - Forex Markup Rate Revision
+        - Complete Card Discontinuation / Portfolio Migration
+    validations:
+      required: true
+
+  - type: input
+    id: effective_date
+    attributes:
+      label: Effective Date of Revision
+      description: When does this change take effect?
+      placeholder: 'e.g., December 1, 2026 or Immediately'
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Specific Terms & Rule Changes
+      description: Describe the before vs. after comparison of the policy.
+      placeholder: 'e.g., Previous lounge policy: Complimentary 2 visits per quarter unconditionally. New policy: Requires spending ₹50,000 in previous calendar quarter to unlock complimentary visits.'
+    validations:
+      required: true
+
+  - type: input
+    id: official_source
+    attributes:
+      label: Official Bank Circular or Notification Link
+      description: Provide the bank's official circular, MITC PDF, or customer notification email reference.
+      placeholder: 'https://www.hdfcbank.com/personal/resources/regulatory-notices...'
+    validations:
+      required: true
