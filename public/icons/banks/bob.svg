@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <rect width="32" height="32" rx="6" fill="#F26522"/>
+  <!-- Bank of Baroda Dual B Sun Rays -->
+  <circle cx="16" cy="16" r="8" fill="#FFFFFF"/>
+  <circle cx="16" cy="16" r="5" fill="#F26522"/>
+  <rect x="15" y="11" width="2" height="10" fill="#FFFFFF"/>
+  <path d="M16 11H19C20.5 11 21.5 12 21.5 13.5C21.5 15 20.5 16 19 16H16V11Z" fill="#FFFFFF"/>
+  <path d="M16 16H19.5C21 16 22 17 22 18.5C22 20 21 21 19.5 21H16V16Z" fill="#FFFFFF"/>
+</svg>

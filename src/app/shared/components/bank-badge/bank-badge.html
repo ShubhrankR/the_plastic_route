@@ -1,0 +1,15 @@
+@if (bank()) {
+  <span class="bank-badge-container size-{{ size() }}" [title]="bankDetails().name">
+    <img
+      [src]="bankDetails().iconPath"
+      [alt]="bankDetails().name"
+      class="bank-icon"
+      loading="lazy"
+      width="18"
+      height="18"
+    />
+    @if (showLabel()) {
+      <span class="bank-name">{{ bankDetails().name }}</span>
+    }
+  </span>
+}

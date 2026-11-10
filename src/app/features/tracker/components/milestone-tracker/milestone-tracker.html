@@ -32,7 +32,12 @@
         <div class="milestone-card">
           <div class="milestone-card-header">
             <h5 class="milestone-card-title">{{ m.card.name }}</h5>
-            <span class="badge badge-pill badge-bank">{{ m.card.bank ?? m.card.network }}</span>
+            <div class="d-flex items-center gap-1">
+              @if (m.card.bank) {
+                <app-bank-badge [bank]="m.card.bank" size="xs"></app-bank-badge>
+              }
+              <app-network-badge [network]="m.card.network" size="xs"></app-network-badge>
+            </div>
           </div>
 
           <!-- Quarterly Lounge Milestone -->

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 32" width="48" height="32" fill="none">
+  <rect width="48" height="32" rx="4" fill="#FFFFFF"/>
+  <!-- RuPay Cyan-Blue wordmark and Dual Triangles -->
+  <text x="5" y="21" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900" fill="#094482" letter-spacing="-0.5">RuPay</text>
+  <!-- Saffron & Green Accent Triangles -->
+  <path d="M36 9L31 23H35L40 9H36Z" fill="#F47920"/>
+  <path d="M40 9L35 23H39L44 9H40Z" fill="#00843D"/>
+</svg>

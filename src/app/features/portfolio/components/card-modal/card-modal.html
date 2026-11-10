@@ -1,13 +1,23 @@
 <div class="modal-backdrop fade-in" (click)="close.emit()">
   <div class="modal-dialog slide-down" (click)="$event.stopPropagation()">
     <div class="modal-header">
-      <h4 class="fw-bold">
-        @if (cardToEdit()) {
-          <span>✏️ Edit Card</span>
-        } @else {
-          <span>💳 Add Credit Card</span>
+      <div class="d-flex items-center gap-2 flex-wrap">
+        <h4 class="fw-bold mb-0">
+          @if (cardToEdit()) {
+            <span>✏️ Edit Card</span>
+          } @else {
+            <span>💳 Add Credit Card</span>
+          }
+        </h4>
+        @if (cardToEdit(); as editCard) {
+          <div class="d-flex items-center gap-1">
+            @if (editCard.bank) {
+              <app-bank-badge [bank]="editCard.bank" size="xs"></app-bank-badge>
+            }
+            <app-network-badge [network]="editCard.network" size="xs"></app-network-badge>
+          </div>
         }
-      </h4>
+      </div>
       <button type="button" class="modal-close-btn" (click)="close.emit()" aria-label="Close modal">
         &times;
       </button>
@@ -58,8 +68,8 @@
         @if (getSelectedCatalogCard(); as selected) {
           <div class="catalog-preview info-box">
             <div class="d-flex justify-between items-center mb-1">
-              <span class="badge badge-network">{{ selected.network }}</span>
-              <span class="text-xs text-muted">{{ selected.bank }}</span>
+              <app-bank-badge [bank]="selected.bank" size="xs"></app-bank-badge>
+              <app-network-badge [network]="selected.network" size="xs"></app-network-badge>
             </div>
             <p class="text-sm fw-semibold text-secondary">{{ selected.optimizationVector }}</p>
             @if (selected.loungeAccess.eligible) {

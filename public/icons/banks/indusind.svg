@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <rect width="32" height="32" rx="6" fill="#861F41"/>
+  <!-- IndusInd Bull Emblem -->
+  <path d="M7 19C7 16 9 14.5 12 14.5L14 12C13 10 11.5 8 9.5 7.5C12 7 15 8.5 16.5 10.5C18.5 8 22 7 24.5 7.5C21.5 8.5 20 10.5 19 12L21 14.5C24 14.5 25.5 16.5 25.5 19C25.5 22 23 24 20 24H12C9 24 7 22 7 19Z" fill="#FFFFFF"/>
+  <circle cx="12" cy="17" r="1.5" fill="#861F41"/>
+</svg>

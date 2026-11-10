@@ -1,10 +1,13 @@
 import { Component, inject, computed } from '@angular/core';
 import { CardService } from '../../../../core/services/card.service';
 import { BillingCycleStatus } from '../../../../core/models/card.model';
+import { BankBadgeComponent } from '../../../../shared/components/bank-badge/bank-badge';
+import { NetworkBadgeComponent } from '../../../../shared/components/network-badge/network-badge';
 
 @Component({
   selector: 'app-billing-cycle-tracker',
   standalone: true,
+  imports: [BankBadgeComponent, NetworkBadgeComponent],
   templateUrl: './billing-cycle-tracker.html',
   styleUrl: './billing-cycle-tracker.css',
 })

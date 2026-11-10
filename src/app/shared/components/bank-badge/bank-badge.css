@@ -1,0 +1,50 @@
+.bank-badge-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  background: var(--input-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.bank-icon {
+  display: block;
+  border-radius: 4px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Sizing variants */
+.size-xs {
+  padding: 0.15rem 0.35rem;
+  font-size: 0.7rem;
+}
+.size-xs .bank-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.size-sm {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+}
+.size-sm .bank-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.size-md {
+  padding: 0.28rem 0.65rem;
+  font-size: 0.82rem;
+}
+.size-md .bank-icon {
+  width: 22px;
+  height: 22px;
+}

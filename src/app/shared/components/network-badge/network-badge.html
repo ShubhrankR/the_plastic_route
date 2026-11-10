@@ -1,0 +1,17 @@
+<span class="network-badge-container size-{{ size() }}">
+  @for (item of networkItems(); track item.name) {
+    <span class="network-pill" [title]="item.name">
+      <img
+        [src]="item.iconPath"
+        [alt]="item.name"
+        class="network-icon"
+        loading="lazy"
+        width="24"
+        height="16"
+      />
+      @if (showLabel()) {
+        <span class="network-name">{{ item.name }}</span>
+      }
+    </span>
+  }
+</span>

@@ -1,11 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CardService } from '../../../../core/services/card.service';
+import { BankBadgeComponent } from '../../../../shared/components/bank-badge/bank-badge';
+import { NetworkBadgeComponent } from '../../../../shared/components/network-badge/network-badge';
 
 @Component({
   selector: 'app-milestone-tracker',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, BankBadgeComponent, NetworkBadgeComponent],
   templateUrl: './milestone-tracker.html',
   styleUrl: './milestone-tracker.css',
 })
