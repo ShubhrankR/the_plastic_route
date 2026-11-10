@@ -18,23 +18,57 @@
   font-weight: 600;
   line-height: 1;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition-fast);
 }
 
 .network-icon {
   display: block;
   object-fit: contain;
-  border-radius: 2px;
+  border-radius: 3px;
   flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Dark mode: elevated frosted glass & crisp card chip separation */
+[data-theme='dark'] .network-pill,
+:host-context([data-theme='dark']) .network-pill,
+:host-context(:not([data-theme='light'])) .network-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme='dark'] .network-icon,
+:host-context([data-theme='dark']) .network-icon,
+:host-context(:not([data-theme='light'])) .network-icon {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Light mode: clean native card pill styling */
+[data-theme='light'] .network-pill,
+:host-context([data-theme='light']) .network-pill {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .network-icon,
+:host-context([data-theme='light']) .network-icon {
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 /* Sizing variants */
 .size-xs .network-pill {
-  padding: 0.15rem 0.35rem;
+  padding: 0.15rem 0.4rem;
   font-size: 0.7rem;
 }
 .size-xs .network-icon {
-  width: 18px;
-  height: 12px;
+  width: 20px;
+  height: 13px;
 }
 
 .size-sm .network-pill {
@@ -42,8 +76,8 @@
   font-size: 0.75rem;
 }
 .size-sm .network-icon {
-  width: 22px;
-  height: 15px;
+  width: 24px;
+  height: 16px;
 }
 
 .size-md .network-pill {

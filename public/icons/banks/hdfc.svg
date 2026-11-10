@@ -1,9 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#004C8F"/>
-  <!-- HDFC Inner Square Emblem -->
-  <rect x="7" y="7" width="18" height="18" fill="#004C8F" stroke="#FFFFFF" stroke-width="2"/>
-  <rect x="12" y="12" width="8" height="8" fill="#ED232A"/>
-  <!-- White cross cutouts -->
-  <rect x="15" y="7" width="2" height="18" fill="#FFFFFF"/>
-  <rect x="7" y="15" width="18" height="2" fill="#FFFFFF"/>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_45_4204)">
+<path d="M0 0H24V24H0V0Z" fill="#ED232A"/>
+<path d="M4.20056 4.20067H19.8023V19.8024H4.20056V4.20067Z" fill="white"/>
+<path d="M10.8003 0H13.1993V24H10.8003V0Z" fill="white"/>
+<path d="M0 10.8034H24V13.2024H0V10.8034Z" fill="white"/>
+<path d="M8.40112 8.40133H15.6014V15.6017H8.40112V8.40133Z" fill="#004C8F"/>
+</g>
+<defs>
+<clipPath id="clip0_45_4204">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
 </svg>
