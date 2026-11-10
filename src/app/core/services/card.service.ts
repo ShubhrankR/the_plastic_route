@@ -290,7 +290,11 @@ export class CardService {
         ? new URLSearchParams(window.location.hash.split('?')[1])
         : null;
 
-      const hasOwnerSeed = urlParams.get('seed') === 'owner' || hashParams?.get('seed') === 'owner';
+      const hasOwnerSeed =
+        urlParams.get('seed') === 'owner' ||
+        hashParams?.get('seed') === 'owner' ||
+        urlParams.get('dev') === 'true' ||
+        hashParams?.get('dev') === 'true';
 
       if (hasOwnerSeed) {
         await this.loadOwnerSeed();
@@ -383,6 +387,12 @@ export class CardService {
     await this.indexedDB.saveCards(seededCards);
     this.cards.set(seededCards);
     this.isExploreMode.set(false);
+
+    this.toastService.show({
+      message: `Loaded developer seed portfolio (${seededCards.length} cards).`,
+      type: 'success',
+      durationMs: 3500,
+    });
   }
 
   /**

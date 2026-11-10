@@ -106,7 +106,7 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
   - [x] Implement **Import Wallet (JSON)**: file upload validator to restore/migrate portfolio across devices or after clearing browser cache.
   - [x] Add explicit "Reset Wallet to Default" confirmation dialog with toast undo protection.
 - [ ] **Public UI Clean-up**
-  - [x] Remove/hide developer-only action (`📥 Load Developer Seed`) from public `/portfolio` view (keep accessible only via `?seed=owner` URL parameter for maintainers).
+  - [x] Remove/hide developer-only action (`📥 Load Developer Seed`) from public `/portfolio` view (keep accessible only via `?dev=true` or `?seed=owner` URL parameter for maintainers).
   - [ ] Clean up legacy Bootstrap CSS classes embedded in `src/index.html`.
 - [ ] **Social Sharing & SEO Metadata**
   - [ ] Add OpenGraph metadata tags (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`) to `src/index.html`.

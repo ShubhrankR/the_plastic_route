@@ -1,4 +1,6 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, signal, computed } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { CardService } from '../../core/services/card.service';
 import { CreditCard } from '../../core/models/card.model';
 import { PortfolioTable } from './components/portfolio-table/portfolio-table';
@@ -13,6 +15,7 @@ import { CardModal } from './components/card-modal/card-modal';
 })
 export class PortfolioComponent {
   private readonly cardService = inject(CardService);
+  private readonly route = inject(ActivatedRoute);
 
   readonly cards = this.cardService.cards;
   readonly masterCatalog = this.cardService.masterCatalog;
@@ -21,14 +24,25 @@ export class PortfolioComponent {
   showModal = signal<boolean>(false);
   cardToEdit = signal<CreditCard | null>(null);
 
-  /** Whether developer controls should be exposed (via ?seed=owner or ?dev=true). */
-  readonly isDeveloperMode = signal<boolean>(
-    typeof window !== 'undefined' &&
+  private readonly queryParams = toSignal(this.route.queryParams, {
+    initialValue: {} as Params,
+  });
+
+  /**
+   * Whether developer controls should be exposed in the UI.
+   * Only active when ?dev=true or ?seed=owner is present in query/hash parameters.
+   */
+  readonly isDeveloperMode = computed<boolean>(() => {
+    const qp = this.queryParams();
+    const hasQueryParam = qp['dev'] === 'true' || qp['seed'] === 'owner';
+    const hasWindowParam =
+      typeof window !== 'undefined' &&
       (window.location.search.includes('seed=owner') ||
         window.location.search.includes('dev=true') ||
         window.location.hash.includes('seed=owner') ||
-        window.location.hash.includes('dev=true')),
-  );
+        window.location.hash.includes('dev=true'));
+    return Boolean(hasQueryParam || hasWindowParam);
+  });
 
   openAddModal(): void {
     this.cardToEdit.set(null);
