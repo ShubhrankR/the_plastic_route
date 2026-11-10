@@ -976,9 +976,12 @@ a.btn:hover,
 }
 
 .badge-bank {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--accent-mint);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: var(--success-bg);
+  color: var(--accent-primary);
+  border: 1px solid var(--card-border-hover);
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .badge-pill {

@@ -55,7 +55,7 @@
 }
 
 .milestone-card {
-  background: var(--input-bg);
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: 1.25rem;
@@ -64,14 +64,30 @@
   gap: 1rem;
 }
 
+.milestone-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.milestone-card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+  flex: 1;
+}
+
 .milestone-item {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  background: rgba(0, 0, 0, 0.15);
-  padding: 0.75rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  gap: 0.5rem;
+  background: var(--gradient-subtle);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--card-border);
 }
 
 .fee-item {

@@ -34,8 +34,8 @@
       <div class="highlight-item">
         <span class="highlight-icon">⚡</span>
         <div class="highlight-text">
-          <span class="highlight-title">20+ Top Cards</span>
-          <span class="highlight-desc">Pre-loaded Indian catalog</span>
+          <span class="highlight-title">{{ catalogCount() }}+ Cards</span>
+          <span class="highlight-desc">Verified Indian catalog</span>
         </div>
       </div>
       <div class="highlight-divider"></div>
@@ -74,8 +74,8 @@
         </div>
         <h3 class="fw-bold module-title">Spend Optimizer</h3>
         <p class="text-secondary text-sm module-desc">
-          Instant category routing across Amazon, Flipkart, Fuel, Forex, UPI QR codes, Dining, and
-          Travel with live return estimation.
+          Instant category routing across Amazon, Flipkart, Fuel, Forex, Utilities, and UPI with
+          multi-currency savings and surcharge alerts.
         </p>
         <a routerLink="/optimizer" class="module-link text-primary fw-semibold">
           Try Optimizer →
@@ -86,12 +86,12 @@
         <div class="module-icon-wrap">
           <span class="module-icon">📅</span>
         </div>
-        <h3 class="fw-bold module-title">Billing Cycle Tracker</h3>
+        <h3 class="fw-bold module-title">Billing Cycle & Lounge Hub</h3>
         <p class="text-secondary text-sm module-desc">
-          Real-time statement cycle analysis tells you if today's transaction rolls over into the
-          next cycle for up to 50 interest-free days.
+          Real-time 50-day statement rollover calculations, airport lounge terminal eligibility
+          checker across Indian hubs, and quarterly spend milestone tracking.
         </p>
-        <a routerLink="/tracker" class="module-link text-primary fw-semibold"> Check Cycles → </a>
+        <a routerLink="/tracker" class="module-link text-primary fw-semibold"> Check Tracker → </a>
       </div>
 
       <div class="glass-card module-card" appScrollReveal delay="0.2s">
@@ -100,8 +100,8 @@
         </div>
         <h3 class="fw-bold module-title">Portfolio Manager</h3>
         <p class="text-secondary text-sm module-desc">
-          Manage your card inventory, customize billing dates, verify airport lounge spend
-          thresholds, and stay ahead of bank rule updates.
+          Manage your card inventory, set custom fee waiver goals, export/import JSON wallet
+          backups, and use 100% offline with full PWA support.
         </p>
         <a routerLink="/portfolio" class="module-link text-primary fw-semibold">
           Manage Wallet →
@@ -124,8 +124,8 @@
         <div class="step-content">
           <h4 class="fw-bold">Pick Your Cards</h4>
           <p class="text-secondary text-sm">
-            Add your active cards from our 20+ Indian Master Catalog or configure custom cards with
-            your statement dates.
+            Add your active cards from our {{ catalogCount() }}+ card catalog across all major
+            Indian banks or configure custom cards with your statement dates.
           </p>
         </div>
       </div>

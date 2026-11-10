@@ -41,10 +41,10 @@
             <div class="lounges-grid">
               @for (lounge of terminal.lounges; track lounge.name) {
                 <div class="lounge-card">
-                  <div class="d-flex justify-between items-center">
-                    <span class="fw-bold text-primary">{{ lounge.name }}</span>
+                  <div class="lounge-header">
+                    <h6 class="lounge-name">{{ lounge.name }}</h6>
                     <span
-                      class="badge"
+                      class="badge lounge-type-badge"
                       [class]="lounge.type === 'International' ? 'badge-warning' : 'badge-success'"
                     >
                       {{ lounge.type }}
@@ -75,10 +75,10 @@
                           <span class="card-tag">
                             ✓ {{ card.name }}
                             @if (card.loungeAccess.spendThreshold) {
-                              <small class="text-muted"
+                              <span class="card-tag-threshold"
                                 >(₹{{
                                   (card.loungeAccess.spendThreshold / 1000).toFixed(0)
-                                }}k/qtr)</small
+                                }}k/qtr)</span
                               >
                             }
                           </span>

@@ -30,8 +30,8 @@
     <div class="milestones-grid">
       @for (m of milestones(); track m.card.id) {
         <div class="milestone-card">
-          <div class="d-flex justify-between items-center">
-            <span class="fw-bold text-primary">{{ m.card.name }}</span>
+          <div class="milestone-card-header">
+            <h5 class="milestone-card-title">{{ m.card.name }}</h5>
             <span class="badge badge-pill badge-bank">{{ m.card.bank ?? m.card.network }}</span>
           </div>
 
