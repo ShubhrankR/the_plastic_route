@@ -191,3 +191,4 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 3. **PWA Mobile-First Usage** ✅ _Resolved_: Configured with `@angular/service-worker`, offline caching, install prompts, and `manifest.webmanifest`.
 4. **Automated Testing & Security Gate** ✅ _Resolved_: Vitest unit test suite (49 tests) integrated into CI alongside Prettier formatting, catalog schema validation, production build, and CodeQL security analysis.
 5. **Brand Iconography & Contrast Compliance** ✅ _Resolved_: Offline vector SVG icon system with theme-adaptive contrast plates delivering high vibrancy across dark and light themes without external CDN dependencies.
+6. **Open Source Security & Governance Architecture** ✅ _Resolved_: Established threat modeling, supply chain defenses, catalog data integrity guards, and branch governance rules in [`docs/OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md`](OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md).

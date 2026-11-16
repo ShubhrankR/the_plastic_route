@@ -74,6 +74,7 @@ Detailed project roadmaps, scaling strategies, and architectural research are av
 - **[Perplexity Deep Research Integration](docs/PERPLEXITY_RESEARCH_INTEGRATION.md)**: Standardized research prompt templates, Perplexity Project setup, and autonomous dataset ingestion workflows.
 - **[User Onboarding Strategy](docs/USER_ONBOARDING_STRATEGY.md)**: Complete specification of the implemented FTUE onboarding gateway, data segregation, and route guard lifecycle.
 - **[Security, Privacy & App Navigation](docs/SECURITY_PRIVACY_AND_NAVIGATION.md)**: Security risk analysis, zero-credential storage guarantee, master catalog vs local wallet data separation, and route guard flows.
+- **[Open Source Security & Governance Architecture](docs/OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md)**: Threat modeling, supply chain defenses, catalog data integrity guards, and branch governance rules for public community contributions.
 - **[CSS Framework Research Report](docs/CSS_FRAMEWORK_RESEARCH_REPORT.md)**: Comprehensive evaluation of Tailwind CSS v4, Spartan UI, DaisyUI 5, PrimeNG, and Vanilla CSS for Angular 22.
 - **[Architecture & Scaling Strategy](docs/SCALING_STRATEGY.md)**: Multi-vector scoring algorithm, declarative rule schemas, Web Workers, IndexedDB, PWA setup, and P2P sync.
 
