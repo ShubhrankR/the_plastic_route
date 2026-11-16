@@ -10,10 +10,19 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International", "Priority Pass"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
     },
     "regulatoryUpdate": "2026 Update: SmartBuy accelerated points capped at 15,000 RP/mo; 3,000 RP monthly sub-cap on GyFTR/Woohoo brand vouchers.",
-    "categories": ["dining_travel", "general", "amazon", "flipkart"],
+    "categories": [
+      "dining_travel",
+      "general",
+      "amazon",
+      "flipkart"
+    ],
     "annualFee": "₹12,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -29,7 +38,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Capped at ₹2,000/month online and ₹2,000/month offline (₹4,000 total/cycle); fee waived on ₹2 Lakh annual spend; lounge access withdrawn.",
-    "categories": ["amazon", "flipkart", "general"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "general"
+    ],
     "annualFee": "₹999 + GST (Waived on ₹2 Lakh spend)",
     "forexMarkup": "3.5%"
   },
@@ -44,10 +57,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Miles conversion ratio 1:2 across partner airline and hotel programs.",
-    "categories": ["dining_travel", "forex"],
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
     "annualFee": "₹5,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -62,10 +81,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Requires ₹50k spend in prior quarter to unlock 2 domestic lounge vouchers; NeuCoins carry 1:1 rupee value.",
-    "categories": ["upi", "general", "dining_travel"],
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "2.0%"
   },
@@ -81,7 +107,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Avoid loading more than ₹5,000 into Amazon Pay wallet per month to prevent processing charges.",
-    "categories": ["amazon", "general"],
+    "categories": [
+      "amazon",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -96,10 +125,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 8 domestic lounge visits per year across major Indian terminals.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹5,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -114,10 +148,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 5% Google Pay utility & 4% partner cashback combined cap ₹500/month; 4 domestic lounges/year.",
-    "categories": ["general", "dining_travel", "gaming_wallet"],
+    "categories": [
+      "general",
+      "dining_travel",
+      "gaming_wallet"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -132,10 +172,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 5000,
-      "terminals": ["Domestic", "International", "Chennai T4"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Chennai T4"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Unlimited domestic lounge access requires ₹5,000 eligible spend in prior cycle.",
-    "categories": ["forex", "dining_travel"],
+    "categories": [
+      "forex",
+      "dining_travel"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "0.0%"
   },
@@ -152,7 +199,12 @@
       "notes": "No complimentary lounge access on current public variant"
     },
     "regulatoryUpdate": "2026 Update: 5% partner cashback capped at 1,000 CashPoints/month; 1% other spends capped at 1,000 CashPoints/month. Fee waived on ₹1 Lakh spend.",
-    "categories": ["amazon", "flipkart", "dining_travel", "general"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹1,000 + GST (Waived on ₹1 Lakh spend)",
     "forexMarkup": "3.5%"
   },
@@ -168,7 +220,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: UPI rewards capped at 500 reward points per calendar cycle.",
-    "categories": ["upi"],
+    "categories": [
+      "upi"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -190,7 +244,11 @@
       ]
     },
     "regulatoryUpdate": "2026 Update: Lounge access and BOGO movie tickets unlocked with ≥₹20k prior calendar month spend; 1.5% forex markup.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "1.5%"
   },
@@ -205,10 +263,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 75000,
-      "terminals": ["Domestic", "International", "Dreamfolks"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Dreamfolks"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Domestic lounge access requires ₹75,000 spend in preceding calendar quarter; 2 intl visits via Dreamfolks.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹6,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -223,10 +288,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 25X reward points capped at ₹10,000 monthly fuel spend.",
-    "categories": ["bpcl"],
+    "categories": [
+      "bpcl"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -241,10 +310,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 100000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Late payment fees revised; ensure automated clearing is active.",
-    "categories": ["flipkart", "general"],
+    "categories": [
+      "flipkart",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -260,7 +334,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Fuel points redemption directly against IndianOil XTRAREWARDS.",
-    "categories": ["other_fuel", "upi"],
+    "categories": [
+      "other_fuel",
+      "upi"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -275,10 +352,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Metal card issuance tier requires ₹50k quarterly spends for fee waiver.",
-    "categories": ["general", "gaming_wallet"],
+    "categories": [
+      "general",
+      "gaming_wallet"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "1.0%"
   },
@@ -293,10 +376,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 5000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Milestone vouchers disbursed via email within 45 days of quarter end.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹1,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -311,10 +398,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Airtel bill cashback capped at ₹250/month; food orders capped at ₹500/month.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -330,7 +422,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Fuel and utility wallet loads excluded from monthly milestone threshold.",
-    "categories": ["general", "gaming_wallet"],
+    "categories": [
+      "general",
+      "gaming_wallet"
+    ],
     "annualFee": "₹4,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -345,10 +440,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 75000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Domestic airport lounge access requires minimum ₹75,000 spend in the preceding calendar quarter.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -363,10 +462,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 4 domestic lounge visits/year with spend-based eligibility; annual fee waived on ₹3.5L annual spend.",
-    "categories": ["flipkart", "dining_travel", "general"],
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -381,10 +486,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1 complimentary domestic airport lounge visit per quarter subject to minimum spend criteria.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -400,7 +510,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 1% fuel surcharge waiver at IOCL pumps + monthly accelerated reward point caps per MITC.",
-    "categories": ["other_fuel", "upi", "general"],
+    "categories": [
+      "other_fuel",
+      "upi",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -415,10 +529,18 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International", "Priority Pass"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Unlimited domestic & international lounge access; annual fee waived on ₹25L eligible annual spend.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹12,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -433,10 +555,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Up to 8 complimentary lounge visits per quarter on Visa variant per MITC.",
-    "categories": ["dining_travel", "forex"],
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
     "annualFee": "₹3,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -452,7 +580,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Lifetime free RuPay card optimized for merchant UPI QR code payments.",
-    "categories": ["upi", "general"],
+    "categories": [
+      "upi",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -468,7 +599,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Marketed lifetime free; monthly discount caps apply on merchant partner apps.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -483,10 +617,18 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International", "Priority Pass"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Zero forex markup; complimentary for Burgundy Private clients meeting TRV criteria.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹50,000 + GST",
     "forexMarkup": "0.0%"
   },
@@ -501,10 +643,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["flipkart", "dining_travel", "general"],
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -519,10 +667,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -538,7 +691,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["other_fuel", "general"],
+    "categories": [
+      "other_fuel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -553,10 +709,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -572,7 +735,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["flipkart", "dining_travel", "general"],
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -587,10 +754,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["other_fuel", "forex", "general"],
+    "categories": [
+      "other_fuel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹1,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -605,10 +778,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "gaming_wallet", "general"],
+    "categories": [
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -623,10 +802,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International", "Priority Pass"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -641,10 +827,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -659,10 +850,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹1,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -678,7 +873,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "gaming_wallet", "general"],
+    "categories": [
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "₹1,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -693,10 +892,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "₹5,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -711,10 +916,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹799 + GST",
     "forexMarkup": "3.5%"
   },
@@ -730,7 +940,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["upi", "general"],
+    "categories": [
+      "upi",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -745,10 +958,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["gaming_wallet", "general"],
+    "categories": [
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -763,10 +981,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -781,10 +1003,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "₹20,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -799,10 +1027,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International", "Priority Pass"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "2.0%"
   },
@@ -817,10 +1052,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -836,7 +1075,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["flipkart", "dining_travel", "general"],
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -851,10 +1094,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹750 + GST",
     "forexMarkup": "3.5%"
   },
@@ -869,10 +1116,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -888,7 +1139,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "gaming_wallet", "general"],
+    "categories": [
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -904,7 +1159,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -920,7 +1177,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -936,7 +1195,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -952,7 +1214,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -967,10 +1232,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "₹10,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -985,10 +1256,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "₹3,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1004,7 +1280,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1019,10 +1297,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "₹50,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1037,10 +1321,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹50,000 + GST",
     "forexMarkup": "0.0%"
   },
@@ -1055,10 +1344,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "₹5,00,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1073,10 +1368,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["other_fuel", "gaming_wallet", "general"],
+    "categories": [
+      "other_fuel",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1091,10 +1392,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["other_fuel", "gaming_wallet", "general"],
+    "categories": [
+      "other_fuel",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1109,10 +1416,19 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International", "Priority Pass"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
     },
     "regulatoryUpdate": "2026 Update: SmartBuy accelerated cap at 10,000 RP/mo; 3,000 RP monthly sub-cap on GyFTR/Woohoo brand vouchers.",
-    "categories": ["dining_travel", "forex", "general", "amazon"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general",
+      "amazon"
+    ],
     "annualFee": "₹10,000 + GST",
     "forexMarkup": "2.0%"
   },
@@ -1127,10 +1443,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 60000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Requires ₹60,000 spend in prior quarter to unlock 3 domestic lounge vouchers; 6 intl visits via Priority Pass.",
-    "categories": ["dining_travel", "flipkart", "general"],
+    "categories": [
+      "dining_travel",
+      "flipkart",
+      "general"
+    ],
     "annualFee": "₹2,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -1146,7 +1469,12 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 10% Swiggy cashback capped at ₹1,500/cycle; 5% online shopping capped at ₹1,500/month; no airport lounge.",
-    "categories": ["dining_travel", "amazon", "flipkart", "general"],
+    "categories": [
+      "dining_travel",
+      "amazon",
+      "flipkart",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1161,10 +1489,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Includes 10 Elite Night Credits and Silver Elite status annually; ₹3,000 annual fee.",
-    "categories": ["dining_travel", "forex"],
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
     "annualFee": "₹3,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1180,7 +1514,13 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Fully digital card managed via PayZapp; custom cashback merchant selection every quarter.",
-    "categories": ["upi", "amazon", "flipkart", "dining_travel", "general"],
+    "categories": [
+      "upi",
+      "amazon",
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1195,10 +1535,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 4 domestic lounge visits per year subject to ₹50,000 quarterly spend threshold.",
-    "categories": ["upi", "general", "dining_travel"],
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1213,10 +1559,18 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International", "Priority Pass"]
+      "terminals": [
+        "Domestic",
+        "International",
+        "Priority Pass"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Exempt from ₹75k quarterly spend requirement; unlimited domestic and international lounge access with guest visits.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹12,500 + GST",
     "forexMarkup": "1.5%"
   },
@@ -1231,10 +1585,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 75000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Requires ₹75,000 spend in preceding calendar quarter for complimentary domestic lounge access.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹3,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1249,10 +1608,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 75000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: RuPay UPI enabled; airport lounge access subject to ₹75,000 prior quarterly spend.",
-    "categories": ["upi", "general", "dining_travel"],
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1267,10 +1632,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 75000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Domestic lounge access subject to ₹75k quarterly spend threshold; premium airport meet & greet benefits.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹5,000 + GST",
     "forexMarkup": "1.5%"
   },
@@ -1286,7 +1658,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Cleartrip voucher redemption structure updated for milestone spends.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1 Lakh spend)",
     "forexMarkup": "3.5%"
   },
@@ -1302,7 +1677,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: RuPay variant enables seamless 10X points on UPI merchant spends.",
-    "categories": ["general", "dining_travel", "upi"],
+    "categories": [
+      "general",
+      "dining_travel",
+      "upi"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1 Lakh spend)",
     "forexMarkup": "3.5%"
   },
@@ -1317,10 +1696,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International (DreamFolks / Priority Pass)"]
+      "terminals": [
+        "Domestic",
+        "International (DreamFolks / Priority Pass)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Dedicated luxury lifestyle concierge desk and WSJ/Mint subscriptions included.",
-    "categories": ["dining_travel", "general", "forex"],
+    "categories": [
+      "dining_travel",
+      "general",
+      "forex"
+    ],
     "annualFee": "₹9,999 + GST (Waived on ₹12 Lakh spend)",
     "forexMarkup": "1.99%"
   },
@@ -1335,10 +1721,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)", "International (Priority Pass 6/yr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 6/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Club Vistara Silver tier and Trident Privilege Red membership benefits refreshed.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹4,999 + GST (Waived on ₹10 Lakh spend)",
     "forexMarkup": "1.99%"
   },
@@ -1353,10 +1745,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (8/yr)", "International (Priority Pass 4/yr)"]
+      "terminals": [
+        "Domestic (8/yr)",
+        "International (Priority Pass 4/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1-year complimentary Club ITC Silver Tier status + milestone gift vouchers.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹2,999 + GST (Waived on ₹3 Lakh spend)",
     "forexMarkup": "3.5%"
   },
@@ -1371,10 +1769,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (1/qtr)"]
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Annual fee waived at ₹2 Lakh milestone; Noise smartwatch welcome gift.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1389,10 +1792,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Railway Lounges (8/yr, max 2/qtr)"]
+      "terminals": [
+        "Railway Lounges (8/yr, max 2/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: RuPay integration allows linking to UPI apps with accelerated travel rewards.",
-    "categories": ["dining_travel", "upi"],
+    "categories": [
+      "dining_travel",
+      "upi"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1408,7 +1816,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 5X reward points on grocery, departmental stores, and dining.",
-    "categories": ["bpcl"],
+    "categories": [
+      "bpcl"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -1423,10 +1833,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (8/yr)", "International (Priority Pass 4/yr)"]
+      "terminals": [
+        "Domestic (8/yr)",
+        "International (Priority Pass 4/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Up to ₹8,750 milestone Reliance Retail vouchers based on annual spending.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹2,999 + GST (Waived on ₹3 Lakh spend)",
     "forexMarkup": "3.5%"
   },
@@ -1441,10 +1857,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (8/yr, max 2/qtr)", "International (Priority Pass 4/yr)"]
+      "terminals": [
+        "Domestic (8/yr, max 2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Integration with Air India Maharaja Points conversion transition terms.",
-    "categories": ["dining_travel"],
+    "categories": [
+      "dining_travel"
+    ],
     "annualFee": "₹2,999 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1459,10 +1880,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (4/yr, max 1/qtr)"]
+      "terminals": [
+        "Domestic (4/yr, max 1/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Complimentary Paytm First membership + ₹750 cashback on first transaction.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1478,7 +1904,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Credit building entry-level card with 100% approval against lien FD.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹0 for first 4 years, ₹499 thereafter",
     "forexMarkup": "3.5%"
   },
@@ -1499,7 +1927,11 @@
       ]
     },
     "regulatoryUpdate": "2026 Update: Private banking luxury privileges with global concierge and lounge access.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹25,000 + GST (Nil joining for Private Clients)",
     "forexMarkup": "1.5%"
   },
@@ -1514,10 +1946,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International (Priority Pass)"]
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Golf privileges and international lounge access updated; non-expiring reward points.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹1,00,000 joining / ₹25,000 renewal",
     "forexMarkup": "1.5%"
   },
@@ -1532,10 +1971,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (6/qtr)", "International (Priority Pass 4/qtr)"]
+      "terminals": [
+        "Domestic (6/qtr)",
+        "International (Priority Pass 4/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 0% zero forex markup on foreign currency spends; 40 complimentary airport lounge visits annually.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹75,000 joining / ₹10,000 renewal",
     "forexMarkup": "0.0%"
   },
@@ -1550,10 +1996,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International (Priority Pass)"]
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1.5% low forex markup; luxury concierge and lifestyle travel perks.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹75,000 joining / ₹10,000 renewal",
     "forexMarkup": "1.5%"
   },
@@ -1568,10 +2021,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International (Priority Pass)"]
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 2.0% reduced forex markup; golf privileges and non-expiring reward points.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹25,000 joining / ₹5,000 renewal",
     "forexMarkup": "2.0%"
   },
@@ -1586,10 +2046,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International (Priority Pass)"]
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Zero renewal fee for Pioneer relationship holders; 1.8% forex markup.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹5,000 - ₹50,000 joining / Nil renewal",
     "forexMarkup": "1.8%"
   },
@@ -1604,10 +2071,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Accelerated rewards on luxury and jewelry merchants; never-expiring points.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹30,000 joining / ₹10,000 renewal",
     "forexMarkup": "2.0%"
   },
@@ -1622,10 +2096,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International (Priority Pass)"]
+      "terminals": [
+        "Domestic",
+        "International (Priority Pass)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: High cash-value redemption rate (₹0.75/pt); 1.8% reduced forex markup.",
-    "categories": ["general", "dining_travel", "forex"],
+    "categories": [
+      "general",
+      "dining_travel",
+      "forex"
+    ],
     "annualFee": "₹15,000 joining / Nil renewal",
     "forexMarkup": "1.8%"
   },
@@ -1640,10 +2121,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["International (Priority Pass 8/yr)"]
+      "terminals": [
+        "International (Priority Pass 8/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Up to 8 complimentary international lounge visits per year with $35 fee waiver on Priority Pass; 1.8% forex markup.",
-    "categories": ["general", "forex", "dining_travel"],
+    "categories": [
+      "general",
+      "forex",
+      "dining_travel"
+    ],
     "annualFee": "₹5,000 joining / Nil renewal (LTF)",
     "forexMarkup": "1.8%"
   },
@@ -1658,10 +2145,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Physical button selector for on-the-spot EMI and rewards conversion; domestic lounge access.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹10,000 joining / Nil renewal",
     "forexMarkup": "3.5%"
   },
@@ -1677,7 +2168,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Customizable 4X reward plan configurations; UPI merchant payment support.",
-    "categories": ["general", "dining_travel", "upi"],
+    "categories": [
+      "general",
+      "dining_travel",
+      "upi"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1693,7 +2188,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Lifetime free everyday credit card with RuPay UPI support.",
-    "categories": ["general", "upi"],
+    "categories": [
+      "general",
+      "upi"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1709,7 +2207,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Two-in-one credit and debit dual account plastic.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1725,7 +2225,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Issued on American Express payment network with online utility rewards.",
-    "categories": ["general", "gaming_wallet"],
+    "categories": [
+      "general",
+      "gaming_wallet"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1741,7 +2244,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Government employee welfare card with 1% statement cashback and UPI support.",
-    "categories": ["general", "upi"],
+    "categories": [
+      "general",
+      "upi"
+    ],
     "annualFee": "₹199 + GST (Nil for Govt Employees)",
     "forexMarkup": "3.5%"
   },
@@ -1756,10 +2262,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)"]
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Complimentary 1-year EazyDiner Prime membership and 8 domestic lounge visits/year.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹2,999 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1775,7 +2286,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Lifetime free dining card with EazyDiner Pay discounts.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1790,10 +2304,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["International (Priority Pass)", "Domestic (2/qtr)"]
+      "terminals": [
+        "International (Priority Pass)",
+        "Domestic (2/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1.5% discounted forex markup at preferred international destination; Avios milestone bonuses.",
-    "categories": ["dining_travel", "forex"],
+    "categories": [
+      "dining_travel",
+      "forex"
+    ],
     "annualFee": "₹10,000 joining / ₹5,000 renewal",
     "forexMarkup": "1.5%"
   },
@@ -1808,10 +2328,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)", "International (Priority Pass 2/yr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 2/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Genuine lifetime-free card with 1.5% low forex fee and 10 complimentary airport lounge visits annually.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "1.5%"
   },
@@ -1827,7 +2354,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: No renewal fee; boosted rewards at Jio-bp pumps and EV mobility chargers.",
-    "categories": ["other_fuel", "upi", "general"],
+    "categories": [
+      "other_fuel",
+      "upi",
+      "general"
+    ],
     "annualFee": "₹499 joining / Nil renewal",
     "forexMarkup": "3.5%"
   },
@@ -1843,7 +2374,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Issued in collaboration with CRED; lifetime free with seamless UPI Scan & Pay.",
-    "categories": ["upi", "general"],
+    "categories": [
+      "upi",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -1858,10 +2392,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (Unlimited + Guest)", "International (Unlimited + Guest)"]
+      "terminals": [
+        "Domestic (Unlimited + Guest)",
+        "International (Unlimited + Guest)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Private banking luxury metal tier with unlimited worldwide lounge access.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹12,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -1876,10 +2417,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)", "International (Priority Pass 4/yr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Tiered White Pass milestone redemption for luxury retail & flights.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹3,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1894,10 +2441,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)", "International (Priority Pass 3/yr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 3/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1.5 Lakh spend; 10 Zen points on dining.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹1,500 + GST (Waived on ₹1.5L spend)",
     "forexMarkup": "3.5%"
   },
@@ -1912,10 +2465,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)"]
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1 Lakh annual spending.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹1,000 + GST (Waived on ₹1L spend)",
     "forexMarkup": "3.5%"
   },
@@ -1930,10 +2488,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)"]
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1 Lakh spend; fuel surcharge waiver active.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹999 + GST (Waived on ₹1L spend)",
     "forexMarkup": "3.5%"
   },
@@ -1948,10 +2511,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 30000,
-      "terminals": ["Domestic (1/qtr)"]
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: RuPay variant supports UPI payments with 8X reward points.",
-    "categories": ["general", "upi", "dining_travel"],
+    "categories": [
+      "general",
+      "upi",
+      "dining_travel"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -1967,7 +2536,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Seamless UPI merchant payments on RuPay with accelerated fuel points.",
-    "categories": ["other_fuel", "upi"],
+    "categories": [
+      "other_fuel",
+      "upi"
+    ],
     "annualFee": "₹449 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -1983,7 +2555,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Movie voucher benefits valid across combined PVR INOX screens nationwide.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -1999,7 +2574,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Credit building entry-level card with 100% approval against lien FD.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -2014,10 +2591,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)"]
+      "terminals": [
+        "Domestic (2/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Free flight welcome ticket and 6% reward rate on IndiGo bookings.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹1,500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2033,7 +2615,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Accelerated CashPoints capped per statement cycle; annual fee waived on ₹50,000 annual spends.",
-    "categories": ["amazon", "flipkart", "general"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "general"
+    ],
     "annualFee": "₹500 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -2049,7 +2635,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Everyday rewards card; renewal fee waived on annual spends of ₹50,000.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -2064,10 +2653,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic (2/qtr, spend-based)", "International (2/qtr)"]
+      "terminals": [
+        "Domestic (2/qtr, spend-based)",
+        "International (2/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Low 2.0% forex markup; renewal fee waived on ₹3 Lakh annual spends.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹1,000 + GST (Waived on ₹3L spend)",
     "forexMarkup": "2.0%"
   },
@@ -2083,7 +2679,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Virtual digital issuance; category caps apply per billing statement cycle.",
-    "categories": ["upi", "general"],
+    "categories": [
+      "upi",
+      "general"
+    ],
     "annualFee": "₹99 + GST / Free in select campaigns",
     "forexMarkup": "3.5%"
   },
@@ -2099,7 +2698,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: RuPay UPI integration with milestone gift cards on app usage.",
-    "categories": ["upi", "general", "dining_travel"],
+    "categories": [
+      "upi",
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹999 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2115,7 +2718,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Entry-level UPI co-branded card with instant cashback vouchers on first transaction.",
-    "categories": ["upi", "general"],
+    "categories": [
+      "upi",
+      "general"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2131,7 +2737,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Pure digital cashback credit card managed via PayZapp.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹250 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2147,7 +2755,12 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 10X reward multipliers activate from the first eligible rupee spent; 24-month reward point expiry.",
-    "categories": ["dining_travel", "forex", "general", "upi"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general",
+      "upi"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -2162,10 +2775,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Railway Lounges (4/qtr)"]
+      "terminals": [
+        "Railway Lounges (4/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 4 complimentary railway lounge visits per quarter unlocked with ≥₹20,000 monthly spend.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -2180,10 +2798,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic (1/qtr)", "Railway Lounges (4/qtr)"]
+      "terminals": [
+        "Domestic (1/qtr)",
+        "Railway Lounges (4/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1.99% reduced forex markup; lounge visits unlocked with ≥₹20k spend in prior calendar month.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "1.99%"
   },
@@ -2199,7 +2824,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 0% forex markup on all foreign currency spends; credit-builder card against FD.",
-    "categories": ["forex", "general"],
+    "categories": [
+      "forex",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "0.0%"
   },
@@ -2214,10 +2842,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic (1/qtr)"]
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 0% forex markup + RuPay UPI companion with in-app travel boosts.",
-    "categories": ["forex", "dining_travel", "upi", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "upi",
+      "general"
+    ],
     "annualFee": "₹750 + GST",
     "forexMarkup": "0.0%"
   },
@@ -2233,7 +2868,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Annual fee waived on ₹50k annual spend; 10X rewards on online merchants.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹199 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -2249,7 +2887,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Instant virtual issuance with 1.5% low international forex fee.",
-    "categories": ["upi", "general", "forex"],
+    "categories": [
+      "upi",
+      "general",
+      "forex"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "1.5%"
   },
@@ -2265,7 +2907,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1 Lakh spend; UPI merchant payments supported.",
-    "categories": ["upi", "general"],
+    "categories": [
+      "upi",
+      "general"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2281,7 +2926,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 21X HPCL fuel points plus 6 HP Pay coins/₹100 via HP Pay app.",
-    "categories": ["other_fuel", "upi", "general"],
+    "categories": [
+      "other_fuel",
+      "upi",
+      "general"
+    ],
     "annualFee": "₹199 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -2296,10 +2945,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic (1/qtr)"]
+      "terminals": [
+        "Domestic (1/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 30X HPCL fuel and utility multiplier; 1 domestic lounge/quarter unlocked on ₹20k spend.",
-    "categories": ["other_fuel", "dining_travel", "general"],
+    "categories": [
+      "other_fuel",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1.5L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2314,10 +2969,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Railway Lounges (4/qtr)"]
+      "terminals": [
+        "Railway Lounges (4/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Instant EMI conversions and 4 railway lounge visits per quarter.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1.5L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2333,7 +2993,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 5% online cashback tier; annual fee waived on ₹2 Lakh spend.",
-    "categories": ["general", "dining_travel", "upi"],
+    "categories": [
+      "general",
+      "dining_travel",
+      "upi"
+    ],
     "annualFee": "₹1,000 + GST (Waived on ₹2L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2348,10 +3012,18 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic (4/qtr)", "International (2/qtr)", "Railway Lounges"]
+      "terminals": [
+        "Domestic (4/qtr)",
+        "International (2/qtr)",
+        "Railway Lounges"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Ultra-low 1.0% forex markup; 16 domestic + 8 international lounge visits per year.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹2,999 + GST (Waived on ₹4-6L spend)",
     "forexMarkup": "1.0%"
   },
@@ -2366,10 +3038,18 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic (2/qtr)", "International (2/qtr)", "Railway Lounges"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (2/qtr)",
+        "Railway Lounges"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 0% forex markup on all foreign currency and DCC transactions; golf benefits.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹3,000 + GST (Waived on ₹6L spend)",
     "forexMarkup": "0.0%"
   },
@@ -2384,10 +3064,18 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic (4/qtr)", "International (4/qtr)", "Railway Lounges"]
+      "terminals": [
+        "Domestic (4/qtr)",
+        "International (4/qtr)",
+        "Railway Lounges"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 0% forex markup; 32 complimentary airport lounge visits annually.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹5,999 + GST",
     "forexMarkup": "0.0%"
   },
@@ -2409,7 +3097,11 @@
       ]
     },
     "regulatoryUpdate": "2026 Update: 0% forex markup + guest lounge access privileges for private clients.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹12,500 + GST (Waived on ₹10L spend)",
     "forexMarkup": "0.0%"
   },
@@ -2424,10 +3116,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (Unlimited + Guest)", "International (Unlimited + Guest)"]
+      "terminals": [
+        "Domestic (Unlimited + Guest)",
+        "International (Unlimited + Guest)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 0% forex markup and unlimited worldwide lounge access for ultra-HNIs.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹50,000 joining / ₹25,000 renewal",
     "forexMarkup": "0.0%"
   },
@@ -2442,10 +3141,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic (2/qtr)", "International (1/qtr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (1/qtr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Reduced 2.99% forex markup; Air India transition support.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹4,999 + GST",
     "forexMarkup": "2.99%"
   },
@@ -2460,10 +3165,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 6E Rewards currency on IndiGo; spend gate ₹20k monthly for lounge visits.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹4,000 (Metal) / ₹3,000 (Plastic) joining / ₹2,000 renewal",
     "forexMarkup": "3.5%"
   },
@@ -2479,7 +3190,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 4X points on LIC insurance premiums; lifetime free for LIC policyholders.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -2494,10 +3207,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 20000,
-      "terminals": ["Railway Lounges"]
+      "terminals": [
+        "Railway Lounges"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Accelerated rewards on insurance premiums and railway lounge access.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -2513,7 +3231,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Seamless UPI integration on RuPay; annual fee waived on ₹1 Lakh spend.",
-    "categories": ["upi", "dining_travel", "general"],
+    "categories": [
+      "upi",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2528,10 +3250,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: NeuCoins valid for 12 months; renewal fee waived on ₹1 Lakh spend.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2546,10 +3273,18 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 75000,
-      "terminals": ["Domestic (2/qtr)", "International (Priority Pass 4/yr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1.99% low forex markup; domestic lounge access unlocked with ₹75k quarterly spend.",
-    "categories": ["general", "dining_travel", "forex", "upi"],
+    "categories": [
+      "general",
+      "dining_travel",
+      "forex",
+      "upi"
+    ],
     "annualFee": "₹1,499 + GST (Waived on ₹3L spend)",
     "forexMarkup": "1.99%"
   },
@@ -2564,10 +3299,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Travel Credits redeemable across partnered airline and hotel programs.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2582,10 +3322,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)", "International (Priority Pass 4/yr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 4/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 2.5% reduced forex markup; fee reversed on ₹10 Lakh annual spend.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹2,999 + GST (Waived on ₹10L spend)",
     "forexMarkup": "2.5%"
   },
@@ -2600,10 +3347,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (2/qtr)", "International (Priority Pass 6/yr)"]
+      "terminals": [
+        "Domestic (2/qtr)",
+        "International (Priority Pass 6/yr)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1.99% low forex fee; milestone bonus travel credits on ₹1L spend blocks.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹4,999 + GST (Waived on ₹15L spend)",
     "forexMarkup": "1.99%"
   },
@@ -2618,10 +3372,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Railway Lounges"]
+      "terminals": [
+        "Railway Lounges"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Direct 10% valueback on rail ticket bookings on irctc.co.in.",
-    "categories": ["dining_travel", "upi", "general"],
+    "categories": [
+      "dining_travel",
+      "upi",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2637,7 +3397,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 6% valueback on jewelry and watches across Titan Group brands; fee waived on ₹3L spend.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹2,999 + GST (Waived on ₹3L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2653,7 +3416,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Concessional APR for armed forces personnel.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹250 + GST / Nil for Defence",
     "forexMarkup": "3.5%"
   },
@@ -2668,10 +3433,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Accelerated rewards on CSD defence stores and dining.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹1,499 + GST / Concessional",
     "forexMarkup": "3.5%"
   },
@@ -2687,7 +3457,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Lifetime free starter credit card with contactless chip security.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -2703,7 +3475,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 2.5% cashback equivalent on HPCL pumps; renewal fee waived on ₹50k spend.",
-    "categories": ["other_fuel", "general"],
+    "categories": [
+      "other_fuel",
+      "general"
+    ],
     "annualFee": "₹199 + GST (Waived on ₹50k spend)",
     "forexMarkup": "3.5%"
   },
@@ -2719,7 +3494,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 20 RP/₹100 on grocery and utility bills; renewal fee waived on ₹1.5 Lakh annual spend.",
-    "categories": ["other_fuel", "general", "dining_travel"],
+    "categories": [
+      "other_fuel",
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹500 + GST (Waived on ₹1.5L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2735,7 +3514,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Annual fee waived on ₹1.5 Lakh spend; customizable card photo face.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1.5L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2750,10 +3532,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 35000,
-      "terminals": ["Domestic (1/qtr)", "International (DreamFolks)"]
+      "terminals": [
+        "Domestic (1/qtr)",
+        "International (DreamFolks)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1 myCash = ₹1 on MakeMyTrip travel bookings; milestone MMT holiday vouchers.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹2,500 + GST (Waived on ₹2.5L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2769,7 +3557,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Lifetime free for Indian armed forces and paramilitary forces.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -2784,10 +3575,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic (Unlimited)", "International (Unlimited Priority Pass / DreamFolks)"]
+      "terminals": [
+        "Domestic (Unlimited)",
+        "International (Unlimited Priority Pass / DreamFolks)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 2.0% reduced forex markup; unlimited worldwide lounge access for primary & add-on.",
-    "categories": ["dining_travel", "forex", "general"],
+    "categories": [
+      "dining_travel",
+      "forex",
+      "general"
+    ],
     "annualFee": "₹12,000 + GST (Waived on ₹10L spend)",
     "forexMarkup": "2.0%"
   },
@@ -2802,10 +3600,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: 1.49% ultra-low forex markup (one of the lowest in ICICI portfolio); Times Prime bundled.",
-    "categories": ["forex", "dining_travel", "general"],
+    "categories": [
+      "forex",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹20,000 + GST",
     "forexMarkup": "1.49%"
   },
@@ -2820,10 +3625,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 35000,
-      "terminals": ["Domestic (Adani Airports)"]
+      "terminals": [
+        "Domestic (Adani Airports)"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Adani airport valet and lounge privileges; fee waived on ₹1.5L spend.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹750 + GST (Waived on ₹1.5L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2839,7 +3649,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: 10% discount on Manchester United online Megastore purchases.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹499 + GST (Waived on ₹1.25L spend)",
     "forexMarkup": "3.5%"
   },
@@ -2854,10 +3666,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "Railway Lounges"]
+      "terminals": [
+        "Domestic",
+        "Railway Lounges"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Accelerated CSD canteen rewards and airport lounge access for defence officers.",
-    "categories": ["general", "dining_travel"],
+    "categories": [
+      "general",
+      "dining_travel"
+    ],
     "annualFee": "₹1,000 + GST / Concessional",
     "forexMarkup": "3.5%"
   },
@@ -2872,10 +3690,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["amazon", "flipkart", "dining_travel", "general"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹1,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2890,10 +3715,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["amazon", "flipkart", "dining_travel", "general"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2909,7 +3741,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -2924,10 +3759,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["flipkart", "dining_travel", "general"],
+    "categories": [
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹2,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -2942,10 +3784,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹12,500 + GST",
     "forexMarkup": "2.0%"
   },
@@ -2960,10 +3808,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹10,000 + GST",
     "forexMarkup": "2.0%"
   },
@@ -2978,10 +3832,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹1,000 + GST",
     "forexMarkup": "2.0%"
   },
@@ -2996,10 +3856,15 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹1,499 + GST",
     "forexMarkup": "2.0%"
   },
@@ -3014,10 +3879,14 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -3033,7 +3902,10 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -3049,7 +3921,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["other_fuel", "upi", "general"],
+    "categories": [
+      "other_fuel",
+      "upi",
+      "general"
+    ],
     "annualFee": "₹500 + GST",
     "forexMarkup": "3.5%"
   },
@@ -3065,7 +3941,12 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["upi", "dining_travel", "gaming_wallet", "general"],
+    "categories": [
+      "upi",
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "₹99 + GST",
     "forexMarkup": "3.5%"
   },
@@ -3080,10 +3961,17 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 0,
-      "terminals": ["Domestic"]
+      "terminals": [
+        "Domestic"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["upi", "dining_travel", "gaming_wallet", "general"],
+    "categories": [
+      "upi",
+      "dining_travel",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "₹999 + GST",
     "forexMarkup": "3.5%"
   },
@@ -3099,7 +3987,11 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["upi", "gaming_wallet", "general"],
+    "categories": [
+      "upi",
+      "gaming_wallet",
+      "general"
+    ],
     "annualFee": "₹499 + GST",
     "forexMarkup": "3.5%"
   },
@@ -3114,10 +4006,16 @@
     "loungeAccess": {
       "eligible": true,
       "spendThreshold": 50000,
-      "terminals": ["Domestic", "International"]
+      "terminals": [
+        "Domestic",
+        "International"
+      ]
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["dining_travel", "general"],
+    "categories": [
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "₹3,000 + GST",
     "forexMarkup": "3.5%"
   },
@@ -3133,7 +4031,12 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["amazon", "flipkart", "dining_travel", "general"],
+    "categories": [
+      "amazon",
+      "flipkart",
+      "dining_travel",
+      "general"
+    ],
     "annualFee": "Lifetime Free",
     "forexMarkup": "3.5%"
   },
@@ -3149,7 +4052,9 @@
       "eligible": false
     },
     "regulatoryUpdate": "2026 Update: Verified terms via issuer schedule & MITC.",
-    "categories": ["general"],
+    "categories": [
+      "general"
+    ],
     "annualFee": "₹250 + GST",
     "forexMarkup": "3.5%"
   }
