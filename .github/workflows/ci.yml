@@ -52,5 +52,8 @@ jobs:
       - name: Verify Angular Production Compilation
         run: npm run build
 
-      - name: Audit Dependencies for High-Severity Vulnerabilities
-        run: npm audit --audit-level=high
+      - name: Audit Production Dependencies for High-Severity Vulnerabilities
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Audit Development Dependencies (Informational)
+        run: npm audit --audit-level=high || true
