@@ -54,11 +54,12 @@ If you discover a security vulnerability, flaw, or data handling issue within th
 - User custom portfolios and statement dates are stored locally using browser `IndexedDB` (`ThePlasticRouteDB`).
 - Browser same-origin policy ensures that this data is isolated exclusively to the host origin.
 
-### 3. Content Security Policy (CSP)
+### 3. Content Security Policy (CSP) & Zero-Telemetry CI Linter
 
-The application includes a strict Content Security Policy (`<meta http-equiv="Content-Security-Policy">`) to defend against Cross-Site Scripting (XSS) and unauthorized subresource loading.
+- The application includes a strict Content Security Policy (`<meta http-equiv="Content-Security-Policy">`) with `connect-src 'self'` to defend against Cross-Site Scripting (XSS) and unauthorized subresource loading.
+- An automated static analysis linter in CI continuously audits `src/app/` on every pull request, failing the build if unauthorized network outbound calls (`fetch(`, `XMLHttpRequest`, `navigator.sendBeacon`) are introduced.
 
 ### 4. Dependency Security & Automated Gates
 
 - Automated **Dependabot** checks continuously scan all npm dependencies and GitHub Actions workflows for known vulnerabilities.
-- Every pull request must pass automated schema validation (`npm run cards:validate`) and high-severity vulnerability audits (`npm audit --audit-level=high`) in CI before merging.
+- Every pull request must pass the automated CI gate (`npm run ci`), which verifies Prettier formatting, master catalog schema, volume threshold (≥ 180 cards), critical repository files existence, approved banking domain whitelists, 55 automated Vitest unit tests, Angular production compilation, and high-severity vulnerability audits (`npm audit --audit-level=high`) before merging.

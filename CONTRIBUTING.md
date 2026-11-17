@@ -176,9 +176,10 @@ npm run ci
 
 This runs:
 
-1. `npm run format:check` — Prettier formatting validation.
-2. `npm run cards:validate` — Master catalog schema and integrity check.
-3. `npm run build` — Production Angular 22 compilation.
+1. `npm run format:check` — Prettier code formatting validation.
+2. `npm run cards:validate` — Master catalog schema, volume threshold (≥ 180 cards), critical files existence, and domain whitelist verification.
+3. `npm test` — Automated unit test suite (55 tests across 9 spec suites).
+4. `npm run build` — Production Angular 22 compilation.
 
 ---
 

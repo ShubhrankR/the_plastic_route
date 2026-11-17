@@ -43,15 +43,15 @@ An exhaustive security audit of the repository reveals strong architectural secu
 - **Vector**: A collaborator, bot, or compromised account pushes commits directly to `main` or merges a pull request without maintainer sign-off.
 - **Impact**: Bypasses all review mechanisms, allowing unvetted or malicious code into the production build.
 - **Analysis**:
-  - `require_code_owner_reviews: true` is currently active.
-  - **Identified Gap**: Branch protection currently has `enforce_admins: false` and `required_status_checks.checks: []`. Administrators can push directly without a PR, and pull requests can technically be merged even if CI tests or schema checks fail.
+  - `require_code_owner_reviews: true` is active (assigned to `@ShubhrankR`).
+  - **Mitigation Implemented**: Branch protection on `main` strictly requires `Code Quality, Schema & Security Verification` and `CodeQL Analysis (javascript-typescript)`, requires branches to be up to date before merging (`strict: true`), and requires linear history. Outside contributors have zero merge permissions in the repository.
 
 ### 2. Threat: Accidental or Malicious Deletion of Core Files / Catalog Truncation
 
 - **Vector**: A pull request removes core files (e.g., `cards.json`, `owner_portfolio.json`, `card.service.ts`) or shrinks `cards.json` from 182 cards down to a handful.
 - **Impact**: Destroys the application's intelligence dataset or causes production build crashes.
 - **Analysis**:
-  - `scripts/validate-cards.mjs` checks JSON validity, but does not currently enforce a **minimum card count threshold** or verify that critical source files exist on disk.
+  - **Mitigation Implemented**: `scripts/validate-cards.mjs` enforces a strict minimum catalog threshold (`MINIMUM_CARD_COUNT = 180`), verifies that all `CRITICAL_FILES` exist on disk, and enforces an approved banking domain whitelist on any embedded URLs. Runs automatically in CI on every push and PR.
 
 ### 3. Threat: Supply Chain Poisoning (Malicious npm Packages)
 
@@ -83,17 +83,21 @@ To ensure the repository is completely resilient against corruption, the followi
 
 ### Rule 1: Strict Branch Protection & Status Check Policy
 
-Configure GitHub branch protection on `main` to enforce the following invariant requirements:
+Branch protection on `main` is actively configured and enforced with the following invariant rules:
 
-1. **Require status checks to pass before merging**:
-   - `Code Quality, Schema & Security Verification` (`ci.yml`)
-   - `CodeQL Analysis` (`codeql.yml`)
-   - **"Require branches to be up to date before merging"**: Enabled.
-2. **Require review from Code Owners**: Enabled (1 approval minimum from `@ShubhrankR`).
-3. **Dismiss stale pull request approvals when new commits are pushed**: Enabled.
-4. **Require linear history**: Enabled (clean rebase/merge flow).
-5. **Include administrators (`enforce_admins: true`)**: Prevents maintainers from accidentally pushing unverified code directly to `main` without CI execution.
-6. **Block force pushes and branch deletions**: Enabled.
+1. **Required status checks to pass before merging**:
+   - `Code Quality, Schema & Security Verification` (`ci.yml`) — encompasses Prettier formatting, catalog schema validation, zero-telemetry scan, 55 automated Vitest unit tests, Angular production build, and `npm audit`.
+   - `CodeQL Analysis (javascript-typescript)` (`codeql.yml`) — automated static security and injection analysis.
+   - **"Require branches to be up to date before merging"**: Enabled (`strict: true`).
+2. **Require review from Code Owners**: Enabled (1 approval minimum from `@ShubhrankR` via `.github/CODEOWNERS`).
+3. **Dismiss stale pull request approvals when new commits are pushed**: Enabled (`dismiss_stale_reviews: true`).
+4. **Require linear history**: Enabled (enforces clean, rebased or squashed commits; prevents merge commits).
+5. **Block force pushes and branch deletions**: Enabled (`allow_force_pushes: false`, `allow_deletions: false`).
+6. **Owner-Exclusive Merge & Bypass Controls**:
+   - External community contributors who fork the repository have **zero write access**; the GitHub interface disables and hides merge buttons entirely for fork PRs.
+   - Repository collaborators are verified and restricted solely to `@ShubhrankR` (sole admin/owner).
+   - Under GitHub branch protection, `enforce_admins: false` explicitly guarantees that **only the repository owner/administrator (`@ShubhrankR`)** holds the technical authority to bypass branch protections when merging self-authored pull requests, while any non-admin contributor or future collaborator is strictly blocked until all checks and reviews pass.
+   - Recommended merge strategy is **Squash and merge**, producing clean, single atomic commits per PR on `main`.
 
 ---
 
