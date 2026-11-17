@@ -26,7 +26,7 @@
             <th>Card & Issuer</th>
             <th>Optimization Vector & Lounge Access</th>
             <th>Billing Cycle</th>
-            <th class="text-right">Actions</th>
+            <th class="text-right actions-cell">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -70,22 +70,24 @@
                 <span class="text-xs text-muted">day of month</span>
               </td>
               <td class="text-right actions-cell">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-outline mr-1"
-                  (click)="onEdit(card)"
-                  title="Edit Card"
-                >
-                  ✏️ Edit
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-danger"
-                  (click)="onDelete(card.id)"
-                  title="Delete Card"
-                >
-                  🗑️
-                </button>
+                <div class="actions-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline"
+                    (click)="onEdit(card)"
+                    title="Edit Card"
+                  >
+                    ✏️ Edit
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-danger"
+                    (click)="onDelete(card.id)"
+                    title="Delete Card"
+                  >
+                    🗑️
+                  </button>
+                </div>
               </td>
             </tr>
           }

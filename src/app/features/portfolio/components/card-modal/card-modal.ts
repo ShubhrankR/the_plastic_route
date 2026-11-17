@@ -1,4 +1,13 @@
-import { Component, input, output, signal, OnInit } from '@angular/core';
+import {
+  Component,
+  input,
+  output,
+  signal,
+  OnInit,
+  OnDestroy,
+  inject,
+  HostListener,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   CreditCard,
@@ -8,6 +17,7 @@ import {
 } from '../../../../core/models/card.model';
 import { BankBadgeComponent } from '../../../../shared/components/bank-badge/bank-badge';
 import { NetworkBadgeComponent } from '../../../../shared/components/network-badge/network-badge';
+import { ScrollLockService } from '../../../../core/services/scroll-lock.service';
 
 @Component({
   selector: 'app-card-modal',
@@ -16,7 +26,9 @@ import { NetworkBadgeComponent } from '../../../../shared/components/network-bad
   templateUrl: './card-modal.html',
   styleUrl: './card-modal.css',
 })
-export class CardModal implements OnInit {
+export class CardModal implements OnInit, OnDestroy {
+  private readonly scrollLock = inject(ScrollLockService);
+
   cardToEdit = input<CreditCard | null>(null);
   masterCatalog = input<MasterCatalogCard[]>([]);
 
@@ -49,7 +61,15 @@ export class CardModal implements OnInit {
 
   readonly networks: CardNetwork[] = ['Visa', 'Mastercard', 'RuPay', 'Amex', 'Diners Club'];
 
+  @HostListener('window:keydown.escape')
+  onEscape(): void {
+    this.close.emit();
+  }
+
   ngOnInit(): void {
+    // Lock body scroll and compensate for scrollbar width across all viewports
+    this.scrollLock.lock();
+
     const editData = this.cardToEdit();
     if (editData) {
       this.activeTab.set('custom');
@@ -72,6 +92,11 @@ export class CardModal implements OnInit {
       this.quickBillingStart.set(first.defaultBillingStart ?? 1);
       this.quickBillingEnd.set(first.defaultBillingEnd ?? 30);
     }
+  }
+
+  ngOnDestroy(): void {
+    // Restore body scroll and scrollbar compensation when modal unmounts/closes
+    this.scrollLock.unlock();
   }
 
   onCatalogSelect(event: Event): void {

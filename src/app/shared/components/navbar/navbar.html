@@ -1,6 +1,6 @@
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="container navbar-inner">
-    <a routerLink="/home" class="brand text-gradient">
+    <a routerLink="/home" class="brand text-gradient" (click)="closeMobileMenu()">
       <img
         src="the_plastic_route.svg"
         alt="The Plastic Route Logo"
@@ -8,11 +8,12 @@
         width="36"
         height="36"
       />
-      <span>The Plastic Route.</span>
+      <span class="brand-title">The Plastic Route.</span>
     </a>
 
+    <!-- Desktop Navigation Links (Scoped for screens > 768px) -->
     @if (hasCompletedOnboarding()) {
-      <div class="nav-links">
+      <div class="nav-links desktop-nav">
         <a routerLink="/home" routerLinkActive="active" class="nav-link">🏠 Home</a>
         <a routerLink="/optimizer" routerLinkActive="active" class="nav-link">💳 Optimizer</a>
         <a routerLink="/tracker" routerLinkActive="active" class="nav-link">📅 Tracker</a>
@@ -27,7 +28,8 @@
       </div>
     }
 
-    <div class="navbar-actions">
+    <!-- Desktop Actions (Scoped for screens > 768px) -->
+    <div class="navbar-actions desktop-nav">
       @if (canInstall()) {
         <button
           type="button"
@@ -42,5 +44,121 @@
         {{ theme() === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode' }}
       </button>
     </div>
+
+    <!-- Mobile Navigation Toggle / Actions (<= 768px) -->
+    <div class="mobile-nav-toggle mobile-only">
+      @if (hasCompletedOnboarding()) {
+        <button
+          type="button"
+          class="hamburger-btn"
+          [class.is-active]="isMobileMenuOpen()"
+          (click)="toggleMobileMenu()"
+          [attr.aria-expanded]="isMobileMenuOpen()"
+          aria-controls="mobile-nav-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      } @else {
+        <button
+          type="button"
+          class="btn btn-ghost btn-sm"
+          (click)="toggleTheme()"
+          aria-label="Toggle dark/light theme"
+        >
+          {{ theme() === 'dark' ? '☀️ Light' : '🌙 Dark' }}
+        </button>
+      }
+    </div>
   </div>
+
+  <!-- Mobile Menu Backdrop & Drawer Overlay (<= 768px) -->
+  @if (isMobileMenuOpen()) {
+    <div class="mobile-backdrop mobile-only" (click)="closeMobileMenu()" aria-hidden="true"></div>
+    <div
+      id="mobile-nav-menu"
+      class="mobile-drawer mobile-only slide-down"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobile navigation menu"
+    >
+      <div class="mobile-drawer-header">
+        <span class="mobile-drawer-title text-gradient">Menu</span>
+        <button
+          type="button"
+          class="mobile-close-btn"
+          (click)="closeMobileMenu()"
+          aria-label="Close menu"
+        >
+          &times;
+        </button>
+      </div>
+
+      <div class="mobile-links-list">
+        <a
+          routerLink="/home"
+          routerLinkActive="active"
+          class="mobile-nav-link"
+          (click)="closeMobileMenu()"
+        >
+          <span class="mobile-nav-icon">🏠</span>
+          <span class="mobile-nav-text">Home</span>
+        </a>
+        <a
+          routerLink="/optimizer"
+          routerLinkActive="active"
+          class="mobile-nav-link"
+          (click)="closeMobileMenu()"
+        >
+          <span class="mobile-nav-icon">💳</span>
+          <span class="mobile-nav-text">Spend Optimizer</span>
+        </a>
+        <a
+          routerLink="/tracker"
+          routerLinkActive="active"
+          class="mobile-nav-link"
+          (click)="closeMobileMenu()"
+        >
+          <span class="mobile-nav-icon">📅</span>
+          <span class="mobile-nav-text">Billing Cycle &amp; Lounge Hub</span>
+        </a>
+        <a
+          routerLink="/portfolio"
+          routerLinkActive="active"
+          class="mobile-nav-link"
+          (click)="closeMobileMenu()"
+        >
+          <span class="mobile-nav-icon">💼</span>
+          <span class="mobile-nav-text">Card Portfolio</span>
+          @if (isExploreMode()) {
+            <span class="nav-badge badge-warning mobile-badge">Demo</span>
+          } @else if (userCardCount() > 0) {
+            <span class="nav-badge badge-success mobile-badge">{{ userCardCount() }}</span>
+          }
+        </a>
+      </div>
+
+      <div class="mobile-drawer-footer">
+        @if (canInstall()) {
+          <button
+            type="button"
+            class="btn btn-outline btn-full mobile-action-btn"
+            (click)="installPwa(); closeMobileMenu()"
+            title="Install The Plastic Route app on your device"
+          >
+            📲 Install App
+          </button>
+        }
+        <button
+          type="button"
+          class="btn btn-ghost btn-full mobile-action-btn"
+          (click)="toggleTheme()"
+        >
+          {{ theme() === 'dark' ? '☀️ Switch to Light Mode' : '🌙 Switch to Dark Mode' }}
+        </button>
+      </div>
+    </div>
+  }
 </nav>

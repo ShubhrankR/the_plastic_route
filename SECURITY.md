@@ -62,4 +62,4 @@ If you discover a security vulnerability, flaw, or data handling issue within th
 ### 4. Dependency Security & Automated Gates
 
 - Automated **Dependabot** checks continuously scan all npm dependencies and GitHub Actions workflows for known vulnerabilities.
-- Every pull request must pass the automated CI gate (`npm run ci`), which verifies Prettier formatting, master catalog schema, volume threshold (≥ 180 cards), critical repository files existence, approved banking domain whitelists, 55 automated Vitest unit tests, Angular production compilation, and high-severity vulnerability audits (`npm audit --audit-level=high`) before merging.
+- Every pull request must pass the automated CI gate (`npm run ci`), which verifies Prettier formatting, master catalog schema, volume threshold (≥ 180 cards), critical repository files existence, approved banking domain whitelists, automated unit tests, Angular production compilation, and high-severity vulnerability audits (`npm audit --omit=dev --audit-level=high`) before merging.
