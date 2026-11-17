@@ -1,132 +1,157 @@
 # 💳 The Plastic Route
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-6366f1?style=for-the-badge&logo=github)](https://shubhrankr.github.io/the_plastic_route/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg?style=for-the-badge)](LICENSE)
-[![CI Security Gate](https://img.shields.io/badge/CI-Automated_Security_Gate-064e3b?style=for-the-badge&logo=githubactions)](.github/workflows/ci.yml)
-[![Zero Backend](https://img.shields.io/badge/Privacy-Zero_Backend-10b981?style=for-the-badge)](SECURITY.md)
+[![Tests: 55 Passed](https://img.shields.io/badge/Tests-55%20Passed-10b981?style=for-the-badge&logo=vitest)](src/app/core/services/catalog-security.spec.ts)
+[![Angular: 22](https://img.shields.io/badge/Angular-22-dd0031?style=for-the-badge&logo=angular)](package.json)
+[![TypeScript: 6](https://img.shields.io/badge/TypeScript-6-3178c6?style=for-the-badge&logo=typescript)](tsconfig.json)
+[![PWA: Offline Ready](https://img.shields.io/badge/PWA-Offline_Ready-064e3b?style=for-the-badge&logo=pwa)](public/manifest.webmanifest)
+[![Zero Backend](https://img.shields.io/badge/Privacy-Zero_Backend-059669?style=for-the-badge)](SECURITY.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b.svg?style=for-the-badge)](LICENSE)
 
-> **🌐 Live Interactive Demo**: Experience the web application deployed live on GitHub Pages:  
+> **🌐 Live Interactive Application**: Experience the app deployed live on GitHub Pages:  
 > 👉 **[https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)**
 
-An open-source, lightweight, privacy-first credit card spend optimizer and billing cycle tracker.
+An open-source, lightweight, zero-tracking web application to instantly know **which credit card to use** and **when your bills roll over**.
 
-Unlike closed ecosystems that scrape your SMS data or demand heavy permissions, **The Plastic Route** runs entirely in the browser, stores no personal financial data on servers, and lets _you_ map the ultimate mathematical route for your wallet.
+Unlike closed FinTech apps that demand invasive SMS permissions, scrape private statements, or monetize your financial footprint, **The Plastic Route** runs 100% client-side in your browser. It stores zero data on remote servers and gives you immediate mathematical clarity for your wallet.
 
-## 🚀 Getting Started
+---
+
+## 📸 Overview & Features
+
+![The Plastic Route Preview](public/og-image.jpg)
+
+### 🎯 Core Capabilities
+
+- **⚡ Spend Optimizer**: Instant recommendation engine that tells you the primary and backup card to swipe for any transaction category (Amazon, Flipkart, BPCL/Fuel, RuPay UPI, Dining, Travel, Rent, Utilities, Education, Government).
+- **📅 Billing Cycle Tracker**: Real-time statement rollover analysis. Instantly tells you if a transaction today hits your _current statement_ or safely rolls over to the _next billing cycle_ for maximum interest-free leverage (up to 50 days).
+- **🛫 Airport Lounge Terminal Checker**: Fast lookup of lounge eligibility across major Indian airports (BLR, DEL, BOM, HYD, MAA, CCU, GOX) with 2026 terminal operator data and quarterly spend qualification thresholds.
+- **💱 Zero-Forex Markup Calculator**: Live savings comparison between zero/low-forex cards and standard 3.5% + 18% GST markups across USD, EUR, GBP, AED, SGD, THB, and JPY.
+- **🏆 Milestone & Fee Waiver Tracker**: Dynamic visual progress bars tracking quarterly spend goals, bonus reward milestones, and annual renewal fee waivers.
+- **🏦 Authentic Brand Vector Badges**: Normalized vector SVG marks for payment networks (Visa, Mastercard, RuPay, Amex, Diners Club) and banks (HDFC, SBI, ICICI, Axis, Kotak, IDFC FIRST, IndusInd, BOBCARD, Federal Bank, Yes Bank) with dark-mode contrast plates.
+- **📱 Progressive Web App (PWA)**: Offline-first architecture powered by `@angular/service-worker`. Installable as a native standalone app on iOS, Android, macOS, and Windows.
+- **🛡️ Strict Zero-Backend Privacy**: 100% client-side execution via browser `IndexedDB`. Zero cookies, zero analytics, zero telemetry, and zero remote tracking.
+
+---
+
+## 📊 Master Card Catalog
+
+The Plastic Route ships with an offline master catalog of **182 verified credit cards** across major Indian issuing banks:
+
+- **HDFC Bank** (Infinia, Regalia Gold, Diners Club Black Metal, Tata Neu Infinity, Millennia, Swiggy, etc.)
+- **SBI Card** (Aurum, Cashback SBI, SimplyCLICK, BPCL Octane, Prime, Elite, etc.)
+- **ICICI Bank** (Emeralde Private Metal, Sapphiro, Rubyx, Coral RuPay, Amazon Pay ICICI, etc.)
+- **Axis Bank** (Magnus Burgundy, Atlas, Olympus, Airtel Axis, Horizon, Ace, Flipkart Axis, Neo, etc.)
+- **American Express** (Platinum Card, Platinum Travel, Gold Card, SmartEarn, Membership Rewards)
+- **IDFC FIRST Bank** (Club Vistara, Wealth, Select, Classic, Millennia, SWYP, WOW)
+- **Kotak Mahindra Bank** (White Reserve, Zen, Mojo, League, Indian Oil)
+- **IndusInd Bank**, **Federal Bank**, **Bank of Baroda (BOBCARD)**, **Yes Bank**, and **Standard Chartered**.
+
+Catalog schema, reward vectors, and annual fee waiver rules are validated autonomously against official issuer MITC schedules (`scripts/sync-cards.mjs` and `scripts/validate-cards.mjs`).
+
+---
+
+## 🚀 Quick Start & Development
 
 ### Prerequisites
 
-- Node.js ≥ v24.15.0 (Recommended: Node `24.19.0` via `nvm`)
-- npm ≥ 11.0.0
+- **Node.js**: `≥ 24.15.0` (Recommended: Node `24.19.0` via `nvm`)
+- **npm**: `≥ 11.0.0`
 
-### Installation & Dev Server
+### Setup & Local Development
 
 ```bash
-npm install
+# 1. Clone the repository
+git clone https://github.com/ShubhrankR/the_plastic_route.git
+cd the_plastic_route
+
+# 2. Install dependencies
+npm ci
+
+# 3. Start local development server with live reload
 npm start
 ```
 
-The app will be available at `http://localhost:4200/`.
+Open [http://localhost:4200/](http://localhost:4200/) in your browser.
 
-### Production Build & Full CI Gate
+### Quality, Security & Test Commands
 
 ```bash
-# Production Angular 22 build
-npm run build
+# Run automated Vitest unit test suite (55 tests across 9 spec suites)
+npm test
 
-# Validate master card catalog against strict schema
+# Check code formatting with Prettier
+npm run format:check
+
+# Validate master card catalog against strict schema & integrity assertions
 npm run cards:validate
 
-# Run complete pre-PR verification pipeline (Format + Schema + Build)
+# Production compilation
+npm run build
+
+# Run complete pre-PR unified CI gate (Format + Schema + Tests + Build)
 npm run ci
 ```
 
-### Autonomous Card Harvester & Master Catalog Sync
+---
 
-```bash
-npm run cards:sync
-```
+## 🛠️ Architecture & Technology Stack
 
-Synchronizes scraped CSV/JSON datasets into `src/app/core/data/cards.json` with automatic schema verification while isolating private seed files.
+The project is built on modern Angular (v22) standalone architecture with zero external UI framework bloat:
 
-## ✨ Features
+| Layer          | Technology              | Key Capabilities                                                                                                   |
+| :------------- | :---------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| **Framework**  | Angular 22              | 100% Standalone components, functional route guards, Signals reactive state                                        |
+| **Language**   | TypeScript 6            | Strict type checking, extensible data models, zero `any` policy                                                    |
+| **Styling**    | Custom Vanilla CSS      | Emerald Forest & Gold design tokens (`src/styles.css`), frosted glassmorphic elevation, dark/light theme switching |
+| **Storage**    | Browser IndexedDB       | Client-side wallet persistence (`ThePlasticRouteDB`) with zero server exfiltration                                 |
+| **Testing**    | Vitest                  | 55 unit tests covering algorithms, spend optimizations, billing cycles, and security guards                        |
+| **Security**   | Content Security Policy | Strict CSP (`connect-src 'self'`), anti-script regex schema checks, CI zero-telemetry linter                       |
+| **Deployment** | GitHub Pages & Actions  | Automated CI gate, CodeQL security scanning, scheduled catalog synchronization                                     |
 
-- **Automated Card Harvester & GitHub Actions:** On-demand Antigravity skill (`card-harvester`) and scheduled GitHub Actions workflow (`.github/workflows/sync-cards.yml`) that traverses, updates, and validates the master bank database against official MITC circulars.
-- **Comprehensive Bank Coverage:** Master catalog containing verified 2026 data for major Indian banks (**HDFC Bank**, **ICICI Bank**, **Axis Bank**, **SBI Card**, **American Express**, **IDFC FIRST**, **Federal Bank**).
-- **Dedicated Welcome Gateway & FTUE:** Distraction-free onboarding view (`/#/welcome`) guarded by Angular Functional Route Guards, offering immediate choice between _Explore Demo Mode_ and _Build Personal Wallet_.
-- **Home Landing Page:** Interactive landing page (`/#/home`) explaining the application purpose, privacy-first architecture, 3-metric highlight bar, and open-source GitHub contribution guidelines.
-- **Spend Optimizer:** Quick lookup tool to instantly see which primary or backup card to swipe based on purchase category (Amazon, Fuel, Forex, UPI, Dining, Travel, etc.).
-- **Billing Cycle Tracker:** Real-time analysis of statement dates. Instantly see if a transaction today hits your _current bill_ or safely rolls over to the _next bill_ for maximum interest-free leverage.
-- **IndexedDB Wallet Persistence:** Client-side local storage using browser IndexedDB for custom user card portfolios with zero server tracking.
-- **Toast Notifications & Undo Card Deletion:** Reactive signal-based toast notification system with interactive `[ ↩️ Undo ]` action to instantly restore deleted cards.
-- **Scroll-Triggered Micro-Animations:** Native `IntersectionObserver` scroll reveal directive with zero main-thread blocking and `prefers-reduced-motion` compliance.
-- **Soothing Light & Dark Themes:** Nature-inspired Emerald Forest & Gold color system with soft off-white (`#f8fafc`) light mode, rich dark emerald mode, glassmorphism, and WCAG-compliant high-contrast typography.
-- **Brand Icon & Multi-Res Favicon:** Custom vector brand mark and multi-resolution `favicon.ico` / `favicon.svg` embedded across all viewports.
-- **Bank & Payment Network Vector Badges:** Authentic vector brand marks for major networks (Visa, MasterCard, RuPay, Amex, Diners Club) and banks (HDFC, SBI, ICICI, Axis, Kotak, IDFC, IndusInd, BOBCARD, Federal Bank, Yes Bank, etc.) with theme-adaptive frosted glass styling and high-contrast backing plates in dark mode.
-- **Privacy-First:** Zero backend, zero cookies, zero tracking. All data stays strictly in your browser.
+---
 
-## 📚 Project Documentation
-
-Detailed project roadmaps, scaling strategies, and architectural research are available in the [`docs/`](docs/) directory:
-
-- **[Development & Feature Roadmap (TODO)](docs/TODO.md)**: Origin philosophy, milestone history, Phase 1–5 feature checklists, backlog, and open research questions.
-- **[Master Credit Card Catalog & Bank Index](docs/CARD_CATALOG_DATASET.md)**: Comprehensive breakdown of all 165 cards across 11 banks in the dataset, reward structures, lounge access, and fees.
-- **[Perplexity Deep Research Integration](docs/PERPLEXITY_RESEARCH_INTEGRATION.md)**: Standardized research prompt templates, Perplexity Project setup, and autonomous dataset ingestion workflows.
-- **[User Onboarding Strategy](docs/USER_ONBOARDING_STRATEGY.md)**: Complete specification of the implemented FTUE onboarding gateway, data segregation, and route guard lifecycle.
-- **[Security, Privacy & App Navigation](docs/SECURITY_PRIVACY_AND_NAVIGATION.md)**: Security risk analysis, zero-credential storage guarantee, master catalog vs local wallet data separation, and route guard flows.
-- **[Open Source Security & Governance Architecture](docs/OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md)**: Threat modeling, supply chain defenses, catalog data integrity guards, and branch governance rules for public community contributions.
-- **[CSS Framework Research Report](docs/CSS_FRAMEWORK_RESEARCH_REPORT.md)**: Comprehensive evaluation of Tailwind CSS v4, Spartan UI, DaisyUI 5, PrimeNG, and Vanilla CSS for Angular 22.
-- **[Architecture & Scaling Strategy](docs/SCALING_STRATEGY.md)**: Multi-vector scoring algorithm, declarative rule schemas, Web Workers, IndexedDB, PWA setup, and P2P sync.
-
-## 🛠️ Project Architecture
-
-The project is built with modern Angular (v22) using standalone components, signals, and TypeScript:
-
-| Layer           | Tech                                                                                                           |
-| --------------- | -------------------------------------------------------------------------------------------------------------- |
-| Framework       | Angular 22 (standalone components, signals, functional route guards, Angular Router)                           |
-| Language        | TypeScript 6 (strict mode, extensible data schemas)                                                            |
-| Styling         | 100% Custom Vanilla CSS Design System (Emerald Forest & Gold tokens, soft off-white light mode, glassmorphism) |
-| Brand Assets    | SVG brand vector icon + multi-resolution `.ico` / `.svg` favicons                                              |
-| State & Storage | Angular Signals + Browser IndexedDB + Synchronous localStorage FTUE cache                                      |
-| Build           | Angular CLI + esbuild                                                                                          |
-
-### Project Structure
+## 📁 Repository Structure
 
 ```
-src/
-├── app/
-│   ├── core/                       # Singleton services, models, guards, and datasets
-│   │   ├── data/                   # Master catalog (cards.json) & owner seed data
-│   │   ├── guards/                 # Functional route guards (onboardingGuard, welcomeGuard)
-│   │   ├── models/card.model.ts    # Extensible TypeScript interfaces
-│   │   └── services/               # CardService, ThemeService, IndexedDBService, ToastService
-│   ├── features/                   # Domain feature views (Route pages)
-│   │   ├── welcome/                # First-Time User Experience gateway (/welcome)
-│   │   ├── home/                   # Home / Landing Page view & sub-components
-│   │   ├── optimizer/              # Spend Optimizer page view & form components
-│   │   ├── tracker/                # Billing Cycle Tracker page view & table
-│   │   └── portfolio/              # Card Portfolio overview & management
-│   ├── shared/                     # Reusable layout components and directives
-│   │   ├── components/             # Navbar, Footer, Toast notifications, Modals
-│   │   └── directives/             # ScrollRevealDirective (IntersectionObserver)
-│   ├── app.config.ts               # App configuration & router providers
-│   ├── app.routes.ts               # HashLocationStrategy route mapping & guards
-│   └── app.ts                      # Root application component shell
-├── index.html
-├── main.ts
-└── styles.css                      # Global design system & theme tokens
+the_plastic_route/
+├── .github/                        # Workflows (ci.yml, codeql.yml, deploy.yml, sync-cards.yml)
+├── docs/                           # Architecture specs, security threat model, and roadmap
+│   ├── CARD_CATALOG_DATASET.md     # Full catalog schema and bank inventory breakdown
+│   ├── OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md  # Threat model, supply chain, and branch governance
+│   ├── SECURITY_PRIVACY_AND_NAVIGATION.md      # Data segregation and zero-credential model
+│   └── TODO.md                     # Origin philosophy, completed milestones, and backlog
+├── public/                         # Brand SVGs, PWA icons, manifest, and OpenGraph assets
+│   ├── icons/                      # Authentic bank & payment network vector SVGs
+│   ├── og-image.jpg                # High-resolution social media preview banner
+│   └── manifest.webmanifest        # PWA application manifest
+├── scripts/                        # Automated validation, MITC sync, and icon generator
+│   ├── sync-cards.mjs              # Scraped MITC dataset synchronization script
+│   └── validate-cards.mjs          # Strict schema, volume threshold & domain whitelist validator
+├── src/
+│   ├── app/
+│   │   ├── core/                   # Core models, services, guards, and master catalog
+│   │   │   ├── data/cards.json     # Master credit card database (182 verified cards)
+│   │   │   ├── guards/             # FTUE onboarding and route protection guards
+│   │   │   └── services/           # CardService, IndexedDBService, ThemeService, PwaService
+│   │   ├── features/               # Route views: /welcome, /home, /optimizer, /tracker, /portfolio
+│   │   └── shared/                 # Reusable BankBadge, NetworkBadge, Navbar, Footer, Toast
+│   ├── index.html                  # Strict CSP headers, OpenGraph / Twitter meta tags
+│   └── styles.css                  # Global design tokens and theme palettes
+├── CONTRIBUTING.md                 # Community contribution guidelines and schema rules
+├── LICENSE                         # MIT License
+└── SECURITY.md                     # Responsible disclosure policy and architectural privacy guarantees
 ```
 
-## 🤝 Contributing & Community
+---
 
-Banking rules, reward multipliers, and lounge access thresholds evolve continuously. We welcome community contributions from developers, researchers, and credit card enthusiasts!
+## 🤝 Contributing
 
-Please review our dedicated guides before contributing:
+We warmly welcome community contributions from developers, designers, and credit card enthusiasts! Whether you want to add a newly launched card, update devalued reward terms, or refine UI components, check out our guides:
 
-- **[Contributing Guidelines (CONTRIBUTING.md)](CONTRIBUTING.md)** — Step-by-step setup, research protocol, card schema, Vanilla CSS rules, and PR checklist.
-- **[Security Policy (SECURITY.md)](SECURITY.md)** — Responsible vulnerability disclosure, zero-backend privacy model, and storage sandboxing.
-- **[Code of Conduct (CODE_OF_CONDUCT.md)](CODE_OF_CONDUCT.md)** — Contributor Covenant v2.1 standards.
+- **[Contributing Guidelines](CONTRIBUTING.md)**: Development setup, branch workflow, card schema, and PR checklists.
+- **[Security & Governance Policy](docs/OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md)**: Catalog integrity rules, domain whitelists, and review requirements.
+- **[Code of Conduct](CODE_OF_CONDUCT.md)**: Contributor Covenant standards.
 
 ---
 

@@ -23,7 +23,7 @@ This document defines the technical architecture, design principles, mandatory r
 ## 🏗️ Technical Architecture & Directory Structure
 
 ```
-/home/shubhrank_rastogi/WORKSPACE/PROJECTS/my_projects/the_plastic_route/
+/home/shubhrank_rastogi/WORKSPACE/my_projects/the_plastic_route/
 ├── src/
 │   ├── app/
 │   │   ├── core/                       # Singleton services, models, and datasets

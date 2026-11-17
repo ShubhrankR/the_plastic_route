@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to **The Plastic Route**! 🎉
 
-The Plastic Route is an open-source, privacy-first, zero-backend credit card spend optimizer and billing cycle tracker. We welcome contributions from developers, designers, and credit card enthusiasts worldwide.
+The Plastic Route is an open-source, privacy-first, zero-backend credit card spend optimizer and billing cycle tracker. We welcome contributions from developers, researchers, and credit card enthusiasts worldwide.
 
 ---
 
@@ -13,7 +13,7 @@ The Plastic Route is an open-source, privacy-first, zero-backend credit card spe
 3. [Branching Strategy & PR Workflow](#-branching-strategy--pr-workflow)
 4. [Contributing to the Master Credit Card Catalog](#-contributing-to-the-master-credit-card-catalog)
 5. [UI & Styling Rules (Strict Custom Vanilla CSS)](#-ui--styling-rules-strict-custom-vanilla-css)
-6. [Security & Privacy Guarantees](#-security--privacy-guarantees)
+6. [Security, Privacy & Data Integrity Guarantees](#-security-privacy--data-integrity-guarantees)
 7. [Pre-Submission Verification Checklist](#-pre-submission-verification-checklist)
 8. [Commit Message Conventions](#-commit-message-conventions)
 
@@ -35,17 +35,17 @@ By participating in this project, you agree to abide by our [Code of Conduct](CO
 ### Setup Instructions
 
 ```bash
-# 1. Clone your fork
+# 1. Fork the repo on GitHub, then clone your fork
 git clone https://github.com/<your-username>/the_plastic_route.git
 cd the_plastic_route
 
-# 2. Use the required Node version
+# 2. Use the recommended Node version
 nvm use 24.19.0
 
-# 3. Install dependencies cleanly
+# 3. Clean install dependencies
 npm ci
 
-# 4. Start local development server
+# 4. Start local development server with live reload
 npm start
 ```
 
@@ -56,18 +56,15 @@ The application will launch at `http://localhost:4200/`.
 ## 🌿 Branching Strategy & PR Workflow
 
 1. **Target Branch**:
-   - All feature, bug fix, and data contribution PRs must target the **`develop`** branch.
-   - The **`main`** branch is reserved for stable production releases deployed to GitHub Pages.
-
-2. **Branch Naming**:
-   - Features: `feature/<feature-name>` (e.g., `feature/pwa-service-worker`)
+   - All pull requests should target the **`main`** branch.
+2. **Branch Naming Conventions**:
+   - Features: `feat/<feature-name>` (e.g., `feat/pwa-notifications`)
    - Bug Fixes: `fix/<bug-summary>` (e.g., `fix/lounge-threshold-calculation`)
-   - Data / Catalog updates: `data/<bank-name>-cards` (e.g., `data/axis-2026-mitc`)
-   - Documentation: `docs/<topic>` (e.g., `docs/faq-guide`)
-
+   - Data / Catalog updates: `data/<bank-name>-cards` (e.g., `data/hdfc-2026-mitc`)
+   - Documentation: `docs/<topic>` (e.g., `docs/mcc-guide`)
 3. **Submitting a Pull Request**:
    - Ensure all automated checks pass locally (`npm run ci`).
-   - Fill out the [Pull Request Template](.github/pull_request_template.md) thoroughly.
+   - Fill out the [Pull Request Template](.github/pull_request_template.md) thoroughly with verified documentation sources.
 
 ---
 
@@ -77,7 +74,7 @@ Bank reward structures, cashback caps, and lounge spend thresholds evolve regula
 
 ### 1. Research Protocol & Verification
 
-- When adding or updating a credit card, refer to [`docs/PERPLEXITY_RESEARCH_INTEGRATION.md`](docs/PERPLEXITY_RESEARCH_INTEGRATION.md) for our standardized research prompt framework.
+- Refer to [`docs/PERPLEXITY_RESEARCH_INTEGRATION.md`](docs/PERPLEXITY_RESEARCH_INTEGRATION.md) for our standardized research prompt framework.
 - Ensure all data points (reward rates, annual fees, forex markups, minimum quarterly spends for airport lounge access) are sourced from official bank MITC (Most Important Terms and Conditions) schedules.
 
 ### 2. Card Schema (`MasterCatalogCard`)
@@ -107,19 +104,24 @@ Card objects in `src/app/core/data/cards.json` must strictly adhere to the follo
 
 #### Allowed Enum Values:
 
-- **`network`**: `'Visa'`, `'Mastercard'`, `'RuPay'`, `'Amex'`, `'Diners Club'` (or combinations like `'Visa / RuPay'`).
-- **`categories`**: Allowed spend categories are:
-  - `'amazon'` (Amazon Shopping & Amazon Pay)
-  - `'flipkart'` (Flipkart / Myntra / Cleartrip)
-  - `'bpcl'` (BPCL Fuel)
-  - `'other_fuel'` (HPCL / IOCL / Other Fuel)
-  - `'upi'` (RuPay UPI QR & merchant transactions)
-  - `'forex'` (Zero/Low Forex & International Travel)
-  - `'dining_travel'` (Dining Out, Flights & Hotels)
-  - `'gaming_wallet'` (Wallet Reloads & Gaming)
-  - `'general'` (General / Catch-All)
+- **`network`**: `'Visa'`, `'Mastercard'`, `'RuPay'`, `'Amex'`, `'Diners Club'` (or combination token strings like `'Visa / RuPay'`).
+- **`categories`**: Allowed spend categories (lowercase tokens):
+  - `'amazon'` — Amazon Shopping & Amazon Pay
+  - `'flipkart'` — Flipkart, Myntra, Cleartrip
+  - `'bpcl'` — BPCL Fuel
+  - `'other_fuel'` — HPCL, IOCL, and general fuel
+  - `'upi'` — RuPay UPI QR & merchant transactions
+  - `'forex'` — Zero/low forex markup & international travel
+  - `'dining_travel'` — Dining out, flights, and hotels
+  - `'gaming_wallet'` — Gaming portals & wallet reloads
+  - `'utilities'` — Electricity, water, broadband, gas bills
+  - `'rent'` — Rental payment platforms
+  - `'education'` — College, school, and course fee payments
+  - `'wallet_load'` — Prepaid wallet loading transactions
+  - `'government'` — Government taxes and municipal fees
+  - `'general'` — General / baseline catch-all spend
 
-### 3. Automated Catalog Validation
+### 3. Automated Catalog Validation & Safety Thresholds
 
 Before submitting any data changes, run the validator:
 
@@ -127,15 +129,15 @@ Before submitting any data changes, run the validator:
 npm run cards:validate
 ```
 
-This performs automated checks for unique IDs, regex constraints, valid categories, numeric bounds, and script/HTML sanitization.
+The validator enforces:
 
-### 4. Updating Routing & Priority Mapping
-
-- If adding a category-defining card, update `CATEGORY_PRIORITY_MAP` in [`src/app/core/services/card.service.ts`](src/app/core/services/card.service.ts).
-- Update the inventory table in [`docs/CARD_CATALOG_DATASET.md`](docs/CARD_CATALOG_DATASET.md).
+- **Volume Threshold**: Prohibits pull requests from shrinking the catalog below 180 cards (`MINIMUM_CARD_COUNT = 180`).
+- **Critical Files Check**: Ensures essential repository files (`cards.json`, `card.service.ts`, `CODEOWNERS`, etc.) exist.
+- **Anti-Scripting / HTML Sanitization**: Blocks any angle brackets (`<`, `>`) or dangerous URI schemes (`javascript:`, `vbscript:`, `data:`).
+- **Approved External Domains**: Any embedded links must use `https://` and belong strictly to official banking/regulatory domains (`*.hdfcbank.com`, `*.sbi.co.in`, `*.rbi.org.in`, etc.).
 
 > [!CAUTION]
-> **NEVER modify `src/app/core/data/owner_portfolio.json`**: This file contains private sample seed configuration and must remain untouched.
+> **NEVER modify `src/app/core/data/owner_portfolio.json`**: This file contains sample seed wallet configuration and must remain untouched.
 
 ---
 
@@ -156,12 +158,12 @@ This performs automated checks for unique IDs, regex constraints, valid categori
 
 ---
 
-## 🛡️ Security & Privacy Guarantees
+## 🛡️ Security, Privacy & Data Integrity Guarantees
 
-- **Zero Backend**: All card processing and optimization logic must run client-side in the user's browser.
-- **No Telemetry**: Do not introduce analytics trackers, third-party cookies, or network exfiltration scripts.
-- **Zero Credential Collection**: Never ask for or store 16-digit Card Numbers (PAN), CVVs, PINs, or NetBanking credentials.
-- **Content Security Policy (CSP)**: Do not introduce inline `<script>` tags or unapproved external origins.
+- **Zero Backend**: All card processing and optimization logic runs exclusively in the user's browser.
+- **No Telemetry**: Our CI pipeline executes an automated static analysis linter (`git grep -nE "fetch\(|XMLHttpRequest|navigator\.sendBeacon" src/app/`). Any attempt to add network tracking or telemetry fails the build immediately.
+- **Zero Credential Collection**: Never ask for or store 16-digit Card Numbers (PAN), CVVs, PINs, OTPs, or NetBanking credentials.
+- **Zero Dependency Policy for Data**: Pull requests adding or updating credit cards must **never** modify `package.json` or `package-lock.json`.
 
 ---
 
@@ -193,4 +195,4 @@ We adhere to the [Conventional Commits](https://www.conventionalcommits.org/) sp
 - `style(navbar): refine glassmorphic border blur token`
 - `refactor(optimizer): streamline category scoring algorithm`
 - `ci(actions): add automated security audit step`
-- `chore(deps): update Angular build tools`
+- `test(security): add catalog integrity assertions`
