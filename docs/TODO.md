@@ -26,8 +26,8 @@ To build trust and ensure security, this application operates on a strict **Zero
 
 - **Live URL**: [https://shubhrankr.github.io/the_plastic_route/](https://shubhrankr.github.io/the_plastic_route/)
 - **Catalog Size**: 182 credit cards across major Indian banks (HDFC, ICICI, SBI, Axis, IDFC FIRST, Kotak, IndusInd, Federal, etc.).
-- **CI / Security Gate**: Fully automated with CodeQL security scanning and zero high/critical vulnerabilities.
-- **Unit Test Coverage**: 49 automated tests across 8 spec suites (`npm test`).
+- **CI / Security Gate**: Fully automated with CodeQL security scanning, Zero-Telemetry privacy linter, catalog data integrity guards, and zero high/critical vulnerabilities.
+- **Unit Test Coverage**: 55 automated tests across 9 spec suites (`npm test`).
 - **Offline Readiness**: PWA with Service Worker offline caching and app installation support.
 - **Iconography**: Authentic bank and payment network SVG vector marks with theme-adaptive contrast plates.
 
@@ -191,4 +191,4 @@ The project was migrated from **HTML5 + Bootstrap 5 + jQuery** to **Angular 22**
 3. **PWA Mobile-First Usage** ✅ _Resolved_: Configured with `@angular/service-worker`, offline caching, install prompts, and `manifest.webmanifest`.
 4. **Automated Testing & Security Gate** ✅ _Resolved_: Vitest unit test suite (49 tests) integrated into CI alongside Prettier formatting, catalog schema validation, production build, and CodeQL security analysis.
 5. **Brand Iconography & Contrast Compliance** ✅ _Resolved_: Offline vector SVG icon system with theme-adaptive contrast plates delivering high vibrancy across dark and light themes without external CDN dependencies.
-6. **Open Source Security & Governance Architecture** ✅ _Resolved_: Established threat modeling, supply chain defenses, catalog data integrity guards, and branch governance rules in [`docs/OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md`](OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md).
+6. **Open Source Security & Governance Architecture** ✅ _Resolved_: Established threat modeling, supply chain defenses, catalog data integrity guards (minimum 180 cards threshold, critical file existence assertions, approved domain whitelist), automated Zero-Telemetry CI privacy linter, and branch governance rules in [`docs/OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md`](OPEN_SOURCE_SECURITY_AND_GOVERNANCE.md).

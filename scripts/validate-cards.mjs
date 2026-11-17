@@ -38,6 +38,40 @@ const VALID_NETWORKS = new Set(['Visa', 'Mastercard', 'RuPay', 'Amex', 'Diners C
 const DANGEROUS_CONTENT_REGEX = /[<>]|(?:javascript|vbscript|data):/i;
 const ID_REGEX = /^[a-z0-9_]+$/;
 
+const MINIMUM_CARD_COUNT = 180;
+
+const CRITICAL_FILES = [
+  'src/app/core/data/cards.json',
+  'src/app/core/data/owner_portfolio.json',
+  'src/app/core/services/card.service.ts',
+  'src/app/core/services/indexed-db.service.ts',
+  'scripts/validate-cards.mjs',
+  'scripts/sync-cards.mjs',
+  '.github/CODEOWNERS',
+  '.github/workflows/ci.yml',
+];
+
+const ALLOWED_DOMAIN_SUFFIXES = [
+  'hdfcbank.com',
+  'icicibank.com',
+  'sbi.co.in',
+  'axisbank.com',
+  'rbi.org.in',
+  'kotak.com',
+  'indusind.com',
+  'standardchartered.co.in',
+  'hsbc.co.in',
+  'yesbank.in',
+  'idfcfirstbank.com',
+  'aubank.in',
+  'bankofbaroda.in',
+  'pnbindia.in',
+  'federalbank.co.in',
+  'americanexpress.com',
+];
+
+const URL_REGEX = /https?:\/\/[^\s"'<>]+/gi;
+
 /**
  * Validates a string for presence of angle brackets, HTML tags, or dangerous URI schemes.
  */
@@ -47,17 +81,60 @@ function isDangerousString(str) {
 }
 
 /**
+ * Validates that any URL embedded in text uses HTTPS and belongs to an approved banking/regulatory domain.
+ */
+function validateUrlsInString(str, context) {
+  if (typeof str !== 'string') return [];
+  const matches = str.match(URL_REGEX);
+  if (!matches) return [];
+
+  const urlErrors = [];
+  for (const urlStr of matches) {
+    try {
+      const parsed = new URL(urlStr);
+      if (parsed.protocol !== 'https:') {
+        urlErrors.push(
+          `${context}: Insecure HTTP link detected ("${urlStr}"). Only HTTPS URLs are permitted.`,
+        );
+        continue;
+      }
+      const hostname = parsed.hostname.toLowerCase();
+      const isAllowed = ALLOWED_DOMAIN_SUFFIXES.some(
+        (domain) => hostname === domain || hostname.endsWith('.' + domain),
+      );
+      if (!isAllowed) {
+        urlErrors.push(
+          `${context}: Disallowed external link domain ("${hostname}"). Only official banking and regulatory domains are permitted.`,
+        );
+      }
+    } catch {
+      urlErrors.push(`${context}: Malformed URL ("${urlStr}").`);
+    }
+  }
+  return urlErrors;
+}
+
+/**
  * Validates the entire cards.json catalog and owner_portfolio.json.
  * Returns an object with { valid: boolean, errors: string[], cardCount: number }.
  */
 export function validateCards() {
   const errors = [];
 
+  // 0. Guard against critical repository file deletion
+  for (const relPath of CRITICAL_FILES) {
+    if (!fs.existsSync(path.resolve(ROOT_DIR, relPath))) {
+      errors.push(
+        `CRITICAL SECURITY FAILURE: Essential repository file "${relPath}" has been deleted.`,
+      );
+    }
+  }
+
   // 1. Validate master catalog (cards.json)
   if (!fs.existsSync(CARDS_JSON_PATH)) {
     return {
       valid: false,
-      errors: [`Master catalog not found at: ${CARDS_JSON_PATH}`],
+      errors: [`Master catalog not found at: ${CARDS_JSON_PATH}`, ...errors],
       cardCount: 0,
     };
   }
@@ -69,7 +146,7 @@ export function validateCards() {
   } catch (err) {
     return {
       valid: false,
-      errors: [`Failed to parse cards.json as valid JSON: ${err.message}`],
+      errors: [`Failed to parse cards.json as valid JSON: ${err.message}`, ...errors],
       cardCount: 0,
     };
   }
@@ -77,9 +154,16 @@ export function validateCards() {
   if (!Array.isArray(catalog)) {
     return {
       valid: false,
-      errors: ['cards.json root element must be a JSON array.'],
+      errors: ['cards.json root element must be a JSON array.', ...errors],
       cardCount: 0,
     };
+  }
+
+  // Guard against catalog truncation or mass deletion
+  if (catalog.length < MINIMUM_CARD_COUNT) {
+    errors.push(
+      `SECURITY ALERT: Master catalog size (${catalog.length}) is below safety threshold (${MINIMUM_CARD_COUNT}). Card deletion is prohibited without explicit maintainer override.`,
+    );
   }
 
   const seenIds = new Set();
@@ -209,6 +293,15 @@ export function validateCards() {
     ) {
       errors.push(`${cardRef}: "forexMarkup" contains prohibited HTML or script content.`);
     }
+
+    // Strict external link & domain whitelist validation
+    ['name', 'bank', 'optimizationVector', 'regulatoryUpdate', 'annualFee', 'forexMarkup'].forEach(
+      (prop) => {
+        if (typeof card[prop] === 'string') {
+          errors.push(...validateUrlsInString(card[prop], `${cardRef}: "${prop}"`));
+        }
+      },
+    );
   });
 
   // 2. Validate owner portfolio (owner_portfolio.json) if it exists

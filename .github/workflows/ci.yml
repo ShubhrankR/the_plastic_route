@@ -37,6 +37,15 @@ jobs:
       - name: Validate Master Card Catalog Schema & Integrity
         run: npm run cards:validate
 
+      - name: Verify Zero-Telemetry Privacy Architecture
+        run: |
+          echo "Auditing application source for unauthorized network telemetry..."
+          if git grep -nE "fetch\(|XMLHttpRequest|navigator\.sendBeacon" src/app/; then
+            echo "❌ CRITICAL: Unauthorized outbound network calls detected in src/app/! The Plastic Route strictly enforces zero-telemetry client-side privacy."
+            exit 1
+          fi
+          echo "✅ Zero outbound network telemetry verified."
+
       - name: Run Automated Unit Tests (Vitest)
         run: npm test
 
