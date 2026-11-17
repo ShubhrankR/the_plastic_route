@@ -113,3 +113,9 @@
 .perk-bullet {
   font-size: 0.8rem;
 }
+
+@media (max-width: 600px) {
+  .milestones-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -211,3 +211,9 @@
   font-size: 0.72rem;
   color: var(--text-muted);
 }
+
+@media (max-width: 600px) {
+  .lounges-grid {
+    grid-template-columns: 1fr;
+  }
+}

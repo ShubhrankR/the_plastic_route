@@ -28,3 +28,32 @@
 .mb-2 {
   margin-bottom: 1.5rem;
 }
+
+@media (max-width: 767px) {
+  .portfolio-header-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .portfolio-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .portfolio-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

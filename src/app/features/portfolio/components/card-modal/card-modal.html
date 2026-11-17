@@ -1,8 +1,14 @@
 <div class="modal-backdrop fade-in" (click)="close.emit()">
-  <div class="modal-dialog slide-down" (click)="$event.stopPropagation()">
+  <div
+    class="modal-dialog slide-down"
+    (click)="$event.stopPropagation()"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="card-modal-title"
+  >
     <div class="modal-header">
       <div class="d-flex items-center gap-2 flex-wrap">
-        <h4 class="fw-bold mb-0">
+        <h4 id="card-modal-title" class="fw-bold mb-0">
           @if (cardToEdit()) {
             <span>✏️ Edit Card</span>
           } @else {
