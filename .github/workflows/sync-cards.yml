@@ -36,6 +36,9 @@ jobs:
       - name: Run Master Catalog Sync Script
         run: npm run cards:sync
 
+      - name: Format Synced Files with Prettier
+        run: npm run format:write
+
       - name: Verify Angular Compilation
         run: npm run build
 
